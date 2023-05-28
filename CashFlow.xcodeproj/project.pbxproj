@@ -22,6 +22,8 @@
 		391FA0E32A2148D40096EB59 /* Operations.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 391FA0E22A2148D40096EB59 /* Operations.storyboard */; };
 		391FA0E52A2149510096EB59 /* OperationsIOProtocols.swift in Sources */ = {isa = PBXBuildFile; fileRef = 391FA0E42A2149510096EB59 /* OperationsIOProtocols.swift */; };
 		391FA0E72A2149720096EB59 /* OperationsInteractorIOProtocols.swift in Sources */ = {isa = PBXBuildFile; fileRef = 391FA0E62A2149720096EB59 /* OperationsInteractorIOProtocols.swift */; };
+		39AE8BBD2A23B249002F6130 /* TotalBalanceTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 39AE8BBC2A23B249002F6130 /* TotalBalanceTableViewCell.swift */; };
+		39AE8BBF2A23B7FD002F6130 /* ActionsTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 39AE8BBE2A23B7FD002F6130 /* ActionsTableViewCell.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -61,6 +63,8 @@
 		391FA0E22A2148D40096EB59 /* Operations.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Operations.storyboard; sourceTree = "<group>"; };
 		391FA0E42A2149510096EB59 /* OperationsIOProtocols.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OperationsIOProtocols.swift; sourceTree = "<group>"; };
 		391FA0E62A2149720096EB59 /* OperationsInteractorIOProtocols.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OperationsInteractorIOProtocols.swift; sourceTree = "<group>"; };
+		39AE8BBC2A23B249002F6130 /* TotalBalanceTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TotalBalanceTableViewCell.swift; sourceTree = "<group>"; };
+		39AE8BBE2A23B7FD002F6130 /* ActionsTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ActionsTableViewCell.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -187,10 +191,20 @@
 		391FA0D72A21480C0096EB59 /* View */ = {
 			isa = PBXGroup;
 			children = (
+				39AE8BBB2A23B1BE002F6130 /* Cells */,
 				391FA0E02A2148A20096EB59 /* OperationsViewController.swift */,
 				391FA0E22A2148D40096EB59 /* Operations.storyboard */,
 			);
 			path = View;
+			sourceTree = "<group>";
+		};
+		39AE8BBB2A23B1BE002F6130 /* Cells */ = {
+			isa = PBXGroup;
+			children = (
+				39AE8BBC2A23B249002F6130 /* TotalBalanceTableViewCell.swift */,
+				39AE8BBE2A23B7FD002F6130 /* ActionsTableViewCell.swift */,
+			);
+			path = Cells;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -329,8 +343,10 @@
 				391FA0DF2A2148790096EB59 /* OperationsPresenter.swift in Sources */,
 				391FA0A32A2135950096EB59 /* AppDelegate.swift in Sources */,
 				391FA0D92A2148560096EB59 /* OperationsConfigurator.swift in Sources */,
+				39AE8BBD2A23B249002F6130 /* TotalBalanceTableViewCell.swift in Sources */,
 				391FA0E72A2149720096EB59 /* OperationsInteractorIOProtocols.swift in Sources */,
 				391FA0A52A2135950096EB59 /* SceneDelegate.swift in Sources */,
+				39AE8BBF2A23B7FD002F6130 /* ActionsTableViewCell.swift in Sources */,
 				391FA0E12A2148A20096EB59 /* OperationsViewController.swift in Sources */,
 				391FA0E52A2149510096EB59 /* OperationsIOProtocols.swift in Sources */,
 			);
