@@ -22,6 +22,9 @@
 		391FA0E32A2148D40096EB59 /* Operations.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 391FA0E22A2148D40096EB59 /* Operations.storyboard */; };
 		391FA0E52A2149510096EB59 /* OperationsIOProtocols.swift in Sources */ = {isa = PBXBuildFile; fileRef = 391FA0E42A2149510096EB59 /* OperationsIOProtocols.swift */; };
 		391FA0E72A2149720096EB59 /* OperationsInteractorIOProtocols.swift in Sources */ = {isa = PBXBuildFile; fileRef = 391FA0E62A2149720096EB59 /* OperationsInteractorIOProtocols.swift */; };
+		39AA92792A3A1AA000F2FF30 /* Realm in Frameworks */ = {isa = PBXBuildFile; productRef = 39AA92782A3A1AA000F2FF30 /* Realm */; };
+		39AA927B2A3A1AA000F2FF30 /* RealmSwift in Frameworks */ = {isa = PBXBuildFile; productRef = 39AA927A2A3A1AA000F2FF30 /* RealmSwift */; };
+		39AD172F2A392359002E9668 /* OperationTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 39AD172E2A392359002E9668 /* OperationTableViewCell.swift */; };
 		39AE8BBD2A23B249002F6130 /* TotalBalanceTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 39AE8BBC2A23B249002F6130 /* TotalBalanceTableViewCell.swift */; };
 		39AE8BBF2A23B7FD002F6130 /* ActionsTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 39AE8BBE2A23B7FD002F6130 /* ActionsTableViewCell.swift */; };
 /* End PBXBuildFile section */
@@ -63,6 +66,7 @@
 		391FA0E22A2148D40096EB59 /* Operations.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Operations.storyboard; sourceTree = "<group>"; };
 		391FA0E42A2149510096EB59 /* OperationsIOProtocols.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OperationsIOProtocols.swift; sourceTree = "<group>"; };
 		391FA0E62A2149720096EB59 /* OperationsInteractorIOProtocols.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OperationsInteractorIOProtocols.swift; sourceTree = "<group>"; };
+		39AD172E2A392359002E9668 /* OperationTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OperationTableViewCell.swift; sourceTree = "<group>"; };
 		39AE8BBC2A23B249002F6130 /* TotalBalanceTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TotalBalanceTableViewCell.swift; sourceTree = "<group>"; };
 		39AE8BBE2A23B7FD002F6130 /* ActionsTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ActionsTableViewCell.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -72,6 +76,8 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				39AA927B2A3A1AA000F2FF30 /* RealmSwift in Frameworks */,
+				39AA92792A3A1AA000F2FF30 /* Realm in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -115,7 +121,8 @@
 		391FA0A12A2135950096EB59 /* CashFlow */ = {
 			isa = PBXGroup;
 			children = (
-				391FA0D22A2147AA0096EB59 /* Screens */,
+				39AD17302A3A16B9002E9668 /* Helpers */,
+				391FA0D22A2147AA0096EB59 /* Scenes */,
 				391FA0A22A2135950096EB59 /* AppDelegate.swift */,
 				391FA0A42A2135950096EB59 /* SceneDelegate.swift */,
 				391FA0AB2A2135970096EB59 /* Assets.xcassets */,
@@ -142,12 +149,12 @@
 			path = CashFlowUITests;
 			sourceTree = "<group>";
 		};
-		391FA0D22A2147AA0096EB59 /* Screens */ = {
+		391FA0D22A2147AA0096EB59 /* Scenes */ = {
 			isa = PBXGroup;
 			children = (
 				391FA0D32A2147DB0096EB59 /* Operations */,
 			);
-			path = Screens;
+			path = Scenes;
 			sourceTree = "<group>";
 		};
 		391FA0D32A2147DB0096EB59 /* Operations */ = {
@@ -198,11 +205,19 @@
 			path = View;
 			sourceTree = "<group>";
 		};
+		39AD17302A3A16B9002E9668 /* Helpers */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Helpers;
+			sourceTree = "<group>";
+		};
 		39AE8BBB2A23B1BE002F6130 /* Cells */ = {
 			isa = PBXGroup;
 			children = (
 				39AE8BBC2A23B249002F6130 /* TotalBalanceTableViewCell.swift */,
 				39AE8BBE2A23B7FD002F6130 /* ActionsTableViewCell.swift */,
+				39AD172E2A392359002E9668 /* OperationTableViewCell.swift */,
 			);
 			path = Cells;
 			sourceTree = "<group>";
@@ -223,6 +238,10 @@
 			dependencies = (
 			);
 			name = CashFlow;
+			packageProductDependencies = (
+				39AA92782A3A1AA000F2FF30 /* Realm */,
+				39AA927A2A3A1AA000F2FF30 /* RealmSwift */,
+			);
 			productName = CashFlow;
 			productReference = 391FA09F2A2135950096EB59 /* CashFlow.app */;
 			productType = "com.apple.product-type.application";
@@ -295,6 +314,9 @@
 				Base,
 			);
 			mainGroup = 391FA0962A2135950096EB59;
+			packageReferences = (
+				39AA92772A3A1AA000F2FF30 /* XCRemoteSwiftPackageReference "realm-swift" */,
+			);
 			productRefGroup = 391FA0A02A2135950096EB59 /* Products */;
 			projectDirPath = "";
 			projectRoot = "";
@@ -345,6 +367,7 @@
 				391FA0D92A2148560096EB59 /* OperationsConfigurator.swift in Sources */,
 				39AE8BBD2A23B249002F6130 /* TotalBalanceTableViewCell.swift in Sources */,
 				391FA0E72A2149720096EB59 /* OperationsInteractorIOProtocols.swift in Sources */,
+				39AD172F2A392359002E9668 /* OperationTableViewCell.swift in Sources */,
 				391FA0A52A2135950096EB59 /* SceneDelegate.swift in Sources */,
 				39AE8BBF2A23B7FD002F6130 /* ActionsTableViewCell.swift in Sources */,
 				391FA0E12A2148A20096EB59 /* OperationsViewController.swift in Sources */,
@@ -682,6 +705,30 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCRemoteSwiftPackageReference section */
+		39AA92772A3A1AA000F2FF30 /* XCRemoteSwiftPackageReference "realm-swift" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/realm/realm-swift";
+			requirement = {
+				branch = master;
+				kind = branch;
+			};
+		};
+/* End XCRemoteSwiftPackageReference section */
+
+/* Begin XCSwiftPackageProductDependency section */
+		39AA92782A3A1AA000F2FF30 /* Realm */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 39AA92772A3A1AA000F2FF30 /* XCRemoteSwiftPackageReference "realm-swift" */;
+			productName = Realm;
+		};
+		39AA927A2A3A1AA000F2FF30 /* RealmSwift */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 39AA92772A3A1AA000F2FF30 /* XCRemoteSwiftPackageReference "realm-swift" */;
+			productName = RealmSwift;
+		};
+/* End XCSwiftPackageProductDependency section */
 	};
 	rootObject = 391FA0972A2135950096EB59 /* Project object */;
 }

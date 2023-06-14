@@ -18,7 +18,7 @@ extension OperationsViewController: OperationsInputViewProtocol {
 extension OperationsViewController: UITableViewDelegate {
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-        
+        tableView.deselectRow(at: indexPath, animated: true)
     }
     
     func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
@@ -28,7 +28,7 @@ extension OperationsViewController: UITableViewDelegate {
         case 1:
             return 100
         default:
-            return 40
+            return 60
         }
     }
 }
@@ -36,7 +36,7 @@ extension OperationsViewController: UITableViewDelegate {
 extension OperationsViewController: UITableViewDataSource {
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return 2
+        return 5
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
@@ -54,7 +54,10 @@ extension OperationsViewController: UITableViewDataSource {
             return cell
             
         default:
-            return UITableViewCell()
+            guard let cell = tableView.dequeueReusableCell(withIdentifier: "operationTableCell", for: indexPath) as? OperationTableViewCell else {
+                return UITableViewCell()
+            }
+            return cell
         }
     }
 }
