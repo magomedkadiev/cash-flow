@@ -3,16 +3,26 @@ import UIKit
 class OperationsViewController: UIViewController {
 
     var presenter: OperationsOutputViewProtocol?
+    var operations: [OperationPO]?
     
+    @IBOutlet weak var tableView: UITableView!
     override func viewDidLoad() {
         super.viewDidLoad()
-        print("Hello Operations!")
+        //presenter?.viewDidLoad()
     }
 
+    @IBAction func addNewOperation(_ sender: UIButton) {
+        presenter?.addNewOperationButtonTapped(sender.tag)
+    }
 }
 
 extension OperationsViewController: OperationsInputViewProtocol {
-    
+    func refreshTableView(operations: [OperationPO]) {
+        self.operations = operations
+        DispatchQueue.main.async {
+            self.tableView.reloadData()
+        }
+    }
 }
 
 extension OperationsViewController: UITableViewDelegate {
@@ -36,7 +46,7 @@ extension OperationsViewController: UITableViewDelegate {
 extension OperationsViewController: UITableViewDataSource {
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return 5
+        return (operations?.count ?? 0) + 2
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
@@ -52,11 +62,12 @@ extension OperationsViewController: UITableViewDataSource {
                 return UITableViewCell()
             }
             return cell
-            
+
         default:
             guard let cell = tableView.dequeueReusableCell(withIdentifier: "operationTableCell", for: indexPath) as? OperationTableViewCell else {
                 return UITableViewCell()
             }
+            cell.nameLabel.text = operations![indexPath.row-2].name
             return cell
         }
     }

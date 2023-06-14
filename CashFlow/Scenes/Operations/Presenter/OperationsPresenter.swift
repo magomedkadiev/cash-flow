@@ -9,13 +9,31 @@ class OperationsPresenter {
         self.view = view
         self.interactor = interactor
     }
-    
 }
 
 extension OperationsPresenter: OperationsOutputViewProtocol {
     
+    func viewDidLoad() {
+        interactor.fetchAllOperations()
+    }
+    
+    func addNewOperationButtonTapped(_ tag: Int) {
+        switch tag {
+        case 1: // income
+            break
+        case 2: // loss
+            let operation = OperationPO(id: "121", name: "eeee", sum: "111")
+            interactor.createNewOperation(operation)
+        case 3: // transfer
+            break
+        default:
+            break
+        }
+    }
 }
 
 extension OperationsPresenter: OperationsInteractorOutputProtocol {
-    
+    func reloadDataWith(_ operations: [OperationPO]) {
+        view?.refreshTableView(operations: operations)
+    }
 }
