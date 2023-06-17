@@ -65,6 +65,7 @@
                                                     <buttonConfiguration key="configuration" style="plain"/>
                                                     <connections>
                                                         <action selector="addNewOperation:" destination="Y6W-OH-hqX" eventType="touchUpInside" id="zJP-kd-gFF"/>
+                                                        <segue destination="2X2-lb-zcp" kind="show" identifier="OperationCreationViewController" id="r6o-wv-Omb"/>
                                                     </connections>
                                                 </button>
                                                 <button opaque="NO" tag="3" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="contactAdd" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="GoX-nB-uLw">
@@ -181,6 +182,16 @@
                 </customObject>
             </objects>
             <point key="canvasLocation" x="135.1145038167939" y="3.5211267605633805"/>
+        </scene>
+        <!--OperationCreation-->
+        <scene sceneID="tFd-7l-pr7">
+            <objects>
+                <viewControllerPlaceholder storyboardName="OperationCreation" id="2X2-lb-zcp" sceneMemberID="viewController">
+                    <navigationItem key="navigationItem" id="MtA-pP-yg1"/>
+                </viewControllerPlaceholder>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="UU4-uZ-z79" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="839" y="4"/>
         </scene>
     </scenes>
     <resources>

@@ -8,11 +8,17 @@ class OperationsViewController: UIViewController {
     @IBOutlet weak var tableView: UITableView!
     override func viewDidLoad() {
         super.viewDidLoad()
-        //presenter?.viewDidLoad()
+        presenter?.viewDidLoad()
     }
 
     @IBAction func addNewOperation(_ sender: UIButton) {
-        presenter?.addNewOperationButtonTapped(sender.tag)
+//        presenter?.addNewOperationButtonTapped(sender.tag)
+    }
+    
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        if segue.identifier == "OperationCreationViewController" {
+           let _ = segue.destination as? OperationCreationViewController
+        }
     }
 }
 
