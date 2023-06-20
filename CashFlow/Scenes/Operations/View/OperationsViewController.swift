@@ -10,10 +10,6 @@ class OperationsViewController: UIViewController {
         super.viewDidLoad()
         presenter?.viewDidLoad()
     }
-
-    @IBAction func addNewOperation(_ sender: UIButton) {
-//        presenter?.addNewOperationButtonTapped(sender.tag)
-    }
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         if segue.identifier == "OperationCreationViewController" {
@@ -73,7 +69,7 @@ extension OperationsViewController: UITableViewDataSource {
             guard let cell = tableView.dequeueReusableCell(withIdentifier: "operationTableCell", for: indexPath) as? OperationTableViewCell else {
                 return UITableViewCell()
             }
-            cell.nameLabel.text = operations![indexPath.row-2].name
+            cell.nameLabel.text = operations![indexPath.row-2].category
             return cell
         }
     }

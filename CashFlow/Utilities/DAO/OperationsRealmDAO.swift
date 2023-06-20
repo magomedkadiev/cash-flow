@@ -7,7 +7,7 @@ class OperationsRealmDAO: OperationsDAO {
     
     func creationOperation(_ operation: OperationPO, complitionHandler: @escaping () -> Void?) {
         realmManager.write { realm in
-            let storedProreties = Operation(id: operation.id, name: operation.name, sum: operation.sum)
+            let storedProreties = Operation(id: operation.id, name: operation.comment, sum: operation.sum)
             realm.add(storedProreties)
         } onSuccess: {
             complitionHandler()

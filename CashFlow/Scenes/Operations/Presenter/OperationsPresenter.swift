@@ -22,7 +22,7 @@ extension OperationsPresenter: OperationsOutputViewProtocol {
         case 1: // income
             break
         case 2: // loss
-            let operation = OperationPO(id: "121", name: "eeee", sum: "111")
+            let operation = OperationPO(id: "", type: "", category: "", wallet: "", data: Data(), comment: "", sum: "")
             interactor.createNewOperation(operation)
         case 3: // transfer
             break

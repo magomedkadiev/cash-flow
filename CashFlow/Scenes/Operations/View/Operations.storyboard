@@ -64,7 +64,6 @@
                                                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                                     <buttonConfiguration key="configuration" style="plain"/>
                                                     <connections>
-                                                        <action selector="addNewOperation:" destination="Y6W-OH-hqX" eventType="touchUpInside" id="zJP-kd-gFF"/>
                                                         <segue destination="2X2-lb-zcp" kind="show" identifier="OperationCreationViewController" id="r6o-wv-Omb"/>
                                                     </connections>
                                                 </button>
