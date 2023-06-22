@@ -55,7 +55,7 @@ extension OperationsViewController: UITableViewDataSource {
         
         switch indexPath.row {
         case 0:
-            guard let cell = tableView.dequeueReusableCell(withIdentifier: "totalBalance", for: indexPath) as? TotalBalanceTableViewCell else {
+            guard let cell = tableView.dequeueReusableCell(withIdentifier: "incomeListTableViewCell", for: indexPath) as? IncomListTableViewCell else {
                 return UITableViewCell()
             }
             return cell
