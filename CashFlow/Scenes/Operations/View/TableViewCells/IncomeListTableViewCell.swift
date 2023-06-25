@@ -1,6 +1,6 @@
 import UIKit
 
-class IncomListTableViewCell: UITableViewCell {
+class IncomeListTableViewCell: UITableViewCell {
 
     @IBOutlet weak var collectionView: UICollectionView!
     
@@ -16,7 +16,7 @@ class IncomListTableViewCell: UITableViewCell {
 
 }
 
-extension IncomListTableViewCell: UICollectionViewDataSource {
+extension IncomeListTableViewCell: UICollectionViewDataSource {
     
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
         return 10
@@ -29,5 +29,4 @@ extension IncomListTableViewCell: UICollectionViewDataSource {
         
         return cell
     }
-    
 }

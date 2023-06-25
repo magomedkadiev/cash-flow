@@ -35,12 +35,10 @@ extension OperationsViewController: UITableViewDelegate {
     
     func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
         switch indexPath.row {
-        case 0:
-            return 100
-        case 1:
-            return 100
+        case 0,1:
+            return 180
         default:
-            return 60
+            return 80
         }
     }
 }
@@ -55,12 +53,12 @@ extension OperationsViewController: UITableViewDataSource {
         
         switch indexPath.row {
         case 0:
-            guard let cell = tableView.dequeueReusableCell(withIdentifier: "incomeListTableViewCell", for: indexPath) as? IncomListTableViewCell else {
+            guard let cell = tableView.dequeueReusableCell(withIdentifier: "exprenseListTableViewCell", for: indexPath) as? ExprenseListTableViewCell else {
                 return UITableViewCell()
             }
             return cell
         case 1:
-            guard let cell = tableView.dequeueReusableCell(withIdentifier: "actionsTableCell", for: indexPath) as? ActionsTableViewCell else {
+            guard let cell = tableView.dequeueReusableCell(withIdentifier: "incomeListTableViewCell", for: indexPath) as? IncomeListTableViewCell else {
                 return UITableViewCell()
             }
             return cell
@@ -69,7 +67,7 @@ extension OperationsViewController: UITableViewDataSource {
             guard let cell = tableView.dequeueReusableCell(withIdentifier: "operationTableCell", for: indexPath) as? OperationTableViewCell else {
                 return UITableViewCell()
             }
-            cell.nameLabel.text = operations![indexPath.row-2].category
+            cell.nameLabel.text = "Операция - \(indexPath.row + 1)"//operations![indexPath.row-2].category
             return cell
         }
     }

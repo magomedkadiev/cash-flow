@@ -30,8 +30,10 @@
 		395A7AB82A3E11F0000A9BE2 /* OperationCreationConfigurator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 395A7AB72A3E11F0000A9BE2 /* OperationCreationConfigurator.swift */; };
 		395A7ABA2A3E11F6000A9BE2 /* OperationCreationInitializer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 395A7AB92A3E11F6000A9BE2 /* OperationCreationInitializer.swift */; };
 		395A7ABC2A3E11FD000A9BE2 /* OperationCreation.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 395A7ABB2A3E11FD000A9BE2 /* OperationCreation.storyboard */; };
-		395A7AC22A44C94C000A9BE2 /* IncomListTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 395A7AC12A44C94C000A9BE2 /* IncomListTableViewCell.swift */; };
+		395A7AC22A44C94C000A9BE2 /* IncomeListTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 395A7AC12A44C94C000A9BE2 /* IncomeListTableViewCell.swift */; };
 		395A7AC42A44CA01000A9BE2 /* IncomeListCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 395A7AC32A44CA01000A9BE2 /* IncomeListCollectionViewCell.swift */; };
+		395A7AC62A48B1DE000A9BE2 /* ExprenseListTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 395A7AC52A48B1DE000A9BE2 /* ExprenseListTableViewCell.swift */; };
+		395A7AC92A48B244000A9BE2 /* ExprenseListCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 395A7AC82A48B244000A9BE2 /* ExprenseListCollectionViewCell.swift */; };
 		39AA92792A3A1AA000F2FF30 /* Realm in Frameworks */ = {isa = PBXBuildFile; productRef = 39AA92782A3A1AA000F2FF30 /* Realm */; };
 		39AA927B2A3A1AA000F2FF30 /* RealmSwift in Frameworks */ = {isa = PBXBuildFile; productRef = 39AA927A2A3A1AA000F2FF30 /* RealmSwift */; };
 		39AA927E2A3A23E600F2FF30 /* RealmManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 39AA927D2A3A23E600F2FF30 /* RealmManager.swift */; };
@@ -42,7 +44,6 @@
 		39AA928A2A3A2F8900F2FF30 /* Operation.swift in Sources */ = {isa = PBXBuildFile; fileRef = 39AA92892A3A2F8900F2FF30 /* Operation.swift */; };
 		39AA928D2A3A3E1500F2FF30 /* OperationsToOperationsPOMapper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 39AA928C2A3A3E1500F2FF30 /* OperationsToOperationsPOMapper.swift */; };
 		39AD172F2A392359002E9668 /* OperationTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 39AD172E2A392359002E9668 /* OperationTableViewCell.swift */; };
-		39AE8BBD2A23B249002F6130 /* TotalBalanceTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 39AE8BBC2A23B249002F6130 /* TotalBalanceTableViewCell.swift */; };
 		39AE8BBF2A23B7FD002F6130 /* ActionsTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 39AE8BBE2A23B7FD002F6130 /* ActionsTableViewCell.swift */; };
 /* End PBXBuildFile section */
 
@@ -91,8 +92,10 @@
 		395A7AB72A3E11F0000A9BE2 /* OperationCreationConfigurator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OperationCreationConfigurator.swift; sourceTree = "<group>"; };
 		395A7AB92A3E11F6000A9BE2 /* OperationCreationInitializer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OperationCreationInitializer.swift; sourceTree = "<group>"; };
 		395A7ABB2A3E11FD000A9BE2 /* OperationCreation.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = OperationCreation.storyboard; sourceTree = "<group>"; };
-		395A7AC12A44C94C000A9BE2 /* IncomListTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IncomListTableViewCell.swift; sourceTree = "<group>"; };
+		395A7AC12A44C94C000A9BE2 /* IncomeListTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IncomeListTableViewCell.swift; sourceTree = "<group>"; };
 		395A7AC32A44CA01000A9BE2 /* IncomeListCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IncomeListCollectionViewCell.swift; sourceTree = "<group>"; };
+		395A7AC52A48B1DE000A9BE2 /* ExprenseListTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExprenseListTableViewCell.swift; sourceTree = "<group>"; };
+		395A7AC82A48B244000A9BE2 /* ExprenseListCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExprenseListCollectionViewCell.swift; sourceTree = "<group>"; };
 		39AA927D2A3A23E600F2FF30 /* RealmManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RealmManager.swift; sourceTree = "<group>"; };
 		39AA927F2A3A240600F2FF30 /* RealmManagerProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RealmManagerProtocol.swift; sourceTree = "<group>"; };
 		39AA92822A3A2D8000F2FF30 /* OperationsRealmDAO.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OperationsRealmDAO.swift; sourceTree = "<group>"; };
@@ -101,7 +104,6 @@
 		39AA92892A3A2F8900F2FF30 /* Operation.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Operation.swift; sourceTree = "<group>"; };
 		39AA928C2A3A3E1500F2FF30 /* OperationsToOperationsPOMapper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OperationsToOperationsPOMapper.swift; sourceTree = "<group>"; };
 		39AD172E2A392359002E9668 /* OperationTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OperationTableViewCell.swift; sourceTree = "<group>"; };
-		39AE8BBC2A23B249002F6130 /* TotalBalanceTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TotalBalanceTableViewCell.swift; sourceTree = "<group>"; };
 		39AE8BBE2A23B7FD002F6130 /* ActionsTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ActionsTableViewCell.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -234,7 +236,8 @@
 		391FA0D72A21480C0096EB59 /* View */ = {
 			isa = PBXGroup;
 			children = (
-				39AE8BBB2A23B1BE002F6130 /* Cells */,
+				395A7AC72A48B1F7000A9BE2 /* CollectionViewCells */,
+				39AE8BBB2A23B1BE002F6130 /* TableViewCells */,
 				391FA0E02A2148A20096EB59 /* OperationsViewController.swift */,
 				391FA0E22A2148D40096EB59 /* Operations.storyboard */,
 			);
@@ -288,6 +291,15 @@
 			path = View;
 			sourceTree = "<group>";
 		};
+		395A7AC72A48B1F7000A9BE2 /* CollectionViewCells */ = {
+			isa = PBXGroup;
+			children = (
+				395A7AC32A44CA01000A9BE2 /* IncomeListCollectionViewCell.swift */,
+				395A7AC82A48B244000A9BE2 /* ExprenseListCollectionViewCell.swift */,
+			);
+			path = CollectionViewCells;
+			sourceTree = "<group>";
+		};
 		39AA927C2A3A200B00F2FF30 /* Realm */ = {
 			isa = PBXGroup;
 			children = (
@@ -333,16 +345,15 @@
 			path = Utilities;
 			sourceTree = "<group>";
 		};
-		39AE8BBB2A23B1BE002F6130 /* Cells */ = {
+		39AE8BBB2A23B1BE002F6130 /* TableViewCells */ = {
 			isa = PBXGroup;
 			children = (
-				39AE8BBC2A23B249002F6130 /* TotalBalanceTableViewCell.swift */,
 				39AE8BBE2A23B7FD002F6130 /* ActionsTableViewCell.swift */,
 				39AD172E2A392359002E9668 /* OperationTableViewCell.swift */,
-				395A7AC12A44C94C000A9BE2 /* IncomListTableViewCell.swift */,
-				395A7AC32A44CA01000A9BE2 /* IncomeListCollectionViewCell.swift */,
+				395A7AC12A44C94C000A9BE2 /* IncomeListTableViewCell.swift */,
+				395A7AC52A48B1DE000A9BE2 /* ExprenseListTableViewCell.swift */,
 			);
-			path = Cells;
+			path = TableViewCells;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -492,8 +503,9 @@
 				395A7ABA2A3E11F6000A9BE2 /* OperationCreationInitializer.swift in Sources */,
 				391FA0DB2A2148610096EB59 /* OperationsInitialier.swift in Sources */,
 				395A7AB82A3E11F0000A9BE2 /* OperationCreationConfigurator.swift in Sources */,
-				395A7AC22A44C94C000A9BE2 /* IncomListTableViewCell.swift in Sources */,
+				395A7AC22A44C94C000A9BE2 /* IncomeListTableViewCell.swift in Sources */,
 				391FA0DD2A2148700096EB59 /* OperationsInteractor.swift in Sources */,
+				395A7AC62A48B1DE000A9BE2 /* ExprenseListTableViewCell.swift in Sources */,
 				395A7AB22A3E11C7000A9BE2 /* OperationCreationIOProtocols.swift in Sources */,
 				39AA928A2A3A2F8900F2FF30 /* Operation.swift in Sources */,
 				391FA0DF2A2148790096EB59 /* OperationsPresenter.swift in Sources */,
@@ -502,13 +514,13 @@
 				391FA0A32A2135950096EB59 /* AppDelegate.swift in Sources */,
 				395A7AB62A3E11E3000A9BE2 /* OperationCreationInteractorIOProtocols.swift in Sources */,
 				391FA0D92A2148560096EB59 /* OperationsConfigurator.swift in Sources */,
-				39AE8BBD2A23B249002F6130 /* TotalBalanceTableViewCell.swift in Sources */,
 				395A7AC42A44CA01000A9BE2 /* IncomeListCollectionViewCell.swift in Sources */,
 				391FA0E72A2149720096EB59 /* OperationsInteractorIOProtocols.swift in Sources */,
 				395A7AAE2A3E0E6D000A9BE2 /* OperationCreationViewController.swift in Sources */,
 				39AA92882A3A2E0700F2FF30 /* OperationPO.swift in Sources */,
 				39AD172F2A392359002E9668 /* OperationTableViewCell.swift in Sources */,
 				391FA0A52A2135950096EB59 /* SceneDelegate.swift in Sources */,
+				395A7AC92A48B244000A9BE2 /* ExprenseListCollectionViewCell.swift in Sources */,
 				39AE8BBF2A23B7FD002F6130 /* ActionsTableViewCell.swift in Sources */,
 				391FA0E12A2148A20096EB59 /* OperationsViewController.swift in Sources */,
 				391FA0E52A2149510096EB59 /* OperationsIOProtocols.swift in Sources */,

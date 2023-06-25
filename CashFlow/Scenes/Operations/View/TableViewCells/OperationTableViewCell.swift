@@ -1,10 +1,3 @@
-//
-//  OperationTableViewCell.swift
-//  CashFlow
-//
-//  Created by Султанхан on 14.06.2023.
-//
-
 import UIKit
 
 class OperationTableViewCell: UITableViewCell {
