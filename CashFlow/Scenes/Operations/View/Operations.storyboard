@@ -82,6 +82,22 @@
                                                             </collectionViewCellContentView>
                                                             <size key="customSize" width="105" height="150"/>
                                                         </collectionViewCell>
+                                                        <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" reuseIdentifier="exprenseListCollectionAddViewCell" id="Ck7-SZ-awM" customClass="ExprenseListCollectionAddViewCell" customModule="CashFlow" customModuleProvider="target">
+                                                            <rect key="frame" x="121" y="18" width="105" height="152"/>
+                                                            <autoresizingMask key="autoresizingMask"/>
+                                                            <collectionViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" id="4nn-b0-8KD">
+                                                                <rect key="frame" x="0.0" y="0.0" width="105" height="152"/>
+                                                                <autoresizingMask key="autoresizingMask"/>
+                                                                <subviews>
+                                                                    <button opaque="NO" userInteractionEnabled="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="00A-AS-0Tx">
+                                                                        <rect key="frame" x="17" y="41" width="70" height="70"/>
+                                                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                                                        <state key="normal" title="Button"/>
+                                                                        <buttonConfiguration key="configuration" style="plain" image="Add"/>
+                                                                    </button>
+                                                                </subviews>
+                                                            </collectionViewCellContentView>
+                                                        </collectionViewCell>
                                                     </cells>
                                                 </collectionView>
                                             </subviews>
@@ -126,7 +142,7 @@
                                                                         <rect key="frame" x="10" y="30" width="70" height="70"/>
                                                                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                                                         <subviews>
-                                                                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="Credit card_duotone_line" highlightedImage="Sign_in_squre_light" translatesAutoresizingMaskIntoConstraints="NO" id="iFO-YY-ygk">
+                                                                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="Credit card_duotone_line" translatesAutoresizingMaskIntoConstraints="NO" id="iFO-YY-ygk">
                                                                                 <rect key="frame" x="10" y="10" width="50" height="50"/>
                                                                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                                                             </imageView>
@@ -280,9 +296,9 @@
         </scene>
     </scenes>
     <resources>
+        <image name="Add" width="50" height="50"/>
         <image name="Credit card_duotone_line" width="50" height="50"/>
         <image name="Sign_in_squre_duotone_line" width="50" height="50"/>
-        <image name="Sign_in_squre_light" width="24" height="24"/>
         <systemColor name="systemBackgroundColor">
             <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
         </systemColor>

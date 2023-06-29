@@ -18,6 +18,14 @@ class OperationsViewController: UIViewController {
     }
 }
 
+extension OperationsViewController: ExpenseListAlertControllerHandler {
+    
+    func createNew(expense: String) {
+        // Здесь нужно сохранять в базу и возвращать списоком объекты для отображения в коллекции
+        print("Create new exprense - \(expense)")
+    }
+}
+
 extension OperationsViewController: OperationsInputViewProtocol {
     func refreshTableView(operations: [OperationPO]) {
         self.operations = operations
@@ -50,19 +58,19 @@ extension OperationsViewController: UITableViewDataSource {
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        
         switch indexPath.row {
         case 0:
             guard let cell = tableView.dequeueReusableCell(withIdentifier: "exprenseListTableViewCell", for: indexPath) as? ExprenseListTableViewCell else {
                 return UITableViewCell()
             }
+            cell.viewController = self
+            cell.alertControllerHandler = self
             return cell
         case 1:
             guard let cell = tableView.dequeueReusableCell(withIdentifier: "incomeListTableViewCell", for: indexPath) as? IncomeListTableViewCell else {
                 return UITableViewCell()
             }
             return cell
-
         default:
             guard let cell = tableView.dequeueReusableCell(withIdentifier: "operationTableCell", for: indexPath) as? OperationTableViewCell else {
                 return UITableViewCell()
