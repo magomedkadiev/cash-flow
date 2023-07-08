@@ -8,4 +8,5 @@ struct OperationPO {
     var data: Data
     var comment: String
     var sum: String
+    var expenses: [ExpensePO]
 }

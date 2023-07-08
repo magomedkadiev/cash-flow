@@ -2,5 +2,5 @@ import Foundation
 
 protocol ExpenseListAlertControllerHandler: AnyObject {
     
-    func createNew(expense: String)
+    func createNewExpenseWith(name: String)
 }

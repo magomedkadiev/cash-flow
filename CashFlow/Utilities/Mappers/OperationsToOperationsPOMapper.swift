@@ -4,7 +4,8 @@ class OperationsToOperationsPOMapper: OperationsToOperationsPOMapperProtocol {
     func map(_ operations: [Operation]) -> [OperationPO] {
         var plainObjects = [OperationPO]()
         for operation in operations {
-            let object = OperationPO(id: operation.id, type: "", category: "", wallet: "", data: Data(), comment: "", sum: "")
+            print(operation.expenses)
+            let object = OperationPO(id: operation.id, type: "", category: "", wallet: "", data: Data(), comment: "", sum: "", expenses: [])
             plainObjects.append(object)
         }
         return plainObjects

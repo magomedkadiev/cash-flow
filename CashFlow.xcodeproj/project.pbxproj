@@ -22,6 +22,7 @@
 		391FA0E32A2148D40096EB59 /* Operations.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 391FA0E22A2148D40096EB59 /* Operations.storyboard */; };
 		391FA0E52A2149510096EB59 /* OperationsIOProtocols.swift in Sources */ = {isa = PBXBuildFile; fileRef = 391FA0E42A2149510096EB59 /* OperationsIOProtocols.swift */; };
 		391FA0E72A2149720096EB59 /* OperationsInteractorIOProtocols.swift in Sources */ = {isa = PBXBuildFile; fileRef = 391FA0E62A2149720096EB59 /* OperationsInteractorIOProtocols.swift */; };
+		3940343B2A5734CB00D45D24 /* ExpensesToExpensesPOMapper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3940343A2A5734CB00D45D24 /* ExpensesToExpensesPOMapper.swift */; };
 		395A7AAE2A3E0E6D000A9BE2 /* OperationCreationViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 395A7AAD2A3E0E6D000A9BE2 /* OperationCreationViewController.swift */; };
 		395A7AB02A3E0E9D000A9BE2 /* OperationCreationPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 395A7AAF2A3E0E9D000A9BE2 /* OperationCreationPresenter.swift */; };
 		395A7AB22A3E11C7000A9BE2 /* OperationCreationIOProtocols.swift in Sources */ = {isa = PBXBuildFile; fileRef = 395A7AB12A3E11C7000A9BE2 /* OperationCreationIOProtocols.swift */; };
@@ -46,6 +47,8 @@
 		39AA928D2A3A3E1500F2FF30 /* OperationsToOperationsPOMapper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 39AA928C2A3A3E1500F2FF30 /* OperationsToOperationsPOMapper.swift */; };
 		39AD172F2A392359002E9668 /* OperationTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 39AD172E2A392359002E9668 /* OperationTableViewCell.swift */; };
 		39AE8BBF2A23B7FD002F6130 /* ActionsTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 39AE8BBE2A23B7FD002F6130 /* ActionsTableViewCell.swift */; };
+		39B1C9AA2A5094450065442C /* Expense.swift in Sources */ = {isa = PBXBuildFile; fileRef = 39B1C9A92A5094450065442C /* Expense.swift */; };
+		39B1C9AC2A5094FA0065442C /* ExpensePO.swift in Sources */ = {isa = PBXBuildFile; fileRef = 39B1C9AB2A5094FA0065442C /* ExpensePO.swift */; };
 		39DC7B0E2A4E1405003E75E6 /* ExpenseListAlertControllerHandler.swift in Sources */ = {isa = PBXBuildFile; fileRef = 39DC7B0D2A4E1405003E75E6 /* ExpenseListAlertControllerHandler.swift */; };
 /* End PBXBuildFile section */
 
@@ -86,6 +89,7 @@
 		391FA0E22A2148D40096EB59 /* Operations.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Operations.storyboard; sourceTree = "<group>"; };
 		391FA0E42A2149510096EB59 /* OperationsIOProtocols.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OperationsIOProtocols.swift; sourceTree = "<group>"; };
 		391FA0E62A2149720096EB59 /* OperationsInteractorIOProtocols.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OperationsInteractorIOProtocols.swift; sourceTree = "<group>"; };
+		3940343A2A5734CB00D45D24 /* ExpensesToExpensesPOMapper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExpensesToExpensesPOMapper.swift; sourceTree = "<group>"; };
 		395A7AAD2A3E0E6D000A9BE2 /* OperationCreationViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OperationCreationViewController.swift; sourceTree = "<group>"; };
 		395A7AAF2A3E0E9D000A9BE2 /* OperationCreationPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OperationCreationPresenter.swift; sourceTree = "<group>"; };
 		395A7AB12A3E11C7000A9BE2 /* OperationCreationIOProtocols.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OperationCreationIOProtocols.swift; sourceTree = "<group>"; };
@@ -108,6 +112,8 @@
 		39AA928C2A3A3E1500F2FF30 /* OperationsToOperationsPOMapper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OperationsToOperationsPOMapper.swift; sourceTree = "<group>"; };
 		39AD172E2A392359002E9668 /* OperationTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OperationTableViewCell.swift; sourceTree = "<group>"; };
 		39AE8BBE2A23B7FD002F6130 /* ActionsTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ActionsTableViewCell.swift; sourceTree = "<group>"; };
+		39B1C9A92A5094450065442C /* Expense.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Expense.swift; sourceTree = "<group>"; };
+		39B1C9AB2A5094FA0065442C /* ExpensePO.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExpensePO.swift; sourceTree = "<group>"; };
 		39DC7B0D2A4E1405003E75E6 /* ExpenseListAlertControllerHandler.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExpenseListAlertControllerHandler.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -326,8 +332,8 @@
 		39AA92862A3A2DFF00F2FF30 /* Models */ = {
 			isa = PBXGroup;
 			children = (
-				39AA92872A3A2E0700F2FF30 /* OperationPO.swift */,
-				39AA92892A3A2F8900F2FF30 /* Operation.swift */,
+				39B1C9A82A5094240065442C /* PlainObjects */,
+				39B1C9A72A50941C0065442C /* RealmObjects */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -336,6 +342,7 @@
 			isa = PBXGroup;
 			children = (
 				39AA928C2A3A3E1500F2FF30 /* OperationsToOperationsPOMapper.swift */,
+				3940343A2A5734CB00D45D24 /* ExpensesToExpensesPOMapper.swift */,
 			);
 			path = Mappers;
 			sourceTree = "<group>";
@@ -360,6 +367,24 @@
 				39DC7B0D2A4E1405003E75E6 /* ExpenseListAlertControllerHandler.swift */,
 			);
 			path = TableViewCells;
+			sourceTree = "<group>";
+		};
+		39B1C9A72A50941C0065442C /* RealmObjects */ = {
+			isa = PBXGroup;
+			children = (
+				39AA92892A3A2F8900F2FF30 /* Operation.swift */,
+				39B1C9A92A5094450065442C /* Expense.swift */,
+			);
+			path = RealmObjects;
+			sourceTree = "<group>";
+		};
+		39B1C9A82A5094240065442C /* PlainObjects */ = {
+			isa = PBXGroup;
+			children = (
+				39AA92872A3A2E0700F2FF30 /* OperationPO.swift */,
+				39B1C9AB2A5094FA0065442C /* ExpensePO.swift */,
+			);
+			path = PlainObjects;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -501,6 +526,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				39B1C9AA2A5094450065442C /* Expense.swift in Sources */,
 				39AA927E2A3A23E600F2FF30 /* RealmManager.swift in Sources */,
 				39AA92832A3A2D8000F2FF30 /* OperationsRealmDAO.swift in Sources */,
 				39AA92802A3A240600F2FF30 /* RealmManagerProtocol.swift in Sources */,
@@ -528,6 +554,8 @@
 				39AA92882A3A2E0700F2FF30 /* OperationPO.swift in Sources */,
 				39AD172F2A392359002E9668 /* OperationTableViewCell.swift in Sources */,
 				391FA0A52A2135950096EB59 /* SceneDelegate.swift in Sources */,
+				3940343B2A5734CB00D45D24 /* ExpensesToExpensesPOMapper.swift in Sources */,
+				39B1C9AC2A5094FA0065442C /* ExpensePO.swift in Sources */,
 				395A7AC92A48B244000A9BE2 /* ExprenseListCollectionViewCell.swift in Sources */,
 				39AE8BBF2A23B7FD002F6130 /* ActionsTableViewCell.swift in Sources */,
 				391FA0E12A2148A20096EB59 /* OperationsViewController.swift in Sources */,

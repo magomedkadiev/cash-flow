@@ -15,25 +15,22 @@ extension OperationsPresenter: OperationsOutputViewProtocol {
     
     func viewDidLoad() {
         interactor.fetchAllOperations()
+        interactor.fetchAllExpenses()
     }
     
-    func addNewOperationButtonTapped(_ tag: Int) {
-        switch tag {
-        case 1: // income
-            break
-        case 2: // loss
-            let operation = OperationPO(id: "", type: "", category: "", wallet: "", data: Data(), comment: "", sum: "")
-            interactor.createNewOperation(operation)
-        case 3: // transfer
-            break
-        default:
-            break
-        }
+    func createNewExpenseButtonTappedWith(expenseName: String) {
+        let expense = ExpensePO(id: UUID().uuidString, name: expenseName, totalValue: 0) // default value in start
+        interactor.createNew(expense)
     }
 }
 
 extension OperationsPresenter: OperationsInteractorOutputProtocol {
+    
     func reloadDataWith(_ operations: [OperationPO]) {
         view?.refreshTableView(operations: operations)
+    }
+    
+    func reloadDataWith(_ expenses: [ExpensePO]) {
+        view?.refreshTableView(expenses: expenses)
     }
 }

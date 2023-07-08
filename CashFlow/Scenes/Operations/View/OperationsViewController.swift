@@ -4,6 +4,7 @@ class OperationsViewController: UIViewController {
 
     var presenter: OperationsOutputViewProtocol?
     var operations: [OperationPO]?
+    var expenses: [ExpensePO] = []
     
     @IBOutlet weak var tableView: UITableView!
     override func viewDidLoad() {
@@ -20,15 +21,22 @@ class OperationsViewController: UIViewController {
 
 extension OperationsViewController: ExpenseListAlertControllerHandler {
     
-    func createNew(expense: String) {
-        // Здесь нужно сохранять в базу и возвращать списоком объекты для отображения в коллекции
-        print("Create new exprense - \(expense)")
+    func createNewExpenseWith(name: String) {
+        presenter?.createNewExpenseButtonTappedWith(expenseName: name)
     }
 }
 
 extension OperationsViewController: OperationsInputViewProtocol {
+    
     func refreshTableView(operations: [OperationPO]) {
         self.operations = operations
+        DispatchQueue.main.async {
+            self.tableView.reloadData()
+        }
+    }
+    
+    func refreshTableView(expenses: [ExpensePO]) {
+        self.expenses = expenses
         DispatchQueue.main.async {
             self.tableView.reloadData()
         }
@@ -65,6 +73,8 @@ extension OperationsViewController: UITableViewDataSource {
             }
             cell.viewController = self
             cell.alertControllerHandler = self
+            cell.expenses = expenses
+            cell.collectionView.reloadData()
             return cell
         case 1:
             guard let cell = tableView.dequeueReusableCell(withIdentifier: "incomeListTableViewCell", for: indexPath) as? IncomeListTableViewCell else {
