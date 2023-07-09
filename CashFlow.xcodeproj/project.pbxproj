@@ -31,11 +31,9 @@
 		395A7AB82A3E11F0000A9BE2 /* OperationCreationConfigurator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 395A7AB72A3E11F0000A9BE2 /* OperationCreationConfigurator.swift */; };
 		395A7ABA2A3E11F6000A9BE2 /* OperationCreationInitializer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 395A7AB92A3E11F6000A9BE2 /* OperationCreationInitializer.swift */; };
 		395A7ABC2A3E11FD000A9BE2 /* OperationCreation.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 395A7ABB2A3E11FD000A9BE2 /* OperationCreation.storyboard */; };
-		395A7AC22A44C94C000A9BE2 /* IncomeListTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 395A7AC12A44C94C000A9BE2 /* IncomeListTableViewCell.swift */; };
-		395A7AC42A44CA01000A9BE2 /* IncomeListCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 395A7AC32A44CA01000A9BE2 /* IncomeListCollectionViewCell.swift */; };
-		395A7AC62A48B1DE000A9BE2 /* ExprenseListTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 395A7AC52A48B1DE000A9BE2 /* ExprenseListTableViewCell.swift */; };
-		395A7AC92A48B244000A9BE2 /* ExprenseListCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 395A7AC82A48B244000A9BE2 /* ExprenseListCollectionViewCell.swift */; };
-		395A7ACB2A4C75BB000A9BE2 /* ExprenseListCollectionAddViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 395A7ACA2A4C75BB000A9BE2 /* ExprenseListCollectionAddViewCell.swift */; };
+		395A7AC62A48B1DE000A9BE2 /* IncomeListTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 395A7AC52A48B1DE000A9BE2 /* IncomeListTableViewCell.swift */; };
+		395A7AC92A48B244000A9BE2 /* IncomeListCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 395A7AC82A48B244000A9BE2 /* IncomeListCollectionViewCell.swift */; };
+		395A7ACB2A4C75BB000A9BE2 /* IncomeListCollectionAddViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 395A7ACA2A4C75BB000A9BE2 /* IncomeListCollectionAddViewCell.swift */; };
 		39AA92792A3A1AA000F2FF30 /* Realm in Frameworks */ = {isa = PBXBuildFile; productRef = 39AA92782A3A1AA000F2FF30 /* Realm */; };
 		39AA927B2A3A1AA000F2FF30 /* RealmSwift in Frameworks */ = {isa = PBXBuildFile; productRef = 39AA927A2A3A1AA000F2FF30 /* RealmSwift */; };
 		39AA927E2A3A23E600F2FF30 /* RealmManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 39AA927D2A3A23E600F2FF30 /* RealmManager.swift */; };
@@ -49,7 +47,7 @@
 		39AE8BBF2A23B7FD002F6130 /* ActionsTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 39AE8BBE2A23B7FD002F6130 /* ActionsTableViewCell.swift */; };
 		39B1C9AA2A5094450065442C /* Expense.swift in Sources */ = {isa = PBXBuildFile; fileRef = 39B1C9A92A5094450065442C /* Expense.swift */; };
 		39B1C9AC2A5094FA0065442C /* ExpensePO.swift in Sources */ = {isa = PBXBuildFile; fileRef = 39B1C9AB2A5094FA0065442C /* ExpensePO.swift */; };
-		39DC7B0E2A4E1405003E75E6 /* ExpenseListAlertControllerHandler.swift in Sources */ = {isa = PBXBuildFile; fileRef = 39DC7B0D2A4E1405003E75E6 /* ExpenseListAlertControllerHandler.swift */; };
+		39DC7B0E2A4E1405003E75E6 /* IncomeListAlertControllerHandler.swift in Sources */ = {isa = PBXBuildFile; fileRef = 39DC7B0D2A4E1405003E75E6 /* IncomeListAlertControllerHandler.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -98,11 +96,9 @@
 		395A7AB72A3E11F0000A9BE2 /* OperationCreationConfigurator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OperationCreationConfigurator.swift; sourceTree = "<group>"; };
 		395A7AB92A3E11F6000A9BE2 /* OperationCreationInitializer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OperationCreationInitializer.swift; sourceTree = "<group>"; };
 		395A7ABB2A3E11FD000A9BE2 /* OperationCreation.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = OperationCreation.storyboard; sourceTree = "<group>"; };
-		395A7AC12A44C94C000A9BE2 /* IncomeListTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IncomeListTableViewCell.swift; sourceTree = "<group>"; };
-		395A7AC32A44CA01000A9BE2 /* IncomeListCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IncomeListCollectionViewCell.swift; sourceTree = "<group>"; };
-		395A7AC52A48B1DE000A9BE2 /* ExprenseListTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExprenseListTableViewCell.swift; sourceTree = "<group>"; };
-		395A7AC82A48B244000A9BE2 /* ExprenseListCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExprenseListCollectionViewCell.swift; sourceTree = "<group>"; };
-		395A7ACA2A4C75BB000A9BE2 /* ExprenseListCollectionAddViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExprenseListCollectionAddViewCell.swift; sourceTree = "<group>"; };
+		395A7AC52A48B1DE000A9BE2 /* IncomeListTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IncomeListTableViewCell.swift; sourceTree = "<group>"; };
+		395A7AC82A48B244000A9BE2 /* IncomeListCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IncomeListCollectionViewCell.swift; sourceTree = "<group>"; };
+		395A7ACA2A4C75BB000A9BE2 /* IncomeListCollectionAddViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IncomeListCollectionAddViewCell.swift; sourceTree = "<group>"; };
 		39AA927D2A3A23E600F2FF30 /* RealmManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RealmManager.swift; sourceTree = "<group>"; };
 		39AA927F2A3A240600F2FF30 /* RealmManagerProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RealmManagerProtocol.swift; sourceTree = "<group>"; };
 		39AA92822A3A2D8000F2FF30 /* OperationsRealmDAO.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OperationsRealmDAO.swift; sourceTree = "<group>"; };
@@ -114,7 +110,7 @@
 		39AE8BBE2A23B7FD002F6130 /* ActionsTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ActionsTableViewCell.swift; sourceTree = "<group>"; };
 		39B1C9A92A5094450065442C /* Expense.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Expense.swift; sourceTree = "<group>"; };
 		39B1C9AB2A5094FA0065442C /* ExpensePO.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExpensePO.swift; sourceTree = "<group>"; };
-		39DC7B0D2A4E1405003E75E6 /* ExpenseListAlertControllerHandler.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExpenseListAlertControllerHandler.swift; sourceTree = "<group>"; };
+		39DC7B0D2A4E1405003E75E6 /* IncomeListAlertControllerHandler.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IncomeListAlertControllerHandler.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -304,9 +300,8 @@
 		395A7AC72A48B1F7000A9BE2 /* CollectionViewCells */ = {
 			isa = PBXGroup;
 			children = (
-				395A7AC32A44CA01000A9BE2 /* IncomeListCollectionViewCell.swift */,
-				395A7AC82A48B244000A9BE2 /* ExprenseListCollectionViewCell.swift */,
-				395A7ACA2A4C75BB000A9BE2 /* ExprenseListCollectionAddViewCell.swift */,
+				395A7AC82A48B244000A9BE2 /* IncomeListCollectionViewCell.swift */,
+				395A7ACA2A4C75BB000A9BE2 /* IncomeListCollectionAddViewCell.swift */,
 			);
 			path = CollectionViewCells;
 			sourceTree = "<group>";
@@ -362,9 +357,8 @@
 			children = (
 				39AE8BBE2A23B7FD002F6130 /* ActionsTableViewCell.swift */,
 				39AD172E2A392359002E9668 /* OperationTableViewCell.swift */,
-				395A7AC12A44C94C000A9BE2 /* IncomeListTableViewCell.swift */,
-				395A7AC52A48B1DE000A9BE2 /* ExprenseListTableViewCell.swift */,
-				39DC7B0D2A4E1405003E75E6 /* ExpenseListAlertControllerHandler.swift */,
+				395A7AC52A48B1DE000A9BE2 /* IncomeListTableViewCell.swift */,
+				39DC7B0D2A4E1405003E75E6 /* IncomeListAlertControllerHandler.swift */,
 			);
 			path = TableViewCells;
 			sourceTree = "<group>";
@@ -531,15 +525,14 @@
 				39AA92832A3A2D8000F2FF30 /* OperationsRealmDAO.swift in Sources */,
 				39AA92802A3A240600F2FF30 /* RealmManagerProtocol.swift in Sources */,
 				395A7AB42A3E11D4000A9BE2 /* OperationCreationInteractor.swift in Sources */,
-				395A7ACB2A4C75BB000A9BE2 /* ExprenseListCollectionAddViewCell.swift in Sources */,
+				395A7ACB2A4C75BB000A9BE2 /* IncomeListCollectionAddViewCell.swift in Sources */,
 				395A7AB02A3E0E9D000A9BE2 /* OperationCreationPresenter.swift in Sources */,
 				395A7ABA2A3E11F6000A9BE2 /* OperationCreationInitializer.swift in Sources */,
-				39DC7B0E2A4E1405003E75E6 /* ExpenseListAlertControllerHandler.swift in Sources */,
+				39DC7B0E2A4E1405003E75E6 /* IncomeListAlertControllerHandler.swift in Sources */,
 				391FA0DB2A2148610096EB59 /* OperationsInitialier.swift in Sources */,
 				395A7AB82A3E11F0000A9BE2 /* OperationCreationConfigurator.swift in Sources */,
-				395A7AC22A44C94C000A9BE2 /* IncomeListTableViewCell.swift in Sources */,
 				391FA0DD2A2148700096EB59 /* OperationsInteractor.swift in Sources */,
-				395A7AC62A48B1DE000A9BE2 /* ExprenseListTableViewCell.swift in Sources */,
+				395A7AC62A48B1DE000A9BE2 /* IncomeListTableViewCell.swift in Sources */,
 				395A7AB22A3E11C7000A9BE2 /* OperationCreationIOProtocols.swift in Sources */,
 				39AA928A2A3A2F8900F2FF30 /* Operation.swift in Sources */,
 				391FA0DF2A2148790096EB59 /* OperationsPresenter.swift in Sources */,
@@ -548,7 +541,6 @@
 				391FA0A32A2135950096EB59 /* AppDelegate.swift in Sources */,
 				395A7AB62A3E11E3000A9BE2 /* OperationCreationInteractorIOProtocols.swift in Sources */,
 				391FA0D92A2148560096EB59 /* OperationsConfigurator.swift in Sources */,
-				395A7AC42A44CA01000A9BE2 /* IncomeListCollectionViewCell.swift in Sources */,
 				391FA0E72A2149720096EB59 /* OperationsInteractorIOProtocols.swift in Sources */,
 				395A7AAE2A3E0E6D000A9BE2 /* OperationCreationViewController.swift in Sources */,
 				39AA92882A3A2E0700F2FF30 /* OperationPO.swift in Sources */,
@@ -556,7 +548,7 @@
 				391FA0A52A2135950096EB59 /* SceneDelegate.swift in Sources */,
 				3940343B2A5734CB00D45D24 /* ExpensesToExpensesPOMapper.swift in Sources */,
 				39B1C9AC2A5094FA0065442C /* ExpensePO.swift in Sources */,
-				395A7AC92A48B244000A9BE2 /* ExprenseListCollectionViewCell.swift in Sources */,
+				395A7AC92A48B244000A9BE2 /* IncomeListCollectionViewCell.swift in Sources */,
 				39AE8BBF2A23B7FD002F6130 /* ActionsTableViewCell.swift in Sources */,
 				391FA0E12A2148A20096EB59 /* OperationsViewController.swift in Sources */,
 				391FA0E52A2149510096EB59 /* OperationsIOProtocols.swift in Sources */,
