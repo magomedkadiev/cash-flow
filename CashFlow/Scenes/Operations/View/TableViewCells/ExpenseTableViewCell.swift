@@ -1,13 +1,10 @@
 import UIKit
 
-class ActionsTableViewCell: UITableViewCell {
+class ExpenseTableViewCell: UITableViewCell {
 
-    @IBOutlet weak var conversionButton: UIButton!
-    @IBOutlet weak var exprenseButton: UIButton!
-    @IBOutlet weak var incomeButton: UIButton!
-    
     override func awakeFromNib() {
-        super.awakeFromNib() 
+        super.awakeFromNib()
+        // Initialization code
     }
 
     override func setSelected(_ selected: Bool, animated: Bool) {

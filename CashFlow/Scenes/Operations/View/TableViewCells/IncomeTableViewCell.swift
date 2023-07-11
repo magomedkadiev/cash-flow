@@ -1,11 +1,10 @@
 import UIKit
 
-// Удалить полностью икоме, переимновать expense -> income и создать expense по новой !!!
-class IncomeListTableViewCell: UITableViewCell {
+class IncomeTableViewCell: UITableViewCell {
 
     @IBOutlet weak var collectionView: UICollectionView!
     weak var viewController: OperationsViewController? = nil
-    weak var alertControllerHandler: IncomeListAlertControllerHandler?
+    weak var alertControllerHandler: IncomeAlertControllerHandler?
     var expenses: [ExpensePO] = []
     
     override func awakeFromNib() {
@@ -31,7 +30,7 @@ class IncomeListTableViewCell: UITableViewCell {
     }
 }
 
-extension IncomeListTableViewCell: UICollectionViewDataSource {
+extension IncomeTableViewCell: UICollectionViewDataSource {
     
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
         return expenses.count + 1
@@ -41,12 +40,12 @@ extension IncomeListTableViewCell: UICollectionViewDataSource {
         switch indexPath.row {
         case expenses.count:
             print(expenses.count, indexPath.row)
-            guard let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "incomeListCollectionAddViewCell", for: indexPath) as? IncomeListCollectionAddViewCell else {
+            guard let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "incomeCollectionAddViewCell", for: indexPath) as? IncomeCollectionAddViewCell else {
                 return UICollectionViewCell()
             }
             return cell
         default:
-            guard let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "incomeListCollectionViewCell", for: indexPath) as? IncomeListCollectionViewCell else {
+            guard let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "incomeCollectionViewCell", for: indexPath) as? IncomeCollectionViewCell else {
                 return UICollectionViewCell()
             }
             cell.nameTextLabel.text = expenses[indexPath.row].name
@@ -56,7 +55,7 @@ extension IncomeListTableViewCell: UICollectionViewDataSource {
     }
 }
 
-extension IncomeListTableViewCell: UICollectionViewDelegate {
+extension IncomeTableViewCell: UICollectionViewDelegate {
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
         switch indexPath.row {
         case expenses.count:

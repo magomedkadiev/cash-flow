@@ -19,7 +19,7 @@ class OperationsViewController: UIViewController {
     }
 }
 
-extension OperationsViewController: IncomeListAlertControllerHandler {
+extension OperationsViewController: IncomeAlertControllerHandler {
     
     func createNewExpenseWith(name: String) {
         presenter?.createNewExpenseButtonTappedWith(expenseName: name)
@@ -68,7 +68,7 @@ extension OperationsViewController: UITableViewDataSource {
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         switch indexPath.row {
         case 0:
-            guard let cell = tableView.dequeueReusableCell(withIdentifier: "incomeListTableViewCell", for: indexPath) as? IncomeListTableViewCell else {
+            guard let cell = tableView.dequeueReusableCell(withIdentifier: "incomeTableViewCell", for: indexPath) as? IncomeTableViewCell else {
                 return UITableViewCell()
             }
             cell.viewController = self

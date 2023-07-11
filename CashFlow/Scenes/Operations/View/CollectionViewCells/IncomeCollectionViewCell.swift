@@ -1,6 +1,6 @@
 import UIKit
 
-class IncomeListCollectionViewCell: UICollectionViewCell {
+class IncomeCollectionViewCell: UICollectionViewCell {
     
     @IBOutlet weak var sumTextLabel: UILabel!
     @IBOutlet weak var nameTextLabel: UILabel!
