@@ -1,10 +1,10 @@
 import UIKit
 
-class IncomeTableViewCell: UITableViewCell {
+class WalletTableViewCell: UITableViewCell {
 
     @IBOutlet weak var collectionView: UICollectionView!
     weak var viewController: OperationsViewController? = nil
-    weak var alertControllerHandler: IncomeAlertControllerHandler?
+    weak var alertControllerHandler: WalletAlertControllerHandler?
     var expenses: [ExpensePO] = []
     
     override func awakeFromNib() {
@@ -30,7 +30,7 @@ class IncomeTableViewCell: UITableViewCell {
     }
 }
 
-extension IncomeTableViewCell: UICollectionViewDataSource {
+extension WalletTableViewCell: UICollectionViewDataSource {
     
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
         return expenses.count + 1
@@ -40,12 +40,12 @@ extension IncomeTableViewCell: UICollectionViewDataSource {
         switch indexPath.row {
         case expenses.count:
             print(expenses.count, indexPath.row)
-            guard let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "incomeCollectionAddViewCell", for: indexPath) as? IncomeCollectionAddViewCell else {
+            guard let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "walletCollectionAddViewCell", for: indexPath) as? WalletCollectionAddViewCell else {
                 return UICollectionViewCell()
             }
             return cell
         default:
-            guard let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "incomeCollectionViewCell", for: indexPath) as? IncomeCollectionViewCell else {
+            guard let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "walletCollectionViewCell", for: indexPath) as? WalletCollectionViewCell else {
                 return UICollectionViewCell()
             }
             cell.nameTextLabel.text = expenses[indexPath.row].name
@@ -55,7 +55,7 @@ extension IncomeTableViewCell: UICollectionViewDataSource {
     }
 }
 
-extension IncomeTableViewCell: UICollectionViewDelegate {
+extension WalletTableViewCell: UICollectionViewDelegate {
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
         switch indexPath.row {
         case expenses.count:
@@ -63,5 +63,16 @@ extension IncomeTableViewCell: UICollectionViewDelegate {
         default:
             break
         }
+    }
+}
+
+extension WalletTableViewCell: UICollectionViewDelegateFlowLayout {
+    
+    func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
+        return CGSize(width: 150, height: 160)
+    }
+    
+    func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, minimumLineSpacingForSectionAt section: Int) -> CGFloat {
+        return 20
     }
 }

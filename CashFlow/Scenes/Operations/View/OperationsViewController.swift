@@ -19,7 +19,7 @@ class OperationsViewController: UIViewController {
     }
 }
 
-extension OperationsViewController: IncomeAlertControllerHandler {
+extension OperationsViewController: WalletAlertControllerHandler {
     
     func createNewExpenseWith(name: String) {
         presenter?.createNewExpenseButtonTappedWith(expenseName: name)
@@ -52,7 +52,7 @@ extension OperationsViewController: UITableViewDelegate {
     func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
         switch indexPath.row {
         case 0,1:
-            return 180
+            return 220
         default:
             return 80
         }
@@ -68,7 +68,7 @@ extension OperationsViewController: UITableViewDataSource {
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         switch indexPath.row {
         case 0:
-            guard let cell = tableView.dequeueReusableCell(withIdentifier: "incomeTableViewCell", for: indexPath) as? IncomeTableViewCell else {
+            guard let cell = tableView.dequeueReusableCell(withIdentifier: "walletTableViewCell", for: indexPath) as? WalletTableViewCell else {
                 return UITableViewCell()
             }
             cell.viewController = self

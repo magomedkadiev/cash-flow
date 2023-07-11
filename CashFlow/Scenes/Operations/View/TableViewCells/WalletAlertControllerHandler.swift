@@ -1,6 +1,6 @@
 import Foundation
 
-protocol IncomeAlertControllerHandler: AnyObject {
+protocol WalletAlertControllerHandler: AnyObject {
     
     func createNewExpenseWith(name: String)
 }
