@@ -23,6 +23,7 @@
 		391FA0E52A2149510096EB59 /* OperationsIOProtocols.swift in Sources */ = {isa = PBXBuildFile; fileRef = 391FA0E42A2149510096EB59 /* OperationsIOProtocols.swift */; };
 		391FA0E72A2149720096EB59 /* OperationsInteractorIOProtocols.swift in Sources */ = {isa = PBXBuildFile; fileRef = 391FA0E62A2149720096EB59 /* OperationsInteractorIOProtocols.swift */; };
 		3940343B2A5734CB00D45D24 /* ExpensesToExpensesPOMapper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3940343A2A5734CB00D45D24 /* ExpensesToExpensesPOMapper.swift */; };
+		394034402A5F280800D45D24 /* OperationCreationHeaderTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3940343F2A5F280800D45D24 /* OperationCreationHeaderTableViewCell.swift */; };
 		395A7AAE2A3E0E6D000A9BE2 /* OperationCreationViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 395A7AAD2A3E0E6D000A9BE2 /* OperationCreationViewController.swift */; };
 		395A7AB02A3E0E9D000A9BE2 /* OperationCreationPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 395A7AAF2A3E0E9D000A9BE2 /* OperationCreationPresenter.swift */; };
 		395A7AB22A3E11C7000A9BE2 /* OperationCreationIOProtocols.swift in Sources */ = {isa = PBXBuildFile; fileRef = 395A7AB12A3E11C7000A9BE2 /* OperationCreationIOProtocols.swift */; };
@@ -87,6 +88,7 @@
 		391FA0E42A2149510096EB59 /* OperationsIOProtocols.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OperationsIOProtocols.swift; sourceTree = "<group>"; };
 		391FA0E62A2149720096EB59 /* OperationsInteractorIOProtocols.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OperationsInteractorIOProtocols.swift; sourceTree = "<group>"; };
 		3940343A2A5734CB00D45D24 /* ExpensesToExpensesPOMapper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExpensesToExpensesPOMapper.swift; sourceTree = "<group>"; };
+		3940343F2A5F280800D45D24 /* OperationCreationHeaderTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OperationCreationHeaderTableViewCell.swift; sourceTree = "<group>"; };
 		395A7AAD2A3E0E6D000A9BE2 /* OperationCreationViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OperationCreationViewController.swift; sourceTree = "<group>"; };
 		395A7AAF2A3E0E9D000A9BE2 /* OperationCreationPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OperationCreationPresenter.swift; sourceTree = "<group>"; };
 		395A7AB12A3E11C7000A9BE2 /* OperationCreationIOProtocols.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OperationCreationIOProtocols.swift; sourceTree = "<group>"; };
@@ -291,6 +293,7 @@
 			children = (
 				395A7AAD2A3E0E6D000A9BE2 /* OperationCreationViewController.swift */,
 				395A7ABB2A3E11FD000A9BE2 /* OperationCreation.storyboard */,
+				3940343F2A5F280800D45D24 /* OperationCreationHeaderTableViewCell.swift */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -540,6 +543,7 @@
 				391FA0D92A2148560096EB59 /* OperationsConfigurator.swift in Sources */,
 				391FA0E72A2149720096EB59 /* OperationsInteractorIOProtocols.swift in Sources */,
 				395A7AAE2A3E0E6D000A9BE2 /* OperationCreationViewController.swift in Sources */,
+				394034402A5F280800D45D24 /* OperationCreationHeaderTableViewCell.swift in Sources */,
 				39AA92882A3A2E0700F2FF30 /* OperationPO.swift in Sources */,
 				39AD172F2A392359002E9668 /* OperationTableViewCell.swift in Sources */,
 				391FA0A52A2135950096EB59 /* SceneDelegate.swift in Sources */,
