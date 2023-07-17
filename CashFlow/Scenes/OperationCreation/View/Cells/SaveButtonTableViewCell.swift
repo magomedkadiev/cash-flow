@@ -1,13 +1,13 @@
 //
-//  OperationCreationHeaderTableViewCell.swift
+//  SaveButtonTableViewCell.swift
 //  CashFlow
 //
-//  Created by Султанхан on 12.07.2023.
+//  Created by Султанхан on 17.07.2023.
 //
 
 import UIKit
 
-class OperationCreationHeaderTableViewCell: UITableViewCell {
+class SaveButtonTableViewCell: UITableViewCell {
 
     override func awakeFromNib() {
         super.awakeFromNib()

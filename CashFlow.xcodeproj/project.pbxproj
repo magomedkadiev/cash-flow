@@ -23,7 +23,9 @@
 		391FA0E52A2149510096EB59 /* OperationsIOProtocols.swift in Sources */ = {isa = PBXBuildFile; fileRef = 391FA0E42A2149510096EB59 /* OperationsIOProtocols.swift */; };
 		391FA0E72A2149720096EB59 /* OperationsInteractorIOProtocols.swift in Sources */ = {isa = PBXBuildFile; fileRef = 391FA0E62A2149720096EB59 /* OperationsInteractorIOProtocols.swift */; };
 		3940343B2A5734CB00D45D24 /* ExpensesToExpensesPOMapper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3940343A2A5734CB00D45D24 /* ExpensesToExpensesPOMapper.swift */; };
-		394034402A5F280800D45D24 /* OperationCreationHeaderTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3940343F2A5F280800D45D24 /* OperationCreationHeaderTableViewCell.swift */; };
+		394034402A5F280800D45D24 /* HeaderTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3940343F2A5F280800D45D24 /* HeaderTableViewCell.swift */; };
+		394034442A65B61600D45D24 /* SaveButtonTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 394034432A65B61600D45D24 /* SaveButtonTableViewCell.swift */; };
+		394034462A65B78B00D45D24 /* CategoryTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 394034452A65B78B00D45D24 /* CategoryTableViewCell.swift */; };
 		395A7AAE2A3E0E6D000A9BE2 /* OperationCreationViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 395A7AAD2A3E0E6D000A9BE2 /* OperationCreationViewController.swift */; };
 		395A7AB02A3E0E9D000A9BE2 /* OperationCreationPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 395A7AAF2A3E0E9D000A9BE2 /* OperationCreationPresenter.swift */; };
 		395A7AB22A3E11C7000A9BE2 /* OperationCreationIOProtocols.swift in Sources */ = {isa = PBXBuildFile; fileRef = 395A7AB12A3E11C7000A9BE2 /* OperationCreationIOProtocols.swift */; };
@@ -88,7 +90,9 @@
 		391FA0E42A2149510096EB59 /* OperationsIOProtocols.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OperationsIOProtocols.swift; sourceTree = "<group>"; };
 		391FA0E62A2149720096EB59 /* OperationsInteractorIOProtocols.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OperationsInteractorIOProtocols.swift; sourceTree = "<group>"; };
 		3940343A2A5734CB00D45D24 /* ExpensesToExpensesPOMapper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExpensesToExpensesPOMapper.swift; sourceTree = "<group>"; };
-		3940343F2A5F280800D45D24 /* OperationCreationHeaderTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OperationCreationHeaderTableViewCell.swift; sourceTree = "<group>"; };
+		3940343F2A5F280800D45D24 /* HeaderTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HeaderTableViewCell.swift; sourceTree = "<group>"; };
+		394034432A65B61600D45D24 /* SaveButtonTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SaveButtonTableViewCell.swift; sourceTree = "<group>"; };
+		394034452A65B78B00D45D24 /* CategoryTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CategoryTableViewCell.swift; sourceTree = "<group>"; };
 		395A7AAD2A3E0E6D000A9BE2 /* OperationCreationViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OperationCreationViewController.swift; sourceTree = "<group>"; };
 		395A7AAF2A3E0E9D000A9BE2 /* OperationCreationPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OperationCreationPresenter.swift; sourceTree = "<group>"; };
 		395A7AB12A3E11C7000A9BE2 /* OperationCreationIOProtocols.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OperationCreationIOProtocols.swift; sourceTree = "<group>"; };
@@ -250,9 +254,27 @@
 			path = View;
 			sourceTree = "<group>";
 		};
+		394034412A62C60B00D45D24 /* ViewObjects */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = ViewObjects;
+			sourceTree = "<group>";
+		};
+		394034422A65B5F900D45D24 /* Cells */ = {
+			isa = PBXGroup;
+			children = (
+				3940343F2A5F280800D45D24 /* HeaderTableViewCell.swift */,
+				394034432A65B61600D45D24 /* SaveButtonTableViewCell.swift */,
+				394034452A65B78B00D45D24 /* CategoryTableViewCell.swift */,
+			);
+			path = Cells;
+			sourceTree = "<group>";
+		};
 		395A7AA82A3E0E1C000A9BE2 /* OperationCreation */ = {
 			isa = PBXGroup;
 			children = (
+				394034412A62C60B00D45D24 /* ViewObjects */,
 				395A7AAC2A3E0E51000A9BE2 /* View */,
 				395A7AAB2A3E0E4A000A9BE2 /* Presenter */,
 				395A7AAA2A3E0E41000A9BE2 /* Interactor */,
@@ -291,9 +313,9 @@
 		395A7AAC2A3E0E51000A9BE2 /* View */ = {
 			isa = PBXGroup;
 			children = (
+				394034422A65B5F900D45D24 /* Cells */,
 				395A7AAD2A3E0E6D000A9BE2 /* OperationCreationViewController.swift */,
 				395A7ABB2A3E11FD000A9BE2 /* OperationCreation.storyboard */,
-				3940343F2A5F280800D45D24 /* OperationCreationHeaderTableViewCell.swift */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -529,6 +551,7 @@
 				395A7AB02A3E0E9D000A9BE2 /* OperationCreationPresenter.swift in Sources */,
 				395A7ABA2A3E11F6000A9BE2 /* OperationCreationInitializer.swift in Sources */,
 				39DC7B0E2A4E1405003E75E6 /* WalletAlertControllerHandler.swift in Sources */,
+				394034442A65B61600D45D24 /* SaveButtonTableViewCell.swift in Sources */,
 				391FA0DB2A2148610096EB59 /* OperationsInitialier.swift in Sources */,
 				395A7AB82A3E11F0000A9BE2 /* OperationCreationConfigurator.swift in Sources */,
 				391FA0DD2A2148700096EB59 /* OperationsInteractor.swift in Sources */,
@@ -543,7 +566,7 @@
 				391FA0D92A2148560096EB59 /* OperationsConfigurator.swift in Sources */,
 				391FA0E72A2149720096EB59 /* OperationsInteractorIOProtocols.swift in Sources */,
 				395A7AAE2A3E0E6D000A9BE2 /* OperationCreationViewController.swift in Sources */,
-				394034402A5F280800D45D24 /* OperationCreationHeaderTableViewCell.swift in Sources */,
+				394034402A5F280800D45D24 /* HeaderTableViewCell.swift in Sources */,
 				39AA92882A3A2E0700F2FF30 /* OperationPO.swift in Sources */,
 				39AD172F2A392359002E9668 /* OperationTableViewCell.swift in Sources */,
 				391FA0A52A2135950096EB59 /* SceneDelegate.swift in Sources */,
@@ -552,6 +575,7 @@
 				395A7AC92A48B244000A9BE2 /* WalletCollectionViewCell.swift in Sources */,
 				391FA0E12A2148A20096EB59 /* OperationsViewController.swift in Sources */,
 				391FA0E52A2149510096EB59 /* OperationsIOProtocols.swift in Sources */,
+				394034462A65B78B00D45D24 /* CategoryTableViewCell.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
