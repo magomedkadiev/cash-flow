@@ -1,8 +1,7 @@
 import Foundation
 
 protocol OperationsInputViewProtocol: AnyObject {
-//    func refreshTableView(operations: [OperationPO])
-//    func refreshTableView(expenses: [ExpensePO])
+    func showInfo(_ viewObjects: [[CashFlowTableViewCellViewObject]])
 }
 
 protocol OperationsOutputViewProtocol {

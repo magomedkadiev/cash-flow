@@ -7,6 +7,7 @@ class OperationsViewController: UIViewController {
     private let refreshControl = UIRefreshControl()
     
     @IBOutlet weak var tableView: UITableView!
+    var viewObjects = [[CashFlowTableViewCellViewObject]]()
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -35,6 +36,9 @@ class OperationsViewController: UIViewController {
 
 extension OperationsViewController: OperationsInputViewProtocol {
     
+    func showInfo(_ viewObjects: [[CashFlowTableViewCellViewObject]]) {
+        self.viewObjects = viewObjects
+    }
 }
 
 extension OperationsViewController: UITableViewDelegate {
@@ -42,15 +46,34 @@ extension OperationsViewController: UITableViewDelegate {
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         tableView.deselectRow(at: indexPath, animated: true)
     }
+    
+    func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
+        let viewObject = viewObjects[indexPath.section][indexPath.row]
+        return viewObject.cellHeight
+    }
+
 }
 
 extension OperationsViewController: UITableViewDataSource {
     
+    func numberOfSections(in tableView: UITableView) -> Int {
+        return viewObjects.count
+    }
+    
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return 2
+        let section = viewObjects[section]
+        return section.count
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        return UITableViewCell()
+        let viewObject = viewObjects[indexPath.section][indexPath.row]
+
+        if let cell = tableView.dequeueReusableCell(withIdentifier: viewObject.reuseIdentifier) as? CashFlowTableViewCellProtocol {
+            cell.setup(with: viewObject, indexPath: indexPath)
+            return cell as? UITableViewCell ?? UITableViewCell()
+        } else {
+            return UITableViewCell()
+        }
+        
     }
 }

@@ -32,6 +32,8 @@
 		394034502A685D1300D45D24 /* CashFlowTableViewCellViewObject.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3940344F2A685D1300D45D24 /* CashFlowTableViewCellViewObject.swift */; };
 		394034522A6865B000D45D24 /* OperationCreationWalletCategoryTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 394034512A6865B000D45D24 /* OperationCreationWalletCategoryTableViewCell.swift */; };
 		394034542A6865F100D45D24 /* OperationCreationWalletCategoryViewObject.swift in Sources */ = {isa = PBXBuildFile; fileRef = 394034532A6865F100D45D24 /* OperationCreationWalletCategoryViewObject.swift */; };
+		394034572A688D2800D45D24 /* OperationsWalletsViewObject.swift in Sources */ = {isa = PBXBuildFile; fileRef = 394034562A688D2800D45D24 /* OperationsWalletsViewObject.swift */; };
+		3940345A2A688D6600D45D24 /* OperationsWalletsTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 394034592A688D6600D45D24 /* OperationsWalletsTableViewCell.swift */; };
 		395A7AAE2A3E0E6D000A9BE2 /* OperationCreationViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 395A7AAD2A3E0E6D000A9BE2 /* OperationCreationViewController.swift */; };
 		395A7AB02A3E0E9D000A9BE2 /* OperationCreationPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 395A7AAF2A3E0E9D000A9BE2 /* OperationCreationPresenter.swift */; };
 		395A7AB22A3E11C7000A9BE2 /* OperationCreationIOProtocols.swift in Sources */ = {isa = PBXBuildFile; fileRef = 395A7AB12A3E11C7000A9BE2 /* OperationCreationIOProtocols.swift */; };
@@ -100,6 +102,8 @@
 		3940344F2A685D1300D45D24 /* CashFlowTableViewCellViewObject.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CashFlowTableViewCellViewObject.swift; sourceTree = "<group>"; };
 		394034512A6865B000D45D24 /* OperationCreationWalletCategoryTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OperationCreationWalletCategoryTableViewCell.swift; sourceTree = "<group>"; };
 		394034532A6865F100D45D24 /* OperationCreationWalletCategoryViewObject.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OperationCreationWalletCategoryViewObject.swift; sourceTree = "<group>"; };
+		394034562A688D2800D45D24 /* OperationsWalletsViewObject.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OperationsWalletsViewObject.swift; sourceTree = "<group>"; };
+		394034592A688D6600D45D24 /* OperationsWalletsTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OperationsWalletsTableViewCell.swift; sourceTree = "<group>"; };
 		395A7AAD2A3E0E6D000A9BE2 /* OperationCreationViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OperationCreationViewController.swift; sourceTree = "<group>"; };
 		395A7AAF2A3E0E9D000A9BE2 /* OperationCreationPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OperationCreationPresenter.swift; sourceTree = "<group>"; };
 		395A7AB12A3E11C7000A9BE2 /* OperationCreationIOProtocols.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OperationCreationIOProtocols.swift; sourceTree = "<group>"; };
@@ -210,6 +214,7 @@
 		391FA0D32A2147DB0096EB59 /* Operations */ = {
 			isa = PBXGroup;
 			children = (
+				394034552A688D0600D45D24 /* ViewObjects */,
 				391FA0D72A21480C0096EB59 /* View */,
 				391FA0D62A2148060096EB59 /* Presenter */,
 				391FA0D52A2148000096EB59 /* Interactor */,
@@ -248,8 +253,9 @@
 		391FA0D72A21480C0096EB59 /* View */ = {
 			isa = PBXGroup;
 			children = (
-				391FA0E02A2148A20096EB59 /* OperationsViewController.swift */,
+				394034582A688D5700D45D24 /* Cells */,
 				391FA0E22A2148D40096EB59 /* Operations.storyboard */,
+				391FA0E02A2148A20096EB59 /* OperationsViewController.swift */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -273,6 +279,22 @@
 				394034432A65B61600D45D24 /* SaveButtonTableViewCell.swift */,
 				394034452A65B78B00D45D24 /* CategoryTableViewCell.swift */,
 				394034512A6865B000D45D24 /* OperationCreationWalletCategoryTableViewCell.swift */,
+			);
+			path = Cells;
+			sourceTree = "<group>";
+		};
+		394034552A688D0600D45D24 /* ViewObjects */ = {
+			isa = PBXGroup;
+			children = (
+				394034562A688D2800D45D24 /* OperationsWalletsViewObject.swift */,
+			);
+			path = ViewObjects;
+			sourceTree = "<group>";
+		};
+		394034582A688D5700D45D24 /* Cells */ = {
+			isa = PBXGroup;
+			children = (
+				394034592A688D6600D45D24 /* OperationsWalletsTableViewCell.swift */,
 			);
 			path = Cells;
 			sourceTree = "<group>";
@@ -552,9 +574,11 @@
 				395A7AB62A3E11E3000A9BE2 /* OperationCreationInteractorIOProtocols.swift in Sources */,
 				394034502A685D1300D45D24 /* CashFlowTableViewCellViewObject.swift in Sources */,
 				391FA0D92A2148560096EB59 /* OperationsConfigurator.swift in Sources */,
+				3940345A2A688D6600D45D24 /* OperationsWalletsTableViewCell.swift in Sources */,
 				391FA0E72A2149720096EB59 /* OperationsInteractorIOProtocols.swift in Sources */,
 				395A7AAE2A3E0E6D000A9BE2 /* OperationCreationViewController.swift in Sources */,
 				394034402A5F280800D45D24 /* HeaderTableViewCell.swift in Sources */,
+				394034572A688D2800D45D24 /* OperationsWalletsViewObject.swift in Sources */,
 				39AA92882A3A2E0700F2FF30 /* OperationPO.swift in Sources */,
 				391FA0A52A2135950096EB59 /* SceneDelegate.swift in Sources */,
 				3940343B2A5734CB00D45D24 /* ExpensesToExpensesPOMapper.swift in Sources */,
