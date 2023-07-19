@@ -6,5 +6,4 @@ struct OperationCreationCategoryViewObject: CashFlowTableViewCellViewObject {
         return 50
     }
     var reuseIdentifier: String = "categoryTableViewCell"
-    var sectionItem: Int
 }

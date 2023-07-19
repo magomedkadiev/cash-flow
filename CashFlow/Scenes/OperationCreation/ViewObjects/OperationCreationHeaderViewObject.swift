@@ -6,5 +6,4 @@ struct OperationCreationHeaderViewObject: CashFlowTableViewCellViewObject {
         return 120
     }
     var reuseIdentifier: String = "headerTableViewCell"
-    var sectionItem: Int
 }

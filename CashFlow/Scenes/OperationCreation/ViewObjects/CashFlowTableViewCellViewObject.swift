@@ -3,7 +3,6 @@ import Foundation
 protocol CashFlowTableViewCellViewObject {
     var cellHeight: CGFloat { get }
     var reuseIdentifier: String { get }
-    var sectionItem: Int { get }
 }
 
 protocol CashFlowTableViewCellProtocol {

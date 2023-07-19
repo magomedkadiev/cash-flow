@@ -1,7 +1,7 @@
 import Foundation
 
 protocol OperationCreationInputViewProtocol: AnyObject {
-    func showInfo(_ viewObject: [CashFlowTableViewCellViewObject])
+    func showInfo(_ viewObjects: [[CashFlowTableViewCellViewObject]])
 }
 
 protocol OperationCreationOutputViewProtocol {

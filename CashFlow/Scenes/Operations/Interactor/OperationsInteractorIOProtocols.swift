@@ -8,7 +8,7 @@ protocol OperationsInteractorInputProtocol {
 }
 
 protocol OperationsInteractorOutputProtocol: AnyObject {
-    func reloadDataWith(_ operations: [OperationPO])
-    func reloadDataWith(_ expenses: [ExpensePO])
+//    func reloadDataWith(_ operations: [OperationPO])
+//    func reloadDataWith(_ expenses: [ExpensePO])
 
 }

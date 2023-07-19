@@ -13,8 +13,6 @@ class OperationsInteractor {
         self.operationsMapper = operationsMapper
         self.expensesMapper = expensesMapper
     }
-    
-    
 }
 
 extension OperationsInteractor: OperationsInteractorInputProtocol {
@@ -30,7 +28,7 @@ extension OperationsInteractor: OperationsInteractorInputProtocol {
             return
         }
         let mappedOperations = self.operationsMapper.map(fetchedOperations)
-        self.presenter?.reloadDataWith(mappedOperations)
+//        self.presenter?.reloadDataWith(mappedOperations)
     }
     
     // Crete New Expense in Realm
@@ -45,7 +43,6 @@ extension OperationsInteractor: OperationsInteractorInputProtocol {
             return
         }
         let mappedObjects = self.expensesMapper.map(fetchedExpenses)
-        self.presenter?.reloadDataWith(mappedObjects)
-        
+//        self.presenter?.reloadDataWith(mappedObjects)
     }
 }

@@ -14,8 +14,8 @@ class OperationsPresenter {
 extension OperationsPresenter: OperationsOutputViewProtocol {
     
     func viewDidLoad() {
-        interactor.fetchAllOperations()
-        interactor.fetchAllExpenses()
+//        interactor.fetchAllOperations()
+//        interactor.fetchAllExpenses()
     }
     
     func createNewExpenseButtonTappedWith(expenseName: String) {
@@ -26,11 +26,11 @@ extension OperationsPresenter: OperationsOutputViewProtocol {
 
 extension OperationsPresenter: OperationsInteractorOutputProtocol {
     
-    func reloadDataWith(_ operations: [OperationPO]) {
-        view?.refreshTableView(operations: operations)
-    }
-    
-    func reloadDataWith(_ expenses: [ExpensePO]) {
-        view?.refreshTableView(expenses: expenses)
-    }
+//    func reloadDataWith(_ operations: [OperationPO]) {
+//        view?.refreshTableView(operations: operations)
+//    }
+//    
+//    func reloadDataWith(_ expenses: [ExpensePO]) {
+//        view?.refreshTableView(expenses: expenses)
+//    }
 }

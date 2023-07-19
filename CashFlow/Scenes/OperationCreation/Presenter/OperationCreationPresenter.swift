@@ -11,17 +11,25 @@ class OperationCreationPresenter {
     }
     
     private func fillViewObjectsToShow() {
-        let headerViewObject = OperationCreationHeaderViewObject(sectionItem: 0)
-        let сategoryViewObject = OperationCreationCategoryViewObject(sectionItem: 1)
-        let walletViewObject = OperationCreationWalletCategoryViewObject(sectionItem: 1)
-        let saveButtonViewObject = OperationCreationSaveButtonViewObject(sectionItem: 2)
+        var viewObjects = [[CashFlowTableViewCellViewObject]]()
+        var headerSectionObjects = [CashFlowTableViewCellViewObject]()
+        var categorySectionObjects = [CashFlowTableViewCellViewObject]()
+        var saveButtonSectionObjects = [CashFlowTableViewCellViewObject]()
+
+        let headerViewObject = OperationCreationHeaderViewObject()
+        let сategoryViewObject = OperationCreationCategoryViewObject()
+        let walletViewObject = OperationCreationWalletCategoryViewObject()
+        let saveButtonViewObject = OperationCreationSaveButtonViewObject()
+
+        headerSectionObjects.append(headerViewObject)
+        categorySectionObjects.append(сategoryViewObject)
+        categorySectionObjects.append(walletViewObject)
+        saveButtonSectionObjects.append(saveButtonViewObject)
         
-        
-        var viewObjects = [CashFlowTableViewCellViewObject]()
-        viewObjects.append(headerViewObject)
-        viewObjects.append(сategoryViewObject)
-        viewObjects.append(walletViewObject)
-        viewObjects.append(saveButtonViewObject)
+        viewObjects.append(headerSectionObjects)
+        viewObjects.append(categorySectionObjects)
+        viewObjects.append(saveButtonSectionObjects)
+
         view?.showInfo(viewObjects)
     }
     

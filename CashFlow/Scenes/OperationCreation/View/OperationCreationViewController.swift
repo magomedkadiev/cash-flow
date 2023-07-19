@@ -3,7 +3,7 @@ import UIKit
 class OperationCreationViewController: UIViewController {
 
     var presenter: OperationCreationOutputViewProtocol?
-    var sections = [GroupedSection<Int, CashFlowTableViewCellViewObject>]()
+    var viewObjects = [[CashFlowTableViewCellViewObject]]()
 
     @IBOutlet weak var tableView: UITableView!
     
@@ -16,17 +16,19 @@ class OperationCreationViewController: UIViewController {
 extension OperationCreationViewController: UITableViewDataSource {
     
     func numberOfSections(in tableView: UITableView) -> Int {
-        return sections.count
+        return viewObjects.count
+
     }
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        let section = sections[section]
-        return section.rows.count
+        let section = viewObjects[section]
+        return section.count
+
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let viewObject = sections[indexPath.section].rows[indexPath.row]
-        
+        let viewObject = viewObjects[indexPath.section][indexPath.row]
+
         if let cell = tableView.dequeueReusableCell(withIdentifier: viewObject.reuseIdentifier) as? CashFlowTableViewCellProtocol {
             cell.setup(with: viewObject, indexPath: indexPath)
             return cell as? UITableViewCell ?? UITableViewCell()
@@ -39,7 +41,8 @@ extension OperationCreationViewController: UITableViewDataSource {
 extension OperationCreationViewController: UITableViewDelegate {
     
     func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
-        let viewObject = sections[indexPath.section].rows[indexPath.row]
+        let viewObject = viewObjects[indexPath.section][indexPath.row]
+
         return viewObject.cellHeight
     }
     
@@ -50,21 +53,7 @@ extension OperationCreationViewController: UITableViewDelegate {
 
 extension OperationCreationViewController: OperationCreationInputViewProtocol {
     
-    func showInfo(_ viewObject: [CashFlowTableViewCellViewObject]) {
-        sections = GroupedSection.group(rows: viewObject, by: { $0.sectionItem })
-        sections.sort { lhs, rhs in lhs.sectionItem < rhs.sectionItem }
-        print(sections)
+    func showInfo(_ viewObjects: [[CashFlowTableViewCellViewObject]]) {
+        self.viewObjects = viewObjects
     }
-}
-
-struct GroupedSection<SectionItem : Hashable, RowItem> {
-
-    var sectionItem : SectionItem
-    var rows : [RowItem]
-
-    static func group(rows : [RowItem], by criteria : (RowItem) -> SectionItem) -> [GroupedSection<SectionItem, RowItem>] {
-        let groups = Dictionary(grouping: rows, by: criteria)
-        return groups.map(GroupedSection.init(sectionItem:rows:))
-    }
-
 }
