@@ -3,74 +3,35 @@ import UIKit
 class OperationCreationViewController: UIViewController {
 
     var presenter: OperationCreationOutputViewProtocol?
-    
+    var sections = [GroupedSection<Int, CashFlowTableViewCellViewObject>]()
+
     @IBOutlet weak var tableView: UITableView!
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        
-    }
-    
-    fileprivate func cornerRadiusFor(view: UIView, for indexPath: IndexPath) {
-        let cornerRadius = 20
-        var corners: UIRectCorner = []
-        
-        
-        switch indexPath.row {
-        case 1:
-            corners.update(with: .topLeft)
-            corners.update(with: .topRight)
-        case 2:
-            corners.update(with: .bottomLeft)
-            corners.update(with: .bottomRight)
-        default:
-            return
-        }
-
-//        if indexPath.row == 0 {
-//            corners.update(with: .topLeft)
-//            corners.update(with: .topRight)
-//        }
-//
-//        if indexPath.row == tableView.numberOfRows(inSection: indexPath.section) - 1 {
-//            corners.update(with: .bottomLeft)
-//            corners.update(with: .bottomRight)
-//        }
-
-        let maskLayer = CAShapeLayer()
-        maskLayer.path = UIBezierPath(roundedRect: view.bounds,
-                                      byRoundingCorners: corners,
-                                      cornerRadii: CGSize(width: cornerRadius, height: cornerRadius)).cgPath
-        view.layer.mask = maskLayer
+        presenter?.viewDidLoad()
     }
 }
 
 extension OperationCreationViewController: UITableViewDataSource {
     
+    func numberOfSections(in tableView: UITableView) -> Int {
+        return sections.count
+    }
+    
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return 4
+        let section = sections[section]
+        return section.rows.count
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        switch indexPath.row {
-        case 0:
-            guard let cell = tableView.dequeueReusableCell(withIdentifier: "operationCreationHeaderTableViewCell") as? HeaderTableViewCell else {
-                return UITableViewCell()
-            }
-            return cell
-        case 3:
-            guard let cell = tableView.dequeueReusableCell(withIdentifier: "saveButtonTableViewCell") as? SaveButtonTableViewCell else {
-                return UITableViewCell()
-            }
-            return cell
-        default:
-            guard let cell = tableView.dequeueReusableCell(withIdentifier: "categoryTableViewCell") as? CategoryTableViewCell else {
-                return UITableViewCell()
-            }
-            
-            cornerRadiusFor(view: cell.categoryBackgroundView, for: indexPath)
-            
-            return cell
+        let viewObject = sections[indexPath.section].rows[indexPath.row]
+        
+        if let cell = tableView.dequeueReusableCell(withIdentifier: viewObject.reuseIdentifier) as? CashFlowTableViewCellProtocol {
+            cell.setup(with: viewObject, indexPath: indexPath)
+            return cell as? UITableViewCell ?? UITableViewCell()
+        } else {
+            return UITableViewCell()
         }
     }
 }
@@ -78,14 +39,32 @@ extension OperationCreationViewController: UITableViewDataSource {
 extension OperationCreationViewController: UITableViewDelegate {
     
     func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
-        switch indexPath.row {
-        case 0: return 150
-        case 3: return 80
-        default: return 60
-        }
+        let viewObject = sections[indexPath.section].rows[indexPath.row]
+        return viewObject.cellHeight
+    }
+    
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        tableView.deselectRow(at: indexPath, animated: true)
     }
 }
 
 extension OperationCreationViewController: OperationCreationInputViewProtocol {
     
+    func showInfo(_ viewObject: [CashFlowTableViewCellViewObject]) {
+        sections = GroupedSection.group(rows: viewObject, by: { $0.sectionItem })
+        sections.sort { lhs, rhs in lhs.sectionItem < rhs.sectionItem }
+        print(sections)
+    }
+}
+
+struct GroupedSection<SectionItem : Hashable, RowItem> {
+
+    var sectionItem : SectionItem
+    var rows : [RowItem]
+
+    static func group(rows : [RowItem], by criteria : (RowItem) -> SectionItem) -> [GroupedSection<SectionItem, RowItem>] {
+        let groups = Dictionary(grouping: rows, by: criteria)
+        return groups.map(GroupedSection.init(sectionItem:rows:))
+    }
+
 }

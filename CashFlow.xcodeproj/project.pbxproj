@@ -26,6 +26,12 @@
 		394034402A5F280800D45D24 /* HeaderTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3940343F2A5F280800D45D24 /* HeaderTableViewCell.swift */; };
 		394034442A65B61600D45D24 /* SaveButtonTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 394034432A65B61600D45D24 /* SaveButtonTableViewCell.swift */; };
 		394034462A65B78B00D45D24 /* CategoryTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 394034452A65B78B00D45D24 /* CategoryTableViewCell.swift */; };
+		3940344A2A685C3200D45D24 /* OperationCreationHeaderViewObject.swift in Sources */ = {isa = PBXBuildFile; fileRef = 394034492A685C3200D45D24 /* OperationCreationHeaderViewObject.swift */; };
+		3940344C2A685C7400D45D24 /* OperationCreationCategoryViewObject.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3940344B2A685C7400D45D24 /* OperationCreationCategoryViewObject.swift */; };
+		3940344E2A685C8C00D45D24 /* OperationCreationSaveButtonViewObject.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3940344D2A685C8C00D45D24 /* OperationCreationSaveButtonViewObject.swift */; };
+		394034502A685D1300D45D24 /* CashFlowTableViewCellViewObject.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3940344F2A685D1300D45D24 /* CashFlowTableViewCellViewObject.swift */; };
+		394034522A6865B000D45D24 /* OperationCreationWalletCategoryTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 394034512A6865B000D45D24 /* OperationCreationWalletCategoryTableViewCell.swift */; };
+		394034542A6865F100D45D24 /* OperationCreationWalletCategoryViewObject.swift in Sources */ = {isa = PBXBuildFile; fileRef = 394034532A6865F100D45D24 /* OperationCreationWalletCategoryViewObject.swift */; };
 		395A7AAE2A3E0E6D000A9BE2 /* OperationCreationViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 395A7AAD2A3E0E6D000A9BE2 /* OperationCreationViewController.swift */; };
 		395A7AB02A3E0E9D000A9BE2 /* OperationCreationPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 395A7AAF2A3E0E9D000A9BE2 /* OperationCreationPresenter.swift */; };
 		395A7AB22A3E11C7000A9BE2 /* OperationCreationIOProtocols.swift in Sources */ = {isa = PBXBuildFile; fileRef = 395A7AB12A3E11C7000A9BE2 /* OperationCreationIOProtocols.swift */; };
@@ -93,6 +99,12 @@
 		3940343F2A5F280800D45D24 /* HeaderTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HeaderTableViewCell.swift; sourceTree = "<group>"; };
 		394034432A65B61600D45D24 /* SaveButtonTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SaveButtonTableViewCell.swift; sourceTree = "<group>"; };
 		394034452A65B78B00D45D24 /* CategoryTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CategoryTableViewCell.swift; sourceTree = "<group>"; };
+		394034492A685C3200D45D24 /* OperationCreationHeaderViewObject.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OperationCreationHeaderViewObject.swift; sourceTree = "<group>"; };
+		3940344B2A685C7400D45D24 /* OperationCreationCategoryViewObject.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OperationCreationCategoryViewObject.swift; sourceTree = "<group>"; };
+		3940344D2A685C8C00D45D24 /* OperationCreationSaveButtonViewObject.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OperationCreationSaveButtonViewObject.swift; sourceTree = "<group>"; };
+		3940344F2A685D1300D45D24 /* CashFlowTableViewCellViewObject.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CashFlowTableViewCellViewObject.swift; sourceTree = "<group>"; };
+		394034512A6865B000D45D24 /* OperationCreationWalletCategoryTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OperationCreationWalletCategoryTableViewCell.swift; sourceTree = "<group>"; };
+		394034532A6865F100D45D24 /* OperationCreationWalletCategoryViewObject.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OperationCreationWalletCategoryViewObject.swift; sourceTree = "<group>"; };
 		395A7AAD2A3E0E6D000A9BE2 /* OperationCreationViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OperationCreationViewController.swift; sourceTree = "<group>"; };
 		395A7AAF2A3E0E9D000A9BE2 /* OperationCreationPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OperationCreationPresenter.swift; sourceTree = "<group>"; };
 		395A7AB12A3E11C7000A9BE2 /* OperationCreationIOProtocols.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OperationCreationIOProtocols.swift; sourceTree = "<group>"; };
@@ -257,6 +269,11 @@
 		394034412A62C60B00D45D24 /* ViewObjects */ = {
 			isa = PBXGroup;
 			children = (
+				394034492A685C3200D45D24 /* OperationCreationHeaderViewObject.swift */,
+				3940344B2A685C7400D45D24 /* OperationCreationCategoryViewObject.swift */,
+				394034532A6865F100D45D24 /* OperationCreationWalletCategoryViewObject.swift */,
+				3940344D2A685C8C00D45D24 /* OperationCreationSaveButtonViewObject.swift */,
+				3940344F2A685D1300D45D24 /* CashFlowTableViewCellViewObject.swift */,
 			);
 			path = ViewObjects;
 			sourceTree = "<group>";
@@ -267,6 +284,7 @@
 				3940343F2A5F280800D45D24 /* HeaderTableViewCell.swift */,
 				394034432A65B61600D45D24 /* SaveButtonTableViewCell.swift */,
 				394034452A65B78B00D45D24 /* CategoryTableViewCell.swift */,
+				394034512A6865B000D45D24 /* OperationCreationWalletCategoryTableViewCell.swift */,
 			);
 			path = Cells;
 			sourceTree = "<group>";
@@ -543,8 +561,10 @@
 			buildActionMask = 2147483647;
 			files = (
 				39B1C9AA2A5094450065442C /* Expense.swift in Sources */,
+				394034522A6865B000D45D24 /* OperationCreationWalletCategoryTableViewCell.swift in Sources */,
 				39AA927E2A3A23E600F2FF30 /* RealmManager.swift in Sources */,
 				39AA92832A3A2D8000F2FF30 /* OperationsRealmDAO.swift in Sources */,
+				3940344E2A685C8C00D45D24 /* OperationCreationSaveButtonViewObject.swift in Sources */,
 				39AA92802A3A240600F2FF30 /* RealmManagerProtocol.swift in Sources */,
 				395A7AB42A3E11D4000A9BE2 /* OperationCreationInteractor.swift in Sources */,
 				395A7ACB2A4C75BB000A9BE2 /* WalletCollectionAddViewCell.swift in Sources */,
@@ -557,12 +577,14 @@
 				391FA0DD2A2148700096EB59 /* OperationsInteractor.swift in Sources */,
 				395A7AC62A48B1DE000A9BE2 /* WalletTableViewCell.swift in Sources */,
 				395A7AB22A3E11C7000A9BE2 /* OperationCreationIOProtocols.swift in Sources */,
+				394034542A6865F100D45D24 /* OperationCreationWalletCategoryViewObject.swift in Sources */,
 				39AA928A2A3A2F8900F2FF30 /* Operation.swift in Sources */,
 				391FA0DF2A2148790096EB59 /* OperationsPresenter.swift in Sources */,
 				39AA928D2A3A3E1500F2FF30 /* OperationsToOperationsPOMapper.swift in Sources */,
 				39AA92852A3A2D8C00F2FF30 /* OperationsDAO.swift in Sources */,
 				391FA0A32A2135950096EB59 /* AppDelegate.swift in Sources */,
 				395A7AB62A3E11E3000A9BE2 /* OperationCreationInteractorIOProtocols.swift in Sources */,
+				394034502A685D1300D45D24 /* CashFlowTableViewCellViewObject.swift in Sources */,
 				391FA0D92A2148560096EB59 /* OperationsConfigurator.swift in Sources */,
 				391FA0E72A2149720096EB59 /* OperationsInteractorIOProtocols.swift in Sources */,
 				395A7AAE2A3E0E6D000A9BE2 /* OperationCreationViewController.swift in Sources */,
@@ -572,6 +594,8 @@
 				391FA0A52A2135950096EB59 /* SceneDelegate.swift in Sources */,
 				3940343B2A5734CB00D45D24 /* ExpensesToExpensesPOMapper.swift in Sources */,
 				39B1C9AC2A5094FA0065442C /* ExpensePO.swift in Sources */,
+				3940344C2A685C7400D45D24 /* OperationCreationCategoryViewObject.swift in Sources */,
+				3940344A2A685C3200D45D24 /* OperationCreationHeaderViewObject.swift in Sources */,
 				395A7AC92A48B244000A9BE2 /* WalletCollectionViewCell.swift in Sources */,
 				391FA0E12A2148A20096EB59 /* OperationsViewController.swift in Sources */,
 				391FA0E52A2149510096EB59 /* OperationsIOProtocols.swift in Sources */,
