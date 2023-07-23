@@ -1,9 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="21701" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="Y6W-OH-hqX">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="21701" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="mf6-65-e2t">
     <device id="retina6_12" orientation="portrait" appearance="light"/>
     <dependencies>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="21679"/>
-        <capability name="Named colors" minToolsVersion="9.0"/>
+        <capability name="Image references" minToolsVersion="12.0"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="System colors in document resources" minToolsVersion="11.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
@@ -12,14 +12,14 @@
         <!--Operation Creation View Controller-->
         <scene sceneID="s0d-6b-0kx">
             <objects>
-                <viewController storyboardIdentifier="OperationCreationViewController" useStoryboardIdentifierAsRestorationIdentifier="YES" id="Y6W-OH-hqX" customClass="OperationCreationViewController" customModule="CashFlow" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="OperationCreation" useStoryboardIdentifierAsRestorationIdentifier="YES" id="Y6W-OH-hqX" customClass="OperationCreationViewController" customModule="CashFlow" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="5EZ-qb-Rvc">
                         <rect key="frame" x="0.0" y="0.0" width="393" height="852"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="insetGrouped" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="18" estimatedSectionHeaderHeight="-1" sectionFooterHeight="18" estimatedSectionFooterHeight="-1" translatesAutoresizingMaskIntoConstraints="NO" id="s8V-iv-o60">
-                                <rect key="frame" x="0.0" y="59" width="393" height="759"/>
-                                <color key="backgroundColor" systemColor="systemGroupedBackgroundColor"/>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="insetGrouped" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="8" estimatedSectionHeaderHeight="-1" sectionFooterHeight="8" estimatedSectionFooterHeight="-1" translatesAutoresizingMaskIntoConstraints="NO" id="s8V-iv-o60">
+                                <rect key="frame" x="0.0" y="0.0" width="393" height="852"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <prototypes>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="headerTableViewCell" rowHeight="120" id="GaC-dQ-1xG" customClass="HeaderTableViewCell" customModule="CashFlow" customModuleProvider="target">
                                         <rect key="frame" x="20" y="55.333332061767578" width="353" height="120"/>
@@ -36,11 +36,13 @@
                                                         <segment title="Доход"/>
                                                         <segment title="Перевод"/>
                                                     </segments>
+                                                    <color key="tintColor" systemColor="tintColor"/>
+                                                    <color key="selectedSegmentTintColor" red="0.12549020350000001" green="0.2823529541" blue="0.74509805439999999" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                                                 </segmentedControl>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="— 50 000₽" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Jlu-JU-Ju6">
                                                     <rect key="frame" x="174" y="55" width="161" height="31"/>
                                                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                                    <fontDescription key="fontDescription" type="system" weight="medium" pointSize="30"/>
+                                                    <fontDescription key="fontDescription" type="boldSystem" pointSize="30"/>
                                                     <color key="textColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
@@ -53,6 +55,7 @@
                                                 </textField>
                                             </subviews>
                                         </tableViewCellContentView>
+                                        <color key="backgroundColor" red="0.9529411793" green="0.96078431610000004" blue="0.96470588450000005" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                                         <connections>
                                             <outlet property="displayTextLabel" destination="Jlu-JU-Ju6" id="zmo-u7-rky"/>
                                             <outlet property="segmentedControl" destination="B1O-kR-UCr" id="Dpm-5b-P1n"/>
@@ -70,7 +73,7 @@
                                                     <rect key="frame" x="20" y="11" width="88" height="21"/>
                                                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                                     <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                                    <color key="textColor" red="0.38431372549019605" green="0.38431372549019605" blue="0.38431372549019605" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                    <color key="textColor" white="0.33333333333333331" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Без категории" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Hir-ae-hPA">
@@ -82,6 +85,7 @@
                                                 </label>
                                             </subviews>
                                         </tableViewCellContentView>
+                                        <color key="backgroundColor" red="0.9529411793" green="0.96078431610000004" blue="0.96470588450000005" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                                     </tableViewCell>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="OperationCreationWalletCategoryTableViewCell" rowHeight="50" id="9Yx-7f-Apk" customClass="OperationCreationWalletCategoryTableViewCell" customModule="CashFlow" customModuleProvider="target">
                                         <rect key="frame" x="20" y="225.33333206176758" width="353" height="50"/>
@@ -94,7 +98,7 @@
                                                     <rect key="frame" x="20" y="11" width="71" height="21"/>
                                                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                                     <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                                    <color key="textColor" red="0.38431372549019605" green="0.38431372549019605" blue="0.38431372549019605" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                    <color key="textColor" white="0.33333333333333331" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Наличка" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="XNe-W7-zdC">
@@ -106,6 +110,7 @@
                                                 </label>
                                             </subviews>
                                         </tableViewCellContentView>
+                                        <color key="backgroundColor" red="0.9529411793" green="0.96078431610000004" blue="0.96470588450000005" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                                     </tableViewCell>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="saveButtonTableViewCell" rowHeight="50" id="cpq-fC-bi3" customClass="SaveButtonTableViewCell" customModule="CashFlow" customModuleProvider="target">
                                         <rect key="frame" x="20" y="275.33333206176758" width="353" height="50"/>
@@ -118,11 +123,12 @@
                                                     <rect key="frame" x="91" y="15" width="171" height="21"/>
                                                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                                     <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                                    <color key="textColor" name="AccentColor"/>
+                                                    <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
                                             </subviews>
                                         </tableViewCellContentView>
+                                        <color key="backgroundColor" red="0.12549020350000001" green="0.2823529541" blue="0.74509805439999999" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                                     </tableViewCell>
                                 </prototypes>
                                 <sections/>
@@ -133,14 +139,19 @@
                             </tableView>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="vDu-zF-Fre"/>
-                        <color key="backgroundColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <constraints>
                             <constraint firstItem="s8V-iv-o60" firstAttribute="leading" secondItem="vDu-zF-Fre" secondAttribute="leading" id="0Es-3h-kBO"/>
                             <constraint firstItem="vDu-zF-Fre" firstAttribute="trailing" secondItem="s8V-iv-o60" secondAttribute="trailing" id="2Sx-eM-Cis"/>
-                            <constraint firstItem="s8V-iv-o60" firstAttribute="top" secondItem="vDu-zF-Fre" secondAttribute="top" id="eOl-Py-Fgz"/>
-                            <constraint firstItem="vDu-zF-Fre" firstAttribute="bottom" secondItem="s8V-iv-o60" secondAttribute="bottom" id="s9a-4d-QS9"/>
+                            <constraint firstAttribute="bottom" secondItem="s8V-iv-o60" secondAttribute="bottom" id="CZj-pk-bWi"/>
+                            <constraint firstItem="s8V-iv-o60" firstAttribute="top" secondItem="5EZ-qb-Rvc" secondAttribute="top" id="hi0-ub-oPE"/>
                         </constraints>
                     </view>
+                    <tabBarItem key="tabBarItem" tag="1" title="" id="t55-Bo-qPD">
+                        <imageReference key="image" image="plus" catalog="system" symbolScale="large"/>
+                    </tabBarItem>
+                    <navigationItem key="navigationItem" id="d8D-or-sdB"/>
+                    <simulatedTabBarMetrics key="simulatedBottomBarMetrics"/>
                     <connections>
                         <outlet property="tableView" destination="s8V-iv-o60" id="tMC-gl-M9S"/>
                     </connections>
@@ -152,15 +163,36 @@
                     </connections>
                 </customObject>
             </objects>
+            <point key="canvasLocation" x="1035.8778625954199" y="-2.1126760563380285"/>
+        </scene>
+        <!--Navigation Controller-->
+        <scene sceneID="xBK-RE-3Lr">
+            <objects>
+                <navigationController automaticallyAdjustsScrollViewInsets="NO" navigationBarHidden="YES" id="mf6-65-e2t" sceneMemberID="viewController">
+                    <tabBarItem key="tabBarItem" title="" id="FSN-d2-VlG">
+                        <color key="badgeColor" red="0.12549020350000001" green="0.2823529541" blue="0.74509805439999999" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                        <imageReference key="selectedImage" image="plus.circle" catalog="system" symbolScale="large"/>
+                    </tabBarItem>
+                    <toolbarItems/>
+                    <nil key="simulatedTopBarMetrics"/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="l9G-yr-iOF">
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <nil name="viewControllers"/>
+                    <connections>
+                        <segue destination="Y6W-OH-hqX" kind="relationship" relationship="rootViewController" id="Uyx-lI-Rdm"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="XAc-ey-tgu" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
             <point key="canvasLocation" x="109.16030534351144" y="-2.1126760563380285"/>
         </scene>
     </scenes>
     <resources>
-        <namedColor name="AccentColor">
-            <color red="0.0" green="0.46000000000000002" blue="0.89000000000000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-        </namedColor>
-        <systemColor name="systemGroupedBackgroundColor">
-            <color red="0.94901960784313721" green="0.94901960784313721" blue="0.96862745098039216" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        <image name="plus" catalog="system" width="128" height="113"/>
+        <image name="plus.circle" catalog="system" width="128" height="123"/>
+        <systemColor name="tintColor">
+            <color red="0.0" green="0.47843137254901963" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </systemColor>
     </resources>
 </document>

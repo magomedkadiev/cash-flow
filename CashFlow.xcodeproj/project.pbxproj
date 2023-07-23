@@ -19,7 +19,6 @@
 		391FA0DD2A2148700096EB59 /* OperationsInteractor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 391FA0DC2A2148700096EB59 /* OperationsInteractor.swift */; };
 		391FA0DF2A2148790096EB59 /* OperationsPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 391FA0DE2A2148790096EB59 /* OperationsPresenter.swift */; };
 		391FA0E12A2148A20096EB59 /* OperationsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 391FA0E02A2148A20096EB59 /* OperationsViewController.swift */; };
-		391FA0E32A2148D40096EB59 /* Operations.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 391FA0E22A2148D40096EB59 /* Operations.storyboard */; };
 		391FA0E52A2149510096EB59 /* OperationsIOProtocols.swift in Sources */ = {isa = PBXBuildFile; fileRef = 391FA0E42A2149510096EB59 /* OperationsIOProtocols.swift */; };
 		391FA0E72A2149720096EB59 /* OperationsInteractorIOProtocols.swift in Sources */ = {isa = PBXBuildFile; fileRef = 391FA0E62A2149720096EB59 /* OperationsInteractorIOProtocols.swift */; };
 		3940343B2A5734CB00D45D24 /* ExpensesToExpensesPOMapper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3940343A2A5734CB00D45D24 /* ExpensesToExpensesPOMapper.swift */; };
@@ -34,6 +33,8 @@
 		394034542A6865F100D45D24 /* OperationCreationWalletCategoryViewObject.swift in Sources */ = {isa = PBXBuildFile; fileRef = 394034532A6865F100D45D24 /* OperationCreationWalletCategoryViewObject.swift */; };
 		394034572A688D2800D45D24 /* OperationsWalletsViewObject.swift in Sources */ = {isa = PBXBuildFile; fileRef = 394034562A688D2800D45D24 /* OperationsWalletsViewObject.swift */; };
 		3940345A2A688D6600D45D24 /* OperationsWalletsTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 394034592A688D6600D45D24 /* OperationsWalletsTableViewCell.swift */; };
+		3940345D2A6C347E00D45D24 /* TabBar.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 3940345C2A6C347E00D45D24 /* TabBar.storyboard */; };
+		394034602A6C34DA00D45D24 /* Settings.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 3940345F2A6C34DA00D45D24 /* Settings.storyboard */; };
 		395A7AAE2A3E0E6D000A9BE2 /* OperationCreationViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 395A7AAD2A3E0E6D000A9BE2 /* OperationCreationViewController.swift */; };
 		395A7AB02A3E0E9D000A9BE2 /* OperationCreationPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 395A7AAF2A3E0E9D000A9BE2 /* OperationCreationPresenter.swift */; };
 		395A7AB22A3E11C7000A9BE2 /* OperationCreationIOProtocols.swift in Sources */ = {isa = PBXBuildFile; fileRef = 395A7AB12A3E11C7000A9BE2 /* OperationCreationIOProtocols.swift */; };
@@ -42,6 +43,9 @@
 		395A7AB82A3E11F0000A9BE2 /* OperationCreationConfigurator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 395A7AB72A3E11F0000A9BE2 /* OperationCreationConfigurator.swift */; };
 		395A7ABA2A3E11F6000A9BE2 /* OperationCreationInitializer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 395A7AB92A3E11F6000A9BE2 /* OperationCreationInitializer.swift */; };
 		395A7ABC2A3E11FD000A9BE2 /* OperationCreation.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 395A7ABB2A3E11FD000A9BE2 /* OperationCreation.storyboard */; };
+		39A7D6782A6DB6570085E861 /* Operations.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 391FA0E22A2148D40096EB59 /* Operations.storyboard */; };
+		39A7D67A2A6DB6C00085E861 /* SettingsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 39A7D6792A6DB6C00085E861 /* SettingsViewController.swift */; };
+		39A7D67C2A6DB9830085E861 /* TabBarViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 39A7D67B2A6DB9830085E861 /* TabBarViewController.swift */; };
 		39AA92792A3A1AA000F2FF30 /* Realm in Frameworks */ = {isa = PBXBuildFile; productRef = 39AA92782A3A1AA000F2FF30 /* Realm */; };
 		39AA927B2A3A1AA000F2FF30 /* RealmSwift in Frameworks */ = {isa = PBXBuildFile; productRef = 39AA927A2A3A1AA000F2FF30 /* RealmSwift */; };
 		39AA927E2A3A23E600F2FF30 /* RealmManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 39AA927D2A3A23E600F2FF30 /* RealmManager.swift */; };
@@ -104,6 +108,8 @@
 		394034532A6865F100D45D24 /* OperationCreationWalletCategoryViewObject.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OperationCreationWalletCategoryViewObject.swift; sourceTree = "<group>"; };
 		394034562A688D2800D45D24 /* OperationsWalletsViewObject.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OperationsWalletsViewObject.swift; sourceTree = "<group>"; };
 		394034592A688D6600D45D24 /* OperationsWalletsTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OperationsWalletsTableViewCell.swift; sourceTree = "<group>"; };
+		3940345C2A6C347E00D45D24 /* TabBar.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = TabBar.storyboard; sourceTree = "<group>"; };
+		3940345F2A6C34DA00D45D24 /* Settings.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Settings.storyboard; sourceTree = "<group>"; };
 		395A7AAD2A3E0E6D000A9BE2 /* OperationCreationViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OperationCreationViewController.swift; sourceTree = "<group>"; };
 		395A7AAF2A3E0E9D000A9BE2 /* OperationCreationPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OperationCreationPresenter.swift; sourceTree = "<group>"; };
 		395A7AB12A3E11C7000A9BE2 /* OperationCreationIOProtocols.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OperationCreationIOProtocols.swift; sourceTree = "<group>"; };
@@ -112,6 +118,8 @@
 		395A7AB72A3E11F0000A9BE2 /* OperationCreationConfigurator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OperationCreationConfigurator.swift; sourceTree = "<group>"; };
 		395A7AB92A3E11F6000A9BE2 /* OperationCreationInitializer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OperationCreationInitializer.swift; sourceTree = "<group>"; };
 		395A7ABB2A3E11FD000A9BE2 /* OperationCreation.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = OperationCreation.storyboard; sourceTree = "<group>"; };
+		39A7D6792A6DB6C00085E861 /* SettingsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsViewController.swift; sourceTree = "<group>"; };
+		39A7D67B2A6DB9830085E861 /* TabBarViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TabBarViewController.swift; sourceTree = "<group>"; };
 		39AA927D2A3A23E600F2FF30 /* RealmManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RealmManager.swift; sourceTree = "<group>"; };
 		39AA927F2A3A240600F2FF30 /* RealmManagerProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RealmManagerProtocol.swift; sourceTree = "<group>"; };
 		39AA92822A3A2D8000F2FF30 /* OperationsRealmDAO.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OperationsRealmDAO.swift; sourceTree = "<group>"; };
@@ -205,6 +213,8 @@
 		391FA0D22A2147AA0096EB59 /* Scenes */ = {
 			isa = PBXGroup;
 			children = (
+				3940345E2A6C34CB00D45D24 /* Settings */,
+				3940345B2A6C347000D45D24 /* TabBar */,
 				395A7AA82A3E0E1C000A9BE2 /* OperationCreation */,
 				391FA0D32A2147DB0096EB59 /* Operations */,
 			);
@@ -297,6 +307,24 @@
 				394034592A688D6600D45D24 /* OperationsWalletsTableViewCell.swift */,
 			);
 			path = Cells;
+			sourceTree = "<group>";
+		};
+		3940345B2A6C347000D45D24 /* TabBar */ = {
+			isa = PBXGroup;
+			children = (
+				3940345C2A6C347E00D45D24 /* TabBar.storyboard */,
+				39A7D67B2A6DB9830085E861 /* TabBarViewController.swift */,
+			);
+			path = TabBar;
+			sourceTree = "<group>";
+		};
+		3940345E2A6C34CB00D45D24 /* Settings */ = {
+			isa = PBXGroup;
+			children = (
+				3940345F2A6C34DA00D45D24 /* Settings.storyboard */,
+				39A7D6792A6DB6C00085E861 /* SettingsViewController.swift */,
+			);
+			path = Settings;
 			sourceTree = "<group>";
 		};
 		395A7AA82A3E0E1C000A9BE2 /* OperationCreation */ = {
@@ -523,8 +551,10 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				391FA0E32A2148D40096EB59 /* Operations.storyboard in Resources */,
+				39A7D6782A6DB6570085E861 /* Operations.storyboard in Resources */,
+				3940345D2A6C347E00D45D24 /* TabBar.storyboard in Resources */,
 				395A7ABC2A3E11FD000A9BE2 /* OperationCreation.storyboard in Resources */,
+				394034602A6C34DA00D45D24 /* Settings.storyboard in Resources */,
 				391FA0AF2A2135970096EB59 /* LaunchScreen.storyboard in Resources */,
 				391FA0AC2A2135970096EB59 /* Assets.xcassets in Resources */,
 			);
@@ -556,10 +586,12 @@
 				39AA927E2A3A23E600F2FF30 /* RealmManager.swift in Sources */,
 				39AA92832A3A2D8000F2FF30 /* OperationsRealmDAO.swift in Sources */,
 				3940344E2A685C8C00D45D24 /* OperationCreationSaveButtonViewObject.swift in Sources */,
+				39A7D67A2A6DB6C00085E861 /* SettingsViewController.swift in Sources */,
 				39AA92802A3A240600F2FF30 /* RealmManagerProtocol.swift in Sources */,
 				395A7AB42A3E11D4000A9BE2 /* OperationCreationInteractor.swift in Sources */,
 				395A7AB02A3E0E9D000A9BE2 /* OperationCreationPresenter.swift in Sources */,
 				395A7ABA2A3E11F6000A9BE2 /* OperationCreationInitializer.swift in Sources */,
+				39A7D67C2A6DB9830085E861 /* TabBarViewController.swift in Sources */,
 				394034442A65B61600D45D24 /* SaveButtonTableViewCell.swift in Sources */,
 				391FA0DB2A2148610096EB59 /* OperationsInitialier.swift in Sources */,
 				395A7AB82A3E11F0000A9BE2 /* OperationCreationConfigurator.swift in Sources */,
@@ -761,9 +793,9 @@
 				INFOPLIST_FILE = CashFlow/Info.plist;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
-				INFOPLIST_KEY_UIMainStoryboardFile = Operations;
-				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
-				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				INFOPLIST_KEY_UIMainStoryboardFile = TabBar;
+				INFOPLIST_KEY_UIStatusBarStyle = "";
+				INFOPLIST_KEY_UISupportedInterfaceOrientations = UIInterfaceOrientationPortrait;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -789,9 +821,9 @@
 				INFOPLIST_FILE = CashFlow/Info.plist;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
-				INFOPLIST_KEY_UIMainStoryboardFile = Operations;
-				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
-				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				INFOPLIST_KEY_UIMainStoryboardFile = TabBar;
+				INFOPLIST_KEY_UIStatusBarStyle = "";
+				INFOPLIST_KEY_UISupportedInterfaceOrientations = UIInterfaceOrientationPortrait;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",

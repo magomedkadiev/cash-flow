@@ -6,7 +6,7 @@ class HeaderTableViewCell: UITableViewCell, CashFlowTableViewCellProtocol {
     @IBOutlet weak var displayTextLabel: UILabel!
     
     func setup(with viewObject: CashFlowTableViewCellViewObject, indexPath: IndexPath) {
-        
+        segmentedControl.setTitleTextAttributes([NSAttributedString.Key.foregroundColor: UIColor.white], for: .selected)
     }
 
 }
