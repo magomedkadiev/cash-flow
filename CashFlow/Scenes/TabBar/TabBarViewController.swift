@@ -1,10 +1,11 @@
 import UIKit
 
 class TabBarViewController: UITabBarController {
+    
+    let router: ApplicationRouter = Router()
 
     override func viewDidLoad() {
         super.viewDidLoad()
-        print("fewfwe")
         self.delegate = self
     }
 
@@ -13,14 +14,9 @@ class TabBarViewController: UITabBarController {
 extension TabBarViewController: UITabBarControllerDelegate {
     
     func tabBarController(_ tabBarController: UITabBarController, shouldSelect viewController: UIViewController) -> Bool {
-        let selectedBarItemTag = viewController.tabBarItem.tag
-        
-        if selectedBarItemTag == TabControllersConst.add {
-            let storyboard = UIStoryboard(name: "OperationCreation", bundle: nil)
-            if let navigationController = storyboard.instantiateInitialViewController() as? UINavigationController {
-                self.present(navigationController, animated: true)
-                return false
-            }
+        if viewController.tabBarItem.tag == TabControllersConst.add {
+            router.openOperationCreationScreen()
+            return false
         }
         return true
     }

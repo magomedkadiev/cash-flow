@@ -46,6 +46,10 @@
 		39A7D6782A6DB6570085E861 /* Operations.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 391FA0E22A2148D40096EB59 /* Operations.storyboard */; };
 		39A7D67A2A6DB6C00085E861 /* SettingsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 39A7D6792A6DB6C00085E861 /* SettingsViewController.swift */; };
 		39A7D67C2A6DB9830085E861 /* TabBarViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 39A7D67B2A6DB9830085E861 /* TabBarViewController.swift */; };
+		39A7D67F2A6DCDA50085E861 /* ApplicationRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 39A7D67E2A6DCDA50085E861 /* ApplicationRouter.swift */; };
+		39A7D6812A6DCDAB0085E861 /* Router.swift in Sources */ = {isa = PBXBuildFile; fileRef = 39A7D6802A6DCDAB0085E861 /* Router.swift */; };
+		39A7D6842A6DCE940085E861 /* CategoryList.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 39A7D6832A6DCE940085E861 /* CategoryList.storyboard */; };
+		39A7D6862A6DCEAD0085E861 /* CategoryListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 39A7D6852A6DCEAD0085E861 /* CategoryListViewController.swift */; };
 		39AA92792A3A1AA000F2FF30 /* Realm in Frameworks */ = {isa = PBXBuildFile; productRef = 39AA92782A3A1AA000F2FF30 /* Realm */; };
 		39AA927B2A3A1AA000F2FF30 /* RealmSwift in Frameworks */ = {isa = PBXBuildFile; productRef = 39AA927A2A3A1AA000F2FF30 /* RealmSwift */; };
 		39AA927E2A3A23E600F2FF30 /* RealmManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 39AA927D2A3A23E600F2FF30 /* RealmManager.swift */; };
@@ -120,6 +124,10 @@
 		395A7ABB2A3E11FD000A9BE2 /* OperationCreation.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = OperationCreation.storyboard; sourceTree = "<group>"; };
 		39A7D6792A6DB6C00085E861 /* SettingsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsViewController.swift; sourceTree = "<group>"; };
 		39A7D67B2A6DB9830085E861 /* TabBarViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TabBarViewController.swift; sourceTree = "<group>"; };
+		39A7D67E2A6DCDA50085E861 /* ApplicationRouter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ApplicationRouter.swift; sourceTree = "<group>"; };
+		39A7D6802A6DCDAB0085E861 /* Router.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Router.swift; sourceTree = "<group>"; };
+		39A7D6832A6DCE940085E861 /* CategoryList.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = CategoryList.storyboard; sourceTree = "<group>"; };
+		39A7D6852A6DCEAD0085E861 /* CategoryListViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CategoryListViewController.swift; sourceTree = "<group>"; };
 		39AA927D2A3A23E600F2FF30 /* RealmManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RealmManager.swift; sourceTree = "<group>"; };
 		39AA927F2A3A240600F2FF30 /* RealmManagerProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RealmManagerProtocol.swift; sourceTree = "<group>"; };
 		39AA92822A3A2D8000F2FF30 /* OperationsRealmDAO.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OperationsRealmDAO.swift; sourceTree = "<group>"; };
@@ -213,6 +221,7 @@
 		391FA0D22A2147AA0096EB59 /* Scenes */ = {
 			isa = PBXGroup;
 			children = (
+				39A7D6822A6DCE820085E861 /* Categories */,
 				3940345E2A6C34CB00D45D24 /* Settings */,
 				3940345B2A6C347000D45D24 /* TabBar */,
 				395A7AA82A3E0E1C000A9BE2 /* OperationCreation */,
@@ -376,6 +385,24 @@
 			path = View;
 			sourceTree = "<group>";
 		};
+		39A7D67D2A6DCD8A0085E861 /* Router */ = {
+			isa = PBXGroup;
+			children = (
+				39A7D67E2A6DCDA50085E861 /* ApplicationRouter.swift */,
+				39A7D6802A6DCDAB0085E861 /* Router.swift */,
+			);
+			path = Router;
+			sourceTree = "<group>";
+		};
+		39A7D6822A6DCE820085E861 /* Categories */ = {
+			isa = PBXGroup;
+			children = (
+				39A7D6832A6DCE940085E861 /* CategoryList.storyboard */,
+				39A7D6852A6DCEAD0085E861 /* CategoryListViewController.swift */,
+			);
+			path = Categories;
+			sourceTree = "<group>";
+		};
 		39AA927C2A3A200B00F2FF30 /* Realm */ = {
 			isa = PBXGroup;
 			children = (
@@ -415,6 +442,7 @@
 		39AD17302A3A16B9002E9668 /* Utilities */ = {
 			isa = PBXGroup;
 			children = (
+				39A7D67D2A6DCD8A0085E861 /* Router */,
 				39AA928B2A3A3DEA00F2FF30 /* Mappers */,
 				39AA92812A3A2D6F00F2FF30 /* DAO */,
 				39AA927C2A3A200B00F2FF30 /* Realm */,
@@ -551,6 +579,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				39A7D6842A6DCE940085E861 /* CategoryList.storyboard in Resources */,
 				39A7D6782A6DB6570085E861 /* Operations.storyboard in Resources */,
 				3940345D2A6C347E00D45D24 /* TabBar.storyboard in Resources */,
 				395A7ABC2A3E11FD000A9BE2 /* OperationCreation.storyboard in Resources */,
@@ -581,12 +610,15 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				39A7D6812A6DCDAB0085E861 /* Router.swift in Sources */,
 				39B1C9AA2A5094450065442C /* Expense.swift in Sources */,
 				394034522A6865B000D45D24 /* OperationCreationWalletCategoryTableViewCell.swift in Sources */,
+				39A7D67F2A6DCDA50085E861 /* ApplicationRouter.swift in Sources */,
 				39AA927E2A3A23E600F2FF30 /* RealmManager.swift in Sources */,
 				39AA92832A3A2D8000F2FF30 /* OperationsRealmDAO.swift in Sources */,
 				3940344E2A685C8C00D45D24 /* OperationCreationSaveButtonViewObject.swift in Sources */,
 				39A7D67A2A6DB6C00085E861 /* SettingsViewController.swift in Sources */,
+				39A7D6862A6DCEAD0085E861 /* CategoryListViewController.swift in Sources */,
 				39AA92802A3A240600F2FF30 /* RealmManagerProtocol.swift in Sources */,
 				395A7AB42A3E11D4000A9BE2 /* OperationCreationInteractor.swift in Sources */,
 				395A7AB02A3E0E9D000A9BE2 /* OperationCreationPresenter.swift in Sources */,

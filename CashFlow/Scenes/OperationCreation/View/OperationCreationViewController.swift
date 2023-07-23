@@ -7,6 +7,11 @@ class OperationCreationViewController: UIViewController {
 
     @IBOutlet weak var tableView: UITableView!
     
+    static func controller() -> UINavigationController {
+        let storyboard = UIStoryboard(name: "OperationCreation", bundle: nil)
+        return storyboard.instantiateInitialViewController() as! UINavigationController
+    }
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         presenter?.viewDidLoad()
@@ -45,6 +50,9 @@ extension OperationCreationViewController: UITableViewDelegate {
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         tableView.deselectRow(at: indexPath, animated: true)
+        let viewObject = viewObjects[indexPath.section][indexPath.row]
+        presenter?.eventItemSelected(viewObject)
+
     }
 }
 

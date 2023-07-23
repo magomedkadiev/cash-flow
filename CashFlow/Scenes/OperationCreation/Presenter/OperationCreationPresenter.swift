@@ -4,10 +4,12 @@ class OperationCreationPresenter {
     
     weak var view: OperationCreationInputViewProtocol?
     var interactor: OperationCreationInteractorInputProtocol
+    let router: ApplicationRouter
     
-    init(view: OperationCreationInputViewProtocol, interactor: OperationCreationInteractorInputProtocol) {
+    init(view: OperationCreationInputViewProtocol, interactor: OperationCreationInteractorInputProtocol, router: ApplicationRouter) {
         self.view = view
         self.interactor = interactor
+        self.router = router
     }
     
     private func fillViewObjectsToShow() {
@@ -38,6 +40,15 @@ extension OperationCreationPresenter: OperationCreationOutputViewProtocol {
     
     func viewDidLoad() {
         fillViewObjectsToShow()
+    }
+    
+    func eventItemSelected(_ viewObject: CashFlowTableViewCellViewObject) {
+        switch viewObject.selectedRowType {
+        case .categoryButton:
+            router.openCategoryList()
+        default:
+            break
+        }
     }
 }
 

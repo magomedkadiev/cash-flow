@@ -6,4 +6,5 @@ struct OperationCreationHeaderViewObject: CashFlowTableViewCellViewObject {
         return 120
     }
     var reuseIdentifier: String = "headerTableViewCell"
+    var selectedRowType: CashFlowTableViewCellTypeProtocol = ._default
 }
