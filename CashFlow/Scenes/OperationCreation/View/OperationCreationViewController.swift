@@ -4,6 +4,8 @@ class OperationCreationViewController: UIViewController {
 
     var presenter: OperationCreationOutputViewProtocol?
     var viewObjects = [[CashFlowTableViewCellViewObject]]()
+    
+    var categoryViewObject: CashFlowTableViewCellViewObject?
 
     @IBOutlet weak var tableView: UITableView!
     

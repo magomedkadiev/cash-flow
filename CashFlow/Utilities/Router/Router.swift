@@ -30,6 +30,27 @@ class Router: ApplicationRouter {
         }
     }
     
+    func dismissCategoryListViewController(_ viewObject: CashFlowTableViewCellViewObject) {
+        
+        let keyWindow = UIApplication.shared.connectedScenes.map({ $0 as? UIWindowScene }).compactMap({ $0 })
+            .first?.windows.filter {$0.isKeyWindow}.first
+        
+        if var topController = keyWindow?.rootViewController {
+            while let presentedViewController = topController.presentedViewController {
+                topController = presentedViewController
+                if let navigationController = topController as? UINavigationController {
+                    if let operationCreationViewController = navigationController.viewControllers.first as? OperationCreationViewController {
+                        operationCreationViewController.categoryViewObject = viewObject
+                    }
+                    navigationController.dismiss(animated: true)
+                }
+            }
+//            if let categoryListViewController = topController as? CategoryListViewController {
+//                categoryListViewController.dismiss(animated: true)
+//            }
+        }
+    }
+    
 }
 
 extension Router {
