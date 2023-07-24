@@ -6,5 +6,5 @@ protocol OperationCreationInputViewProtocol: AnyObject {
 
 protocol OperationCreationOutputViewProtocol {
     func viewDidLoad()
-    func eventItemSelected(_ viewObject: CashFlowTableViewCellViewObject)
+    func eventItemSelected(_ viewObject: CashFlowTableViewCellViewObject, storedViewObjects: [CashFlowTableViewCellViewObject])
 }

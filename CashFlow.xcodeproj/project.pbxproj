@@ -68,6 +68,8 @@
 		39A7D6B32A6EB17D0085E861 /* WalletListInteractorIOProtocols.swift in Sources */ = {isa = PBXBuildFile; fileRef = 39A7D6B22A6EB17D0085E861 /* WalletListInteractorIOProtocols.swift */; };
 		39A7D6B52A6EB19A0085E861 /* WalletListInitializer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 39A7D6B42A6EB19A0085E861 /* WalletListInitializer.swift */; };
 		39A7D6B72A6EB1B30085E861 /* WalletListConfigurator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 39A7D6B62A6EB1B30085E861 /* WalletListConfigurator.swift */; };
+		39A7D6B92A6EBF490085E861 /* CategoryPO.swift in Sources */ = {isa = PBXBuildFile; fileRef = 39A7D6B82A6EBF490085E861 /* CategoryPO.swift */; };
+		39A7D6BB2A6EBF6B0085E861 /* WalletPO.swift in Sources */ = {isa = PBXBuildFile; fileRef = 39A7D6BA2A6EBF6B0085E861 /* WalletPO.swift */; };
 		39AA92792A3A1AA000F2FF30 /* Realm in Frameworks */ = {isa = PBXBuildFile; productRef = 39AA92782A3A1AA000F2FF30 /* Realm */; };
 		39AA927B2A3A1AA000F2FF30 /* RealmSwift in Frameworks */ = {isa = PBXBuildFile; productRef = 39AA927A2A3A1AA000F2FF30 /* RealmSwift */; };
 		39AA927E2A3A23E600F2FF30 /* RealmManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 39AA927D2A3A23E600F2FF30 /* RealmManager.swift */; };
@@ -164,6 +166,8 @@
 		39A7D6B22A6EB17D0085E861 /* WalletListInteractorIOProtocols.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WalletListInteractorIOProtocols.swift; sourceTree = "<group>"; };
 		39A7D6B42A6EB19A0085E861 /* WalletListInitializer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WalletListInitializer.swift; sourceTree = "<group>"; };
 		39A7D6B62A6EB1B30085E861 /* WalletListConfigurator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WalletListConfigurator.swift; sourceTree = "<group>"; };
+		39A7D6B82A6EBF490085E861 /* CategoryPO.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CategoryPO.swift; sourceTree = "<group>"; };
+		39A7D6BA2A6EBF6B0085E861 /* WalletPO.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WalletPO.swift; sourceTree = "<group>"; };
 		39AA927D2A3A23E600F2FF30 /* RealmManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RealmManager.swift; sourceTree = "<group>"; };
 		39AA927F2A3A240600F2FF30 /* RealmManagerProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RealmManagerProtocol.swift; sourceTree = "<group>"; };
 		39AA92822A3A2D8000F2FF30 /* OperationsRealmDAO.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OperationsRealmDAO.swift; sourceTree = "<group>"; };
@@ -622,6 +626,8 @@
 			children = (
 				39AA92872A3A2E0700F2FF30 /* OperationPO.swift */,
 				39B1C9AB2A5094FA0065442C /* ExpensePO.swift */,
+				39A7D6B82A6EBF490085E861 /* CategoryPO.swift */,
+				39A7D6BA2A6EBF6B0085E861 /* WalletPO.swift */,
 			);
 			path = PlainObjects;
 			sourceTree = "<group>";
@@ -793,6 +799,7 @@
 				395A7AB82A3E11F0000A9BE2 /* OperationCreationConfigurator.swift in Sources */,
 				39A7D6B12A6EB16F0085E861 /* WalletListInteractor.swift in Sources */,
 				391FA0DD2A2148700096EB59 /* OperationsInteractor.swift in Sources */,
+				39A7D6B92A6EBF490085E861 /* CategoryPO.swift in Sources */,
 				395A7AB22A3E11C7000A9BE2 /* OperationCreationIOProtocols.swift in Sources */,
 				394034542A6865F100D45D24 /* OperationCreationWalletCategoryViewObject.swift in Sources */,
 				39A7D68C2A6E97D70085E861 /* CategoryListPresenter.swift in Sources */,
@@ -812,6 +819,7 @@
 				3940345A2A688D6600D45D24 /* OperationsWalletsTableViewCell.swift in Sources */,
 				391FA0E72A2149720096EB59 /* OperationsInteractorIOProtocols.swift in Sources */,
 				395A7AAE2A3E0E6D000A9BE2 /* OperationCreationViewController.swift in Sources */,
+				39A7D6BB2A6EBF6B0085E861 /* WalletPO.swift in Sources */,
 				394034402A5F280800D45D24 /* HeaderTableViewCell.swift in Sources */,
 				39A7D69C2A6E9C110085E861 /* CategoryListTableViewCell.swift in Sources */,
 				394034572A688D2800D45D24 /* OperationsWalletsViewObject.swift in Sources */,

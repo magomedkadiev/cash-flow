@@ -35,6 +35,20 @@ class OperationCreationPresenter {
         view?.showInfo(viewObjects)
     }
     
+    fileprivate func prepareStoredViewObjects(_ storedViewObjects: [CashFlowTableViewCellViewObject]) {
+        
+//        guard let categoryViewObject = storedViewObjects.compactMap({ $0.self as? OperationCreationCategoryViewObject }).first else {
+//            return
+//        }
+//        
+//        guard let walletViewObject = storedViewObjects.compactMap({ $0.self as? WalletListViewObject }).first else {
+//            return
+//        }
+        
+//        let _ = OperationPO(id: UUID().uuidString, type: .expense, category: categoryViewObject, wallet: walletViewObject, data: Data(), comment: "")
+
+    }
+    
 }
 extension OperationCreationPresenter: OperationCreationOutputViewProtocol {
     
@@ -42,12 +56,16 @@ extension OperationCreationPresenter: OperationCreationOutputViewProtocol {
         fillViewObjectsToShow()
     }
     
-    func eventItemSelected(_ viewObject: CashFlowTableViewCellViewObject) {
+    func eventItemSelected(_ viewObject: CashFlowTableViewCellViewObject, storedViewObjects: [CashFlowTableViewCellViewObject]) {
+        
         switch viewObject.selectedRowType {
         case .categoryButton:
             router.openCategoryList()
         case .walletButton:
             router.openWalletList()
+        case .saveButton:
+            break
+            //prepareStoredViewObjects(storedViewObjects)
         default:
             break
         }

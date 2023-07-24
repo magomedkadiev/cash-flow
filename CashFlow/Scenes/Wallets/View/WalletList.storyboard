@@ -20,7 +20,7 @@
                                 <rect key="frame" x="0.0" y="59" width="393" height="759"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <prototypes>
-                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="WalletListTableViewCell" rowHeight="50" id="776-5B-BUA" customClass="WalletListTableViewCell" customModule="CashFlow" customModuleProvider="target">
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="OperationCreationWalletCategoryTableViewCell" rowHeight="50" id="776-5B-BUA" customClass="WalletListTableViewCell" customModule="CashFlow" customModuleProvider="target">
                                         <rect key="frame" x="20" y="55.333332061767578" width="353" height="50"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="776-5B-BUA" id="VEc-Hm-kXZ">
@@ -42,6 +42,9 @@
                                             </constraints>
                                         </tableViewCellContentView>
                                         <color key="backgroundColor" red="0.9529411793" green="0.96078431610000004" blue="0.96470588450000005" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                        <connections>
+                                            <outlet property="nameLabelText" destination="Raf-9y-4U0" id="ZXq-WM-R1S"/>
+                                        </connections>
                                     </tableViewCell>
                                 </prototypes>
                                 <connections>

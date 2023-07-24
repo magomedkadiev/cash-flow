@@ -2,11 +2,15 @@ import Foundation
 
 struct OperationPO {
     var id: String
-    var type: String // create type
-    var category: String // create category
-    var wallet: String // create wallet
+    var type: OperationType
+    var category: OperationCreationCategoryViewObject
+    var wallet: OperationCreationWalletCategoryViewObject
     var data: Data
     var comment: String
-    var sum: String
-    var expenses: [ExpensePO]
+}
+
+enum OperationType {
+    case expense
+    case income
+    case transition
 }

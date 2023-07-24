@@ -19,8 +19,16 @@ extension WalletListPresenter: WalletListOutputViewProtocol {
     func viewDidLoad() {
         var viewObjects = [CashFlowTableViewCellViewObject]()
         
-        viewObjects.append(WalletListViewObject())
-        
+        let cashWalletViewObject = OperationCreationWalletCategoryViewObject(name: "Наличка")
+        let cashWalletViewObject1 = OperationCreationWalletCategoryViewObject(name: "Сбер")
+        let cashWalletViewObject2 = OperationCreationWalletCategoryViewObject(name: "Тинькоф")
+        let cashWalletViewObject3 = OperationCreationWalletCategoryViewObject(name: "Резерв")
+
+        viewObjects.append(cashWalletViewObject)
+        viewObjects.append(cashWalletViewObject1)
+        viewObjects.append(cashWalletViewObject2)
+        viewObjects.append(cashWalletViewObject3)
+
         view?.showInfo(viewObjects)
     }
     

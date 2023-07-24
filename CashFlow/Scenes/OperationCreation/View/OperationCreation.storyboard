@@ -69,23 +69,38 @@
                                             <rect key="frame" x="0.0" y="0.0" width="353" height="50"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
-                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Категория" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="wWM-D6-phw">
-                                                    <rect key="frame" x="20" y="11" width="88" height="21"/>
-                                                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                                    <color key="textColor" white="0.33333333333333331" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                                    <nil key="highlightedColor"/>
-                                                </label>
-                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Без категории" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Hir-ae-hPA">
-                                                    <rect key="frame" x="222" y="11" width="115" height="21"/>
-                                                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                                    <nil key="textColor"/>
-                                                    <nil key="highlightedColor"/>
-                                                </label>
+                                                <stackView opaque="NO" contentMode="scaleToFill" distribution="equalSpacing" alignment="center" spacing="16" translatesAutoresizingMaskIntoConstraints="NO" id="Cyj-Gm-4eC">
+                                                    <rect key="frame" x="20" y="0.0" width="317" height="50"/>
+                                                    <subviews>
+                                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Категория" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="wWM-D6-phw">
+                                                            <rect key="frame" x="0.0" y="14.999999999999998" width="82.666666666666671" height="20.333333333333329"/>
+                                                            <constraints>
+                                                                <constraint firstAttribute="width" constant="82.670000000000002" id="Zaq-1u-33a"/>
+                                                            </constraints>
+                                                            <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                            <color key="textColor" white="0.33333333333333331" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                            <nil key="highlightedColor"/>
+                                                        </label>
+                                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Без категории" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Hir-ae-hPA">
+                                                            <rect key="frame" x="202.33333333333334" y="14.999999999999998" width="114.66666666666666" height="20.333333333333329"/>
+                                                            <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                            <nil key="textColor"/>
+                                                            <nil key="highlightedColor"/>
+                                                        </label>
+                                                    </subviews>
+                                                </stackView>
                                             </subviews>
+                                            <constraints>
+                                                <constraint firstItem="Cyj-Gm-4eC" firstAttribute="top" secondItem="uJP-fe-8QG" secondAttribute="top" id="PoH-I4-REF"/>
+                                                <constraint firstAttribute="bottom" secondItem="Cyj-Gm-4eC" secondAttribute="bottom" id="SKE-09-qZZ"/>
+                                                <constraint firstAttribute="trailing" secondItem="Cyj-Gm-4eC" secondAttribute="trailing" constant="16" id="fYU-eA-T5h"/>
+                                                <constraint firstItem="Cyj-Gm-4eC" firstAttribute="leading" secondItem="uJP-fe-8QG" secondAttribute="leading" constant="20" id="l2O-u3-34W"/>
+                                            </constraints>
                                         </tableViewCellContentView>
                                         <color key="backgroundColor" red="0.9529411793" green="0.96078431610000004" blue="0.96470588450000005" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                        <connections>
+                                            <outlet property="categoryNameLabel" destination="Hir-ae-hPA" id="azs-SA-wsc"/>
+                                        </connections>
                                     </tableViewCell>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="OperationCreationWalletCategoryTableViewCell" rowHeight="50" id="9Yx-7f-Apk" customClass="OperationCreationWalletCategoryTableViewCell" customModule="CashFlow" customModuleProvider="target">
                                         <rect key="frame" x="20" y="225.33333206176758" width="353" height="50"/>
@@ -94,23 +109,38 @@
                                             <rect key="frame" x="0.0" y="0.0" width="353" height="50"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
-                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Кошелек" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="J5v-mt-FwH">
-                                                    <rect key="frame" x="20" y="11" width="71" height="21"/>
-                                                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                                    <color key="textColor" white="0.33333333333333331" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                                    <nil key="highlightedColor"/>
-                                                </label>
-                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Наличка" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="XNe-W7-zdC">
-                                                    <rect key="frame" x="269" y="11" width="68" height="21"/>
-                                                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                                    <nil key="textColor"/>
-                                                    <nil key="highlightedColor"/>
-                                                </label>
+                                                <stackView opaque="NO" contentMode="scaleToFill" horizontalCompressionResistancePriority="749" distribution="fillProportionally" spacing="16" translatesAutoresizingMaskIntoConstraints="NO" id="y7Q-yG-tQS">
+                                                    <rect key="frame" x="20" y="0.0" width="317" height="50"/>
+                                                    <subviews>
+                                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Кошелек" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="J5v-mt-FwH">
+                                                            <rect key="frame" x="0.0" y="0.0" width="144.66666666666666" height="50"/>
+                                                            <constraints>
+                                                                <constraint firstAttribute="width" constant="144.66999999999999" id="jex-MW-E4j"/>
+                                                            </constraints>
+                                                            <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                            <color key="textColor" white="0.33333333333333331" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                            <nil key="highlightedColor"/>
+                                                        </label>
+                                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Наличка" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="XNe-W7-zdC">
+                                                            <rect key="frame" x="160.66666666666663" y="0.0" width="156.33333333333337" height="50"/>
+                                                            <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                            <nil key="textColor"/>
+                                                            <nil key="highlightedColor"/>
+                                                        </label>
+                                                    </subviews>
+                                                </stackView>
                                             </subviews>
+                                            <constraints>
+                                                <constraint firstItem="y7Q-yG-tQS" firstAttribute="leading" secondItem="6vk-sF-Dyn" secondAttribute="leading" constant="20" id="2g5-Lb-9Tp"/>
+                                                <constraint firstAttribute="bottom" secondItem="y7Q-yG-tQS" secondAttribute="bottom" id="5Al-Iq-Da1"/>
+                                                <constraint firstItem="y7Q-yG-tQS" firstAttribute="top" secondItem="6vk-sF-Dyn" secondAttribute="top" id="8rW-ZV-46M"/>
+                                                <constraint firstAttribute="trailing" secondItem="y7Q-yG-tQS" secondAttribute="trailing" constant="16" id="bgT-RT-DI3"/>
+                                            </constraints>
                                         </tableViewCellContentView>
                                         <color key="backgroundColor" red="0.9529411793" green="0.96078431610000004" blue="0.96470588450000005" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                        <connections>
+                                            <outlet property="walletNameLabel" destination="XNe-W7-zdC" id="TEr-GB-ZI1"/>
+                                        </connections>
                                     </tableViewCell>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="saveButtonTableViewCell" rowHeight="50" id="cpq-fC-bi3" customClass="SaveButtonTableViewCell" customModule="CashFlow" customModuleProvider="target">
                                         <rect key="frame" x="20" y="275.33333206176758" width="353" height="50"/>
@@ -119,14 +149,19 @@
                                             <rect key="frame" x="0.0" y="0.0" width="353" height="50"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
-                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Сохранить операцию" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ayR-Bc-Vvs">
-                                                    <rect key="frame" x="91" y="15" width="171" height="21"/>
-                                                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Сохранить операцию" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ayR-Bc-Vvs">
+                                                    <rect key="frame" x="20" y="11" width="313" height="28"/>
                                                     <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                                     <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
                                             </subviews>
+                                            <constraints>
+                                                <constraint firstItem="ayR-Bc-Vvs" firstAttribute="leading" secondItem="d4f-iM-Txn" secondAttribute="leadingMargin" id="Omn-hL-bZI"/>
+                                                <constraint firstItem="ayR-Bc-Vvs" firstAttribute="top" secondItem="d4f-iM-Txn" secondAttribute="topMargin" id="XUL-7l-pUi"/>
+                                                <constraint firstAttribute="trailingMargin" secondItem="ayR-Bc-Vvs" secondAttribute="trailing" id="i5S-lP-lga"/>
+                                                <constraint firstAttribute="bottomMargin" secondItem="ayR-Bc-Vvs" secondAttribute="bottom" id="qfx-B5-Riv"/>
+                                            </constraints>
                                         </tableViewCellContentView>
                                         <color key="backgroundColor" red="0.12549020350000001" green="0.2823529541" blue="0.74509805439999999" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                                     </tableViewCell>

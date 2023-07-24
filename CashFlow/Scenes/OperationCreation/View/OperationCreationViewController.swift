@@ -1,11 +1,24 @@
 import UIKit
 
 class OperationCreationViewController: UIViewController {
-
-    var presenter: OperationCreationOutputViewProtocol?
-    var viewObjects = [[CashFlowTableViewCellViewObject]]()
     
-    var categoryViewObject: CashFlowTableViewCellViewObject?
+    var presenter: OperationCreationOutputViewProtocol?
+    var viewObjects: [[CashFlowTableViewCellViewObject]] = [] {
+        didSet {
+            tableView.reloadData()
+        }
+    }
+    
+    var storedViewObjects: [CashFlowTableViewCellViewObject] = [] {
+        willSet {
+            if storedViewObjects.count > 0 {
+                print(newValue)
+            }
+        }
+    }
+    
+//    var categoryViewObject: CashFlowTableViewCellViewObject?
+//    var walletViewObject: CashFlowTableViewCellViewObject?
 
     @IBOutlet weak var tableView: UITableView!
     
@@ -52,9 +65,10 @@ extension OperationCreationViewController: UITableViewDelegate {
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         tableView.deselectRow(at: indexPath, animated: true)
-        let viewObject = viewObjects[indexPath.section][indexPath.row]
-        presenter?.eventItemSelected(viewObject)
-
+        
+        let selectedViewObject = viewObjects[indexPath.section][indexPath.row]
+        
+        presenter?.eventItemSelected(selectedViewObject, storedViewObjects: storedViewObjects)
     }
 }
 

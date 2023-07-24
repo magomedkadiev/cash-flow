@@ -19,8 +19,16 @@ extension CategoryListPresenter: CategoryListOutputViewProtocol {
         // some work with db
         var viewObjects = [CashFlowTableViewCellViewObject]()
         
-        viewObjects.append(CategoryListViewObject())
-        
+        let shopCategoryViewObject = OperationCreationCategoryViewObject(name: "Супермаркет")
+        let shopCategoryViewObject1 = OperationCreationCategoryViewObject(name: "Еда вне дома")
+        let shopCategoryViewObject2 = OperationCreationCategoryViewObject(name: "Такси")
+        let shopCategoryViewObject3 = OperationCreationCategoryViewObject(name: "Здоровье")
+
+        viewObjects.append(shopCategoryViewObject)
+        viewObjects.append(shopCategoryViewObject1)
+        viewObjects.append(shopCategoryViewObject2)
+        viewObjects.append(shopCategoryViewObject3)
+
         view?.showInfo(viewObjects)
     }
     

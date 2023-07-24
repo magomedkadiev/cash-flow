@@ -57,7 +57,8 @@ class Router: ApplicationRouter {
                 topController = presentedViewController
                 if let navigationController = topController as? UINavigationController {
                     if let operationCreationViewController = navigationController.viewControllers.first as? OperationCreationViewController {
-                        operationCreationViewController.categoryViewObject = viewObject
+                        operationCreationViewController.viewObjects[1].removeFirst()
+                        operationCreationViewController.viewObjects[1].insert(viewObject, at: 0)
                     }
                     navigationController.dismiss(animated: true)
                 }
@@ -74,7 +75,8 @@ class Router: ApplicationRouter {
                 topController = presentedViewController
                 if let navigationController = topController as? UINavigationController {
                     if let operationCreationViewController = navigationController.viewControllers.first as? OperationCreationViewController {
-                        operationCreationViewController.categoryViewObject = viewObject
+                        operationCreationViewController.viewObjects[1].removeLast()
+                        operationCreationViewController.viewObjects[1].append(viewObject) 
                     }
                     navigationController.dismiss(animated: true)
                 }
