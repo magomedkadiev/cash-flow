@@ -24,9 +24,9 @@ extension OperationsInteractor: OperationsInteractorInputProtocol {
     }
     
     func fetchAllOperations() {
-        guard let fetchedOperations = operationsRealmDAO?.fetchAllOperations() else {
-            return
-        }
+//        guard let fetchedOperations = operationsRealmDAO?.fetchAllOperations() else {
+//            return
+//        }
 //        let mappedOperations = self.operationsMapper.map(fetchedOperations)
 //        self.presenter?.reloadDataWith(mappedOperations)
     }
@@ -39,9 +39,9 @@ extension OperationsInteractor: OperationsInteractorInputProtocol {
     }
     
     func fetchAllExpenses() {
-        guard let fetchedExpenses = operationsRealmDAO?.fetchAllExpenses() else {
-            return
-        }
+//        guard let fetchedExpenses = operationsRealmDAO?.fetchAllExpenses() else {
+//            return
+//        }
 //        let mappedObjects = self.expensesMapper.map(fetchedExpenses)
 //        self.presenter?.reloadDataWith(mappedObjects)
     }

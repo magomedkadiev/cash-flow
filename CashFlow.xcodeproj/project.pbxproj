@@ -50,6 +50,14 @@
 		39A7D6812A6DCDAB0085E861 /* Router.swift in Sources */ = {isa = PBXBuildFile; fileRef = 39A7D6802A6DCDAB0085E861 /* Router.swift */; };
 		39A7D6842A6DCE940085E861 /* CategoryList.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 39A7D6832A6DCE940085E861 /* CategoryList.storyboard */; };
 		39A7D6862A6DCEAD0085E861 /* CategoryListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 39A7D6852A6DCEAD0085E861 /* CategoryListViewController.swift */; };
+		39A7D68C2A6E97D70085E861 /* CategoryListPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 39A7D68B2A6E97D70085E861 /* CategoryListPresenter.swift */; };
+		39A7D68E2A6E97E90085E861 /* CategoryListIOProtocols.swift in Sources */ = {isa = PBXBuildFile; fileRef = 39A7D68D2A6E97E90085E861 /* CategoryListIOProtocols.swift */; };
+		39A7D6902A6E98630085E861 /* CategoryListinteractor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 39A7D68F2A6E98630085E861 /* CategoryListinteractor.swift */; };
+		39A7D6922A6E987A0085E861 /* CategoryListinteractorIOProtocols.swift in Sources */ = {isa = PBXBuildFile; fileRef = 39A7D6912A6E987A0085E861 /* CategoryListinteractorIOProtocols.swift */; };
+		39A7D6942A6E98B60085E861 /* CategoryListInitializer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 39A7D6932A6E98B60085E861 /* CategoryListInitializer.swift */; };
+		39A7D6962A6E98C60085E861 /* CategoryListConfigurator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 39A7D6952A6E98C60085E861 /* CategoryListConfigurator.swift */; };
+		39A7D6992A6E9B9E0085E861 /* CategoryListViewObject.swift in Sources */ = {isa = PBXBuildFile; fileRef = 39A7D6982A6E9B9E0085E861 /* CategoryListViewObject.swift */; };
+		39A7D69C2A6E9C110085E861 /* CategoryListTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 39A7D69B2A6E9C110085E861 /* CategoryListTableViewCell.swift */; };
 		39AA92792A3A1AA000F2FF30 /* Realm in Frameworks */ = {isa = PBXBuildFile; productRef = 39AA92782A3A1AA000F2FF30 /* Realm */; };
 		39AA927B2A3A1AA000F2FF30 /* RealmSwift in Frameworks */ = {isa = PBXBuildFile; productRef = 39AA927A2A3A1AA000F2FF30 /* RealmSwift */; };
 		39AA927E2A3A23E600F2FF30 /* RealmManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 39AA927D2A3A23E600F2FF30 /* RealmManager.swift */; };
@@ -128,6 +136,14 @@
 		39A7D6802A6DCDAB0085E861 /* Router.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Router.swift; sourceTree = "<group>"; };
 		39A7D6832A6DCE940085E861 /* CategoryList.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = CategoryList.storyboard; sourceTree = "<group>"; };
 		39A7D6852A6DCEAD0085E861 /* CategoryListViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CategoryListViewController.swift; sourceTree = "<group>"; };
+		39A7D68B2A6E97D70085E861 /* CategoryListPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CategoryListPresenter.swift; sourceTree = "<group>"; };
+		39A7D68D2A6E97E90085E861 /* CategoryListIOProtocols.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CategoryListIOProtocols.swift; sourceTree = "<group>"; };
+		39A7D68F2A6E98630085E861 /* CategoryListinteractor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CategoryListinteractor.swift; sourceTree = "<group>"; };
+		39A7D6912A6E987A0085E861 /* CategoryListinteractorIOProtocols.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CategoryListinteractorIOProtocols.swift; sourceTree = "<group>"; };
+		39A7D6932A6E98B60085E861 /* CategoryListInitializer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CategoryListInitializer.swift; sourceTree = "<group>"; };
+		39A7D6952A6E98C60085E861 /* CategoryListConfigurator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CategoryListConfigurator.swift; sourceTree = "<group>"; };
+		39A7D6982A6E9B9E0085E861 /* CategoryListViewObject.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CategoryListViewObject.swift; sourceTree = "<group>"; };
+		39A7D69B2A6E9C110085E861 /* CategoryListTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CategoryListTableViewCell.swift; sourceTree = "<group>"; };
 		39AA927D2A3A23E600F2FF30 /* RealmManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RealmManager.swift; sourceTree = "<group>"; };
 		39AA927F2A3A240600F2FF30 /* RealmManagerProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RealmManagerProtocol.swift; sourceTree = "<group>"; };
 		39AA92822A3A2D8000F2FF30 /* OperationsRealmDAO.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OperationsRealmDAO.swift; sourceTree = "<group>"; };
@@ -397,10 +413,66 @@
 		39A7D6822A6DCE820085E861 /* Categories */ = {
 			isa = PBXGroup;
 			children = (
+				39A7D69A2A6E9C000085E861 /* Cells */,
+				39A7D6972A6E9B8A0085E861 /* ViewObjects */,
+				39A7D6872A6E976B0085E861 /* View */,
+				39A7D6882A6E97790085E861 /* Presenter */,
+				39A7D6892A6E977E0085E861 /* Interactor */,
+				39A7D68A2A6E97850085E861 /* Configurator */,
+			);
+			path = Categories;
+			sourceTree = "<group>";
+		};
+		39A7D6872A6E976B0085E861 /* View */ = {
+			isa = PBXGroup;
+			children = (
 				39A7D6832A6DCE940085E861 /* CategoryList.storyboard */,
 				39A7D6852A6DCEAD0085E861 /* CategoryListViewController.swift */,
 			);
-			path = Categories;
+			path = View;
+			sourceTree = "<group>";
+		};
+		39A7D6882A6E97790085E861 /* Presenter */ = {
+			isa = PBXGroup;
+			children = (
+				39A7D68B2A6E97D70085E861 /* CategoryListPresenter.swift */,
+				39A7D68D2A6E97E90085E861 /* CategoryListIOProtocols.swift */,
+			);
+			path = Presenter;
+			sourceTree = "<group>";
+		};
+		39A7D6892A6E977E0085E861 /* Interactor */ = {
+			isa = PBXGroup;
+			children = (
+				39A7D68F2A6E98630085E861 /* CategoryListinteractor.swift */,
+				39A7D6912A6E987A0085E861 /* CategoryListinteractorIOProtocols.swift */,
+			);
+			path = Interactor;
+			sourceTree = "<group>";
+		};
+		39A7D68A2A6E97850085E861 /* Configurator */ = {
+			isa = PBXGroup;
+			children = (
+				39A7D6932A6E98B60085E861 /* CategoryListInitializer.swift */,
+				39A7D6952A6E98C60085E861 /* CategoryListConfigurator.swift */,
+			);
+			path = Configurator;
+			sourceTree = "<group>";
+		};
+		39A7D6972A6E9B8A0085E861 /* ViewObjects */ = {
+			isa = PBXGroup;
+			children = (
+				39A7D6982A6E9B9E0085E861 /* CategoryListViewObject.swift */,
+			);
+			path = ViewObjects;
+			sourceTree = "<group>";
+		};
+		39A7D69A2A6E9C000085E861 /* Cells */ = {
+			isa = PBXGroup;
+			children = (
+				39A7D69B2A6E9C110085E861 /* CategoryListTableViewCell.swift */,
+			);
+			path = Cells;
 			sourceTree = "<group>";
 		};
 		39AA927C2A3A200B00F2FF30 /* Realm */ = {
@@ -616,11 +688,13 @@
 				39A7D67F2A6DCDA50085E861 /* ApplicationRouter.swift in Sources */,
 				39AA927E2A3A23E600F2FF30 /* RealmManager.swift in Sources */,
 				39AA92832A3A2D8000F2FF30 /* OperationsRealmDAO.swift in Sources */,
+				39A7D6962A6E98C60085E861 /* CategoryListConfigurator.swift in Sources */,
 				3940344E2A685C8C00D45D24 /* OperationCreationSaveButtonViewObject.swift in Sources */,
 				39A7D67A2A6DB6C00085E861 /* SettingsViewController.swift in Sources */,
 				39A7D6862A6DCEAD0085E861 /* CategoryListViewController.swift in Sources */,
 				39AA92802A3A240600F2FF30 /* RealmManagerProtocol.swift in Sources */,
 				395A7AB42A3E11D4000A9BE2 /* OperationCreationInteractor.swift in Sources */,
+				39A7D68E2A6E97E90085E861 /* CategoryListIOProtocols.swift in Sources */,
 				395A7AB02A3E0E9D000A9BE2 /* OperationCreationPresenter.swift in Sources */,
 				395A7ABA2A3E11F6000A9BE2 /* OperationCreationInitializer.swift in Sources */,
 				39A7D67C2A6DB9830085E861 /* TabBarViewController.swift in Sources */,
@@ -630,24 +704,30 @@
 				391FA0DD2A2148700096EB59 /* OperationsInteractor.swift in Sources */,
 				395A7AB22A3E11C7000A9BE2 /* OperationCreationIOProtocols.swift in Sources */,
 				394034542A6865F100D45D24 /* OperationCreationWalletCategoryViewObject.swift in Sources */,
+				39A7D68C2A6E97D70085E861 /* CategoryListPresenter.swift in Sources */,
 				39AA928A2A3A2F8900F2FF30 /* Operation.swift in Sources */,
 				391FA0DF2A2148790096EB59 /* OperationsPresenter.swift in Sources */,
 				39AA928D2A3A3E1500F2FF30 /* OperationsToOperationsPOMapper.swift in Sources */,
 				39AA92852A3A2D8C00F2FF30 /* OperationsDAO.swift in Sources */,
+				39A7D6902A6E98630085E861 /* CategoryListinteractor.swift in Sources */,
 				391FA0A32A2135950096EB59 /* AppDelegate.swift in Sources */,
 				395A7AB62A3E11E3000A9BE2 /* OperationCreationInteractorIOProtocols.swift in Sources */,
 				394034502A685D1300D45D24 /* CashFlowTableViewCellViewObject.swift in Sources */,
 				391FA0D92A2148560096EB59 /* OperationsConfigurator.swift in Sources */,
+				39A7D6942A6E98B60085E861 /* CategoryListInitializer.swift in Sources */,
 				3940345A2A688D6600D45D24 /* OperationsWalletsTableViewCell.swift in Sources */,
 				391FA0E72A2149720096EB59 /* OperationsInteractorIOProtocols.swift in Sources */,
 				395A7AAE2A3E0E6D000A9BE2 /* OperationCreationViewController.swift in Sources */,
 				394034402A5F280800D45D24 /* HeaderTableViewCell.swift in Sources */,
+				39A7D69C2A6E9C110085E861 /* CategoryListTableViewCell.swift in Sources */,
 				394034572A688D2800D45D24 /* OperationsWalletsViewObject.swift in Sources */,
+				39A7D6922A6E987A0085E861 /* CategoryListinteractorIOProtocols.swift in Sources */,
 				39AA92882A3A2E0700F2FF30 /* OperationPO.swift in Sources */,
 				391FA0A52A2135950096EB59 /* SceneDelegate.swift in Sources */,
 				3940343B2A5734CB00D45D24 /* ExpensesToExpensesPOMapper.swift in Sources */,
 				39B1C9AC2A5094FA0065442C /* ExpensePO.swift in Sources */,
 				3940344C2A685C7400D45D24 /* OperationCreationCategoryViewObject.swift in Sources */,
+				39A7D6992A6E9B9E0085E861 /* CategoryListViewObject.swift in Sources */,
 				3940344A2A685C3200D45D24 /* OperationCreationHeaderViewObject.swift in Sources */,
 				391FA0E12A2148A20096EB59 /* OperationsViewController.swift in Sources */,
 				391FA0E52A2149510096EB59 /* OperationsIOProtocols.swift in Sources */,
