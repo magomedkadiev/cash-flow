@@ -46,6 +46,8 @@ extension OperationCreationPresenter: OperationCreationOutputViewProtocol {
         switch viewObject.selectedRowType {
         case .categoryButton:
             router.openCategoryList()
+        case .walletButton:
+            router.openWalletList()
         default:
             break
         }

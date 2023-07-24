@@ -1,10 +1,10 @@
 import Foundation
 
-protocol CategoryListInputViewProtocol: AnyObject {
+protocol WalletListInputViewProtocol: AnyObject{
     func showInfo(_ viewObjects: [CashFlowTableViewCellViewObject])
 }
 
-protocol CategoryListOutputViewProtocol {
+protocol WalletListOutputViewProtocol {
     func viewDidLoad()
     func dismissViewController(with viewObject: CashFlowTableViewCellViewObject)
 }
