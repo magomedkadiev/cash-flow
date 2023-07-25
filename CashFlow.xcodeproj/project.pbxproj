@@ -7,6 +7,11 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		3907A4D02A70486D007C6412 /* Realm in Frameworks */ = {isa = PBXBuildFile; productRef = 3907A4CF2A70486D007C6412 /* Realm */; };
+		3907A4D22A70486D007C6412 /* RealmSwift in Frameworks */ = {isa = PBXBuildFile; productRef = 3907A4D12A70486D007C6412 /* RealmSwift */; };
+		3907A4D42A704A03007C6412 /* TotalAmountTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3907A4D32A704A03007C6412 /* TotalAmountTableViewCell.swift */; };
+		3907A4D62A704B1A007C6412 /* OperationCreationTotalAmountViewObject.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3907A4D52A704B1A007C6412 /* OperationCreationTotalAmountViewObject.swift */; };
+		3907A4DA2A7069C5007C6412 /* OperationCreationCategoryHandler.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3907A4D92A7069C5007C6412 /* OperationCreationCategoryHandler.swift */; };
 		391FA0A32A2135950096EB59 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 391FA0A22A2135950096EB59 /* AppDelegate.swift */; };
 		391FA0A52A2135950096EB59 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 391FA0A42A2135950096EB59 /* SceneDelegate.swift */; };
 		391FA0AC2A2135970096EB59 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 391FA0AB2A2135970096EB59 /* Assets.xcassets */; };
@@ -70,8 +75,6 @@
 		39A7D6B72A6EB1B30085E861 /* WalletListConfigurator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 39A7D6B62A6EB1B30085E861 /* WalletListConfigurator.swift */; };
 		39A7D6B92A6EBF490085E861 /* CategoryPO.swift in Sources */ = {isa = PBXBuildFile; fileRef = 39A7D6B82A6EBF490085E861 /* CategoryPO.swift */; };
 		39A7D6BB2A6EBF6B0085E861 /* WalletPO.swift in Sources */ = {isa = PBXBuildFile; fileRef = 39A7D6BA2A6EBF6B0085E861 /* WalletPO.swift */; };
-		39AA92792A3A1AA000F2FF30 /* Realm in Frameworks */ = {isa = PBXBuildFile; productRef = 39AA92782A3A1AA000F2FF30 /* Realm */; };
-		39AA927B2A3A1AA000F2FF30 /* RealmSwift in Frameworks */ = {isa = PBXBuildFile; productRef = 39AA927A2A3A1AA000F2FF30 /* RealmSwift */; };
 		39AA927E2A3A23E600F2FF30 /* RealmManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 39AA927D2A3A23E600F2FF30 /* RealmManager.swift */; };
 		39AA92802A3A240600F2FF30 /* RealmManagerProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 39AA927F2A3A240600F2FF30 /* RealmManagerProtocol.swift */; };
 		39AA92832A3A2D8000F2FF30 /* OperationsRealmDAO.swift in Sources */ = {isa = PBXBuildFile; fileRef = 39AA92822A3A2D8000F2FF30 /* OperationsRealmDAO.swift */; };
@@ -101,6 +104,9 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		3907A4D32A704A03007C6412 /* TotalAmountTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TotalAmountTableViewCell.swift; sourceTree = "<group>"; };
+		3907A4D52A704B1A007C6412 /* OperationCreationTotalAmountViewObject.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OperationCreationTotalAmountViewObject.swift; sourceTree = "<group>"; };
+		3907A4D92A7069C5007C6412 /* OperationCreationCategoryHandler.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OperationCreationCategoryHandler.swift; sourceTree = "<group>"; };
 		391FA09F2A2135950096EB59 /* CashFlow.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = CashFlow.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		391FA0A22A2135950096EB59 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		391FA0A42A2135950096EB59 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -184,8 +190,8 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				39AA927B2A3A1AA000F2FF30 /* RealmSwift in Frameworks */,
-				39AA92792A3A1AA000F2FF30 /* Realm in Frameworks */,
+				3907A4D22A70486D007C6412 /* RealmSwift in Frameworks */,
+				3907A4D02A70486D007C6412 /* Realm in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -206,6 +212,13 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		3907A4CE2A70486D007C6412 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
 		391FA0962A2135950096EB59 = {
 			isa = PBXGroup;
 			children = (
@@ -213,6 +226,7 @@
 				391FA0B82A2135970096EB59 /* CashFlowTests */,
 				391FA0C22A2135970096EB59 /* CashFlowUITests */,
 				391FA0A02A2135950096EB59 /* Products */,
+				3907A4CE2A70486D007C6412 /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -328,6 +342,7 @@
 				394034532A6865F100D45D24 /* OperationCreationWalletCategoryViewObject.swift */,
 				3940344D2A685C8C00D45D24 /* OperationCreationSaveButtonViewObject.swift */,
 				3940344F2A685D1300D45D24 /* CashFlowTableViewCellViewObject.swift */,
+				3907A4D52A704B1A007C6412 /* OperationCreationTotalAmountViewObject.swift */,
 			);
 			path = ViewObjects;
 			sourceTree = "<group>";
@@ -336,6 +351,7 @@
 			isa = PBXGroup;
 			children = (
 				3940343F2A5F280800D45D24 /* HeaderTableViewCell.swift */,
+				3907A4D32A704A03007C6412 /* TotalAmountTableViewCell.swift */,
 				394034432A65B61600D45D24 /* SaveButtonTableViewCell.swift */,
 				394034452A65B78B00D45D24 /* CategoryTableViewCell.swift */,
 				394034512A6865B000D45D24 /* OperationCreationWalletCategoryTableViewCell.swift */,
@@ -422,6 +438,7 @@
 				394034422A65B5F900D45D24 /* Cells */,
 				395A7AAD2A3E0E6D000A9BE2 /* OperationCreationViewController.swift */,
 				395A7ABB2A3E11FD000A9BE2 /* OperationCreation.storyboard */,
+				3907A4D92A7069C5007C6412 /* OperationCreationCategoryHandler.swift */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -649,8 +666,8 @@
 			);
 			name = CashFlow;
 			packageProductDependencies = (
-				39AA92782A3A1AA000F2FF30 /* Realm */,
-				39AA927A2A3A1AA000F2FF30 /* RealmSwift */,
+				3907A4CF2A70486D007C6412 /* Realm */,
+				3907A4D12A70486D007C6412 /* RealmSwift */,
 			);
 			productName = CashFlow;
 			productReference = 391FA09F2A2135950096EB59 /* CashFlow.app */;
@@ -800,6 +817,7 @@
 				39A7D6B12A6EB16F0085E861 /* WalletListInteractor.swift in Sources */,
 				391FA0DD2A2148700096EB59 /* OperationsInteractor.swift in Sources */,
 				39A7D6B92A6EBF490085E861 /* CategoryPO.swift in Sources */,
+				3907A4D62A704B1A007C6412 /* OperationCreationTotalAmountViewObject.swift in Sources */,
 				395A7AB22A3E11C7000A9BE2 /* OperationCreationIOProtocols.swift in Sources */,
 				394034542A6865F100D45D24 /* OperationCreationWalletCategoryViewObject.swift in Sources */,
 				39A7D68C2A6E97D70085E861 /* CategoryListPresenter.swift in Sources */,
@@ -809,7 +827,9 @@
 				39AA928D2A3A3E1500F2FF30 /* OperationsToOperationsPOMapper.swift in Sources */,
 				39AA92852A3A2D8C00F2FF30 /* OperationsDAO.swift in Sources */,
 				39A7D6A42A6EAF830085E861 /* WalletListTableViewCell.swift in Sources */,
+				3907A4DA2A7069C5007C6412 /* OperationCreationCategoryHandler.swift in Sources */,
 				39A7D6902A6E98630085E861 /* CategoryListinteractor.swift in Sources */,
+				3907A4D42A704A03007C6412 /* TotalAmountTableViewCell.swift in Sources */,
 				391FA0A32A2135950096EB59 /* AppDelegate.swift in Sources */,
 				395A7AB62A3E11E3000A9BE2 /* OperationCreationInteractorIOProtocols.swift in Sources */,
 				39A7D6B32A6EB17D0085E861 /* WalletListInteractorIOProtocols.swift in Sources */,
@@ -1182,12 +1202,12 @@
 /* End XCRemoteSwiftPackageReference section */
 
 /* Begin XCSwiftPackageProductDependency section */
-		39AA92782A3A1AA000F2FF30 /* Realm */ = {
+		3907A4CF2A70486D007C6412 /* Realm */ = {
 			isa = XCSwiftPackageProductDependency;
 			package = 39AA92772A3A1AA000F2FF30 /* XCRemoteSwiftPackageReference "realm-swift" */;
 			productName = Realm;
 		};
-		39AA927A2A3A1AA000F2FF30 /* RealmSwift */ = {
+		3907A4D12A70486D007C6412 /* RealmSwift */ = {
 			isa = XCSwiftPackageProductDependency;
 			package = 39AA92772A3A1AA000F2FF30 /* XCRemoteSwiftPackageReference "realm-swift" */;
 			productName = RealmSwift;

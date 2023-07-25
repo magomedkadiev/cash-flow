@@ -14,6 +14,7 @@ class Router: ApplicationRouter {
             if let navigationController = topController as? UINavigationController {
                 if let operationCreationViewController = navigationController.topViewController as? OperationCreationViewController {
                     let categoryListViewController = CategoryListViewController.controller()
+                    categoryListViewController.handler = operationCreationViewController
                     operationCreationViewController.present(categoryListViewController, animated: true)
                 }
             }
@@ -31,6 +32,7 @@ class Router: ApplicationRouter {
             if let navigationController = topController as? UINavigationController {
                 if let operationCreationViewController = navigationController.topViewController as? OperationCreationViewController {
                     let walletListViewController = WalletListViewController.controller()
+                    walletListViewController.handler = operationCreationViewController
                     operationCreationViewController.present(walletListViewController, animated: true)
                 }
             }
@@ -56,10 +58,6 @@ class Router: ApplicationRouter {
             while let presentedViewController = topController.presentedViewController {
                 topController = presentedViewController
                 if let navigationController = topController as? UINavigationController {
-                    if let operationCreationViewController = navigationController.viewControllers.first as? OperationCreationViewController {
-                        operationCreationViewController.viewObjects[1].removeFirst()
-                        operationCreationViewController.viewObjects[1].insert(viewObject, at: 0)
-                    }
                     navigationController.dismiss(animated: true)
                 }
             }
@@ -74,10 +72,6 @@ class Router: ApplicationRouter {
             while let presentedViewController = topController.presentedViewController {
                 topController = presentedViewController
                 if let navigationController = topController as? UINavigationController {
-                    if let operationCreationViewController = navigationController.viewControllers.first as? OperationCreationViewController {
-                        operationCreationViewController.viewObjects[1].removeLast()
-                        operationCreationViewController.viewObjects[1].append(viewObject) 
-                    }
                     navigationController.dismiss(animated: true)
                 }
             }

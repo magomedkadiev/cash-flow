@@ -7,5 +7,5 @@ struct OperationCreationCategoryViewObject: CashFlowTableViewCellViewObject {
     }
     var reuseIdentifier: String = "categoryTableViewCell"
     var selectedRowType: CashFlowTableViewCellTypeProtocol = .categoryButton
-    var name: String = "Без категории"
+    var name: String
 }

@@ -6,6 +6,7 @@ class CategoryListViewController: UIViewController {
     
     var presenter: CategoryListOutputViewProtocol?
     var viewObjects = [CashFlowTableViewCellViewObject]()
+    weak var handler: OperationCreationCategoryHandler?
 
     static func controller() -> CategoryListViewController {
         let storyboard = UIStoryboard(name: "CategoryList", bundle: nil)
@@ -49,6 +50,7 @@ extension CategoryListViewController: UITableViewDelegate {
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         tableView.deselectRow(at: indexPath, animated: true)
         let viewObject = viewObjects[indexPath.row]
+        handler?.handler(viewObject: viewObject)
         presenter?.dismissViewController(with: viewObject)
     }
     

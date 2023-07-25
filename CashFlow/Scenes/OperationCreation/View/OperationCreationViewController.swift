@@ -3,22 +3,18 @@ import UIKit
 class OperationCreationViewController: UIViewController {
     
     var presenter: OperationCreationOutputViewProtocol?
+    
+    private var totalAmount: String = ""
+    
+    var categoryViewObject: OperationCreationCategoryViewObject?
+    
+    var walletViewObject: OperationCreationWalletCategoryViewObject?
+    
     var viewObjects: [[CashFlowTableViewCellViewObject]] = [] {
         didSet {
             tableView.reloadData()
         }
     }
-    
-    var storedViewObjects: [CashFlowTableViewCellViewObject] = [] {
-        willSet {
-            if storedViewObjects.count > 0 {
-                print(newValue)
-            }
-        }
-    }
-    
-//    var categoryViewObject: CashFlowTableViewCellViewObject?
-//    var walletViewObject: CashFlowTableViewCellViewObject?
 
     @IBOutlet weak var tableView: UITableView!
     
@@ -30,6 +26,16 @@ class OperationCreationViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         presenter?.viewDidLoad()
+    }
+    
+    fileprivate func updateDisplayTextLabelWhenTotalAmountChanged(with text: String) {
+        let visibleCells = tableView.visibleCells
+        
+        for cell in visibleCells {
+            if let cell = cell as? TotalAmountTableViewCell {
+                cell.displayLabelText.text = totalAmount + " ₽"
+            }
+        }
     }
 }
 
@@ -67,8 +73,7 @@ extension OperationCreationViewController: UITableViewDelegate {
         tableView.deselectRow(at: indexPath, animated: true)
         
         let selectedViewObject = viewObjects[indexPath.section][indexPath.row]
-        
-        presenter?.eventItemSelected(selectedViewObject, storedViewObjects: storedViewObjects)
+        presenter?.eventItemSelected(selectedViewObject, totalAmount: totalAmount)
     }
 }
 
@@ -76,5 +81,25 @@ extension OperationCreationViewController: OperationCreationInputViewProtocol {
     
     func showInfo(_ viewObjects: [[CashFlowTableViewCellViewObject]]) {
         self.viewObjects = viewObjects
+    }
+}
+
+extension OperationCreationViewController: UITextFieldDelegate {
+    
+    func textField(_ textField: UITextField, shouldChangeCharactersIn range: NSRange, replacementString string: String) -> Bool {
+        let text = (textField.text as NSString?)?.replacingCharacters(in: range, with: string) ?? ""
+        let shouldChangeCharacters = text.count <= 7
+        if shouldChangeCharacters {
+            totalAmount = text
+            updateDisplayTextLabelWhenTotalAmountChanged(with: totalAmount)
+        }
+        return shouldChangeCharacters
+    }
+}
+
+extension OperationCreationViewController: OperationCreationCategoryHandler {
+    
+    func handler(viewObject: CashFlowTableViewCellViewObject) {
+        presenter?.configureSelected(viewObject: viewObject)
     }
 }

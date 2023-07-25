@@ -7,6 +7,6 @@ struct OperationCreationWalletCategoryViewObject: CashFlowTableViewCellViewObjec
     
     var selectedRowType: CashFlowTableViewCellTypeProtocol = .walletButton
     
-    var name: String = "Наличные"
+    var name: String
  
 }
