@@ -6,7 +6,7 @@ class CategoryListViewController: UIViewController {
     
     var presenter: CategoryListOutputViewProtocol?
     var viewObjects = [CashFlowTableViewCellViewObject]()
-    weak var handler: OperationCreationCategoryHandler?
+    weak var handler: OperationCreationSelectionHandler?
 
     static func controller() -> CategoryListViewController {
         let storyboard = UIStoryboard(name: "CategoryList", bundle: nil)

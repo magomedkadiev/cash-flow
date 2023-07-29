@@ -11,7 +11,15 @@
 		3907A4D22A70486D007C6412 /* RealmSwift in Frameworks */ = {isa = PBXBuildFile; productRef = 3907A4D12A70486D007C6412 /* RealmSwift */; };
 		3907A4D42A704A03007C6412 /* TotalAmountTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3907A4D32A704A03007C6412 /* TotalAmountTableViewCell.swift */; };
 		3907A4D62A704B1A007C6412 /* OperationCreationTotalAmountViewObject.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3907A4D52A704B1A007C6412 /* OperationCreationTotalAmountViewObject.swift */; };
-		3907A4DA2A7069C5007C6412 /* OperationCreationCategoryHandler.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3907A4D92A7069C5007C6412 /* OperationCreationCategoryHandler.swift */; };
+		3907A4DA2A7069C5007C6412 /* OperationCreationSelectionHandler.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3907A4D92A7069C5007C6412 /* OperationCreationSelectionHandler.swift */; };
+		3907A4DC2A71A613007C6412 /* Category.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3907A4DB2A71A613007C6412 /* Category.swift */; };
+		3907A4DE2A71A61C007C6412 /* Wallet.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3907A4DD2A71A61C007C6412 /* Wallet.swift */; };
+		3907A4E02A71B22A007C6412 /* CategoryPOToRealmCategoryMapper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3907A4DF2A71B22A007C6412 /* CategoryPOToRealmCategoryMapper.swift */; };
+		3907A4E22A71B28F007C6412 /* WalletPOToRealmWalletMapper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3907A4E12A71B28F007C6412 /* WalletPOToRealmWalletMapper.swift */; };
+		3907A4E42A71B5BD007C6412 /* OperationsPOToOperationViewObjectsMapper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3907A4E32A71B5BD007C6412 /* OperationsPOToOperationViewObjectsMapper.swift */; };
+		3907A4E62A71B6FB007C6412 /* OperationViewObject.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3907A4E52A71B6FB007C6412 /* OperationViewObject.swift */; };
+		3907A4E82A71B8D0007C6412 /* OperationsTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3907A4E72A71B8D0007C6412 /* OperationsTableViewCell.swift */; };
+		3907A4EA2A75950C007C6412 /* OperatioinCreationFinishHandler.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3907A4E92A75950C007C6412 /* OperatioinCreationFinishHandler.swift */; };
 		391FA0A32A2135950096EB59 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 391FA0A22A2135950096EB59 /* AppDelegate.swift */; };
 		391FA0A52A2135950096EB59 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 391FA0A42A2135950096EB59 /* SceneDelegate.swift */; };
 		391FA0AC2A2135970096EB59 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 391FA0AB2A2135970096EB59 /* Assets.xcassets */; };
@@ -106,7 +114,15 @@
 /* Begin PBXFileReference section */
 		3907A4D32A704A03007C6412 /* TotalAmountTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TotalAmountTableViewCell.swift; sourceTree = "<group>"; };
 		3907A4D52A704B1A007C6412 /* OperationCreationTotalAmountViewObject.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OperationCreationTotalAmountViewObject.swift; sourceTree = "<group>"; };
-		3907A4D92A7069C5007C6412 /* OperationCreationCategoryHandler.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OperationCreationCategoryHandler.swift; sourceTree = "<group>"; };
+		3907A4D92A7069C5007C6412 /* OperationCreationSelectionHandler.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OperationCreationSelectionHandler.swift; sourceTree = "<group>"; };
+		3907A4DB2A71A613007C6412 /* Category.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Category.swift; sourceTree = "<group>"; };
+		3907A4DD2A71A61C007C6412 /* Wallet.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Wallet.swift; sourceTree = "<group>"; };
+		3907A4DF2A71B22A007C6412 /* CategoryPOToRealmCategoryMapper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CategoryPOToRealmCategoryMapper.swift; sourceTree = "<group>"; };
+		3907A4E12A71B28F007C6412 /* WalletPOToRealmWalletMapper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WalletPOToRealmWalletMapper.swift; sourceTree = "<group>"; };
+		3907A4E32A71B5BD007C6412 /* OperationsPOToOperationViewObjectsMapper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OperationsPOToOperationViewObjectsMapper.swift; sourceTree = "<group>"; };
+		3907A4E52A71B6FB007C6412 /* OperationViewObject.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OperationViewObject.swift; sourceTree = "<group>"; };
+		3907A4E72A71B8D0007C6412 /* OperationsTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OperationsTableViewCell.swift; sourceTree = "<group>"; };
+		3907A4E92A75950C007C6412 /* OperatioinCreationFinishHandler.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OperatioinCreationFinishHandler.swift; sourceTree = "<group>"; };
 		391FA09F2A2135950096EB59 /* CashFlow.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = CashFlow.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		391FA0A22A2135950096EB59 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		391FA0A42A2135950096EB59 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -337,11 +353,11 @@
 		394034412A62C60B00D45D24 /* ViewObjects */ = {
 			isa = PBXGroup;
 			children = (
+				3940344F2A685D1300D45D24 /* CashFlowTableViewCellViewObject.swift */,
 				394034492A685C3200D45D24 /* OperationCreationHeaderViewObject.swift */,
 				3940344B2A685C7400D45D24 /* OperationCreationCategoryViewObject.swift */,
 				394034532A6865F100D45D24 /* OperationCreationWalletCategoryViewObject.swift */,
 				3940344D2A685C8C00D45D24 /* OperationCreationSaveButtonViewObject.swift */,
-				3940344F2A685D1300D45D24 /* CashFlowTableViewCellViewObject.swift */,
 				3907A4D52A704B1A007C6412 /* OperationCreationTotalAmountViewObject.swift */,
 			);
 			path = ViewObjects;
@@ -362,6 +378,7 @@
 		394034552A688D0600D45D24 /* ViewObjects */ = {
 			isa = PBXGroup;
 			children = (
+				3907A4E52A71B6FB007C6412 /* OperationViewObject.swift */,
 				394034562A688D2800D45D24 /* OperationsWalletsViewObject.swift */,
 			);
 			path = ViewObjects;
@@ -371,6 +388,7 @@
 			isa = PBXGroup;
 			children = (
 				394034592A688D6600D45D24 /* OperationsWalletsTableViewCell.swift */,
+				3907A4E72A71B8D0007C6412 /* OperationsTableViewCell.swift */,
 			);
 			path = Cells;
 			sourceTree = "<group>";
@@ -438,7 +456,8 @@
 				394034422A65B5F900D45D24 /* Cells */,
 				395A7AAD2A3E0E6D000A9BE2 /* OperationCreationViewController.swift */,
 				395A7ABB2A3E11FD000A9BE2 /* OperationCreation.storyboard */,
-				3907A4D92A7069C5007C6412 /* OperationCreationCategoryHandler.swift */,
+				3907A4D92A7069C5007C6412 /* OperationCreationSelectionHandler.swift */,
+				3907A4E92A75950C007C6412 /* OperatioinCreationFinishHandler.swift */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -455,8 +474,6 @@
 		39A7D6822A6DCE820085E861 /* Categories */ = {
 			isa = PBXGroup;
 			children = (
-				39A7D69A2A6E9C000085E861 /* Cells */,
-				39A7D6972A6E9B8A0085E861 /* ViewObjects */,
 				39A7D6872A6E976B0085E861 /* View */,
 				39A7D6882A6E97790085E861 /* Presenter */,
 				39A7D6892A6E977E0085E861 /* Interactor */,
@@ -468,6 +485,8 @@
 		39A7D6872A6E976B0085E861 /* View */ = {
 			isa = PBXGroup;
 			children = (
+				39A7D69A2A6E9C000085E861 /* Cells */,
+				39A7D6972A6E9B8A0085E861 /* ViewObjects */,
 				39A7D6832A6DCE940085E861 /* CategoryList.storyboard */,
 				39A7D6852A6DCEAD0085E861 /* CategoryListViewController.swift */,
 			);
@@ -614,6 +633,9 @@
 			children = (
 				39AA928C2A3A3E1500F2FF30 /* OperationsToOperationsPOMapper.swift */,
 				3940343A2A5734CB00D45D24 /* ExpensesToExpensesPOMapper.swift */,
+				3907A4DF2A71B22A007C6412 /* CategoryPOToRealmCategoryMapper.swift */,
+				3907A4E12A71B28F007C6412 /* WalletPOToRealmWalletMapper.swift */,
+				3907A4E32A71B5BD007C6412 /* OperationsPOToOperationViewObjectsMapper.swift */,
 			);
 			path = Mappers;
 			sourceTree = "<group>";
@@ -634,6 +656,8 @@
 			children = (
 				39AA92892A3A2F8900F2FF30 /* Operation.swift */,
 				39B1C9A92A5094450065442C /* Expense.swift */,
+				3907A4DB2A71A613007C6412 /* Category.swift */,
+				3907A4DD2A71A61C007C6412 /* Wallet.swift */,
 			);
 			path = RealmObjects;
 			sourceTree = "<group>";
@@ -795,6 +819,7 @@
 				39A7D6812A6DCDAB0085E861 /* Router.swift in Sources */,
 				39B1C9AA2A5094450065442C /* Expense.swift in Sources */,
 				394034522A6865B000D45D24 /* OperationCreationWalletCategoryTableViewCell.swift in Sources */,
+				3907A4E62A71B6FB007C6412 /* OperationViewObject.swift in Sources */,
 				39A7D67F2A6DCDA50085E861 /* ApplicationRouter.swift in Sources */,
 				39AA927E2A3A23E600F2FF30 /* RealmManager.swift in Sources */,
 				39AA92832A3A2D8000F2FF30 /* OperationsRealmDAO.swift in Sources */,
@@ -802,8 +827,10 @@
 				39A7D6B52A6EB19A0085E861 /* WalletListInitializer.swift in Sources */,
 				3940344E2A685C8C00D45D24 /* OperationCreationSaveButtonViewObject.swift in Sources */,
 				39A7D67A2A6DB6C00085E861 /* SettingsViewController.swift in Sources */,
+				3907A4E22A71B28F007C6412 /* WalletPOToRealmWalletMapper.swift in Sources */,
 				39A7D69F2A6EAEEB0085E861 /* WalletListViewController.swift in Sources */,
 				39A7D6862A6DCEAD0085E861 /* CategoryListViewController.swift in Sources */,
+				3907A4EA2A75950C007C6412 /* OperatioinCreationFinishHandler.swift in Sources */,
 				39AA92802A3A240600F2FF30 /* RealmManagerProtocol.swift in Sources */,
 				395A7AB42A3E11D4000A9BE2 /* OperationCreationInteractor.swift in Sources */,
 				39A7D68E2A6E97E90085E861 /* CategoryListIOProtocols.swift in Sources */,
@@ -812,6 +839,7 @@
 				395A7ABA2A3E11F6000A9BE2 /* OperationCreationInitializer.swift in Sources */,
 				39A7D67C2A6DB9830085E861 /* TabBarViewController.swift in Sources */,
 				394034442A65B61600D45D24 /* SaveButtonTableViewCell.swift in Sources */,
+				3907A4E02A71B22A007C6412 /* CategoryPOToRealmCategoryMapper.swift in Sources */,
 				391FA0DB2A2148610096EB59 /* OperationsInitialier.swift in Sources */,
 				395A7AB82A3E11F0000A9BE2 /* OperationCreationConfigurator.swift in Sources */,
 				39A7D6B12A6EB16F0085E861 /* WalletListInteractor.swift in Sources */,
@@ -827,9 +855,12 @@
 				39AA928D2A3A3E1500F2FF30 /* OperationsToOperationsPOMapper.swift in Sources */,
 				39AA92852A3A2D8C00F2FF30 /* OperationsDAO.swift in Sources */,
 				39A7D6A42A6EAF830085E861 /* WalletListTableViewCell.swift in Sources */,
-				3907A4DA2A7069C5007C6412 /* OperationCreationCategoryHandler.swift in Sources */,
+				3907A4DA2A7069C5007C6412 /* OperationCreationSelectionHandler.swift in Sources */,
+				3907A4E42A71B5BD007C6412 /* OperationsPOToOperationViewObjectsMapper.swift in Sources */,
+				3907A4DE2A71A61C007C6412 /* Wallet.swift in Sources */,
 				39A7D6902A6E98630085E861 /* CategoryListinteractor.swift in Sources */,
 				3907A4D42A704A03007C6412 /* TotalAmountTableViewCell.swift in Sources */,
+				3907A4E82A71B8D0007C6412 /* OperationsTableViewCell.swift in Sources */,
 				391FA0A32A2135950096EB59 /* AppDelegate.swift in Sources */,
 				395A7AB62A3E11E3000A9BE2 /* OperationCreationInteractorIOProtocols.swift in Sources */,
 				39A7D6B32A6EB17D0085E861 /* WalletListInteractorIOProtocols.swift in Sources */,
@@ -853,6 +884,7 @@
 				39A7D6992A6E9B9E0085E861 /* CategoryListViewObject.swift in Sources */,
 				3940344A2A685C3200D45D24 /* OperationCreationHeaderViewObject.swift in Sources */,
 				391FA0E12A2148A20096EB59 /* OperationsViewController.swift in Sources */,
+				3907A4DC2A71A613007C6412 /* Category.swift in Sources */,
 				391FA0E52A2149510096EB59 /* OperationsIOProtocols.swift in Sources */,
 				394034462A65B78B00D45D24 /* CategoryTableViewCell.swift in Sources */,
 				39A7D6AD2A6EB12B0085E861 /* WalletListPresenter.swift in Sources */,

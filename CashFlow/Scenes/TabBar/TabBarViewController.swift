@@ -1,6 +1,6 @@
 import UIKit
 
-class TabBarViewController: UITabBarController {
+class TabBarViewController: UITabBarController, UIAdaptivePresentationControllerDelegate {
     
     let router: ApplicationRouter = Router()
 

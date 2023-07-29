@@ -6,8 +6,9 @@ class OperationCreationPresenter {
     var interactor: OperationCreationInteractorInputProtocol
     let router: ApplicationRouter
     
-    var categoryName: String = "Без категории"
-    var walletName: String = "Наличные"
+    var selectedCategoryViewObject: OperationCreationCategoryViewObject?
+    var selectedWalletViewObject: OperationCreationWalletCategoryViewObject?
+    var totalAmount: String = ""
     
     init(view: OperationCreationInputViewProtocol, interactor: OperationCreationInteractorInputProtocol, router: ApplicationRouter) {
         self.view = view
@@ -24,8 +25,8 @@ class OperationCreationPresenter {
 
         let headerViewObject = OperationCreationHeaderViewObject()
         let totalAmountViewObject = OperationCreationTotalAmountViewObject()
-        let сategoryViewObject = OperationCreationCategoryViewObject(name: categoryName)
-        let walletViewObject = OperationCreationWalletCategoryViewObject(name: walletName)
+        let сategoryViewObject = OperationCreationCategoryViewObject(name: selectedCategoryViewObject?.name ?? "Без категории")
+        let walletViewObject = OperationCreationWalletCategoryViewObject(name: selectedWalletViewObject?.name ?? "Наличные")
         let saveButtonViewObject = OperationCreationSaveButtonViewObject()
 
         headerSectionObjects.append(headerViewObject)
@@ -42,17 +43,26 @@ class OperationCreationPresenter {
         view?.showInfo(viewObjects)
     }
     
-    fileprivate func prepareStoredViewObjects() {
-//        guard let categoryViewObject = storedViewObjects.compactMap({ $0.self as? OperationCreationCategoryViewObject }).first else {
-//            return
-//        }
-//        
-//        guard let walletViewObject = storedViewObjects.compactMap({ $0.self as? WalletListViewObject }).first else {
-//            return
-//        }
+    fileprivate func prepareSelectedViewObjects() {
         
-//        let _ = OperationPO(id: UUID().uuidString, type: .expense, category: categoryViewObject, wallet: walletViewObject, data: Data(), comment: "")
-
+        guard let selectedCategoryViewObject = selectedCategoryViewObject,
+              let selectedWalletViewObject = selectedWalletViewObject
+        else {
+            return
+        }
+        
+        
+        let categoryPO = CategoryPO(id: "selectedCategoryViewObject.id", name: selectedCategoryViewObject.name)
+        let walletPO = WalletPO(id: "selectedWalletViewObject.id", name: selectedWalletViewObject.name, sum: "12345")
+        
+        let operationPO = OperationPO(id: UUID().uuidString,
+                                      type: .expense,
+                                      category: categoryPO,
+                                      wallet: walletPO,
+                                      sum: totalAmount,
+                                      data: Data(),
+                                      comment: "")
+        interactor.performSaveOperationRequest(with: operationPO)
     }
     
 }
@@ -70,7 +80,8 @@ extension OperationCreationPresenter: OperationCreationOutputViewProtocol {
         case .walletButton:
             router.openWalletList()
         case .saveButton:
-            prepareStoredViewObjects()
+            self.totalAmount = totalAmount
+            prepareSelectedViewObjects()
         default:
             break
         }
@@ -78,9 +89,9 @@ extension OperationCreationPresenter: OperationCreationOutputViewProtocol {
     
     func configureSelected(viewObject: CashFlowTableViewCellViewObject) {
         if let categoryViewObject = viewObject as? OperationCreationCategoryViewObject {
-            categoryName = categoryViewObject.name
+            selectedCategoryViewObject = categoryViewObject
         } else if let walletViewObject = viewObject as? OperationCreationWalletCategoryViewObject {
-            walletName = walletViewObject.name
+            selectedWalletViewObject = walletViewObject
         }
         
         fillViewObjectsToShow()
@@ -89,4 +100,10 @@ extension OperationCreationPresenter: OperationCreationOutputViewProtocol {
 
 extension OperationCreationPresenter: OperationCreationInteractorOutputProtocol {
     
+    func operationCreationFinished() {
+        DispatchQueue.main.async {
+            self.router.dismiss()
+            self.view?.operationCreationFinished()
+        }
+    }
 }

@@ -15,7 +15,9 @@ class OperationCreationViewController: UIViewController {
             tableView.reloadData()
         }
     }
-
+    
+    weak var operationCreationFinishHandler: OperatioinCreationFinishHandler?
+    
     @IBOutlet weak var tableView: UITableView!
     
     static func controller() -> UINavigationController {
@@ -82,6 +84,10 @@ extension OperationCreationViewController: OperationCreationInputViewProtocol {
     func showInfo(_ viewObjects: [[CashFlowTableViewCellViewObject]]) {
         self.viewObjects = viewObjects
     }
+    
+    func operationCreationFinished() {
+        operationCreationFinishHandler?.finishHandled()
+    }
 }
 
 extension OperationCreationViewController: UITextFieldDelegate {
@@ -97,7 +103,7 @@ extension OperationCreationViewController: UITextFieldDelegate {
     }
 }
 
-extension OperationCreationViewController: OperationCreationCategoryHandler {
+extension OperationCreationViewController: OperationCreationSelectionHandler {
     
     func handler(viewObject: CashFlowTableViewCellViewObject) {
         presenter?.configureSelected(viewObject: viewObject)

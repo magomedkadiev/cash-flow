@@ -5,7 +5,7 @@ class WalletListViewController: UIViewController {
     @IBOutlet weak var tableView: UITableView!
     var viewObjects = [CashFlowTableViewCellViewObject]()
     var presenter: WalletListOutputViewProtocol?
-    weak var handler: OperationCreationCategoryHandler?
+    weak var handler: OperationCreationSelectionHandler?
     
     static func controller() -> WalletListViewController {
         let storyboard = UIStoryboard(name: "WalletList", bundle: nil)

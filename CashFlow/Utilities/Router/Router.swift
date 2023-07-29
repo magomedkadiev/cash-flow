@@ -44,27 +44,18 @@ class Router: ApplicationRouter {
             return
         }
         if let navigationController = applicationTabBarController.selectedViewController as? UINavigationController {
-            let operationCreationViewController = OperationCreationViewController.controller()
-            navigationController.present(operationCreationViewController, animated: true)
-        }
-    }
-    
-    func dismissCategoryListViewController(_ viewObject: CashFlowTableViewCellViewObject) {
-        
-        let keyWindow = UIApplication.shared.connectedScenes.map({ $0 as? UIWindowScene }).compactMap({ $0 })
-            .first?.windows.filter {$0.isKeyWindow}.first
-        
-        if var topController = keyWindow?.rootViewController {
-            while let presentedViewController = topController.presentedViewController {
-                topController = presentedViewController
-                if let navigationController = topController as? UINavigationController {
-                    navigationController.dismiss(animated: true)
+            if let operationsViewController = navigationController.topViewController as? OperationsViewController {
+                let operationCreationViewController = OperationCreationViewController.controller()
+                if let topViewController = operationCreationViewController.topViewController as? OperationCreationViewController {
+                    topViewController.operationCreationFinishHandler = operationsViewController
+                    operationsViewController.present(operationCreationViewController, animated: true)
                 }
             }
         }
     }
     
-    func dismissWalletListViewController(_ viewObject: CashFlowTableViewCellViewObject) {
+    func dismiss() {
+        
         let keyWindow = UIApplication.shared.connectedScenes.map({ $0 as? UIWindowScene }).compactMap({ $0 })
             .first?.windows.filter {$0.isKeyWindow}.first
         

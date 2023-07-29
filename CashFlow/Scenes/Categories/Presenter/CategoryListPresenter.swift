@@ -16,7 +16,6 @@ class CategoryListPresenter {
 extension CategoryListPresenter: CategoryListOutputViewProtocol {
     
     func viewDidLoad() {
-        // some work with db
         var viewObjects = [CashFlowTableViewCellViewObject]()
         
         let shopCategoryViewObject = OperationCreationCategoryViewObject(name: "Супермаркет")
@@ -33,7 +32,7 @@ extension CategoryListPresenter: CategoryListOutputViewProtocol {
     }
     
     func dismissViewController(with viewObject: CashFlowTableViewCellViewObject) {
-        router.dismissCategoryListViewController(viewObject)
+        router.dismiss()
     }
 }
 

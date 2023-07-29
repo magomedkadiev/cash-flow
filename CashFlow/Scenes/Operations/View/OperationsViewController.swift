@@ -38,6 +38,7 @@ extension OperationsViewController: OperationsInputViewProtocol {
     
     func showInfo(_ viewObjects: [[CashFlowTableViewCellViewObject]]) {
         self.viewObjects = viewObjects
+        self.tableView.reloadData()
     }
 }
 
@@ -75,5 +76,12 @@ extension OperationsViewController: UITableViewDataSource {
             return UITableViewCell()
         }
         
+    }
+}
+
+extension OperationsViewController: OperatioinCreationFinishHandler {
+    
+    func finishHandled() {
+        presenter?.fetchAllOperations()
     }
 }

@@ -17,9 +17,15 @@ class OperationsRealmDAO: OperationsDAO {
     }
     
     func creationOperation(_ operation: OperationPO, complitionHandler: @escaping () -> Void?) {
+        let categoryMapper = CategoryPOToRealmCategoryMapper()
+        let walletMapper = WalletPOToRealmWalletMapper()
         realmManager.write { realm in
-//            let storedProreties = Operation(id: operation.id, name: operation.comment, sum: operation.sum)
-//            realm.add(storedProreties)
+            let storedProreties = Operation(id: operation.id,
+                                            type: operation.type,
+                                            category: categoryMapper.map(operation.category),
+                                            wallet: walletMapper.map(operation.wallet),
+                                            totalAmount: operation.sum)
+            realm.add(storedProreties)
         } onSuccess: {
             complitionHandler()
         } onFailure: {

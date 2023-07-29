@@ -1,13 +1,25 @@
 import Foundation
 
 class OperationsToOperationsPOMapper: OperationsToOperationsPOMapperProtocol {
+    
     func map(_ operations: [Operation]) -> [OperationPO] {
-        let plainObjects = [OperationPO]()
-//        for operation in operations {
-//            print(operation.expenses)
-//            let object = OperationPO(id: operation.id, type: "", category: "", wallet: "", data: Data(), comment: "", sum: "", expenses: [])
-//            plainObjects.append(object)
-//        }
+        var plainObjects = [OperationPO]()
+        
+        for operation in operations {
+            let categoryPO = CategoryPO(id: operation.category?.id ?? "" ,
+                                        name: operation.category?.name ?? "")
+            let walletPO = WalletPO(id: operation.wallet?.id ?? "",
+                                    name: operation.wallet?.name ?? "",
+                                    sum: operation.wallet?.sum ?? "")
+            
+            let object = OperationPO(id: operation.id,
+                                     type: operation.type,
+                                     category: categoryPO,
+                                     wallet: walletPO,
+                                     sum: operation.totalAmount,
+                                     data: Data(), comment: "")
+            plainObjects.append(object)
+        }
         return plainObjects
     }
 }

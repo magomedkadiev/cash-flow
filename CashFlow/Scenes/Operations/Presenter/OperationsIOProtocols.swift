@@ -6,5 +6,5 @@ protocol OperationsInputViewProtocol: AnyObject {
 
 protocol OperationsOutputViewProtocol {
     func viewDidLoad()
-    func createNewExpenseButtonTappedWith(expenseName: String)
+    func fetchAllOperations()
 }

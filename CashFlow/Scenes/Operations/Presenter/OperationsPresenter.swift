@@ -4,25 +4,33 @@ class OperationsPresenter {
     
     weak var view: OperationsInputViewProtocol?
     var interactor: OperationsInteractorInputProtocol
+    let mapper: OperationsPOToOperationViewObjectsMapperProtocol
     
-    init(view: OperationsInputViewProtocol, interactor: OperationsInteractorInputProtocol) {
+    init(view: OperationsInputViewProtocol, interactor: OperationsInteractorInputProtocol, mapper: OperationsPOToOperationViewObjectsMapperProtocol) {
         self.view = view
         self.interactor = interactor
+        self.mapper = mapper
     }
     
-    private func fillViewObjectsToShow() {
+    private func fillViewObjectsToShow(operations: [CashFlowTableViewCellViewObject]? = nil) {
         
         var viewObjects = [[CashFlowTableViewCellViewObject]]()
-        
         var operationsWalletsSectionObjecs = [CashFlowTableViewCellViewObject]()
-        
+        var operationsSectionObjecs = [CashFlowTableViewCellViewObject]()
+
+        // Wallet List
         let operationsWalletsViewObject = OperationsWalletsViewObject()
+        operationsWalletsSectionObjecs.append(operationsWalletsViewObject)
+        operationsWalletsSectionObjecs.append(operationsWalletsViewObject)
+        operationsWalletsSectionObjecs.append(operationsWalletsViewObject)
         
-        operationsWalletsSectionObjecs.append(operationsWalletsViewObject)
-        operationsWalletsSectionObjecs.append(operationsWalletsViewObject)
-        operationsWalletsSectionObjecs.append(operationsWalletsViewObject)
+        // Operation List
+        if let operations = operations {
+            operationsSectionObjecs.append(contentsOf: operations)
+        }
         
         viewObjects.append(operationsWalletsSectionObjecs)
+        viewObjects.append(operationsSectionObjecs)
         view?.showInfo(viewObjects)
     }
 
@@ -32,23 +40,18 @@ extension OperationsPresenter: OperationsOutputViewProtocol {
     
     func viewDidLoad() {
         fillViewObjectsToShow()
-//        interactor.fetchAllOperations()
-//        interactor.fetchAllExpenses()
+        interactor.fetchAllOperations()
     }
     
-    func createNewExpenseButtonTappedWith(expenseName: String) {
-        let expense = ExpensePO(id: UUID().uuidString, name: expenseName, totalValue: 0) // default value in start
-        interactor.createNew(expense)
+    func fetchAllOperations() {
+        interactor.fetchAllOperations()
     }
 }
 
 extension OperationsPresenter: OperationsInteractorOutputProtocol {
     
-//    func reloadDataWith(_ operations: [OperationPO]) {
-//        view?.refreshTableView(operations: operations)
-//    }
-//
-//    func reloadDataWith(_ expenses: [ExpensePO]) {
-//        view?.refreshTableView(expenses: expenses)
-//    }
+    func reloadDataWith(_ operations: [OperationPO]) {
+        let mappedOperations = mapper.map(operations)
+        fillViewObjectsToShow(operations: mappedOperations)
+    }
 }

@@ -5,16 +5,29 @@ class Operation: Object {
     
     @objc dynamic var id: String = ""
     
-    @objc dynamic var name: String = ""
+    @objc dynamic var typeRaw: String = ""
     
-    @objc dynamic var sum: String = ""
+    var type: OperationType {
+        get {
+            return OperationType(rawValue: typeRaw) ?? OperationType.expense
+        }
+        set {
+            typeRaw = newValue.rawValue
+        }
+    }
     
-    var expenses = List<Expense>()
+    @objc dynamic var category: Category?
     
-    convenience init(id: String, name: String, sum: String) {
+    @objc dynamic var wallet: Wallet?
+    
+    @objc dynamic var totalAmount: String = ""
+            
+    convenience init(id: String, type: OperationType, category: Category, wallet: Wallet, totalAmount: String) {
         self.init()
         self.id = id
-        self.name = name
-        self.sum = sum
+        self.type = type
+        self.category = category
+        self.wallet = wallet
+        self.totalAmount = totalAmount
     }
 }

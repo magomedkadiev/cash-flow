@@ -33,7 +33,7 @@ extension WalletListPresenter: WalletListOutputViewProtocol {
     }
     
     func dismissViewController(with viewObject: CashFlowTableViewCellViewObject) {
-        router.dismissWalletListViewController(viewObject)
+        router.dismiss()
     }
 }
 
