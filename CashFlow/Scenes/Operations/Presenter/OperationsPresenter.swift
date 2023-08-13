@@ -5,11 +5,13 @@ class OperationsPresenter {
     weak var view: OperationsInputViewProtocol?
     var interactor: OperationsInteractorInputProtocol
     let mapper: OperationsPOToOperationViewObjectsMapperProtocol
+    let router: ApplicationRouter
     
-    init(view: OperationsInputViewProtocol, interactor: OperationsInteractorInputProtocol, mapper: OperationsPOToOperationViewObjectsMapperProtocol) {
+    init(view: OperationsInputViewProtocol, interactor: OperationsInteractorInputProtocol, mapper: OperationsPOToOperationViewObjectsMapperProtocol, router: ApplicationRouter) {
         self.view = view
         self.interactor = interactor
         self.mapper = mapper
+        self.router = router
     }
     
     private func fillViewObjectsToShow(operations: [CashFlowTableViewCellViewObject]? = nil) {
@@ -53,5 +55,9 @@ extension OperationsPresenter: OperationsInteractorOutputProtocol {
     func reloadDataWith(_ operations: [OperationPO]) {
         let mappedOperations = mapper.map(operations)
         fillViewObjectsToShow(operations: mappedOperations)
+    }
+    
+    func eventBeginFerfeshing() {
+        router.openOperationCreationScreen()
     }
 }

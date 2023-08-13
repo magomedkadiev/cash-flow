@@ -7,4 +7,5 @@ protocol OperationsInputViewProtocol: AnyObject {
 protocol OperationsOutputViewProtocol {
     func viewDidLoad()
     func fetchAllOperations()
+    func eventBeginFerfeshing()
 }

@@ -16,7 +16,7 @@ class OperationCreationViewController: UIViewController {
         }
     }
     
-    weak var operationCreationFinishHandler: OperatioinCreationFinishHandler?
+    weak var operationCreationFinishHandler: OperationCreationFinishHandler?
     
     @IBOutlet weak var tableView: UITableView!
     

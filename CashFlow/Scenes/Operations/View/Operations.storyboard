@@ -103,7 +103,6 @@
                     <simulatedTabBarMetrics key="simulatedBottomBarMetrics"/>
                     <connections>
                         <outlet property="tableView" destination="MJI-QB-ls9" id="0Ev-4d-nZg"/>
-                        <segue destination="2X2-lb-zcp" kind="presentation" identifier="OperationCreationViewController" id="6M9-v1-xiq"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Ief-a0-LHa" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
@@ -114,16 +113,6 @@
                 </customObject>
             </objects>
             <point key="canvasLocation" x="2046.564885496183" y="3.5211267605633805"/>
-        </scene>
-        <!--OperationCreation-->
-        <scene sceneID="tFd-7l-pr7">
-            <objects>
-                <viewControllerPlaceholder storyboardName="OperationCreation" id="2X2-lb-zcp" sceneMemberID="viewController">
-                    <navigationItem key="navigationItem" id="MtA-pP-yg1"/>
-                </viewControllerPlaceholder>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="UU4-uZ-z79" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
-            </objects>
-            <point key="canvasLocation" x="2691.6030534351144" y="3.5211267605633805"/>
         </scene>
         <!--Операции-->
         <scene sceneID="g9S-DW-UHm">

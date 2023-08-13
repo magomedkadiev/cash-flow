@@ -21,16 +21,11 @@ class OperationsViewController: UIViewController {
     }
     
     @objc private func refreshingHasStarted(sender: UIRefreshControl) {
-        self.performSegue(withIdentifier: "OperationCreationViewController", sender: nil)
-        DispatchQueue.main.asyncAfter(deadline: .now() + 1, execute: {
+        presenter?.eventBeginFerfeshing()
+        // TODO: make it without delay
+        DispatchQueue.main.asyncAfter(deadline: .now() + 0.5, execute: {
             self.refreshControl.endRefreshing()
         })
-    }
-    
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        if segue.identifier == "OperationCreationViewController" {
-           let _ = segue.destination as? OperationCreationViewController
-        }
     }
 }
 
@@ -79,7 +74,7 @@ extension OperationsViewController: UITableViewDataSource {
     }
 }
 
-extension OperationsViewController: OperatioinCreationFinishHandler {
+extension OperationsViewController: OperationCreationFinishHandler {
     
     func finishHandled() {
         presenter?.fetchAllOperations()

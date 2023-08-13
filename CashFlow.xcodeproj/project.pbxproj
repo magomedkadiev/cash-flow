@@ -19,7 +19,7 @@
 		3907A4E42A71B5BD007C6412 /* OperationsPOToOperationViewObjectsMapper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3907A4E32A71B5BD007C6412 /* OperationsPOToOperationViewObjectsMapper.swift */; };
 		3907A4E62A71B6FB007C6412 /* OperationViewObject.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3907A4E52A71B6FB007C6412 /* OperationViewObject.swift */; };
 		3907A4E82A71B8D0007C6412 /* OperationsTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3907A4E72A71B8D0007C6412 /* OperationsTableViewCell.swift */; };
-		3907A4EA2A75950C007C6412 /* OperatioinCreationFinishHandler.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3907A4E92A75950C007C6412 /* OperatioinCreationFinishHandler.swift */; };
+		3907A4EA2A75950C007C6412 /* OperationCreationFinishHandler.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3907A4E92A75950C007C6412 /* OperationCreationFinishHandler.swift */; };
 		391FA0A32A2135950096EB59 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 391FA0A22A2135950096EB59 /* AppDelegate.swift */; };
 		391FA0A52A2135950096EB59 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 391FA0A42A2135950096EB59 /* SceneDelegate.swift */; };
 		391FA0AC2A2135970096EB59 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 391FA0AB2A2135970096EB59 /* Assets.xcassets */; };
@@ -122,7 +122,7 @@
 		3907A4E32A71B5BD007C6412 /* OperationsPOToOperationViewObjectsMapper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OperationsPOToOperationViewObjectsMapper.swift; sourceTree = "<group>"; };
 		3907A4E52A71B6FB007C6412 /* OperationViewObject.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OperationViewObject.swift; sourceTree = "<group>"; };
 		3907A4E72A71B8D0007C6412 /* OperationsTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OperationsTableViewCell.swift; sourceTree = "<group>"; };
-		3907A4E92A75950C007C6412 /* OperatioinCreationFinishHandler.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OperatioinCreationFinishHandler.swift; sourceTree = "<group>"; };
+		3907A4E92A75950C007C6412 /* OperationCreationFinishHandler.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OperationCreationFinishHandler.swift; sourceTree = "<group>"; };
 		391FA09F2A2135950096EB59 /* CashFlow.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = CashFlow.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		391FA0A22A2135950096EB59 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		391FA0A42A2135950096EB59 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -457,7 +457,7 @@
 				395A7AAD2A3E0E6D000A9BE2 /* OperationCreationViewController.swift */,
 				395A7ABB2A3E11FD000A9BE2 /* OperationCreation.storyboard */,
 				3907A4D92A7069C5007C6412 /* OperationCreationSelectionHandler.swift */,
-				3907A4E92A75950C007C6412 /* OperatioinCreationFinishHandler.swift */,
+				3907A4E92A75950C007C6412 /* OperationCreationFinishHandler.swift */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -830,7 +830,7 @@
 				3907A4E22A71B28F007C6412 /* WalletPOToRealmWalletMapper.swift in Sources */,
 				39A7D69F2A6EAEEB0085E861 /* WalletListViewController.swift in Sources */,
 				39A7D6862A6DCEAD0085E861 /* CategoryListViewController.swift in Sources */,
-				3907A4EA2A75950C007C6412 /* OperatioinCreationFinishHandler.swift in Sources */,
+				3907A4EA2A75950C007C6412 /* OperationCreationFinishHandler.swift in Sources */,
 				39AA92802A3A240600F2FF30 /* RealmManagerProtocol.swift in Sources */,
 				395A7AB42A3E11D4000A9BE2 /* OperationCreationInteractor.swift in Sources */,
 				39A7D68E2A6E97E90085E861 /* CategoryListIOProtocols.swift in Sources */,
