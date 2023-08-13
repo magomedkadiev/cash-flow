@@ -1,7 +1,7 @@
 import Foundation
 
 struct OperationViewObject: CashFlowTableViewCellViewObject {
-    var cellHeight: CGFloat = 50
+    var cellHeight: CGFloat = 55
     
     var reuseIdentifier: String = "OperationsTableViewCell"
     
