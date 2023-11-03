@@ -18,7 +18,7 @@
                         <viewLayoutGuide key="safeArea" id="vDu-zF-Fre"/>
                         <color key="backgroundColor" systemColor="systemGrayColor"/>
                     </view>
-                    <tabBarItem key="tabBarItem" tag="2" title="Настройки" image="gear" catalog="system" id="k67-5V-5JR"/>
+                    <tabBarItem key="tabBarItem" tag="4" title="Настройки" image="gear" catalog="system" id="k67-5V-5JR"/>
                     <navigationItem key="navigationItem" id="ZZ4-Kj-71A"/>
                     <simulatedTabBarMetrics key="simulatedBottomBarMetrics"/>
                 </viewController>

@@ -48,6 +48,8 @@
 		3940345A2A688D6600D45D24 /* OperationsWalletsTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 394034592A688D6600D45D24 /* OperationsWalletsTableViewCell.swift */; };
 		3940345D2A6C347E00D45D24 /* TabBar.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 3940345C2A6C347E00D45D24 /* TabBar.storyboard */; };
 		394034602A6C34DA00D45D24 /* Settings.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 3940345F2A6C34DA00D45D24 /* Settings.storyboard */; };
+		3957CDCE2AF567A500834215 /* AnalyticsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3957CDCD2AF567A500834215 /* AnalyticsViewController.swift */; };
+		3957CDD02AF567AB00834215 /* Analytics.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 3957CDCF2AF567AB00834215 /* Analytics.storyboard */; };
 		395A7AAE2A3E0E6D000A9BE2 /* OperationCreationViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 395A7AAD2A3E0E6D000A9BE2 /* OperationCreationViewController.swift */; };
 		395A7AB02A3E0E9D000A9BE2 /* OperationCreationPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 395A7AAF2A3E0E9D000A9BE2 /* OperationCreationPresenter.swift */; };
 		395A7AB22A3E11C7000A9BE2 /* OperationCreationIOProtocols.swift in Sources */ = {isa = PBXBuildFile; fileRef = 395A7AB12A3E11C7000A9BE2 /* OperationCreationIOProtocols.swift */; };
@@ -156,6 +158,8 @@
 		394034592A688D6600D45D24 /* OperationsWalletsTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OperationsWalletsTableViewCell.swift; sourceTree = "<group>"; };
 		3940345C2A6C347E00D45D24 /* TabBar.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = TabBar.storyboard; sourceTree = "<group>"; };
 		3940345F2A6C34DA00D45D24 /* Settings.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Settings.storyboard; sourceTree = "<group>"; };
+		3957CDCD2AF567A500834215 /* AnalyticsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AnalyticsViewController.swift; sourceTree = "<group>"; };
+		3957CDCF2AF567AB00834215 /* Analytics.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Analytics.storyboard; sourceTree = "<group>"; };
 		395A7AAD2A3E0E6D000A9BE2 /* OperationCreationViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OperationCreationViewController.swift; sourceTree = "<group>"; };
 		395A7AAF2A3E0E9D000A9BE2 /* OperationCreationPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OperationCreationPresenter.swift; sourceTree = "<group>"; };
 		395A7AB12A3E11C7000A9BE2 /* OperationCreationIOProtocols.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OperationCreationIOProtocols.swift; sourceTree = "<group>"; };
@@ -291,6 +295,7 @@
 		391FA0D22A2147AA0096EB59 /* Scenes */ = {
 			isa = PBXGroup;
 			children = (
+				3957CDCC2AF5671F00834215 /* Analytics */,
 				39A7D69D2A6EAEC50085E861 /* Wallets */,
 				39A7D6822A6DCE820085E861 /* Categories */,
 				3940345E2A6C34CB00D45D24 /* Settings */,
@@ -409,6 +414,15 @@
 				39A7D6792A6DB6C00085E861 /* SettingsViewController.swift */,
 			);
 			path = Settings;
+			sourceTree = "<group>";
+		};
+		3957CDCC2AF5671F00834215 /* Analytics */ = {
+			isa = PBXGroup;
+			children = (
+				3957CDCD2AF567A500834215 /* AnalyticsViewController.swift */,
+				3957CDCF2AF567AB00834215 /* Analytics.storyboard */,
+			);
+			path = Analytics;
 			sourceTree = "<group>";
 		};
 		395A7AA82A3E0E1C000A9BE2 /* OperationCreation */ = {
@@ -785,6 +799,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				39A7D6842A6DCE940085E861 /* CategoryList.storyboard in Resources */,
+				3957CDD02AF567AB00834215 /* Analytics.storyboard in Resources */,
 				39A7D6A12A6EAF1C0085E861 /* WalletList.storyboard in Resources */,
 				39A7D6782A6DB6570085E861 /* Operations.storyboard in Resources */,
 				3940345D2A6C347E00D45D24 /* TabBar.storyboard in Resources */,
@@ -832,6 +847,7 @@
 				39A7D6862A6DCEAD0085E861 /* CategoryListViewController.swift in Sources */,
 				3907A4EA2A75950C007C6412 /* OperationCreationFinishHandler.swift in Sources */,
 				39AA92802A3A240600F2FF30 /* RealmManagerProtocol.swift in Sources */,
+				3957CDCE2AF567A500834215 /* AnalyticsViewController.swift in Sources */,
 				395A7AB42A3E11D4000A9BE2 /* OperationCreationInteractor.swift in Sources */,
 				39A7D68E2A6E97E90085E861 /* CategoryListIOProtocols.swift in Sources */,
 				395A7AB02A3E0E9D000A9BE2 /* OperationCreationPresenter.swift in Sources */,

@@ -34,7 +34,6 @@
                                                     <segments>
                                                         <segment title="Расход"/>
                                                         <segment title="Доход"/>
-                                                        <segment title="Перевод"/>
                                                     </segments>
                                                     <color key="tintColor" systemColor="tintColor"/>
                                                     <color key="selectedSegmentTintColor" red="0.22745099660000001" green="0.50196081400000003" blue="0.74901962280000001" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
