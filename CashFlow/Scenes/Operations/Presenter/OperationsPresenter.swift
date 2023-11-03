@@ -15,27 +15,45 @@ class OperationsPresenter {
     }
     
     private func fillViewObjectsToShow(operations: [CashFlowTableViewCellViewObject]? = nil) {
+        var viewObjectsByDateDictionary = [Date: [OperationViewObject]]()
+        guard let operations = operations as? [OperationViewObject] else { return }
         
-        var viewObjects = [[CashFlowTableViewCellViewObject]]()
-        var operationsWalletsSectionObjecs = [CashFlowTableViewCellViewObject]()
-        var operationsSectionObjecs = [CashFlowTableViewCellViewObject]()
+//        let operation = OperationViewObject(categoryName: "2", walletName: "1", totalAmount: "2", date: "2023-10-29".toDate())
+//        let operation2 = OperationViewObject(categoryName: "2", walletName: "1", totalAmount: "2", date: "2023-10-29".toDate())
+//        let operation3 = OperationViewObject(categoryName: "2", walletName: "1", totalAmount: "2", date: "2023-10-29".toDate())
+//        let operation4 = OperationViewObject(categoryName: "2", walletName: "1", totalAmount: "2", date: "2023-10-25".toDate())
+//        let operation5 = OperationViewObject(categoryName: "2", walletName: "1", totalAmount: "2", date: "2023-10-25".toDate())
+//
+//        operations.append(contentsOf: [operation, operation2, operation3, operation4, operation5])
+        
+        for operation in operations {
+            let operationDate = operation.date
+            var headerDate: Date?
+            
+            // Сравниваю даты ключей с текущей
+            let keys = viewObjectsByDateDictionary.keys.map { date in
+                if date.hasSame(.day, as: operationDate) {
+                    headerDate = date
+                    return true
+                }
+                headerDate = operationDate
+                return false
+            }
 
-        // Wallet List
-        let operationsWalletsViewObject = OperationsWalletsViewObject()
-        operationsWalletsSectionObjecs.append(operationsWalletsViewObject)
-        operationsWalletsSectionObjecs.append(operationsWalletsViewObject)
-        operationsWalletsSectionObjecs.append(operationsWalletsViewObject)
-        
-        // Operation List
-        if let operations = operations {
-            operationsSectionObjecs.append(contentsOf: operations)
+            // Если нет такой даты, то создаю новый хедер
+            if !keys.contains(true) {
+                viewObjectsByDateDictionary[operationDate] = []
+            }
+            
+            var operationsArray = viewObjectsByDateDictionary[headerDate ?? Date()]
+            operationsArray?.append(operation)
+            operationsArray?.sort(by: {$0.date > $1.date })
+            viewObjectsByDateDictionary[headerDate ?? Date()] = operationsArray
         }
         
-        viewObjects.append(operationsWalletsSectionObjecs)
-        viewObjects.append(operationsSectionObjecs)
-        view?.showInfo(viewObjects)
+        let sortedViewObjects = viewObjectsByDateDictionary.sorted(by: {$0.key > $1.key})
+        view?.showInfo(sortedViewObjects)
     }
-
 }
 
 extension OperationsPresenter: OperationsOutputViewProtocol {

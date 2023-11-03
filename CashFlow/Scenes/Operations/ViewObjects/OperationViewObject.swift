@@ -12,4 +12,6 @@ struct OperationViewObject: CashFlowTableViewCellViewObject {
     var walletName: String
     
     var totalAmount: String
+    
+    var date: Date = Date()
 }
