@@ -16,15 +16,15 @@ class OperationsPresenter {
     
     private func fillViewObjectsToShow(operations: [CashFlowTableViewCellViewObject]? = nil) {
         var viewObjectsByDateDictionary = [Date: [OperationViewObject]]()
-        guard let operations = operations as? [OperationViewObject] else { return }
+        guard var operations = operations as? [OperationViewObject] else { return }
         
-//        let operation = OperationViewObject(categoryName: "2", walletName: "1", totalAmount: "2", date: "2023-10-29".toDate())
-//        let operation2 = OperationViewObject(categoryName: "2", walletName: "1", totalAmount: "2", date: "2023-10-29".toDate())
-//        let operation3 = OperationViewObject(categoryName: "2", walletName: "1", totalAmount: "2", date: "2023-10-29".toDate())
-//        let operation4 = OperationViewObject(categoryName: "2", walletName: "1", totalAmount: "2", date: "2023-10-25".toDate())
-//        let operation5 = OperationViewObject(categoryName: "2", walletName: "1", totalAmount: "2", date: "2023-10-25".toDate())
-//
-//        operations.append(contentsOf: [operation, operation2, operation3, operation4, operation5])
+        let operation = OperationViewObject(categoryName: "2", walletName: "1", totalAmount: "2", date: "2023-10-29".toDate())
+        let operation2 = OperationViewObject(categoryName: "2", walletName: "1", totalAmount: "2", date: "2023-10-29".toDate())
+        let operation3 = OperationViewObject(categoryName: "2", walletName: "1", totalAmount: "2", date: "2023-10-29".toDate())
+        let operation4 = OperationViewObject(categoryName: "2", walletName: "1", totalAmount: "2", date: "2023-10-25".toDate())
+        let operation5 = OperationViewObject(categoryName: "2", walletName: "1", totalAmount: "2", date: "2023-10-25".toDate())
+
+        operations.append(contentsOf: [operation, operation2, operation3, operation4, operation5])
         
         for operation in operations {
             let operationDate = operation.date
