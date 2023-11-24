@@ -21,13 +21,16 @@ class Operation: Object {
     @objc dynamic var wallet: Wallet?
     
     @objc dynamic var totalAmount: String = ""
+    
+    @objc dynamic var date: Date?
             
-    convenience init(id: String, type: OperationType, category: Category, wallet: Wallet, totalAmount: String) {
+    convenience init(id: String, type: OperationType, category: Category, wallet: Wallet, totalAmount: String, date: Date) {
         self.init()
         self.id = id
         self.type = type
         self.category = category
         self.wallet = wallet
         self.totalAmount = totalAmount
+        self.date = date
     }
 }

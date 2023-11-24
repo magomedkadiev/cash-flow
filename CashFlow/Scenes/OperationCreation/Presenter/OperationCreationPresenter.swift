@@ -60,7 +60,7 @@ class OperationCreationPresenter {
                                       category: categoryPO,
                                       wallet: walletPO,
                                       sum: totalAmount,
-                                      data: Data(),
+                                      date: Date(),
                                       comment: "")
         interactor.performSaveOperationRequest(with: operationPO)
     }
@@ -107,3 +107,4 @@ extension OperationCreationPresenter: OperationCreationInteractorOutputProtocol 
         }
     }
 }
+

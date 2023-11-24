@@ -1,7 +1,7 @@
 import Foundation
 
 protocol OperationsInputViewProtocol: AnyObject {
-    func showInfo(_ viewObjects: [Dictionary<Date, [OperationViewObject]>.Element])
+    func showInfo(_ operationSectionObjects: [OperationSectionObject])
 }
 
 protocol OperationsOutputViewProtocol {

@@ -94,6 +94,7 @@
 		39AA928D2A3A3E1500F2FF30 /* OperationsToOperationsPOMapper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 39AA928C2A3A3E1500F2FF30 /* OperationsToOperationsPOMapper.swift */; };
 		39B1C9AA2A5094450065442C /* Expense.swift in Sources */ = {isa = PBXBuildFile; fileRef = 39B1C9A92A5094450065442C /* Expense.swift */; };
 		39B1C9AC2A5094FA0065442C /* ExpensePO.swift in Sources */ = {isa = PBXBuildFile; fileRef = 39B1C9AB2A5094FA0065442C /* ExpensePO.swift */; };
+		39EC46EA2B10C8E400C2BA0D /* Date + Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 39EC46E92B10C8E400C2BA0D /* Date + Extension.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -203,6 +204,7 @@
 		39AA928C2A3A3E1500F2FF30 /* OperationsToOperationsPOMapper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OperationsToOperationsPOMapper.swift; sourceTree = "<group>"; };
 		39B1C9A92A5094450065442C /* Expense.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Expense.swift; sourceTree = "<group>"; };
 		39B1C9AB2A5094FA0065442C /* ExpensePO.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExpensePO.swift; sourceTree = "<group>"; };
+		39EC46E92B10C8E400C2BA0D /* Date + Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Date + Extension.swift"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -657,6 +659,7 @@
 		39AD17302A3A16B9002E9668 /* Utilities */ = {
 			isa = PBXGroup;
 			children = (
+				39EC46E82B10C8D400C2BA0D /* Extensions */,
 				39A7D67D2A6DCD8A0085E861 /* Router */,
 				39AA928B2A3A3DEA00F2FF30 /* Mappers */,
 				39AA92812A3A2D6F00F2FF30 /* DAO */,
@@ -685,6 +688,14 @@
 				39A7D6BA2A6EBF6B0085E861 /* WalletPO.swift */,
 			);
 			path = PlainObjects;
+			sourceTree = "<group>";
+		};
+		39EC46E82B10C8D400C2BA0D /* Extensions */ = {
+			isa = PBXGroup;
+			children = (
+				39EC46E92B10C8E400C2BA0D /* Date + Extension.swift */,
+			);
+			path = Extensions;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -874,6 +885,7 @@
 				3907A4DA2A7069C5007C6412 /* OperationCreationSelectionHandler.swift in Sources */,
 				3907A4E42A71B5BD007C6412 /* OperationsPOToOperationViewObjectsMapper.swift in Sources */,
 				3907A4DE2A71A61C007C6412 /* Wallet.swift in Sources */,
+				39EC46EA2B10C8E400C2BA0D /* Date + Extension.swift in Sources */,
 				39A7D6902A6E98630085E861 /* CategoryListinteractor.swift in Sources */,
 				3907A4D42A704A03007C6412 /* TotalAmountTableViewCell.swift in Sources */,
 				3907A4E82A71B8D0007C6412 /* OperationsTableViewCell.swift in Sources */,

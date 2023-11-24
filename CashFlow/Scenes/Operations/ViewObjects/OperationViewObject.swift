@@ -15,3 +15,9 @@ struct OperationViewObject: CashFlowTableViewCellViewObject {
     
     var date: Date = Date()
 }
+
+extension OperationViewObject: Comparable {
+    static func < (lhs: OperationViewObject, rhs: OperationViewObject) -> Bool {
+        lhs.date < rhs.date
+    }
+}

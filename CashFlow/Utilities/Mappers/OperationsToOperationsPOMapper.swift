@@ -17,7 +17,7 @@ class OperationsToOperationsPOMapper: OperationsToOperationsPOMapperProtocol {
                                      category: categoryPO,
                                      wallet: walletPO,
                                      sum: operation.totalAmount,
-                                     data: Data(), comment: "")
+                                     date: operation.date ?? Date(), comment: "")
             plainObjects.append(object)
         }
         return plainObjects

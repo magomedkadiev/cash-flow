@@ -6,7 +6,7 @@ struct OperationPO {
     var category: CategoryPO
     var wallet: WalletPO
     var sum: String
-    var data: Data
+    var date: Date
     var comment: String
 }
 

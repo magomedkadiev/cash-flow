@@ -24,7 +24,8 @@ class OperationsRealmDAO: OperationsDAO {
                                             type: operation.type,
                                             category: categoryMapper.map(operation.category),
                                             wallet: walletMapper.map(operation.wallet),
-                                            totalAmount: operation.sum)
+                                            totalAmount: operation.sum,
+                                            date: operation.date)
             realm.add(storedProreties)
         } onSuccess: {
             complitionHandler()
