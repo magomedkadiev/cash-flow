@@ -9,6 +9,10 @@ class OperationCreationPresenter {
     var selectedCategoryViewObject: OperationCreationCategoryViewObject?
     var totalAmount: String = ""
     
+    private var selectedCategoryName: String {
+        return selectedCategoryViewObject?.name ?? "(Без категории)"
+    }
+    
     init(view: OperationCreationInputViewProtocol, interactor: OperationCreationInteractorInputProtocol, router: ApplicationRouter) {
         self.view = view
         self.interactor = interactor
@@ -24,7 +28,7 @@ class OperationCreationPresenter {
 
         let headerViewObject = OperationCreationHeaderViewObject()
         let totalAmountViewObject = OperationCreationTotalAmountViewObject()
-        let сategoryViewObject = OperationCreationCategoryViewObject(name: selectedCategoryViewObject?.name ?? "Без категории")
+        let сategoryViewObject = OperationCreationCategoryViewObject(name: selectedCategoryName)
         let saveButtonViewObject = OperationCreationSaveButtonViewObject()
 
         headerSectionObjects.append(headerViewObject)
@@ -42,12 +46,7 @@ class OperationCreationPresenter {
     
     fileprivate func prepareSelectedViewObjects() {
         
-        guard let selectedCategoryViewObject = selectedCategoryViewObject else {
-            return
-        }
-        
-        
-        let categoryPO = CategoryPO(id: "selectedCategoryViewObject.id", name: selectedCategoryViewObject.name)
+        let categoryPO = CategoryPO(id: "selectedCategoryViewObject.id", name: selectedCategoryName)
         
         let operationPO = OperationPO(id: UUID().uuidString,
                                       type: .expense,
