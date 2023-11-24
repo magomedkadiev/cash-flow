@@ -8,9 +8,7 @@ struct OperationViewObject: CashFlowTableViewCellViewObject {
     var selectedRowType: CashFlowTableViewCellTypeProtocol = ._default
     
     var categoryName: String
-    
-    var walletName: String
-    
+        
     var totalAmount: String
     
     var date: Date = Date()

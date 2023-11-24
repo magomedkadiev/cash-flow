@@ -2,7 +2,6 @@ import UIKit
 
 class OperationsTableViewCell: UITableViewCell, CashFlowTableViewCellProtocol {
 
-    @IBOutlet weak var walletNameTextLabel: UILabel!
     @IBOutlet weak var sumLabelText: UILabel!
     @IBOutlet weak var categoryNameLabelText: UILabel!
     
@@ -14,6 +13,5 @@ class OperationsTableViewCell: UITableViewCell, CashFlowTableViewCellProtocol {
         
         categoryNameLabelText.text = viewObject.categoryName
         sumLabelText.text = "- \(viewObject.totalAmount) ₽"
-        walletNameTextLabel.text = viewObject.walletName
     }
 }

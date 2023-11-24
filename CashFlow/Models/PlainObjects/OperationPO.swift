@@ -4,7 +4,6 @@ struct OperationPO {
     var id: String
     var type: OperationType
     var category: CategoryPO
-    var wallet: WalletPO
     var sum: String
     var date: Date
     var comment: String

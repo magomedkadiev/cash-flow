@@ -7,9 +7,7 @@ class OperationCreationViewController: UIViewController {
     private var totalAmount: String = ""
     
     var categoryViewObject: OperationCreationCategoryViewObject?
-    
-    var walletViewObject: OperationCreationWalletCategoryViewObject?
-    
+        
     var viewObjects: [[CashFlowTableViewCellViewObject]] = [] {
         didSet {
             tableView.reloadData()

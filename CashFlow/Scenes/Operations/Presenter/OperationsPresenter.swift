@@ -20,7 +20,7 @@ class OperationsPresenter {
     }
     
     private func fillViewObjectsToShow(operations: [CashFlowTableViewCellViewObject]? = nil) {
-        guard var operations = operations as? [OperationViewObject] else { return }
+        guard let operations = operations as? [OperationViewObject] else { return }
         var operationSectionObject = [OperationSectionObject]()
 
         let viewObjectsByDateGrouping = Dictionary(grouping: operations.sorted(by: { ($0.date) > ($1.date) }),

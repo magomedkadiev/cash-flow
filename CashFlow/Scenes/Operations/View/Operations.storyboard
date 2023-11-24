@@ -73,30 +73,21 @@
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Mbt-p3-cYX">
-                                                    <rect key="frame" x="60" y="8" width="107" height="39.333333333333336"/>
+                                                    <rect key="frame" x="60" y="7.3333333333333321" width="107" height="40.333333333333343"/>
                                                     <subviews>
                                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Еда вне дома" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Wdq-LH-Maq">
-                                                            <rect key="frame" x="0.0" y="0.0" width="107" height="20.333333333333332"/>
+                                                            <rect key="frame" x="0.0" y="9.9999999999999982" width="107" height="20.333333333333329"/>
                                                             <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                                             <nil key="textColor"/>
-                                                            <nil key="highlightedColor"/>
-                                                        </label>
-                                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalCompressionResistancePriority="749" text="Наличка" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Wz9-Qx-UBw">
-                                                            <rect key="frame" x="0.0" y="22.333333333333332" width="107" height="16.999999999999996"/>
-                                                            <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                                            <color key="textColor" red="0.38431372549999998" green="0.38431372549999998" blue="0.38431372549999998" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                             <nil key="highlightedColor"/>
                                                         </label>
                                                     </subviews>
                                                     <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                     <constraints>
-                                                        <constraint firstAttribute="bottom" secondItem="Wz9-Qx-UBw" secondAttribute="bottom" id="55f-nV-1al"/>
-                                                        <constraint firstAttribute="trailing" secondItem="Wz9-Qx-UBw" secondAttribute="trailing" id="5va-Xr-JXg"/>
-                                                        <constraint firstItem="Wz9-Qx-UBw" firstAttribute="top" secondItem="Wdq-LH-Maq" secondAttribute="bottom" constant="2" id="LNF-qP-HYa"/>
-                                                        <constraint firstItem="Wz9-Qx-UBw" firstAttribute="leading" secondItem="Mbt-p3-cYX" secondAttribute="leading" id="Q8v-xf-bOF"/>
-                                                        <constraint firstItem="Wdq-LH-Maq" firstAttribute="leading" secondItem="Mbt-p3-cYX" secondAttribute="leading" id="nkf-xU-LEd"/>
-                                                        <constraint firstAttribute="trailing" secondItem="Wdq-LH-Maq" secondAttribute="trailing" id="z7i-Jq-xst"/>
-                                                        <constraint firstItem="Wdq-LH-Maq" firstAttribute="top" secondItem="Mbt-p3-cYX" secondAttribute="top" id="z8f-c3-7zZ"/>
+                                                        <constraint firstItem="Wdq-LH-Maq" firstAttribute="leading" secondItem="Mbt-p3-cYX" secondAttribute="leading" id="3cY-i0-WaY"/>
+                                                        <constraint firstItem="Wdq-LH-Maq" firstAttribute="top" secondItem="Mbt-p3-cYX" secondAttribute="top" constant="10" id="LCa-CF-8ed"/>
+                                                        <constraint firstAttribute="trailing" secondItem="Wdq-LH-Maq" secondAttribute="trailing" id="bo0-Z8-ncz"/>
+                                                        <constraint firstAttribute="bottom" secondItem="Wdq-LH-Maq" secondAttribute="bottom" constant="10" id="cUj-jk-h8T"/>
                                                     </constraints>
                                                 </view>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="- 500 р" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="bHb-Lh-Ykg">
@@ -128,7 +119,6 @@
                                         <connections>
                                             <outlet property="categoryNameLabelText" destination="Wdq-LH-Maq" id="8Q8-dI-niz"/>
                                             <outlet property="sumLabelText" destination="bHb-Lh-Ykg" id="PkL-fS-ysz"/>
-                                            <outlet property="walletNameTextLabel" destination="Wz9-Qx-UBw" id="5KM-Az-I8v"/>
                                         </connections>
                                     </tableViewCell>
                                 </prototypes>

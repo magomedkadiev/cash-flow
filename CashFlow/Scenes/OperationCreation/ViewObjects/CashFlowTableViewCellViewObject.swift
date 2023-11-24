@@ -13,6 +13,5 @@ protocol CashFlowTableViewCellProtocol {
 enum CashFlowTableViewCellTypeProtocol {
     case saveButton
     case categoryButton
-    case walletButton
     case _default
 }
