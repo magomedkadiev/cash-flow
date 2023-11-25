@@ -12,5 +12,4 @@ struct OperationPO {
 enum OperationType: String {
     case expense
     case income
-    case transition
 }

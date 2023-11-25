@@ -7,7 +7,6 @@ class OperationCreationPresenter {
     let router: ApplicationRouter
     
     var selectedCategoryViewObject: OperationCreationCategoryViewObject?
-    var totalAmount: String = ""
     
     private var selectedCategoryName: String {
         return selectedCategoryViewObject?.name ?? "(Без категории)"
@@ -44,14 +43,15 @@ class OperationCreationPresenter {
         view?.showInfo(viewObjects)
     }
     
-    fileprivate func prepareSelectedViewObjects() {
+    
+    fileprivate func prepareOperationWith(type: OperationType, and sum: String) {
         
         let categoryPO = CategoryPO(id: "selectedCategoryViewObject.id", name: selectedCategoryName)
         
         let operationPO = OperationPO(id: UUID().uuidString,
-                                      type: .expense,
+                                      type: type,
                                       category: categoryPO,
-                                      sum: totalAmount,
+                                      sum: sum,
                                       date: Date(),
                                       comment: "")
         interactor.performSaveOperationRequest(with: operationPO)
@@ -64,14 +64,13 @@ extension OperationCreationPresenter: OperationCreationOutputViewProtocol {
         fillViewObjectsToShow()
     }
     
-    func eventItemSelected(_ viewObject: CashFlowTableViewCellViewObject, totalAmount: String) {
+    func eventItemSelected(_ viewObject: CashFlowTableViewCellViewObject, sum: String, type: OperationType) {
         
         switch viewObject.selectedRowType {
         case .categoryButton:
             router.openCategoryList()
         case .saveButton:
-            self.totalAmount = totalAmount
-            prepareSelectedViewObjects()
+            prepareOperationWith(type: type, and: sum)
         default:
             break
         }

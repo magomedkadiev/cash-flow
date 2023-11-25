@@ -4,7 +4,7 @@ class OperationCreationViewController: UIViewController {
     
     var presenter: OperationCreationOutputViewProtocol?
     
-    private var totalAmount: String = ""
+    private var sum: String = ""
     
     var categoryViewObject: OperationCreationCategoryViewObject?
         
@@ -33,7 +33,7 @@ class OperationCreationViewController: UIViewController {
         
         for cell in visibleCells {
             if let cell = cell as? TotalAmountTableViewCell {
-                cell.displayLabelText.text = totalAmount + " ₽"
+                cell.displayLabelText.text = sum + " ₽"
             }
         }
     }
@@ -73,7 +73,9 @@ extension OperationCreationViewController: UITableViewDelegate {
         tableView.deselectRow(at: indexPath, animated: true)
         
         let selectedViewObject = viewObjects[indexPath.section][indexPath.row]
-        presenter?.eventItemSelected(selectedViewObject, totalAmount: totalAmount)
+        let segmentedIndex = tableView.visibleCells.map { $0 as? HeaderTableViewCell }.first??.segmentedControl.selectedSegmentIndex ?? 0
+        let type: OperationType = segmentedIndex == 0 ? .expense : .income
+        presenter?.eventItemSelected(selectedViewObject, sum: sum, type: type)
     }
 }
 
@@ -94,8 +96,8 @@ extension OperationCreationViewController: UITextFieldDelegate {
         let text = (textField.text as NSString?)?.replacingCharacters(in: range, with: string) ?? ""
         let shouldChangeCharacters = text.count <= 7
         if shouldChangeCharacters {
-            totalAmount = text
-            updateDisplayTextLabelWhenTotalAmountChanged(with: totalAmount)
+            sum = text
+            updateDisplayTextLabelWhenTotalAmountChanged(with: sum)
         }
         return shouldChangeCharacters
     }
