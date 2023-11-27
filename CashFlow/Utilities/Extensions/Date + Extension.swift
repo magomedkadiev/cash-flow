@@ -8,4 +8,8 @@ extension Date {
         formatter.dateFormat = format
         return formatter.string(from: self)
     }
+    
+    func month(using calendar: Calendar = .current) -> Int {
+        calendar.component(.month, from: self)
+    }
 }

@@ -31,7 +31,19 @@ class OperationsPresenter {
             OperationSectionObject(date: $0, operations: viewObjectsByDateGrouping[$0]!)
         }
         
-        view?.showInfo(operationSectionObject)
+        let totalExpense = calculateTotalSumInMonthBy(operations: operations, type: .expense)
+        let totalIncome = calculateTotalSumInMonthBy(operations: operations, type: .income)
+
+        view?.showInfo(operationSectionObject, totalExpense: totalExpense, totalIncome: totalIncome)
+    }
+    
+    private func calculateTotalSumInMonthBy(operations: [OperationViewObject], type: OperationType) -> Int {
+        
+        let filteredOperations = operations
+            .filter { Calendar.current.component(.month, from: $0.date) == Date().month() } // get operations in current month
+            .filter { $0.type == type }
+        
+        return filteredOperations.map { Int($0.totalAmount) ?? 0 }.reduce(0, +)
     }
 }
 

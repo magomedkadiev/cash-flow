@@ -2,6 +2,9 @@ import UIKit
 
 class OperationsViewController: UIViewController {
 
+    @IBOutlet weak var monthlyExpenseTextLabel: UILabel!
+    @IBOutlet weak var monthlyIncomeTextLabel: UILabel!
+    
     var presenter: OperationsOutputViewProtocol?
     
     private let refreshControl = UIRefreshControl()
@@ -33,8 +36,11 @@ class OperationsViewController: UIViewController {
 
 extension OperationsViewController: OperationsInputViewProtocol {
     
-    func showInfo(_ operationSectionObjects: [OperationSectionObject]) {
+    func showInfo(_ operationSectionObjects: [OperationSectionObject], totalExpense: Int, totalIncome: Int) {
         self.operationSectionObjects = operationSectionObjects
+        self.monthlyExpenseTextLabel.text = "\(totalExpense) ₽"
+        self.monthlyIncomeTextLabel.text = "\(totalIncome) ₽"
+
         self.tableView.reloadData()
     }
 }
