@@ -65,7 +65,7 @@ extension OperationsViewController: UITableViewDataSource {
     
     func tableView(_ tableView: UITableView, titleForHeaderInSection section: Int) -> String? {
         let sectionObject = operationSectionObjects[section]
-        return sectionObject.date.toString() + "   (\(sectionObject.sumPerDay))₽"
+        return sectionObject.date.toString() + "   (\(sectionObject.balancePerDay))₽"
     }
     
     func numberOfSections(in tableView: UITableView) -> Int {

@@ -14,7 +14,7 @@ class OperationsTableViewCell: UITableViewCell, CashFlowTableViewCellProtocol {
         categoryNameLabelText.text = viewObject.categoryName
         
         let typeRaw = viewObject.type == .expense ? "- " : "+ "
-        let sumText = typeRaw + viewObject.totalAmount + " ₽"
+        let sumText = typeRaw + "\(viewObject.totalAmount)" + " ₽"
         sumLabelText.text = sumText
     }
 }

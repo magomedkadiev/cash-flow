@@ -4,7 +4,7 @@ struct OperationPO {
     var id: String
     var type: OperationType
     var category: CategoryPO
-    var sum: String
+    var sum: Int
     var date: Date
     var comment: String
 }

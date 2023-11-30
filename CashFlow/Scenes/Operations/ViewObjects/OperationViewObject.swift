@@ -9,7 +9,7 @@ struct OperationViewObject: CashFlowTableViewCellViewObject {
     
     var categoryName: String
         
-    var totalAmount: String
+    var totalAmount: Int
     
     var date: Date = Date()
     

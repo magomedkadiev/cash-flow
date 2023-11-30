@@ -44,7 +44,7 @@ class OperationCreationPresenter {
     }
     
     
-    fileprivate func prepareOperationWith(type: OperationType, and sum: String) {
+    fileprivate func prepareOperationWith(type: OperationType, and sum: Int) {
         
         let categoryPO = CategoryPO(id: "selectedCategoryViewObject.id", name: selectedCategoryName)
         
@@ -64,7 +64,7 @@ extension OperationCreationPresenter: OperationCreationOutputViewProtocol {
         fillViewObjectsToShow()
     }
     
-    func eventItemSelected(_ viewObject: CashFlowTableViewCellViewObject, sum: String, type: OperationType) {
+    func eventItemSelected(_ viewObject: CashFlowTableViewCellViewObject, sum: Int, type: OperationType) {
         
         switch viewObject.selectedRowType {
         case .categoryButton:

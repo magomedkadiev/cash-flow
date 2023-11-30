@@ -4,7 +4,7 @@ class OperationCreationViewController: UIViewController {
     
     var presenter: OperationCreationOutputViewProtocol?
     
-    private var sum: String = ""
+    private var sum: Int = 0
     
     var categoryViewObject: OperationCreationCategoryViewObject?
         
@@ -28,12 +28,12 @@ class OperationCreationViewController: UIViewController {
         presenter?.viewDidLoad()
     }
     
-    fileprivate func updateDisplayTextLabelWhenTotalAmountChanged(with text: String) {
+    fileprivate func updateDisplayTextLabelWhenTotalAmountChanged() {
         let visibleCells = tableView.visibleCells
         
         for cell in visibleCells {
             if let cell = cell as? TotalAmountTableViewCell {
-                cell.displayLabelText.text = sum + " ₽"
+                cell.displayLabelText.text = "\(sum) ₽"
             }
         }
     }
@@ -96,8 +96,8 @@ extension OperationCreationViewController: UITextFieldDelegate {
         let text = (textField.text as NSString?)?.replacingCharacters(in: range, with: string) ?? ""
         let shouldChangeCharacters = text.count <= 7
         if shouldChangeCharacters {
-            sum = text
-            updateDisplayTextLabelWhenTotalAmountChanged(with: sum)
+            sum = Int(text) ?? 0
+            updateDisplayTextLabelWhenTotalAmountChanged()
         }
         return shouldChangeCharacters
     }
