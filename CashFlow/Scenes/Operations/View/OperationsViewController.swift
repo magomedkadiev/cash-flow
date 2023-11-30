@@ -38,8 +38,8 @@ extension OperationsViewController: OperationsInputViewProtocol {
     
     func showInfo(_ operationSectionObjects: [OperationSectionObject], totalExpense: Int, totalIncome: Int) {
         self.operationSectionObjects = operationSectionObjects
-        self.monthlyExpenseTextLabel.text = "\(totalExpense) ₽"
-        self.monthlyIncomeTextLabel.text = "\(totalIncome) ₽"
+        self.monthlyExpenseTextLabel.text = totalExpense.toMoneyStyle()
+        self.monthlyIncomeTextLabel.text = totalIncome.toMoneyStyle()
 
         self.tableView.reloadData()
     }
@@ -65,7 +65,7 @@ extension OperationsViewController: UITableViewDataSource {
     
     func tableView(_ tableView: UITableView, titleForHeaderInSection section: Int) -> String? {
         let sectionObject = operationSectionObjects[section]
-        return sectionObject.date.toString() + "   (\(sectionObject.balancePerDay))₽"
+        return sectionObject.date.toString() + "      " + sectionObject.balancePerDay.toMoneyStyle()
     }
     
     func numberOfSections(in tableView: UITableView) -> Int {

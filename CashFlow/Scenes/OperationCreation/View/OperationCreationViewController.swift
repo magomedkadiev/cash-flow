@@ -33,7 +33,7 @@ class OperationCreationViewController: UIViewController {
         
         for cell in visibleCells {
             if let cell = cell as? TotalAmountTableViewCell {
-                cell.displayLabelText.text = "\(sum) ₽"
+                cell.displayLabelText.text = sum.toMoneyStyle()
             }
         }
     }

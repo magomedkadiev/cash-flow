@@ -78,6 +78,7 @@
 		39B1C9AA2A5094450065442C /* Expense.swift in Sources */ = {isa = PBXBuildFile; fileRef = 39B1C9A92A5094450065442C /* Expense.swift */; };
 		39B1C9AC2A5094FA0065442C /* ExpensePO.swift in Sources */ = {isa = PBXBuildFile; fileRef = 39B1C9AB2A5094FA0065442C /* ExpensePO.swift */; };
 		39EC46EA2B10C8E400C2BA0D /* Date + Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 39EC46E92B10C8E400C2BA0D /* Date + Extension.swift */; };
+		39EC46EE2B191E2A00C2BA0D /* Int + Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 39EC46ED2B191E2A00C2BA0D /* Int + Extension.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -171,6 +172,7 @@
 		39B1C9A92A5094450065442C /* Expense.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Expense.swift; sourceTree = "<group>"; };
 		39B1C9AB2A5094FA0065442C /* ExpensePO.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExpensePO.swift; sourceTree = "<group>"; };
 		39EC46E92B10C8E400C2BA0D /* Date + Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Date + Extension.swift"; sourceTree = "<group>"; };
+		39EC46ED2B191E2A00C2BA0D /* Int + Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Int + Extension.swift"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -587,6 +589,7 @@
 			isa = PBXGroup;
 			children = (
 				39EC46E92B10C8E400C2BA0D /* Date + Extension.swift */,
+				39EC46ED2B191E2A00C2BA0D /* Int + Extension.swift */,
 			);
 			path = Extensions;
 			sourceTree = "<group>";
@@ -765,6 +768,7 @@
 				391FA0DF2A2148790096EB59 /* OperationsPresenter.swift in Sources */,
 				39AA928D2A3A3E1500F2FF30 /* OperationsToOperationsPOMapper.swift in Sources */,
 				39AA92852A3A2D8C00F2FF30 /* OperationsDAO.swift in Sources */,
+				39EC46EE2B191E2A00C2BA0D /* Int + Extension.swift in Sources */,
 				3907A4DA2A7069C5007C6412 /* OperationCreationSelectionHandler.swift in Sources */,
 				3907A4E42A71B5BD007C6412 /* OperationsPOToOperationViewObjectsMapper.swift in Sources */,
 				39EC46EA2B10C8E400C2BA0D /* Date + Extension.swift in Sources */,
