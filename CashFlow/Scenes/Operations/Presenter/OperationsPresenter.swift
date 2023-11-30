@@ -3,6 +3,7 @@ import Foundation
 struct OperationSectionObject {
     let date: Date
     let operations: [OperationViewObject]
+    let sumPerDay: Int
 }
 
 class OperationsPresenter {
@@ -28,7 +29,10 @@ class OperationsPresenter {
         
         let sortedKeysByDates = viewObjectsByDateGrouping.keys.sorted(by: >)
         operationSectionObject = sortedKeysByDates.map {
-            OperationSectionObject(date: $0, operations: viewObjectsByDateGrouping[$0]!)
+            OperationSectionObject(date: $0,
+                                   operations: viewObjectsByDateGrouping[$0]!,
+                                   sumPerDay: viewObjectsByDateGrouping[$0]!.map { Int($0.totalAmount) ?? 0 }.reduce(0, +)
+            )
         }
         
         let totalExpense = calculateTotalSumInMonthBy(operations: operations, type: .expense)
