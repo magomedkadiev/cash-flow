@@ -11,6 +11,7 @@ class OperationCreationPresenter {
     private var selectedCategoryName: String {
         return selectedCategoryViewObject?.name ?? "(Без категории)"
     }
+    private var selectedCategoryDate: Date = .now
     
     init(view: OperationCreationInputViewProtocol, interactor: OperationCreationInteractorInputProtocol, router: ApplicationRouter) {
         self.view = view
@@ -28,11 +29,13 @@ class OperationCreationPresenter {
         let headerViewObject = OperationCreationHeaderViewObject()
         let totalAmountViewObject = OperationCreationTotalAmountViewObject()
         let сategoryViewObject = OperationCreationCategoryViewObject(name: selectedCategoryName)
+        let dateViewObject = OperationCreationDateViewObject(date: selectedCategoryDate)
         let saveButtonViewObject = OperationCreationSaveButtonViewObject()
 
         headerSectionObjects.append(headerViewObject)
         totalAmountSectionObjects.append(totalAmountViewObject)
         categorySectionObjects.append(сategoryViewObject)
+        categorySectionObjects.append(dateViewObject)
         saveButtonSectionObjects.append(saveButtonViewObject)
         
         viewObjects.append(headerSectionObjects)
@@ -52,7 +55,7 @@ class OperationCreationPresenter {
                                       type: type,
                                       category: categoryPO,
                                       sum: sum,
-                                      date: Date(),
+                                      date: selectedCategoryDate,
                                       comment: "")
         interactor.performSaveOperationRequest(with: operationPO)
     }
@@ -81,6 +84,10 @@ extension OperationCreationPresenter: OperationCreationOutputViewProtocol {
             selectedCategoryViewObject = categoryViewObject
         }
         fillViewObjectsToShow()
+    }
+    
+    func datePickerValueChanged(date: Date) {
+        selectedCategoryDate = date
     }
 }
 

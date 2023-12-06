@@ -54,6 +54,11 @@ extension OperationCreationViewController: UITableViewDataSource {
         let viewObject = viewObjects[indexPath.section][indexPath.row]
 
         if let cell = tableView.dequeueReusableCell(withIdentifier: viewObject.reuseIdentifier) as? CashFlowTableViewCellProtocol {
+            
+            if let dateTableCell = cell as? DateTableViewCell {
+                dateTableCell.handler = self
+            }
+            
             cell.setup(with: viewObject, indexPath: indexPath)
             return cell as? UITableViewCell ?? UITableViewCell()
         } else {
@@ -107,5 +112,12 @@ extension OperationCreationViewController: OperationCreationSelectionHandler {
     
     func handler(viewObject: CashFlowTableViewCellViewObject) {
         presenter?.configureSelected(viewObject: viewObject)
+    }
+}
+
+extension OperationCreationViewController: OperationCreationDatePickerChangedHandler {
+    
+    func valueChanged(date: Date) {
+        presenter?.datePickerValueChanged(date: date)
     }
 }
