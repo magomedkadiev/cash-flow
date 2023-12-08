@@ -6,5 +6,5 @@ struct OperationCreationSaveButtonViewObject: CashFlowTableViewCellViewObject {
         return 50
     }
     var reuseIdentifier: String = "saveButtonTableViewCell"
-    var selectedRowType: CashFlowTableViewCellTypeProtocol = .saveButton
+    var cellType: CashFlowTableViewCellTypeProtocol = .saveButton
 }

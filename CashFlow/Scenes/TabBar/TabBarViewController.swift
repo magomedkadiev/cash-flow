@@ -15,7 +15,7 @@ extension TabBarViewController: UITabBarControllerDelegate {
     
     func tabBarController(_ tabBarController: UITabBarController, shouldSelect viewController: UIViewController) -> Bool {
         if viewController.tabBarItem.tag == TabControllersConst.add {
-            router.openOperationCreationScreen()
+            router.openOperationCreationScreen(nil)
             return false
         }
         return true

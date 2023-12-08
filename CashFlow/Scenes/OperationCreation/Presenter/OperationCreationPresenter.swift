@@ -6,17 +6,16 @@ class OperationCreationPresenter {
     var interactor: OperationCreationInteractorInputProtocol
     let router: ApplicationRouter
     
-    var selectedCategoryViewObject: OperationCreationCategoryViewObject?
+    private var operationViewObject: CashFlowTableViewCellViewObject?
+    var templateViewObject: OperationCreationTemplateViewObject
+    var templateViewObjectMapper: OperationCreationTemplateViewObjectToOperationViewObjetMapper
     
-    private var selectedCategoryName: String {
-        return selectedCategoryViewObject?.name ?? "(Без категории)"
-    }
-    private var selectedCategoryDate: Date = .now
-    
-    init(view: OperationCreationInputViewProtocol, interactor: OperationCreationInteractorInputProtocol, router: ApplicationRouter) {
+    init(view: OperationCreationInputViewProtocol, interactor: OperationCreationInteractorInputProtocol, router: ApplicationRouter, templateViewObject: OperationCreationTemplateViewObject, templateViewObjectMapper: OperationCreationTemplateViewObjectToOperationViewObjetMapper) {
         self.view = view
         self.interactor = interactor
         self.router = router
+        self.templateViewObject = templateViewObject
+        self.templateViewObjectMapper = templateViewObjectMapper
     }
     
     private func fillViewObjectsToShow() {
@@ -25,13 +24,13 @@ class OperationCreationPresenter {
         var totalAmountSectionObjects = [CashFlowTableViewCellViewObject]()
         var categorySectionObjects = [CashFlowTableViewCellViewObject]()
         var saveButtonSectionObjects = [CashFlowTableViewCellViewObject]()
-
-        let headerViewObject = OperationCreationHeaderViewObject()
-        let totalAmountViewObject = OperationCreationTotalAmountViewObject()
-        let сategoryViewObject = OperationCreationCategoryViewObject(name: selectedCategoryName)
-        let dateViewObject = OperationCreationDateViewObject(date: selectedCategoryDate)
+        
+        let headerViewObject = OperationCreationHeaderViewObject(type: templateViewObject.type)
+        let totalAmountViewObject = OperationCreationTotalAmountViewObject(totalAmount: templateViewObject.totalAmount)
+        let сategoryViewObject = OperationCreationCategoryViewObject(name: templateViewObject.categoryName)
+        let dateViewObject = OperationCreationDateViewObject(date: templateViewObject.date)
         let saveButtonViewObject = OperationCreationSaveButtonViewObject()
-
+        
         headerSectionObjects.append(headerViewObject)
         totalAmountSectionObjects.append(totalAmountViewObject)
         categorySectionObjects.append(сategoryViewObject)
@@ -42,20 +41,20 @@ class OperationCreationPresenter {
         viewObjects.append(totalAmountSectionObjects)
         viewObjects.append(categorySectionObjects)
         viewObjects.append(saveButtonSectionObjects)
-
+        
         view?.showInfo(viewObjects)
     }
     
-    
-    fileprivate func prepareOperationWith(type: OperationType, and sum: Int) {
+    fileprivate func creationNewOperationWith() {
         
-        let categoryPO = CategoryPO(id: "selectedCategoryViewObject.id", name: selectedCategoryName)
+        let categoryPO = CategoryPO(id: "selectedCategoryViewObject.id",
+                                    name: templateViewObject.categoryName)
         
-        let operationPO = OperationPO(id: UUID().uuidString,
-                                      type: type,
+        let operationPO = OperationPO(id: templateViewObject.id,
+                                      type: templateViewObject.type,
                                       category: categoryPO,
-                                      sum: sum,
-                                      date: selectedCategoryDate,
+                                      sum: templateViewObject.totalAmount,
+                                      date: templateViewObject.date,
                                       comment: "")
         interactor.performSaveOperationRequest(with: operationPO)
     }
@@ -63,17 +62,20 @@ class OperationCreationPresenter {
 }
 extension OperationCreationPresenter: OperationCreationOutputViewProtocol {
     
-    func viewDidLoad() {
+    func viewDidLoad(_ viewObject: CashFlowTableViewCellViewObject?) {
+        self.operationViewObject = viewObject
+        if let operationViewObject = operationViewObject as? OperationViewObject {
+            templateViewObject = templateViewObjectMapper.map(operationViewObject)
+        }
         fillViewObjectsToShow()
     }
     
-    func eventItemSelected(_ viewObject: CashFlowTableViewCellViewObject, sum: Int, type: OperationType) {
-        
-        switch viewObject.selectedRowType {
+    func didSelectRowAt(_ type: CashFlowTableViewCellTypeProtocol) {
+        switch type {
         case .categoryButton:
             router.openCategoryList()
         case .saveButton:
-            prepareOperationWith(type: type, and: sum)
+            creationNewOperationWith()
         default:
             break
         }
@@ -81,13 +83,22 @@ extension OperationCreationPresenter: OperationCreationOutputViewProtocol {
     
     func configureSelected(viewObject: CashFlowTableViewCellViewObject) {
         if let categoryViewObject = viewObject as? OperationCreationCategoryViewObject {
-            selectedCategoryViewObject = categoryViewObject
+            templateViewObject.categoryName = categoryViewObject.name
+            fillViewObjectsToShow()
         }
-        fillViewObjectsToShow()
     }
     
     func datePickerValueChanged(date: Date) {
-        selectedCategoryDate = date
+        templateViewObject.date = date
+    }
+    
+    func totalAmountValueChanged(totalAmount: Int) {
+        templateViewObject.totalAmount = totalAmount
+    }
+    
+    func segmentedControlValueChanged(_ segmentedIndex: Int) {
+        let type: OperationType = segmentedIndex == 0 ? .expense : .income
+        templateViewObject.type = type
     }
 }
 

@@ -30,4 +30,8 @@ class Operation: Object {
         self.totalAmount = totalAmount
         self.date = date
     }
+    
+    override static func primaryKey() -> String? {
+        return "id"
+    }
 }

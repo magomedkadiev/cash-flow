@@ -67,6 +67,10 @@ extension OperationsPresenter: OperationsOutputViewProtocol {
     func fetchAllOperations() {
         interactor.fetchAllOperations()
     }
+    
+    func didSelectItemEvent(_ viewObject: CashFlowTableViewCellViewObject) {
+        router.openOperationCreationScreen(viewObject)
+    }
 }
 
 extension OperationsPresenter: OperationsInteractorOutputProtocol {
@@ -77,6 +81,6 @@ extension OperationsPresenter: OperationsInteractorOutputProtocol {
     }
     
     func eventBeginFerfeshing() {
-        router.openOperationCreationScreen()
+        router.openOperationCreationScreen(nil)
     }
 }

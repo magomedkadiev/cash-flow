@@ -6,8 +6,8 @@ struct OperationCreationTotalAmountViewObject: CashFlowTableViewCellViewObject {
     
     var reuseIdentifier: String = "TotalAmountTableViewCell"
     
-    var selectedRowType: CashFlowTableViewCellTypeProtocol = ._default
+    var cellType: CashFlowTableViewCellTypeProtocol = ._default
     
-    var defaultTextValue = "0 ₽" 
+    var totalAmount: Int
 
 }

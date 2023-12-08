@@ -49,6 +49,8 @@ extension OperationsViewController: UITableViewDelegate {
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         tableView.deselectRow(at: indexPath, animated: true)
+        let operationViewObject = operationSectionObjects[indexPath.section].operations[indexPath.row]
+        presenter?.didSelectItemEvent(operationViewObject)
     }
     
     func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {

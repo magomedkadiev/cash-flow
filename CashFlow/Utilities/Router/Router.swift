@@ -21,7 +21,7 @@ class Router: ApplicationRouter {
         }
     }
     
-    func openOperationCreationScreen() {
+    func openOperationCreationScreen(_ viewObject: CashFlowTableViewCellViewObject?) {
         guard let applicationTabBarController = Router.getTabBarViewController() else {
             return
         }
@@ -30,6 +30,7 @@ class Router: ApplicationRouter {
                 let operationCreationViewController = OperationCreationViewController.controller()
                 if let topViewController = operationCreationViewController.topViewController as? OperationCreationViewController {
                     topViewController.operationCreationFinishHandler = operationsViewController
+                    topViewController.operationViewObject = viewObject
                     operationsViewController.present(operationCreationViewController, animated: true)
                 }
             }

@@ -8,4 +8,5 @@ protocol OperationsOutputViewProtocol {
     func viewDidLoad()
     func fetchAllOperations()
     func eventBeginFerfeshing()
+    func didSelectItemEvent(_ operation: CashFlowTableViewCellViewObject)
 }

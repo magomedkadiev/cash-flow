@@ -11,7 +11,7 @@
 		3907A4D22A70486D007C6412 /* RealmSwift in Frameworks */ = {isa = PBXBuildFile; productRef = 3907A4D12A70486D007C6412 /* RealmSwift */; };
 		3907A4D42A704A03007C6412 /* TotalAmountTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3907A4D32A704A03007C6412 /* TotalAmountTableViewCell.swift */; };
 		3907A4D62A704B1A007C6412 /* OperationCreationTotalAmountViewObject.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3907A4D52A704B1A007C6412 /* OperationCreationTotalAmountViewObject.swift */; };
-		3907A4DA2A7069C5007C6412 /* OperationCreationSelectionHandler.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3907A4D92A7069C5007C6412 /* OperationCreationSelectionHandler.swift */; };
+		3907A4DA2A7069C5007C6412 /* CategoryListSelectionHandler.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3907A4D92A7069C5007C6412 /* CategoryListSelectionHandler.swift */; };
 		3907A4DC2A71A613007C6412 /* Category.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3907A4DB2A71A613007C6412 /* Category.swift */; };
 		3907A4E02A71B22A007C6412 /* CategoryPOToRealmCategoryMapper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3907A4DF2A71B22A007C6412 /* CategoryPOToRealmCategoryMapper.swift */; };
 		3907A4E42A71B5BD007C6412 /* OperationsPOToOperationViewObjectsMapper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3907A4E32A71B5BD007C6412 /* OperationsPOToOperationViewObjectsMapper.swift */; };
@@ -82,6 +82,9 @@
 		39EC46F02B20953200C2BA0D /* OperationCreationDateViewObject.swift in Sources */ = {isa = PBXBuildFile; fileRef = 39EC46EF2B20953200C2BA0D /* OperationCreationDateViewObject.swift */; };
 		39EC46F22B20968100C2BA0D /* DateTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 39EC46F12B20968100C2BA0D /* DateTableViewCell.swift */; };
 		39EC46F42B20EFDA00C2BA0D /* OperationCreationDatePickerChangedHandler.swift in Sources */ = {isa = PBXBuildFile; fileRef = 39EC46F32B20EFDA00C2BA0D /* OperationCreationDatePickerChangedHandler.swift */; };
+		39EC46F62B222B3000C2BA0D /* OperationCreationTemplateViewObject.swift in Sources */ = {isa = PBXBuildFile; fileRef = 39EC46F52B222B2F00C2BA0D /* OperationCreationTemplateViewObject.swift */; };
+		39EC46F82B222C9800C2BA0D /* OperationCreationTemplateViewObjectToOperationViewObjetMapper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 39EC46F72B222C9800C2BA0D /* OperationCreationTemplateViewObjectToOperationViewObjetMapper.swift */; };
+		39EC46FD2B2370A600C2BA0D /* OperationCreationSegmentedControllHandler.swift in Sources */ = {isa = PBXBuildFile; fileRef = 39EC46FC2B2370A600C2BA0D /* OperationCreationSegmentedControllHandler.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -104,7 +107,7 @@
 /* Begin PBXFileReference section */
 		3907A4D32A704A03007C6412 /* TotalAmountTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TotalAmountTableViewCell.swift; sourceTree = "<group>"; };
 		3907A4D52A704B1A007C6412 /* OperationCreationTotalAmountViewObject.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OperationCreationTotalAmountViewObject.swift; sourceTree = "<group>"; };
-		3907A4D92A7069C5007C6412 /* OperationCreationSelectionHandler.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OperationCreationSelectionHandler.swift; sourceTree = "<group>"; };
+		3907A4D92A7069C5007C6412 /* CategoryListSelectionHandler.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CategoryListSelectionHandler.swift; sourceTree = "<group>"; };
 		3907A4DB2A71A613007C6412 /* Category.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Category.swift; sourceTree = "<group>"; };
 		3907A4DF2A71B22A007C6412 /* CategoryPOToRealmCategoryMapper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CategoryPOToRealmCategoryMapper.swift; sourceTree = "<group>"; };
 		3907A4E32A71B5BD007C6412 /* OperationsPOToOperationViewObjectsMapper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OperationsPOToOperationViewObjectsMapper.swift; sourceTree = "<group>"; };
@@ -179,6 +182,9 @@
 		39EC46EF2B20953200C2BA0D /* OperationCreationDateViewObject.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OperationCreationDateViewObject.swift; sourceTree = "<group>"; };
 		39EC46F12B20968100C2BA0D /* DateTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DateTableViewCell.swift; sourceTree = "<group>"; };
 		39EC46F32B20EFDA00C2BA0D /* OperationCreationDatePickerChangedHandler.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OperationCreationDatePickerChangedHandler.swift; sourceTree = "<group>"; };
+		39EC46F52B222B2F00C2BA0D /* OperationCreationTemplateViewObject.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OperationCreationTemplateViewObject.swift; sourceTree = "<group>"; };
+		39EC46F72B222C9800C2BA0D /* OperationCreationTemplateViewObjectToOperationViewObjetMapper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OperationCreationTemplateViewObjectToOperationViewObjetMapper.swift; sourceTree = "<group>"; };
+		39EC46FC2B2370A600C2BA0D /* OperationCreationSegmentedControllHandler.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OperationCreationSegmentedControllHandler.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -339,8 +345,10 @@
 				3940344D2A685C8C00D45D24 /* OperationCreationSaveButtonViewObject.swift */,
 				3907A4D52A704B1A007C6412 /* OperationCreationTotalAmountViewObject.swift */,
 				39EC46EF2B20953200C2BA0D /* OperationCreationDateViewObject.swift */,
+				39EC46F52B222B2F00C2BA0D /* OperationCreationTemplateViewObject.swift */,
 			);
-			path = ViewObjects;
+			name = ViewObjects;
+			path = ../Scenes/OperationCreation/ViewObjects;
 			sourceTree = "<group>";
 		};
 		394034422A65B5F900D45D24 /* Cells */ = {
@@ -401,7 +409,6 @@
 		395A7AA82A3E0E1C000A9BE2 /* OperationCreation */ = {
 			isa = PBXGroup;
 			children = (
-				394034412A62C60B00D45D24 /* ViewObjects */,
 				395A7AAC2A3E0E51000A9BE2 /* View */,
 				395A7AAB2A3E0E4A000A9BE2 /* Presenter */,
 				395A7AAA2A3E0E41000A9BE2 /* Interactor */,
@@ -440,12 +447,10 @@
 		395A7AAC2A3E0E51000A9BE2 /* View */ = {
 			isa = PBXGroup;
 			children = (
+				39EC46F92B236F4100C2BA0D /* Handlers */,
 				394034422A65B5F900D45D24 /* Cells */,
 				395A7AAD2A3E0E6D000A9BE2 /* OperationCreationViewController.swift */,
 				395A7ABB2A3E11FD000A9BE2 /* OperationCreation.storyboard */,
-				3907A4D92A7069C5007C6412 /* OperationCreationSelectionHandler.swift */,
-				3907A4E92A75950C007C6412 /* OperationCreationFinishHandler.swift */,
-				39EC46F32B20EFDA00C2BA0D /* OperationCreationDatePickerChangedHandler.swift */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -473,6 +478,7 @@
 		39A7D6872A6E976B0085E861 /* View */ = {
 			isa = PBXGroup;
 			children = (
+				39EC46FA2B23703B00C2BA0D /* Handlers */,
 				39A7D69A2A6E9C000085E861 /* Cells */,
 				39A7D6972A6E9B8A0085E861 /* ViewObjects */,
 				39A7D6832A6DCE940085E861 /* CategoryList.storyboard */,
@@ -558,6 +564,7 @@
 				3940343A2A5734CB00D45D24 /* ExpensesToExpensesPOMapper.swift */,
 				3907A4DF2A71B22A007C6412 /* CategoryPOToRealmCategoryMapper.swift */,
 				3907A4E32A71B5BD007C6412 /* OperationsPOToOperationViewObjectsMapper.swift */,
+				39EC46F72B222C9800C2BA0D /* OperationCreationTemplateViewObjectToOperationViewObjetMapper.swift */,
 			);
 			path = Mappers;
 			sourceTree = "<group>";
@@ -565,6 +572,7 @@
 		39AD17302A3A16B9002E9668 /* Utilities */ = {
 			isa = PBXGroup;
 			children = (
+				394034412A62C60B00D45D24 /* ViewObjects */,
 				39EC46E82B10C8D400C2BA0D /* Extensions */,
 				39A7D67D2A6DCD8A0085E861 /* Router */,
 				39AA928B2A3A3DEA00F2FF30 /* Mappers */,
@@ -601,6 +609,24 @@
 				39EC46ED2B191E2A00C2BA0D /* Int + Extension.swift */,
 			);
 			path = Extensions;
+			sourceTree = "<group>";
+		};
+		39EC46F92B236F4100C2BA0D /* Handlers */ = {
+			isa = PBXGroup;
+			children = (
+				3907A4E92A75950C007C6412 /* OperationCreationFinishHandler.swift */,
+				39EC46F32B20EFDA00C2BA0D /* OperationCreationDatePickerChangedHandler.swift */,
+				39EC46FC2B2370A600C2BA0D /* OperationCreationSegmentedControllHandler.swift */,
+			);
+			path = Handlers;
+			sourceTree = "<group>";
+		};
+		39EC46FA2B23703B00C2BA0D /* Handlers */ = {
+			isa = PBXGroup;
+			children = (
+				3907A4D92A7069C5007C6412 /* CategoryListSelectionHandler.swift */,
+			);
+			path = Handlers;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -753,10 +779,12 @@
 				39AA927E2A3A23E600F2FF30 /* RealmManager.swift in Sources */,
 				39AA92832A3A2D8000F2FF30 /* OperationsRealmDAO.swift in Sources */,
 				39A7D6962A6E98C60085E861 /* CategoryListConfigurator.swift in Sources */,
+				39EC46FD2B2370A600C2BA0D /* OperationCreationSegmentedControllHandler.swift in Sources */,
 				3940344E2A685C8C00D45D24 /* OperationCreationSaveButtonViewObject.swift in Sources */,
 				39EC46F42B20EFDA00C2BA0D /* OperationCreationDatePickerChangedHandler.swift in Sources */,
 				39A7D67A2A6DB6C00085E861 /* SettingsViewController.swift in Sources */,
 				39A7D6862A6DCEAD0085E861 /* CategoryListViewController.swift in Sources */,
+				39EC46F62B222B3000C2BA0D /* OperationCreationTemplateViewObject.swift in Sources */,
 				3907A4EA2A75950C007C6412 /* OperationCreationFinishHandler.swift in Sources */,
 				39AA92802A3A240600F2FF30 /* RealmManagerProtocol.swift in Sources */,
 				3957CDCE2AF567A500834215 /* AnalyticsViewController.swift in Sources */,
@@ -780,13 +808,14 @@
 				39AA928D2A3A3E1500F2FF30 /* OperationsToOperationsPOMapper.swift in Sources */,
 				39AA92852A3A2D8C00F2FF30 /* OperationsDAO.swift in Sources */,
 				39EC46EE2B191E2A00C2BA0D /* Int + Extension.swift in Sources */,
-				3907A4DA2A7069C5007C6412 /* OperationCreationSelectionHandler.swift in Sources */,
+				3907A4DA2A7069C5007C6412 /* CategoryListSelectionHandler.swift in Sources */,
 				3907A4E42A71B5BD007C6412 /* OperationsPOToOperationViewObjectsMapper.swift in Sources */,
 				39EC46F02B20953200C2BA0D /* OperationCreationDateViewObject.swift in Sources */,
 				39EC46EA2B10C8E400C2BA0D /* Date + Extension.swift in Sources */,
 				39A7D6902A6E98630085E861 /* CategoryListinteractor.swift in Sources */,
 				3907A4D42A704A03007C6412 /* TotalAmountTableViewCell.swift in Sources */,
 				3907A4E82A71B8D0007C6412 /* OperationsTableViewCell.swift in Sources */,
+				39EC46F82B222C9800C2BA0D /* OperationCreationTemplateViewObjectToOperationViewObjetMapper.swift in Sources */,
 				391FA0A32A2135950096EB59 /* AppDelegate.swift in Sources */,
 				395A7AB62A3E11E3000A9BE2 /* OperationCreationInteractorIOProtocols.swift in Sources */,
 				394034502A685D1300D45D24 /* CashFlowTableViewCellViewObject.swift in Sources */,

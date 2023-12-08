@@ -1,11 +1,14 @@
 import Foundation
 
 struct OperationViewObject: CashFlowTableViewCellViewObject {
+    
+    var id: String = ""
+    
     var cellHeight: CGFloat = 55
     
     var reuseIdentifier: String = "OperationsTableViewCell"
     
-    var selectedRowType: CashFlowTableViewCellTypeProtocol = ._default
+    var cellType: CashFlowTableViewCellTypeProtocol = ._default
     
     var categoryName: String
         

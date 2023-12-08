@@ -6,7 +6,7 @@ class OperationCreationViewController: UIViewController {
     
     private var sum: Int = 0
     
-    var categoryViewObject: OperationCreationCategoryViewObject?
+    var operationViewObject: CashFlowTableViewCellViewObject?
         
     var viewObjects: [[CashFlowTableViewCellViewObject]] = [] {
         didSet {
@@ -25,7 +25,7 @@ class OperationCreationViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        presenter?.viewDidLoad()
+        presenter?.viewDidLoad(operationViewObject)
     }
     
     fileprivate func updateDisplayTextLabelWhenTotalAmountChanged() {
@@ -59,6 +59,10 @@ extension OperationCreationViewController: UITableViewDataSource {
                 dateTableCell.handler = self
             }
             
+            if let headerTableCell = cell as? HeaderTableViewCell {
+                headerTableCell.handler = self
+            }
+            
             cell.setup(with: viewObject, indexPath: indexPath)
             return cell as? UITableViewCell ?? UITableViewCell()
         } else {
@@ -77,10 +81,8 @@ extension OperationCreationViewController: UITableViewDelegate {
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         tableView.deselectRow(at: indexPath, animated: true)
         
-        let selectedViewObject = viewObjects[indexPath.section][indexPath.row]
-        let segmentedIndex = tableView.visibleCells.map { $0 as? HeaderTableViewCell }.first??.segmentedControl.selectedSegmentIndex ?? 0
-        let type: OperationType = segmentedIndex == 0 ? .expense : .income
-        presenter?.eventItemSelected(selectedViewObject, sum: sum, type: type)
+        let type = viewObjects[indexPath.section][indexPath.row].cellType
+        presenter?.didSelectRowAt(type)
     }
 }
 
@@ -102,15 +104,16 @@ extension OperationCreationViewController: UITextFieldDelegate {
         let shouldChangeCharacters = text.count <= 7
         if shouldChangeCharacters {
             sum = Int(text) ?? 0
+            presenter?.totalAmountValueChanged(totalAmount: Int(text) ?? 0)
             updateDisplayTextLabelWhenTotalAmountChanged()
         }
         return shouldChangeCharacters
     }
 }
 
-extension OperationCreationViewController: OperationCreationSelectionHandler {
+extension OperationCreationViewController: CategoryListSelectionHandler {
     
-    func handler(viewObject: CashFlowTableViewCellViewObject) {
+    func didSelect(_ viewObject: CashFlowTableViewCellViewObject) {
         presenter?.configureSelected(viewObject: viewObject)
     }
 }
@@ -119,5 +122,12 @@ extension OperationCreationViewController: OperationCreationDatePickerChangedHan
     
     func valueChanged(date: Date) {
         presenter?.datePickerValueChanged(date: date)
+    }
+}
+
+extension OperationCreationViewController: OperationCreationSegmentedControllHandler {
+    
+    func valueChanged(segmentedIndex: Int) {
+        presenter?.segmentedControlValueChanged(segmentedIndex)
     }
 }

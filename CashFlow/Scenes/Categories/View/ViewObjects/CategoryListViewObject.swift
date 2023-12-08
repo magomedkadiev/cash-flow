@@ -7,7 +7,7 @@ struct CategoryListViewObject: CashFlowTableViewCellViewObject {
     
     var reuseIdentifier: String = "categoryTableViewCell"
     
-    var selectedRowType: CashFlowTableViewCellTypeProtocol = ._default
+    var cellType: CashFlowTableViewCellTypeProtocol = ._default
     
     var name: String
     
