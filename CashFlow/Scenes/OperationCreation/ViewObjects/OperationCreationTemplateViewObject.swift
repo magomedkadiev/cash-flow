@@ -12,4 +12,6 @@ struct OperationCreationTemplateViewObject {
     
     var type: OperationType
     
+    var comment: String
+    
 }

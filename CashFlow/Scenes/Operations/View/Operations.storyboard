@@ -115,26 +115,25 @@
                                             <rect key="frame" x="0.0" y="0.0" width="390" height="55"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
-                                                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Mbt-p3-cYX">
-                                                    <rect key="frame" x="60" y="7.6666666666666679" width="107" height="40"/>
+                                                <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" translatesAutoresizingMaskIntoConstraints="NO" id="p47-E9-NED">
+                                                    <rect key="frame" x="53" y="9.6666666666666643" width="107" height="36"/>
                                                     <subviews>
                                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Еда вне дома" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Wdq-LH-Maq">
-                                                            <rect key="frame" x="0.0" y="10" width="107" height="20"/>
+                                                            <rect key="frame" x="0.0" y="0.0" width="107" height="20.333333333333332"/>
                                                             <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                                             <nil key="textColor"/>
                                                             <nil key="highlightedColor"/>
                                                         </label>
+                                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Комментарий" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="aGz-NM-3gb">
+                                                            <rect key="frame" x="0.0" y="20.333333333333336" width="107" height="15.666666666666664"/>
+                                                            <fontDescription key="fontDescription" type="system" pointSize="13"/>
+                                                            <color key="textColor" white="0.33333333329999998" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                            <nil key="highlightedColor"/>
+                                                        </label>
                                                     </subviews>
-                                                    <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                                    <constraints>
-                                                        <constraint firstItem="Wdq-LH-Maq" firstAttribute="leading" secondItem="Mbt-p3-cYX" secondAttribute="leading" id="3cY-i0-WaY"/>
-                                                        <constraint firstItem="Wdq-LH-Maq" firstAttribute="top" secondItem="Mbt-p3-cYX" secondAttribute="top" constant="10" id="LCa-CF-8ed"/>
-                                                        <constraint firstAttribute="trailing" secondItem="Wdq-LH-Maq" secondAttribute="trailing" id="bo0-Z8-ncz"/>
-                                                        <constraint firstAttribute="bottom" secondItem="Wdq-LH-Maq" secondAttribute="bottom" constant="10" id="cUj-jk-h8T"/>
-                                                    </constraints>
-                                                </view>
-                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="- 500 р" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="bHb-Lh-Ykg">
-                                                    <rect key="frame" x="312.66666666666669" y="17.666666666666668" width="57.333333333333314" height="20.000000000000004"/>
+                                                </stackView>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" horizontalCompressionResistancePriority="751" text="- 500 р" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="bHb-Lh-Ykg">
+                                                    <rect key="frame" x="312.66666666666669" y="17.333333333333336" width="57.333333333333314" height="20.333333333333336"/>
                                                     <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                                     <nil key="textColor"/>
                                                     <nil key="highlightedColor"/>
@@ -151,9 +150,9 @@
                                                 <constraint firstItem="bHb-Lh-Ykg" firstAttribute="trailing" secondItem="6Lb-Tp-D32" secondAttribute="trailingMargin" id="1q1-V3-bad"/>
                                                 <constraint firstItem="e59-F5-pUm" firstAttribute="leading" secondItem="6Lb-Tp-D32" secondAttribute="leadingMargin" id="90E-uA-JZi"/>
                                                 <constraint firstItem="bHb-Lh-Ykg" firstAttribute="centerY" secondItem="6Lb-Tp-D32" secondAttribute="centerY" id="K6D-9e-v2K"/>
-                                                <constraint firstItem="bHb-Lh-Ykg" firstAttribute="leading" relation="greaterThanOrEqual" secondItem="Mbt-p3-cYX" secondAttribute="trailing" constant="16" id="QNq-f1-4Pi"/>
-                                                <constraint firstItem="Mbt-p3-cYX" firstAttribute="leading" secondItem="e59-F5-pUm" secondAttribute="trailing" constant="15" id="ecS-iT-2x1"/>
-                                                <constraint firstItem="Mbt-p3-cYX" firstAttribute="centerY" secondItem="6Lb-Tp-D32" secondAttribute="centerY" id="q26-iO-VCh"/>
+                                                <constraint firstItem="bHb-Lh-Ykg" firstAttribute="leading" relation="greaterThanOrEqual" secondItem="p47-E9-NED" secondAttribute="trailing" constant="16" id="ach-wX-7Gg"/>
+                                                <constraint firstItem="p47-E9-NED" firstAttribute="centerY" secondItem="6Lb-Tp-D32" secondAttribute="centerY" id="s8X-Pm-M7p"/>
+                                                <constraint firstItem="p47-E9-NED" firstAttribute="leading" secondItem="e59-F5-pUm" secondAttribute="trailing" constant="8" symbolic="YES" id="vJX-E1-043"/>
                                                 <constraint firstAttribute="bottomMargin" secondItem="e59-F5-pUm" secondAttribute="bottom" constant="5" id="voY-BG-equ"/>
                                                 <constraint firstItem="e59-F5-pUm" firstAttribute="top" secondItem="6Lb-Tp-D32" secondAttribute="topMargin" constant="5" id="z5c-bU-vTs"/>
                                             </constraints>
@@ -161,6 +160,7 @@
                                         <color key="backgroundColor" red="0.95294117647058818" green="0.96078431372549022" blue="0.96470588235294119" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                         <connections>
                                             <outlet property="categoryNameLabelText" destination="Wdq-LH-Maq" id="8Q8-dI-niz"/>
+                                            <outlet property="commentLabelText" destination="aGz-NM-3gb" id="gmw-uS-mew"/>
                                             <outlet property="sumLabelText" destination="bHb-Lh-Ykg" id="PkL-fS-ysz"/>
                                         </connections>
                                     </tableViewCell>

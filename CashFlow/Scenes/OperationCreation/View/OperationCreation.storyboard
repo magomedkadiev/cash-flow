@@ -146,7 +146,7 @@
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <stackView opaque="NO" contentMode="scaleToFill" distribution="equalSpacing" alignment="center" spacing="16" translatesAutoresizingMaskIntoConstraints="NO" id="c8c-8e-X5b">
-                                                    <rect key="frame" x="20" y="0.0" width="317" height="50"/>
+                                                    <rect key="frame" x="20" y="0.0" width="325" height="50"/>
                                                     <subviews>
                                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Дата" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Sxq-oa-Iiy">
                                                             <rect key="frame" x="0.0" y="14.999999999999998" width="82.666666666666671" height="20.333333333333329"/>
@@ -158,7 +158,7 @@
                                                             <nil key="highlightedColor"/>
                                                         </label>
                                                         <datePicker contentMode="scaleToFill" contentHorizontalAlignment="trailing" contentVerticalAlignment="center" datePickerMode="dateAndTime" minuteInterval="1" translatesAutoresizingMaskIntoConstraints="NO" id="AZn-f5-exo">
-                                                            <rect key="frame" x="99" y="0.0" width="218" height="50"/>
+                                                            <rect key="frame" x="99" y="0.0" width="226" height="50"/>
                                                             <locale key="locale" localeIdentifier="ru_RU"/>
                                                             <connections>
                                                                 <action selector="datePickerDidChanged:" destination="Van-AU-opS" eventType="editingDidEnd" id="hGr-jY-xbg"/>
@@ -173,7 +173,7 @@
                                             <constraints>
                                                 <constraint firstItem="c8c-8e-X5b" firstAttribute="top" secondItem="opu-Fr-rDL" secondAttribute="top" id="Atp-j5-bEI"/>
                                                 <constraint firstItem="c8c-8e-X5b" firstAttribute="leading" secondItem="opu-Fr-rDL" secondAttribute="leading" constant="20" id="MMC-zS-qyU"/>
-                                                <constraint firstAttribute="trailing" secondItem="c8c-8e-X5b" secondAttribute="trailing" constant="16" id="oIE-rW-NWa"/>
+                                                <constraint firstAttribute="trailing" secondItem="c8c-8e-X5b" secondAttribute="trailing" constant="8" id="oIE-rW-NWa"/>
                                                 <constraint firstAttribute="bottom" secondItem="c8c-8e-X5b" secondAttribute="bottom" id="pUG-qi-3kR"/>
                                             </constraints>
                                         </tableViewCellContentView>
@@ -182,8 +182,37 @@
                                             <outlet property="datePicker" destination="AZn-f5-exo" id="sGp-Lz-AmA"/>
                                         </connections>
                                     </tableViewCell>
-                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="saveButtonTableViewCell" rowHeight="50" id="cpq-fC-bi3" customClass="SaveButtonTableViewCell" customModule="CashFlow" customModuleProvider="target">
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="commentTableViewCell" rowHeight="50" id="gbd-1s-ZaS" customClass="CommentTableViewCell" customModule="CashFlow" customModuleProvider="target">
                                         <rect key="frame" x="20" y="278.33333206176758" width="353" height="50"/>
+                                        <autoresizingMask key="autoresizingMask"/>
+                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="gbd-1s-ZaS" id="1Ol-aX-PJV">
+                                            <rect key="frame" x="0.0" y="0.0" width="353" height="50"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                            <subviews>
+                                                <textField opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="248" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="Комментарий" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="hya-wj-52N">
+                                                    <rect key="frame" x="20" y="8" width="317" height="34"/>
+                                                    <color key="textColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                    <textInputTraits key="textInputTraits"/>
+                                                    <connections>
+                                                        <outlet property="delegate" destination="gbd-1s-ZaS" id="BoJ-52-f0h"/>
+                                                    </connections>
+                                                </textField>
+                                            </subviews>
+                                            <constraints>
+                                                <constraint firstAttribute="bottom" secondItem="hya-wj-52N" secondAttribute="bottom" constant="8" id="H3w-Eu-i9V"/>
+                                                <constraint firstItem="hya-wj-52N" firstAttribute="top" secondItem="1Ol-aX-PJV" secondAttribute="top" constant="8" id="X3O-zJ-Udh"/>
+                                                <constraint firstAttribute="trailing" secondItem="hya-wj-52N" secondAttribute="trailing" constant="16" id="vAY-aw-GFc"/>
+                                                <constraint firstItem="hya-wj-52N" firstAttribute="leading" secondItem="1Ol-aX-PJV" secondAttribute="leading" constant="20" id="x9y-U2-t76"/>
+                                            </constraints>
+                                        </tableViewCellContentView>
+                                        <color key="backgroundColor" red="0.95294117647058818" green="0.96078431372549022" blue="0.96470588235294119" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                        <connections>
+                                            <outlet property="commentTextField" destination="hya-wj-52N" id="n0K-yL-xka"/>
+                                        </connections>
+                                    </tableViewCell>
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="saveButtonTableViewCell" rowHeight="50" id="cpq-fC-bi3" customClass="SaveButtonTableViewCell" customModule="CashFlow" customModuleProvider="target">
+                                        <rect key="frame" x="20" y="328.33333206176758" width="353" height="50"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="cpq-fC-bi3" id="d4f-iM-Txn">
                                             <rect key="frame" x="0.0" y="0.0" width="353" height="50"/>

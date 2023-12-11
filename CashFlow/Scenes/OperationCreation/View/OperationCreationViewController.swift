@@ -55,12 +55,15 @@ extension OperationCreationViewController: UITableViewDataSource {
 
         if let cell = tableView.dequeueReusableCell(withIdentifier: viewObject.reuseIdentifier) as? CashFlowTableViewCellProtocol {
             
-            if let dateTableCell = cell as? DateTableViewCell {
-                dateTableCell.handler = self
-            }
-            
-            if let headerTableCell = cell as? HeaderTableViewCell {
-                headerTableCell.handler = self
+            switch cell {
+            case let headerCell as HeaderTableViewCell:
+                headerCell.handler = self
+            case let dateCell as DateTableViewCell:
+                dateCell.handler = self
+            case let commentCell as CommentTableViewCell:
+                commentCell.handler = self
+            default:
+                break
             }
             
             cell.setup(with: viewObject, indexPath: indexPath)
@@ -101,7 +104,7 @@ extension OperationCreationViewController: UITextFieldDelegate {
     
     func textField(_ textField: UITextField, shouldChangeCharactersIn range: NSRange, replacementString string: String) -> Bool {
         let text = (textField.text as NSString?)?.replacingCharacters(in: range, with: string) ?? ""
-        let shouldChangeCharacters = text.count <= 7
+        let shouldChangeCharacters = text.count <= 8
         if shouldChangeCharacters {
             sum = Int(text) ?? 0
             presenter?.totalAmountValueChanged(totalAmount: Int(text) ?? 0)
@@ -129,5 +132,12 @@ extension OperationCreationViewController: OperationCreationSegmentedControllHan
     
     func valueChanged(segmentedIndex: Int) {
         presenter?.segmentedControlValueChanged(segmentedIndex)
+    }
+}
+
+extension OperationCreationViewController: OperationCreationCommentHandler {
+    
+    func valueChanged(_ text: String) {
+        presenter?.commentValueChanged(text)
     }
 }

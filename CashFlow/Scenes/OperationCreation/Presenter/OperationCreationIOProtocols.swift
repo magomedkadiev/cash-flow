@@ -12,4 +12,5 @@ protocol OperationCreationOutputViewProtocol {
     func datePickerValueChanged(date: Date)
     func totalAmountValueChanged(totalAmount: Int)
     func segmentedControlValueChanged(_ segmentedIndex: Int)
+    func commentValueChanged(_ text: String)
 }

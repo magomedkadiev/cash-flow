@@ -6,6 +6,7 @@ class OperationCreationTemplateViewObjectToOperationViewObjetMapper {
                                                    categoryName: operationViewObject.categoryName,
                                                    date: operationViewObject.date,
                                                    totalAmount: operationViewObject.totalAmount,
-                                                   type: operationViewObject.type)
+                                                   type: operationViewObject.type,
+                                                   comment: operationViewObject.comment)
     }
 }

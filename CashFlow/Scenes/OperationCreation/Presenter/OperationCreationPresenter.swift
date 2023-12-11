@@ -29,12 +29,14 @@ class OperationCreationPresenter {
         let totalAmountViewObject = OperationCreationTotalAmountViewObject(totalAmount: templateViewObject.totalAmount)
         let сategoryViewObject = OperationCreationCategoryViewObject(name: templateViewObject.categoryName)
         let dateViewObject = OperationCreationDateViewObject(date: templateViewObject.date)
+        let commentViewObject = OperationCreationCommentViewObject(comment: templateViewObject.comment)
         let saveButtonViewObject = OperationCreationSaveButtonViewObject()
         
         headerSectionObjects.append(headerViewObject)
         totalAmountSectionObjects.append(totalAmountViewObject)
         categorySectionObjects.append(сategoryViewObject)
         categorySectionObjects.append(dateViewObject)
+        categorySectionObjects.append(commentViewObject)
         saveButtonSectionObjects.append(saveButtonViewObject)
         
         viewObjects.append(headerSectionObjects)
@@ -55,7 +57,7 @@ class OperationCreationPresenter {
                                       category: categoryPO,
                                       sum: templateViewObject.totalAmount,
                                       date: templateViewObject.date,
-                                      comment: "")
+                                      comment: templateViewObject.comment)
         interactor.performSaveOperationRequest(with: operationPO)
     }
     
@@ -99,6 +101,10 @@ extension OperationCreationPresenter: OperationCreationOutputViewProtocol {
     func segmentedControlValueChanged(_ segmentedIndex: Int) {
         let type: OperationType = segmentedIndex == 0 ? .expense : .income
         templateViewObject.type = type
+    }
+    
+    func commentValueChanged(_ text: String) {
+        templateViewObject.comment = text
     }
 }
 

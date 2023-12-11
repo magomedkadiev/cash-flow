@@ -17,6 +17,8 @@ struct OperationViewObject: CashFlowTableViewCellViewObject {
     var date: Date = Date()
     
     var type: OperationType
+    
+    var comment: String
 }
 
 extension OperationViewObject: Comparable {

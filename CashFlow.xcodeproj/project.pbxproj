@@ -7,8 +7,6 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		3907A4D02A70486D007C6412 /* Realm in Frameworks */ = {isa = PBXBuildFile; productRef = 3907A4CF2A70486D007C6412 /* Realm */; };
-		3907A4D22A70486D007C6412 /* RealmSwift in Frameworks */ = {isa = PBXBuildFile; productRef = 3907A4D12A70486D007C6412 /* RealmSwift */; };
 		3907A4D42A704A03007C6412 /* TotalAmountTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3907A4D32A704A03007C6412 /* TotalAmountTableViewCell.swift */; };
 		3907A4D62A704B1A007C6412 /* OperationCreationTotalAmountViewObject.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3907A4D52A704B1A007C6412 /* OperationCreationTotalAmountViewObject.swift */; };
 		3907A4DA2A7069C5007C6412 /* CategoryListSelectionHandler.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3907A4D92A7069C5007C6412 /* CategoryListSelectionHandler.swift */; };
@@ -85,6 +83,11 @@
 		39EC46F62B222B3000C2BA0D /* OperationCreationTemplateViewObject.swift in Sources */ = {isa = PBXBuildFile; fileRef = 39EC46F52B222B2F00C2BA0D /* OperationCreationTemplateViewObject.swift */; };
 		39EC46F82B222C9800C2BA0D /* OperationCreationTemplateViewObjectToOperationViewObjetMapper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 39EC46F72B222C9800C2BA0D /* OperationCreationTemplateViewObjectToOperationViewObjetMapper.swift */; };
 		39EC46FD2B2370A600C2BA0D /* OperationCreationSegmentedControllHandler.swift in Sources */ = {isa = PBXBuildFile; fileRef = 39EC46FC2B2370A600C2BA0D /* OperationCreationSegmentedControllHandler.swift */; };
+		39EC46FF2B23773400C2BA0D /* CommentTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 39EC46FE2B23773400C2BA0D /* CommentTableViewCell.swift */; };
+		39EC47012B2378DF00C2BA0D /* OperationCreationCommentViewObject.swift in Sources */ = {isa = PBXBuildFile; fileRef = 39EC47002B2378DF00C2BA0D /* OperationCreationCommentViewObject.swift */; };
+		39EC47032B27107A00C2BA0D /* OperationCreationCommentHandler.swift in Sources */ = {isa = PBXBuildFile; fileRef = 39EC47022B27107A00C2BA0D /* OperationCreationCommentHandler.swift */; };
+		39EC47062B271D3400C2BA0D /* Realm in Frameworks */ = {isa = PBXBuildFile; productRef = 39EC47052B271D3400C2BA0D /* Realm */; };
+		39EC47082B271D3400C2BA0D /* RealmSwift in Frameworks */ = {isa = PBXBuildFile; productRef = 39EC47072B271D3400C2BA0D /* RealmSwift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -185,6 +188,9 @@
 		39EC46F52B222B2F00C2BA0D /* OperationCreationTemplateViewObject.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OperationCreationTemplateViewObject.swift; sourceTree = "<group>"; };
 		39EC46F72B222C9800C2BA0D /* OperationCreationTemplateViewObjectToOperationViewObjetMapper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OperationCreationTemplateViewObjectToOperationViewObjetMapper.swift; sourceTree = "<group>"; };
 		39EC46FC2B2370A600C2BA0D /* OperationCreationSegmentedControllHandler.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OperationCreationSegmentedControllHandler.swift; sourceTree = "<group>"; };
+		39EC46FE2B23773400C2BA0D /* CommentTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CommentTableViewCell.swift; sourceTree = "<group>"; };
+		39EC47002B2378DF00C2BA0D /* OperationCreationCommentViewObject.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OperationCreationCommentViewObject.swift; sourceTree = "<group>"; };
+		39EC47022B27107A00C2BA0D /* OperationCreationCommentHandler.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OperationCreationCommentHandler.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -192,8 +198,8 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				3907A4D22A70486D007C6412 /* RealmSwift in Frameworks */,
-				3907A4D02A70486D007C6412 /* Realm in Frameworks */,
+				39EC47082B271D3400C2BA0D /* RealmSwift in Frameworks */,
+				39EC47062B271D3400C2BA0D /* Realm in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -346,6 +352,7 @@
 				3907A4D52A704B1A007C6412 /* OperationCreationTotalAmountViewObject.swift */,
 				39EC46EF2B20953200C2BA0D /* OperationCreationDateViewObject.swift */,
 				39EC46F52B222B2F00C2BA0D /* OperationCreationTemplateViewObject.swift */,
+				39EC47002B2378DF00C2BA0D /* OperationCreationCommentViewObject.swift */,
 			);
 			name = ViewObjects;
 			path = ../Scenes/OperationCreation/ViewObjects;
@@ -359,6 +366,7 @@
 				394034432A65B61600D45D24 /* SaveButtonTableViewCell.swift */,
 				394034452A65B78B00D45D24 /* CategoryTableViewCell.swift */,
 				39EC46F12B20968100C2BA0D /* DateTableViewCell.swift */,
+				39EC46FE2B23773400C2BA0D /* CommentTableViewCell.swift */,
 			);
 			path = Cells;
 			sourceTree = "<group>";
@@ -617,6 +625,7 @@
 				3907A4E92A75950C007C6412 /* OperationCreationFinishHandler.swift */,
 				39EC46F32B20EFDA00C2BA0D /* OperationCreationDatePickerChangedHandler.swift */,
 				39EC46FC2B2370A600C2BA0D /* OperationCreationSegmentedControllHandler.swift */,
+				39EC47022B27107A00C2BA0D /* OperationCreationCommentHandler.swift */,
 			);
 			path = Handlers;
 			sourceTree = "<group>";
@@ -646,8 +655,8 @@
 			);
 			name = CashFlow;
 			packageProductDependencies = (
-				3907A4CF2A70486D007C6412 /* Realm */,
-				3907A4D12A70486D007C6412 /* RealmSwift */,
+				39EC47052B271D3400C2BA0D /* Realm */,
+				39EC47072B271D3400C2BA0D /* RealmSwift */,
 			);
 			productName = CashFlow;
 			productReference = 391FA09F2A2135950096EB59 /* CashFlow.app */;
@@ -722,7 +731,7 @@
 			);
 			mainGroup = 391FA0962A2135950096EB59;
 			packageReferences = (
-				39AA92772A3A1AA000F2FF30 /* XCRemoteSwiftPackageReference "realm-swift" */,
+				39EC47042B271D3300C2BA0D /* XCRemoteSwiftPackageReference "realm-swift" */,
 			);
 			productRefGroup = 391FA0A02A2135950096EB59 /* Products */;
 			projectDirPath = "";
@@ -782,6 +791,7 @@
 				39EC46FD2B2370A600C2BA0D /* OperationCreationSegmentedControllHandler.swift in Sources */,
 				3940344E2A685C8C00D45D24 /* OperationCreationSaveButtonViewObject.swift in Sources */,
 				39EC46F42B20EFDA00C2BA0D /* OperationCreationDatePickerChangedHandler.swift in Sources */,
+				39EC47012B2378DF00C2BA0D /* OperationCreationCommentViewObject.swift in Sources */,
 				39A7D67A2A6DB6C00085E861 /* SettingsViewController.swift in Sources */,
 				39A7D6862A6DCEAD0085E861 /* CategoryListViewController.swift in Sources */,
 				39EC46F62B222B3000C2BA0D /* OperationCreationTemplateViewObject.swift in Sources */,
@@ -806,6 +816,7 @@
 				39AA928A2A3A2F8900F2FF30 /* Operation.swift in Sources */,
 				391FA0DF2A2148790096EB59 /* OperationsPresenter.swift in Sources */,
 				39AA928D2A3A3E1500F2FF30 /* OperationsToOperationsPOMapper.swift in Sources */,
+				39EC47032B27107A00C2BA0D /* OperationCreationCommentHandler.swift in Sources */,
 				39AA92852A3A2D8C00F2FF30 /* OperationsDAO.swift in Sources */,
 				39EC46EE2B191E2A00C2BA0D /* Int + Extension.swift in Sources */,
 				3907A4DA2A7069C5007C6412 /* CategoryListSelectionHandler.swift in Sources */,
@@ -827,6 +838,7 @@
 				39A7D69C2A6E9C110085E861 /* CategoryListTableViewCell.swift in Sources */,
 				39A7D6922A6E987A0085E861 /* CategoryListinteractorIOProtocols.swift in Sources */,
 				39AA92882A3A2E0700F2FF30 /* OperationPO.swift in Sources */,
+				39EC46FF2B23773400C2BA0D /* CommentTableViewCell.swift in Sources */,
 				391FA0A52A2135950096EB59 /* SceneDelegate.swift in Sources */,
 				3940343B2A5734CB00D45D24 /* ExpensesToExpensesPOMapper.swift in Sources */,
 				39B1C9AC2A5094FA0065442C /* ExpensePO.swift in Sources */,
@@ -1172,7 +1184,7 @@
 /* End XCConfigurationList section */
 
 /* Begin XCRemoteSwiftPackageReference section */
-		39AA92772A3A1AA000F2FF30 /* XCRemoteSwiftPackageReference "realm-swift" */ = {
+		39EC47042B271D3300C2BA0D /* XCRemoteSwiftPackageReference "realm-swift" */ = {
 			isa = XCRemoteSwiftPackageReference;
 			repositoryURL = "https://github.com/realm/realm-swift";
 			requirement = {
@@ -1183,14 +1195,14 @@
 /* End XCRemoteSwiftPackageReference section */
 
 /* Begin XCSwiftPackageProductDependency section */
-		3907A4CF2A70486D007C6412 /* Realm */ = {
+		39EC47052B271D3400C2BA0D /* Realm */ = {
 			isa = XCSwiftPackageProductDependency;
-			package = 39AA92772A3A1AA000F2FF30 /* XCRemoteSwiftPackageReference "realm-swift" */;
+			package = 39EC47042B271D3300C2BA0D /* XCRemoteSwiftPackageReference "realm-swift" */;
 			productName = Realm;
 		};
-		3907A4D12A70486D007C6412 /* RealmSwift */ = {
+		39EC47072B271D3400C2BA0D /* RealmSwift */ = {
 			isa = XCSwiftPackageProductDependency;
-			package = 39AA92772A3A1AA000F2FF30 /* XCRemoteSwiftPackageReference "realm-swift" */;
+			package = 39EC47042B271D3300C2BA0D /* XCRemoteSwiftPackageReference "realm-swift" */;
 			productName = RealmSwift;
 		};
 /* End XCSwiftPackageProductDependency section */
