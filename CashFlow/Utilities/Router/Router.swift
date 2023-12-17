@@ -33,6 +33,9 @@ class Router: ApplicationRouter {
                     topViewController.operationViewObject = viewObject
                     operationsViewController.present(operationCreationViewController, animated: true)
                 }
+            } else if let selectedViewController = applicationTabBarController.selectedViewController {
+                let operationCreationViewController = OperationCreationViewController.controller()
+                selectedViewController.present(operationCreationViewController, animated: true)
             }
         }
     }

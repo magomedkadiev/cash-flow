@@ -9,6 +9,11 @@ import UIKit
 
 class SettingsViewController: UIViewController {
 
+    static func controller() -> UINavigationController {
+        let storyboard = UIStoryboard(name: "Settings", bundle: nil)
+        return storyboard.instantiateInitialViewController() as! UINavigationController
+    }
+    
     override func viewDidLoad() {
         super.viewDidLoad()
 

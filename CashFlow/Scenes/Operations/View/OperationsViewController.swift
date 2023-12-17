@@ -16,6 +16,11 @@ class OperationsViewController: UIViewController {
     @IBOutlet weak var tableView: UITableView!
 
     var operationSectionObjects = [OperationSectionObject]()
+    
+    static func controller() -> UINavigationController {
+        let storyboard = UIStoryboard(name: "Operations", bundle: nil)
+        return storyboard.instantiateInitialViewController() as! UINavigationController
+    }
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -27,7 +32,7 @@ class OperationsViewController: UIViewController {
 extension OperationsViewController: UIScrollViewDelegate {
     
     func scrollViewDidScroll(_ scrollView: UIScrollView) {
-        let maxPullDistance: CGFloat = 170
+        let maxPullDistance: CGFloat = 210
         if scrollView.panGestureRecognizer.state.rawValue == 0 && scrollView.contentOffset.y < -maxPullDistance {
             refreshControl.beginRefreshing()
             presenter?.eventBeginFerfeshing()
