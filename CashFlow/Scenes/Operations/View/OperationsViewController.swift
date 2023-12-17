@@ -7,7 +7,11 @@ class OperationsViewController: UIViewController {
     
     var presenter: OperationsOutputViewProtocol?
     
-    private let refreshControl = UIRefreshControl()
+    private let refreshControl: UIRefreshControl = {
+        let refreshControl = UIRefreshControl()
+        refreshControl.tintColor = .clear
+        return refreshControl
+    }()
     
     @IBOutlet weak var tableView: UITableView!
 
@@ -16,23 +20,23 @@ class OperationsViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         presenter?.viewDidLoad()
-        setupRefreshControll()
-    }
-    
-    private func setupRefreshControll() {
-        refreshControl.addTarget(self, action: #selector(refreshingHasStarted(sender:)), for: .valueChanged)
         tableView.addSubview(refreshControl)
-    }
-    
-    @objc private func refreshingHasStarted(sender: UIRefreshControl) {
-        presenter?.eventBeginFerfeshing()
-        // TODO: make it without delay
-        DispatchQueue.main.asyncAfter(deadline: .now() + 0.5, execute: {
-            self.refreshControl.endRefreshing()
-        })
     }
 }
 
+extension OperationsViewController: UIScrollViewDelegate {
+    
+    func scrollViewDidScroll(_ scrollView: UIScrollView) {
+        let maxPullDistance: CGFloat = 170
+        if scrollView.panGestureRecognizer.state.rawValue == 0 && scrollView.contentOffset.y < -maxPullDistance {
+            refreshControl.beginRefreshing()
+            presenter?.eventBeginFerfeshing()
+            DispatchQueue.main.asyncAfter(deadline: .now() + 0.3, execute: {
+                self.refreshControl.endRefreshing()
+            })
+        }
+    }
+}
 
 extension OperationsViewController: OperationsInputViewProtocol {
     
