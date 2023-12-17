@@ -6,6 +6,7 @@ struct OperationCreationDateViewObject: CashFlowTableViewCellViewObject {
         return 50
     }
     var reuseIdentifier: String = "dateTableViewCell"
-    var cellType: CashFlowTableViewCellTypeProtocol = ._default
     var date: Date
+    var cellType: CashFlowTableViewCellTypeProtocol = ._default
 }
+

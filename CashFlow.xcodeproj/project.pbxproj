@@ -86,8 +86,6 @@
 		39EC46FF2B23773400C2BA0D /* CommentTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 39EC46FE2B23773400C2BA0D /* CommentTableViewCell.swift */; };
 		39EC47012B2378DF00C2BA0D /* OperationCreationCommentViewObject.swift in Sources */ = {isa = PBXBuildFile; fileRef = 39EC47002B2378DF00C2BA0D /* OperationCreationCommentViewObject.swift */; };
 		39EC47032B27107A00C2BA0D /* OperationCreationCommentHandler.swift in Sources */ = {isa = PBXBuildFile; fileRef = 39EC47022B27107A00C2BA0D /* OperationCreationCommentHandler.swift */; };
-		39EC47062B271D3400C2BA0D /* Realm in Frameworks */ = {isa = PBXBuildFile; productRef = 39EC47052B271D3400C2BA0D /* Realm */; };
-		39EC47082B271D3400C2BA0D /* RealmSwift in Frameworks */ = {isa = PBXBuildFile; productRef = 39EC47072B271D3400C2BA0D /* RealmSwift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -198,8 +196,6 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				39EC47082B271D3400C2BA0D /* RealmSwift in Frameworks */,
-				39EC47062B271D3400C2BA0D /* Realm in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -655,8 +651,6 @@
 			);
 			name = CashFlow;
 			packageProductDependencies = (
-				39EC47052B271D3400C2BA0D /* Realm */,
-				39EC47072B271D3400C2BA0D /* RealmSwift */,
 			);
 			productName = CashFlow;
 			productReference = 391FA09F2A2135950096EB59 /* CashFlow.app */;
@@ -731,7 +725,7 @@
 			);
 			mainGroup = 391FA0962A2135950096EB59;
 			packageReferences = (
-				39EC47042B271D3300C2BA0D /* XCRemoteSwiftPackageReference "realm-swift" */,
+				390ADC352B29FB6C00CC80FA /* XCRemoteSwiftPackageReference "realm-swift" */,
 			);
 			productRefGroup = 391FA0A02A2135950096EB59 /* Products */;
 			projectDirPath = "";
@@ -1030,7 +1024,7 @@
 					"@executable_path/Frameworks",
 				);
 				MARKETING_VERSION = 1.0;
-				PRODUCT_BUNDLE_IDENTIFIER = smagomedkadiev.CashFlow;
+				PRODUCT_BUNDLE_IDENTIFIER = smagomedkadiev.cashFlowEasy;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_EMIT_LOC_STRINGS = YES;
 				SWIFT_VERSION = 5.0;
@@ -1058,7 +1052,7 @@
 					"@executable_path/Frameworks",
 				);
 				MARKETING_VERSION = 1.0;
-				PRODUCT_BUNDLE_IDENTIFIER = smagomedkadiev.CashFlow;
+				PRODUCT_BUNDLE_IDENTIFIER = smagomedkadiev.cashFlowEasy;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_EMIT_LOC_STRINGS = YES;
 				SWIFT_VERSION = 5.0;
@@ -1184,7 +1178,7 @@
 /* End XCConfigurationList section */
 
 /* Begin XCRemoteSwiftPackageReference section */
-		39EC47042B271D3300C2BA0D /* XCRemoteSwiftPackageReference "realm-swift" */ = {
+		390ADC352B29FB6C00CC80FA /* XCRemoteSwiftPackageReference "realm-swift" */ = {
 			isa = XCRemoteSwiftPackageReference;
 			repositoryURL = "https://github.com/realm/realm-swift";
 			requirement = {
@@ -1193,19 +1187,6 @@
 			};
 		};
 /* End XCRemoteSwiftPackageReference section */
-
-/* Begin XCSwiftPackageProductDependency section */
-		39EC47052B271D3400C2BA0D /* Realm */ = {
-			isa = XCSwiftPackageProductDependency;
-			package = 39EC47042B271D3300C2BA0D /* XCRemoteSwiftPackageReference "realm-swift" */;
-			productName = Realm;
-		};
-		39EC47072B271D3400C2BA0D /* RealmSwift */ = {
-			isa = XCSwiftPackageProductDependency;
-			package = 39EC47042B271D3300C2BA0D /* XCRemoteSwiftPackageReference "realm-swift" */;
-			productName = RealmSwift;
-		};
-/* End XCSwiftPackageProductDependency section */
 	};
 	rootObject = 391FA0972A2135950096EB59 /* Project object */;
 }
