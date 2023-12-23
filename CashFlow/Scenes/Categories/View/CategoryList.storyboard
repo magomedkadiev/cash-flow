@@ -1,8 +1,10 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="21701" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="Y6W-OH-hqX">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="22505" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="Y6W-OH-hqX">
     <device id="retina6_12" orientation="portrait" appearance="light"/>
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="21679"/>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="22504"/>
+        <capability name="Image references" minToolsVersion="12.0"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="System colors in document resources" minToolsVersion="11.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
@@ -28,21 +30,33 @@
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Категория" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="1eC-bN-n2h">
-                                                    <rect key="frame" x="20" y="11" width="313" height="28"/>
+                                                    <rect key="frame" x="20" y="11" width="284" height="28"/>
                                                     <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                                     <nil key="textColor"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
+                                                <imageView hidden="YES" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="34c-mP-vMU">
+                                                    <rect key="frame" x="312" y="13" width="25" height="25"/>
+                                                    <constraints>
+                                                        <constraint firstAttribute="height" constant="25" id="7Qa-8X-GeN"/>
+                                                        <constraint firstAttribute="width" constant="25" id="ebv-FV-b7D"/>
+                                                    </constraints>
+                                                    <imageReference key="image" image="checkmark.circle" catalog="system" symbolScale="default"/>
+                                                </imageView>
                                             </subviews>
                                             <constraints>
-                                                <constraint firstItem="1eC-bN-n2h" firstAttribute="trailing" secondItem="87y-lV-pMb" secondAttribute="trailingMargin" id="HYh-Ft-0Ie"/>
+                                                <constraint firstItem="34c-mP-vMU" firstAttribute="top" secondItem="87y-lV-pMb" secondAttribute="top" constant="12" id="B5h-ef-FHG"/>
+                                                <constraint firstItem="34c-mP-vMU" firstAttribute="leading" secondItem="1eC-bN-n2h" secondAttribute="trailing" constant="8" symbolic="YES" id="QJg-h6-g5c"/>
                                                 <constraint firstItem="1eC-bN-n2h" firstAttribute="leading" secondItem="87y-lV-pMb" secondAttribute="leadingMargin" id="bB6-r0-VnI"/>
+                                                <constraint firstAttribute="trailing" secondItem="34c-mP-vMU" secondAttribute="trailing" constant="16" id="ca1-jl-oqM"/>
                                                 <constraint firstItem="1eC-bN-n2h" firstAttribute="top" secondItem="87y-lV-pMb" secondAttribute="topMargin" id="i3g-AC-cgg"/>
+                                                <constraint firstAttribute="bottom" secondItem="34c-mP-vMU" secondAttribute="bottom" constant="11.67" id="yPr-4U-4fs"/>
                                                 <constraint firstAttribute="bottomMargin" secondItem="1eC-bN-n2h" secondAttribute="bottom" id="zVG-Se-cM8"/>
                                             </constraints>
                                         </tableViewCellContentView>
                                         <color key="backgroundColor" red="0.9529411793" green="0.96078431610000004" blue="0.96470588450000005" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                                         <connections>
+                                            <outlet property="checkMarkImageView" destination="34c-mP-vMU" id="zUh-OX-EtM"/>
                                             <outlet property="nameLabelText" destination="1eC-bN-n2h" id="NVG-g3-L3E"/>
                                         </connections>
                                     </tableViewCell>
@@ -77,6 +91,7 @@
         </scene>
     </scenes>
     <resources>
+        <image name="checkmark.circle" catalog="system" width="128" height="123"/>
         <systemColor name="systemBackgroundColor">
             <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
         </systemColor>

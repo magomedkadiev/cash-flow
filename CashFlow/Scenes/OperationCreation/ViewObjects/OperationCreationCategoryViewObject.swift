@@ -1,5 +1,6 @@
 import Foundation
 
+// DEPRECATED
 struct OperationCreationCategoryViewObject: CashFlowTableViewCellViewObject {
     
     var cellHeight: CGFloat {

@@ -27,7 +27,7 @@ class OperationCreationPresenter {
         
         let headerViewObject = OperationCreationHeaderViewObject(type: templateViewObject.type)
         let totalAmountViewObject = OperationCreationTotalAmountViewObject(totalAmount: templateViewObject.totalAmount)
-        let сategoryViewObject = OperationCreationCategoryViewObject(name: templateViewObject.categoryName)
+        let сategoryViewObject = CategoryListViewObject(name: templateViewObject.categoryName)
         let dateViewObject = OperationCreationDateViewObject(date: templateViewObject.date)
         let commentViewObject = OperationCreationCommentViewObject(comment: templateViewObject.comment)
         let saveButtonViewObject = OperationCreationSaveButtonViewObject()
@@ -84,7 +84,7 @@ extension OperationCreationPresenter: OperationCreationOutputViewProtocol {
     }
     
     func configureSelected(viewObject: CashFlowTableViewCellViewObject) {
-        if let categoryViewObject = viewObject as? OperationCreationCategoryViewObject {
+        if let categoryViewObject = viewObject as? CategoryListViewObject {
             templateViewObject.categoryName = categoryViewObject.name
             fillViewObjectsToShow()
         }

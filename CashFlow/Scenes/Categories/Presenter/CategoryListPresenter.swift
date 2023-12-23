@@ -16,17 +16,21 @@ class CategoryListPresenter {
 extension CategoryListPresenter: CategoryListOutputViewProtocol {
     
     func viewDidLoad() {
-        var viewObjects = [CashFlowTableViewCellViewObject]()
+        var viewObjects = [CategoryListViewObject]()
         
-        let shopCategoryViewObject = OperationCreationCategoryViewObject(name: "Супермаркет")
-        let shopCategoryViewObject1 = OperationCreationCategoryViewObject(name: "Еда вне дома")
-        let shopCategoryViewObject2 = OperationCreationCategoryViewObject(name: "Такси")
-        let shopCategoryViewObject3 = OperationCreationCategoryViewObject(name: "Здоровье")
-
-        viewObjects.append(shopCategoryViewObject)
-        viewObjects.append(shopCategoryViewObject1)
-        viewObjects.append(shopCategoryViewObject2)
-        viewObjects.append(shopCategoryViewObject3)
+        //TODO: Сохранять в бд. Добавить возможность добавлять новые категории. Сохранять значение выбранного элемента.
+        viewObjects = [
+            CategoryListViewObject(name: "Еда вне дома", subCategories: [
+                CategoryListViewObject(name: "Кофейни"),
+                CategoryListViewObject(name: "Рестораны"),
+                CategoryListViewObject(name: "Обед")
+            ]),
+            CategoryListViewObject(name: "Автомобиль", subCategories: [
+                CategoryListViewObject(name: "Топливо"),
+                CategoryListViewObject(name: "Штрафы")
+            ]),
+            CategoryListViewObject(name: "Продукты питания")
+        ]
 
         view?.showInfo(viewObjects)
     }

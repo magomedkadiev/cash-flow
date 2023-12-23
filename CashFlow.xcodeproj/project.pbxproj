@@ -42,6 +42,9 @@
 		394034502A685D1300D45D24 /* CashFlowTableViewCellViewObject.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3940344F2A685D1300D45D24 /* CashFlowTableViewCellViewObject.swift */; };
 		3940345D2A6C347E00D45D24 /* TabBar.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 3940345C2A6C347E00D45D24 /* TabBar.storyboard */; };
 		394034602A6C34DA00D45D24 /* Settings.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 3940345F2A6C34DA00D45D24 /* Settings.storyboard */; };
+		3949D7702B371E2B005B4904 /* CategoryListHeaderView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 3949D76F2B371E2B005B4904 /* CategoryListHeaderView.xib */; };
+		3949D7722B371E69005B4904 /* CategoryListHeaderView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3949D7712B371E69005B4904 /* CategoryListHeaderView.swift */; };
+		3949D7742B372BEF005B4904 /* CategoryListHeaderSelectionHandler.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3949D7732B372BEF005B4904 /* CategoryListHeaderSelectionHandler.swift */; };
 		3957CDCE2AF567A500834215 /* AnalyticsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3957CDCD2AF567A500834215 /* AnalyticsViewController.swift */; };
 		3957CDD02AF567AB00834215 /* Analytics.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 3957CDCF2AF567AB00834215 /* Analytics.storyboard */; };
 		395A7AAE2A3E0E6D000A9BE2 /* OperationCreationViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 395A7AAD2A3E0E6D000A9BE2 /* OperationCreationViewController.swift */; };
@@ -147,6 +150,9 @@
 		3940344F2A685D1300D45D24 /* CashFlowTableViewCellViewObject.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CashFlowTableViewCellViewObject.swift; sourceTree = "<group>"; };
 		3940345C2A6C347E00D45D24 /* TabBar.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = TabBar.storyboard; sourceTree = "<group>"; };
 		3940345F2A6C34DA00D45D24 /* Settings.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Settings.storyboard; sourceTree = "<group>"; };
+		3949D76F2B371E2B005B4904 /* CategoryListHeaderView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = CategoryListHeaderView.xib; sourceTree = "<group>"; };
+		3949D7712B371E69005B4904 /* CategoryListHeaderView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CategoryListHeaderView.swift; sourceTree = "<group>"; };
+		3949D7732B372BEF005B4904 /* CategoryListHeaderSelectionHandler.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CategoryListHeaderSelectionHandler.swift; sourceTree = "<group>"; };
 		3957CDCD2AF567A500834215 /* AnalyticsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AnalyticsViewController.swift; sourceTree = "<group>"; };
 		3957CDCF2AF567AB00834215 /* Analytics.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Analytics.storyboard; sourceTree = "<group>"; };
 		395A7AAD2A3E0E6D000A9BE2 /* OperationCreationViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OperationCreationViewController.swift; sourceTree = "<group>"; };
@@ -493,6 +499,7 @@
 				39A7D69A2A6E9C000085E861 /* Cells */,
 				39A7D6972A6E9B8A0085E861 /* ViewObjects */,
 				39A7D6832A6DCE940085E861 /* CategoryList.storyboard */,
+				3949D76F2B371E2B005B4904 /* CategoryListHeaderView.xib */,
 				39A7D6852A6DCEAD0085E861 /* CategoryListViewController.swift */,
 			);
 			path = View;
@@ -537,6 +544,7 @@
 			isa = PBXGroup;
 			children = (
 				39A7D69B2A6E9C110085E861 /* CategoryListTableViewCell.swift */,
+				3949D7712B371E69005B4904 /* CategoryListHeaderView.swift */,
 			);
 			path = Cells;
 			sourceTree = "<group>";
@@ -637,6 +645,7 @@
 			isa = PBXGroup;
 			children = (
 				3907A4D92A7069C5007C6412 /* CategoryListSelectionHandler.swift */,
+				3949D7732B372BEF005B4904 /* CategoryListHeaderSelectionHandler.swift */,
 			);
 			path = Handlers;
 			sourceTree = "<group>";
@@ -709,7 +718,7 @@
 			attributes = {
 				BuildIndependentTargetsInParallel = 1;
 				LastSwiftUpdateCheck = 1430;
-				LastUpgradeCheck = 1430;
+				LastUpgradeCheck = 1510;
 				TargetAttributes = {
 					391FA09E2A2135950096EB59 = {
 						CreatedOnToolsVersion = 14.3;
@@ -757,6 +766,7 @@
 				39A7D6782A6DB6570085E861 /* Operations.storyboard in Resources */,
 				3940345D2A6C347E00D45D24 /* TabBar.storyboard in Resources */,
 				395A7ABC2A3E11FD000A9BE2 /* OperationCreation.storyboard in Resources */,
+				3949D7702B371E2B005B4904 /* CategoryListHeaderView.xib in Resources */,
 				394034602A6C34DA00D45D24 /* Settings.storyboard in Resources */,
 				391FA0AF2A2135970096EB59 /* LaunchScreen.storyboard in Resources */,
 				391FA0AC2A2135970096EB59 /* Assets.xcassets in Resources */,
@@ -837,6 +847,7 @@
 				39A7D6942A6E98B60085E861 /* CategoryListInitializer.swift in Sources */,
 				391FA0E72A2149720096EB59 /* OperationsInteractorIOProtocols.swift in Sources */,
 				395A7AAE2A3E0E6D000A9BE2 /* OperationCreationViewController.swift in Sources */,
+				3949D7722B371E69005B4904 /* CategoryListHeaderView.swift in Sources */,
 				394034402A5F280800D45D24 /* HeaderTableViewCell.swift in Sources */,
 				39A7D69C2A6E9C110085E861 /* CategoryListTableViewCell.swift in Sources */,
 				39A7D6922A6E987A0085E861 /* CategoryListinteractorIOProtocols.swift in Sources */,
@@ -850,6 +861,7 @@
 				3940344A2A685C3200D45D24 /* OperationCreationHeaderViewObject.swift in Sources */,
 				391FA0E12A2148A20096EB59 /* OperationsViewController.swift in Sources */,
 				3907A4DC2A71A613007C6412 /* Category.swift in Sources */,
+				3949D7742B372BEF005B4904 /* CategoryListHeaderSelectionHandler.swift in Sources */,
 				391FA0E52A2149510096EB59 /* OperationsIOProtocols.swift in Sources */,
 				39DDA82F2B2F68D3009E0405 /* MiddleTabBar.swift in Sources */,
 				394034462A65B78B00D45D24 /* CategoryTableViewCell.swift in Sources */,
@@ -936,6 +948,7 @@
 				DEBUG_INFORMATION_FORMAT = dwarf;
 				ENABLE_STRICT_OBJC_MSGSEND = YES;
 				ENABLE_TESTABILITY = YES;
+				ENABLE_USER_SCRIPT_SANDBOXING = YES;
 				GCC_C_LANGUAGE_STANDARD = gnu11;
 				GCC_DYNAMIC_NO_PIC = NO;
 				GCC_NO_COMMON_BLOCKS = YES;
@@ -996,6 +1009,7 @@
 				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
 				ENABLE_NS_ASSERTIONS = NO;
 				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_USER_SCRIPT_SANDBOXING = YES;
 				GCC_C_LANGUAGE_STANDARD = gnu11;
 				GCC_NO_COMMON_BLOCKS = YES;
 				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
