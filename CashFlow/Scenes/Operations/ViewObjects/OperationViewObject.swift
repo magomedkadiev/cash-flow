@@ -4,7 +4,7 @@ struct OperationViewObject: CashFlowTableViewCellViewObject {
     
     var id: String = ""
     
-    var cellHeight: CGFloat = 55
+    var cellHeight: CGFloat = 50
     
     var reuseIdentifier: String = "OperationsTableViewCell"
     

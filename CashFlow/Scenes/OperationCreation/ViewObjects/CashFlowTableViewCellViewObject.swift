@@ -14,4 +14,5 @@ enum CashFlowTableViewCellTypeProtocol {
     case categoryButton
     case saveButton
     case _default
+    case settingCategory
 }

@@ -11,11 +11,18 @@ class Router: ApplicationRouter {
             while let presentedViewController = topController.presentedViewController {
                 topController = presentedViewController
             }
+            // From current hierarchy
             if let navigationController = topController as? UINavigationController {
                 if let operationCreationViewController = navigationController.topViewController as? OperationCreationViewController {
                     let categoryListViewController = CategoryListViewController.controller()
                     categoryListViewController.handler = operationCreationViewController
                     operationCreationViewController.present(categoryListViewController, animated: true)
+                }
+            } // From settings scene
+            else if let navigationController = (topController as? UITabBarController)?.selectedViewController as? UINavigationController {
+                if let settingsViewController = navigationController.topViewController as? SettingsViewController {
+                    let categoryListViewController = CategoryListViewController.controller()
+                    settingsViewController.present(categoryListViewController, animated: true)
                 }
             }
         }
