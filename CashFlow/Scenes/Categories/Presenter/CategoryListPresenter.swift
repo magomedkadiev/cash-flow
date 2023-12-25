@@ -38,6 +38,13 @@ extension CategoryListPresenter: CategoryListOutputViewProtocol {
     func dismissViewController(with viewObject: CashFlowTableViewCellViewObject) {
         router.dismiss()
     }
+    
+    func isReadyForEditing() -> Bool {
+        if (router.getChildrenViewController() as? OperationCreationViewController) != nil {
+            return false
+        }
+        return true
+    }
 }
 
 extension CategoryListPresenter: CategoryListinteractorOutputProtocol {

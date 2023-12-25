@@ -8,6 +8,14 @@ class CategoryListViewController: UIViewController {
     var viewObjects = [CategoryListViewObject]()
     weak var handler: CategoryListSelectionHandler?
     private let headerID = String(describing: CategoryListHeaderView.self)
+    private var isEdited: Bool {
+        get {
+            return presenter?.isReadyForEditing() ?? false
+        }
+        set {
+            
+        }
+    }
 
     static func controller() -> CategoryListViewController {
         let storyboard = UIStoryboard(name: "CategoryList", bundle: nil)
@@ -55,6 +63,7 @@ extension CategoryListViewController: UITableViewDataSource {
         }
         header.configure(title: viewObjects[section].name, section: section)
         header.rotateImage(viewObjects[section].isExpanded)
+        header.setEditingStyle(isEdited)
         header.handler = self
         
         return header

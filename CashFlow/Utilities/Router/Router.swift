@@ -54,6 +54,19 @@ class Router: ApplicationRouter {
             }
         }
     }
+    
+    func getChildrenViewController() -> UIViewController? {
+        
+        let keyWindow = UIApplication.shared.connectedScenes.map({ $0 as? UIWindowScene }).compactMap({ $0 })
+            .first?.windows.filter {$0.isKeyWindow}.first
+
+        if let topController = keyWindow?.rootViewController?.presentedViewController {
+            if let navigationController = topController as? UINavigationController {
+                return navigationController.topViewController
+            }
+        }
+        return nil
+    }
 }
 
 extension Router {

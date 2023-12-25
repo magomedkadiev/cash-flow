@@ -17,36 +17,58 @@
                 <rect key="frame" x="0.0" y="0.0" width="432" height="60"/>
                 <autoresizingMask key="autoresizingMask"/>
                 <subviews>
-                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="rbh-ei-UfT">
-                        <rect key="frame" x="20" y="16" width="392" height="28"/>
-                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                        <nil key="textColor"/>
-                        <nil key="highlightedColor"/>
-                    </label>
-                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="right" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="2rn-b9-8Ya">
-                        <rect key="frame" x="16" y="0.0" width="408" height="60"/>
-                        <color key="tintColor" white="0.66666666666666663" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                        <state key="normal" title="Button"/>
-                        <buttonConfiguration key="configuration" style="plain">
-                            <imageReference key="image" image="arrow.down" catalog="system" symbolScale="medium"/>
-                        </buttonConfiguration>
-                        <connections>
-                            <action selector="headerButtonDidTap:" destination="ffd-KZ-551" eventType="touchUpInside" id="lSB-bx-F73"/>
-                        </connections>
-                    </button>
+                    <stackView opaque="NO" contentMode="scaleToFill" distribution="fillProportionally" spacing="116" translatesAutoresizingMaskIntoConstraints="NO" id="9nl-HR-7kK">
+                        <rect key="frame" x="16" y="8" width="408" height="34.333333333333336"/>
+                        <subviews>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="rbh-ei-UfT">
+                                <rect key="frame" x="0.0" y="0.0" width="159" height="34.333333333333336"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <stackView opaque="NO" contentMode="scaleToFill" spacing="8" translatesAutoresizingMaskIntoConstraints="NO" id="HGN-aV-usB">
+                                <rect key="frame" x="275" y="0.0" width="133" height="34.333333333333336"/>
+                                <subviews>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="right" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="2rn-b9-8Ya">
+                                        <rect key="frame" x="0.0" y="0.0" width="100" height="34.333333333333336"/>
+                                        <constraints>
+                                            <constraint firstAttribute="width" constant="100" id="fPi-eO-oGs"/>
+                                        </constraints>
+                                        <color key="tintColor" white="0.66666666666666663" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        <state key="normal" title="Button"/>
+                                        <buttonConfiguration key="configuration" style="plain">
+                                            <imageReference key="image" image="arrow.down" catalog="system" symbolScale="medium"/>
+                                        </buttonConfiguration>
+                                        <connections>
+                                            <action selector="headerButtonDidTap:" destination="ffd-KZ-551" eventType="touchUpInside" id="lSB-bx-F73"/>
+                                        </connections>
+                                    </button>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="1Zs-CD-Hhh">
+                                        <rect key="frame" x="108" y="0.0" width="25" height="34.333333333333336"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="25" id="WIu-Fz-jl2"/>
+                                            <constraint firstAttribute="width" constant="25" id="Y6W-yL-sDW"/>
+                                        </constraints>
+                                        <state key="normal" title="Button"/>
+                                        <buttonConfiguration key="configuration" style="plain" image="plus.circle" catalog="system"/>
+                                        <connections>
+                                            <action selector="appendCategoryButtonTapped:" destination="ffd-KZ-551" eventType="touchUpInside" id="WaE-6E-aER"/>
+                                        </connections>
+                                    </button>
+                                </subviews>
+                            </stackView>
+                        </subviews>
+                    </stackView>
                 </subviews>
                 <constraints>
-                    <constraint firstItem="2rn-b9-8Ya" firstAttribute="leading" secondItem="yiJ-GX-l14" secondAttribute="leading" constant="16" id="APO-w0-rKv"/>
-                    <constraint firstAttribute="bottom" secondItem="rbh-ei-UfT" secondAttribute="bottom" constant="16" id="QLc-Fe-tZK"/>
-                    <constraint firstItem="rbh-ei-UfT" firstAttribute="leading" secondItem="yiJ-GX-l14" secondAttribute="leading" constant="20" symbolic="YES" id="QTf-gE-CED"/>
-                    <constraint firstAttribute="trailing" secondItem="rbh-ei-UfT" secondAttribute="trailing" constant="20" symbolic="YES" id="ZHr-22-Yru"/>
-                    <constraint firstItem="2rn-b9-8Ya" firstAttribute="top" secondItem="yiJ-GX-l14" secondAttribute="top" id="cCC-71-ykj"/>
-                    <constraint firstItem="rbh-ei-UfT" firstAttribute="top" secondItem="yiJ-GX-l14" secondAttribute="top" constant="16" id="flV-2g-Egd"/>
-                    <constraint firstAttribute="bottom" secondItem="2rn-b9-8Ya" secondAttribute="bottom" id="mRP-hI-X4B"/>
-                    <constraint firstAttribute="trailing" secondItem="2rn-b9-8Ya" secondAttribute="trailing" constant="8" id="zCb-Uf-iLW"/>
+                    <constraint firstItem="9nl-HR-7kK" firstAttribute="top" secondItem="yiJ-GX-l14" secondAttribute="top" constant="8" id="7ep-sH-7hH"/>
+                    <constraint firstAttribute="bottom" secondItem="9nl-HR-7kK" secondAttribute="bottom" constant="8" id="Cwm-PE-nvs"/>
+                    <constraint firstAttribute="trailing" secondItem="9nl-HR-7kK" secondAttribute="trailing" constant="8" id="Sq6-AZ-EPs"/>
+                    <constraint firstItem="9nl-HR-7kK" firstAttribute="leading" secondItem="yiJ-GX-l14" secondAttribute="leading" constant="16" id="hkc-vq-G4d"/>
                 </constraints>
             </tableViewCellContentView>
             <connections>
+                <outlet property="appendCategoryButton" destination="1Zs-CD-Hhh" id="CJw-wW-2I5"/>
                 <outlet property="headerButton" destination="2rn-b9-8Ya" id="H6E-t0-DxJ"/>
                 <outlet property="headerTextLabel" destination="rbh-ei-UfT" id="NaN-Kq-dHP"/>
             </connections>
@@ -55,5 +77,6 @@
     </objects>
     <resources>
         <image name="arrow.down" catalog="system" width="118" height="128"/>
+        <image name="plus.circle" catalog="system" width="128" height="123"/>
     </resources>
 </document>

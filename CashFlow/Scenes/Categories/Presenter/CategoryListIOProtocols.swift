@@ -7,4 +7,5 @@ protocol CategoryListInputViewProtocol: AnyObject {
 protocol CategoryListOutputViewProtocol {
     func viewDidLoad()
     func dismissViewController(with viewObject: CashFlowTableViewCellViewObject)
+    func isReadyForEditing() -> Bool
 }
