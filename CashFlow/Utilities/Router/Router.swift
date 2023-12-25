@@ -15,14 +15,17 @@ class Router: ApplicationRouter {
             if let navigationController = topController as? UINavigationController {
                 if let operationCreationViewController = navigationController.topViewController as? OperationCreationViewController {
                     let categoryListViewController = CategoryListViewController.controller()
-                    categoryListViewController.handler = operationCreationViewController
-                    operationCreationViewController.present(categoryListViewController, animated: true)
+                    if let topViewController = categoryListViewController.topViewController as? CategoryListViewController {
+                        topViewController.handler = operationCreationViewController
+                        operationCreationViewController.present(categoryListViewController, animated: true)
+                    }
                 }
             } // From settings scene
             else if let navigationController = (topController as? UITabBarController)?.selectedViewController as? UINavigationController {
                 if let settingsViewController = navigationController.topViewController as? SettingsViewController {
                     let categoryListViewController = CategoryListViewController.controller()
-                    settingsViewController.present(categoryListViewController, animated: true)
+//                    categoryListViewController.modalPresentationStyle = .fullScreen
+                    navigationController.present(categoryListViewController, animated: true)
                 }
             }
         }
@@ -73,6 +76,23 @@ class Router: ApplicationRouter {
             }
         }
         return nil
+    }
+    
+    func openCategoryCreationScreen() {
+        let keyWindow = UIApplication.shared.connectedScenes.map({ $0 as? UIWindowScene }).compactMap({ $0 })
+            .first?.windows.filter {$0.isKeyWindow}.first
+        
+        if var topController = keyWindow?.rootViewController {
+            while let presentedViewController = topController.presentedViewController {
+                topController = presentedViewController
+            }
+            if let navigationController = topController as? UINavigationController {
+                if let categoryListViewController = navigationController.topViewController as? CategoryListViewController {
+                    let categoryCreationViewController = CategoryCreationViewController.controller()
+                    categoryListViewController.present(categoryCreationViewController, animated: true)
+                }
+            }
+        }
     }
 }
 

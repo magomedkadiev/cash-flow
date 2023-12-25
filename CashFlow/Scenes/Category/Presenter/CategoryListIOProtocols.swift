@@ -8,4 +8,5 @@ protocol CategoryListOutputViewProtocol {
     func viewDidLoad()
     func dismissViewController(with viewObject: CashFlowTableViewCellViewObject)
     func isReadyForEditing() -> Bool
+    func addButtonTapped()
 }

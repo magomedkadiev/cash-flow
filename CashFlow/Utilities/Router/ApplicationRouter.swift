@@ -6,4 +6,5 @@ protocol ApplicationRouter {
     func openOperationCreationScreen(_ viewObject: CashFlowTableViewCellViewObject?)
     func dismiss()
     func getChildrenViewController() -> UIViewController?
+    func openCategoryCreationScreen()
 }

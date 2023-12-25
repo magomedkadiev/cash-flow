@@ -45,6 +45,10 @@ extension CategoryListPresenter: CategoryListOutputViewProtocol {
         }
         return true
     }
+    
+    func addButtonTapped() {
+        router.openCategoryCreationScreen()
+    }
 }
 
 extension CategoryListPresenter: CategoryListinteractorOutputProtocol {

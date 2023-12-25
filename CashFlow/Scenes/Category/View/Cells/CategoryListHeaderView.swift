@@ -4,8 +4,7 @@ class CategoryListHeaderView: UITableViewHeaderFooterView {
 
     @IBOutlet weak var headerButton: UIButton!
     @IBOutlet weak var headerTextLabel: UILabel!
-    @IBOutlet weak var appendCategoryButton: UIButton!
-
+    
     weak var handler: CategoryListHeaderSelectionHandler?
     
     func configure(title: String, section: Int) {
@@ -24,13 +23,4 @@ class CategoryListHeaderView: UITableViewHeaderFooterView {
     @IBAction func headerButtonDidTap(_ sender: UIButton) {
         handler?.expandedSection(sender)
     }
-    
-    func setEditingStyle(_ value: Bool) {
-        appendCategoryButton.isHidden = !value
-    }
-    
-    @IBAction func appendCategoryButtonTapped(_ sender: UIButton) {
-        
-    }
-    
 }

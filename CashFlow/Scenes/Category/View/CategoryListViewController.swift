@@ -7,19 +7,17 @@ class CategoryListViewController: UIViewController {
     var presenter: CategoryListOutputViewProtocol?
     var viewObjects = [CategoryListViewObject]()
     weak var handler: CategoryListSelectionHandler?
+    
     private let headerID = String(describing: CategoryListHeaderView.self)
     private var isEdited: Bool {
         get {
             return presenter?.isReadyForEditing() ?? false
         }
-        set {
-            
-        }
     }
 
-    static func controller() -> CategoryListViewController {
+    static func controller() -> UINavigationController {
         let storyboard = UIStoryboard(name: "CategoryList", bundle: nil)
-        return storyboard.instantiateViewController(withIdentifier: "CategoryListViewController") as! CategoryListViewController
+        return storyboard.instantiateInitialViewController() as! UINavigationController
     }
     
     override func viewDidLoad() {
@@ -33,6 +31,11 @@ class CategoryListViewController: UIViewController {
         tableView.register(nib, forHeaderFooterViewReuseIdentifier: headerID)
         tableView.tableFooterView = UIView()
     }
+    
+    @IBAction func addBarButtonItemTapped(_ sender: UIBarButtonItem) {
+        presenter?.addButtonTapped()
+    }
+    
 }
 
 extension CategoryListViewController: CategoryListInputViewProtocol {
@@ -63,7 +66,6 @@ extension CategoryListViewController: UITableViewDataSource {
         }
         header.configure(title: viewObjects[section].name, section: section)
         header.rotateImage(viewObjects[section].isExpanded)
-        header.setEditingStyle(isEdited)
         header.handler = self
         
         return header

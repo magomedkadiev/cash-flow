@@ -53,6 +53,8 @@
 		3949D7882B39B15A005B4904 /* SettingsConfigurator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3949D7872B39B15A005B4904 /* SettingsConfigurator.swift */; };
 		3949D78A2B39B51C005B4904 /* SettingsTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3949D7892B39B51C005B4904 /* SettingsTableViewCell.swift */; };
 		3949D78D2B39B99F005B4904 /* SettingsCategoryViewObject.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3949D78C2B39B99F005B4904 /* SettingsCategoryViewObject.swift */; };
+		3949D7902B39F40C005B4904 /* CategoryCreationViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3949D78F2B39F40C005B4904 /* CategoryCreationViewController.swift */; };
+		3949D7922B39F415005B4904 /* CategoryCreation.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 3949D7912B39F415005B4904 /* CategoryCreation.storyboard */; };
 		3957CDCE2AF567A500834215 /* AnalyticsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3957CDCD2AF567A500834215 /* AnalyticsViewController.swift */; };
 		3957CDD02AF567AB00834215 /* Analytics.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 3957CDCF2AF567AB00834215 /* Analytics.storyboard */; };
 		395A7AAE2A3E0E6D000A9BE2 /* OperationCreationViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 395A7AAD2A3E0E6D000A9BE2 /* OperationCreationViewController.swift */; };
@@ -169,6 +171,8 @@
 		3949D7872B39B15A005B4904 /* SettingsConfigurator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsConfigurator.swift; sourceTree = "<group>"; };
 		3949D7892B39B51C005B4904 /* SettingsTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsTableViewCell.swift; sourceTree = "<group>"; };
 		3949D78C2B39B99F005B4904 /* SettingsCategoryViewObject.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsCategoryViewObject.swift; sourceTree = "<group>"; };
+		3949D78F2B39F40C005B4904 /* CategoryCreationViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CategoryCreationViewController.swift; sourceTree = "<group>"; };
+		3949D7912B39F415005B4904 /* CategoryCreation.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = CategoryCreation.storyboard; sourceTree = "<group>"; };
 		3957CDCD2AF567A500834215 /* AnalyticsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AnalyticsViewController.swift; sourceTree = "<group>"; };
 		3957CDCF2AF567AB00834215 /* Analytics.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Analytics.storyboard; sourceTree = "<group>"; };
 		395A7AAD2A3E0E6D000A9BE2 /* OperationCreationViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OperationCreationViewController.swift; sourceTree = "<group>"; };
@@ -307,8 +311,9 @@
 		391FA0D22A2147AA0096EB59 /* Scenes */ = {
 			isa = PBXGroup;
 			children = (
+				3949D78E2B39F3EB005B4904 /* CategoryCreation */,
 				3957CDCC2AF5671F00834215 /* Analytics */,
-				39A7D6822A6DCE820085E861 /* Categories */,
+				39A7D6822A6DCE820085E861 /* Category */,
 				3940345E2A6C34CB00D45D24 /* Settings */,
 				3940345B2A6C347000D45D24 /* TabBar */,
 				395A7AA82A3E0E1C000A9BE2 /* OperationCreation */,
@@ -477,6 +482,15 @@
 			path = ViewObjects;
 			sourceTree = "<group>";
 		};
+		3949D78E2B39F3EB005B4904 /* CategoryCreation */ = {
+			isa = PBXGroup;
+			children = (
+				3949D78F2B39F40C005B4904 /* CategoryCreationViewController.swift */,
+				3949D7912B39F415005B4904 /* CategoryCreation.storyboard */,
+			);
+			path = CategoryCreation;
+			sourceTree = "<group>";
+		};
 		3957CDCC2AF5671F00834215 /* Analytics */ = {
 			isa = PBXGroup;
 			children = (
@@ -545,7 +559,7 @@
 			path = Router;
 			sourceTree = "<group>";
 		};
-		39A7D6822A6DCE820085E861 /* Categories */ = {
+		39A7D6822A6DCE820085E861 /* Category */ = {
 			isa = PBXGroup;
 			children = (
 				39A7D6872A6E976B0085E861 /* View */,
@@ -553,7 +567,7 @@
 				39A7D6892A6E977E0085E861 /* Interactor */,
 				39A7D68A2A6E97850085E861 /* Configurator */,
 			);
-			path = Categories;
+			path = Category;
 			sourceTree = "<group>";
 		};
 		39A7D6872A6E976B0085E861 /* View */ = {
@@ -829,6 +843,7 @@
 				39A7D6782A6DB6570085E861 /* Operations.storyboard in Resources */,
 				3940345D2A6C347E00D45D24 /* TabBar.storyboard in Resources */,
 				395A7ABC2A3E11FD000A9BE2 /* OperationCreation.storyboard in Resources */,
+				3949D7922B39F415005B4904 /* CategoryCreation.storyboard in Resources */,
 				3949D7702B371E2B005B4904 /* CategoryListHeaderView.xib in Resources */,
 				394034602A6C34DA00D45D24 /* Settings.storyboard in Resources */,
 				391FA0AF2A2135970096EB59 /* LaunchScreen.storyboard in Resources */,
@@ -858,6 +873,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				39A7D6812A6DCDAB0085E861 /* Router.swift in Sources */,
+				3949D7902B39F40C005B4904 /* CategoryCreationViewController.swift in Sources */,
 				39B1C9AA2A5094450065442C /* Expense.swift in Sources */,
 				3907A4E62A71B6FB007C6412 /* OperationViewObject.swift in Sources */,
 				39A7D67F2A6DCDA50085E861 /* ApplicationRouter.swift in Sources */,

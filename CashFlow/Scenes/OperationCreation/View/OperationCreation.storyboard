@@ -255,7 +255,9 @@
                     <tabBarItem key="tabBarItem" tag="1" title="" id="t55-Bo-qPD">
                         <imageReference key="image" image="plus.circle.fill" catalog="system" symbolScale="large" variableValue="0.0"/>
                     </tabBarItem>
-                    <navigationItem key="navigationItem" id="d8D-or-sdB"/>
+                    <navigationItem key="navigationItem" id="d8D-or-sdB">
+                        <barButtonItem key="leftBarButtonItem" title="Item" image="xmark" catalog="system" id="JYE-3g-hJs"/>
+                    </navigationItem>
                     <simulatedTabBarMetrics key="simulatedBottomBarMetrics"/>
                     <connections>
                         <outlet property="tableView" destination="s8V-iv-o60" id="tMC-gl-M9S"/>
@@ -273,12 +275,13 @@
         <!--Navigation Controller-->
         <scene sceneID="xBK-RE-3Lr">
             <objects>
-                <navigationController automaticallyAdjustsScrollViewInsets="NO" navigationBarHidden="YES" id="mf6-65-e2t" sceneMemberID="viewController">
+                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="mf6-65-e2t" sceneMemberID="viewController">
                     <tabBarItem key="tabBarItem" title="" id="FSN-d2-VlG">
                         <color key="badgeColor" red="0.12549020350000001" green="0.2823529541" blue="0.74509805439999999" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                     </tabBarItem>
                     <toolbarItems/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" id="l9G-yr-iOF">
+                        <rect key="frame" x="0.0" y="59" width="393" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
                     </navigationBar>
                     <nil name="viewControllers"/>
@@ -296,6 +299,7 @@
     </scenes>
     <resources>
         <image name="plus.circle.fill" catalog="system" width="128" height="123"/>
+        <image name="xmark" catalog="system" width="128" height="113"/>
         <systemColor name="tintColor">
             <color red="0.0" green="0.47843137250000001" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </systemColor>
