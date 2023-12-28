@@ -15,4 +15,6 @@ enum CashFlowTableViewCellTypeProtocol {
     case saveButton
     case _default
     case settingCategory
+    case categoryCreationParent
+    case categoryCreationSetTitleName
 }

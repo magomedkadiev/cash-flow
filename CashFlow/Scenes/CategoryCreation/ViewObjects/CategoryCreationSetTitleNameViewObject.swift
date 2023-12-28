@@ -6,7 +6,7 @@ struct CategoryCreationSetTitleNameViewObject: CashFlowTableViewCellViewObject {
     
     var reuseIdentifier: String = "CategoryCreationSetTitleNameCell"
     
-    var cellType: CashFlowTableViewCellTypeProtocol = ._default
+    var cellType: CashFlowTableViewCellTypeProtocol = .categoryCreationSetTitleName
     
     var titleName: String
     

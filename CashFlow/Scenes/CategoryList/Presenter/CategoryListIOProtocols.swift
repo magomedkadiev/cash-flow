@@ -6,6 +6,7 @@ protocol CategoryListInputViewProtocol: AnyObject {
 
 protocol CategoryListOutputViewProtocol {
     func viewDidLoad()
+    func fetchAllCategories()
     func dismissViewController(with viewObject: CashFlowTableViewCellViewObject)
     func isReadyForEditing() -> Bool
     func addButtonTapped()

@@ -8,6 +8,8 @@ class CategoryCreationViewController: UIViewController {
     
     var viewObjects = [[CashFlowTableViewCellViewObject]]()
     
+    weak var categoryCreationFinishHandler: CategoryCreationFinishHandler?
+    
     static func controller() -> UINavigationController {
         let storyboard = UIStoryboard(name: "CategoryCreation", bundle: nil)
         return storyboard.instantiateInitialViewController() as! UINavigationController
@@ -18,12 +20,19 @@ class CategoryCreationViewController: UIViewController {
         presenter?.viewDidLoad()
     }
 
+    @IBAction func createCategoryTapped(_ sender: UIBarButtonItem) {
+        presenter?.createCategoryWith()
+    }
 }
 
 extension CategoryCreationViewController: CategoryCreationInputViewProtocol {
     
     func showInfo(_ viewObjects: [[CashFlowTableViewCellViewObject]]) {
         self.viewObjects = viewObjects
+    }
+    
+    func categoryCreationFinished() {
+        categoryCreationFinishHandler?.finishHandled()
     }
 }
 
@@ -62,6 +71,20 @@ extension CategoryCreationViewController: UITableViewDelegate {
     }
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        let viewObject = viewObjects[indexPath.section][indexPath.row]
         tableView.deselectRow(at: indexPath, animated: true)
+        presenter?.didSelectItemEvent(viewObject)
+    }
+}
+
+extension CategoryCreationViewController: UITextFieldDelegate {
+    
+    func textField(_ textField: UITextField, shouldChangeCharactersIn range: NSRange, replacementString string: String) -> Bool {
+        let text = (textField.text as NSString?)?.replacingCharacters(in: range, with: string) ?? ""
+        let shouldChangeCharacters = text.count <= 30
+        if shouldChangeCharacters {
+            presenter?.updateCategoryName(text)
+        }
+        return shouldChangeCharacters
     }
 }

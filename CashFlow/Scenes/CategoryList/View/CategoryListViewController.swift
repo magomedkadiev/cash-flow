@@ -114,3 +114,10 @@ extension CategoryListViewController: CategoryListHeaderSelectionHandler {
         tableView.reloadSections(IndexSet(integer: section), with: .automatic)
     }
 }
+
+extension CategoryListViewController: CategoryCreationFinishHandler {
+    
+    func finishHandled() {
+        presenter?.fetchAllCategories()
+    }
+}

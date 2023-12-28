@@ -58,6 +58,9 @@
                                                     <rect key="frame" x="16" y="0.0" width="321" height="50"/>
                                                     <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                                     <textInputTraits key="textInputTraits"/>
+                                                    <connections>
+                                                        <outlet property="delegate" destination="Y6W-OH-hqX" id="FCx-Ld-wTC"/>
+                                                    </connections>
                                                 </textField>
                                             </subviews>
                                             <constraints>
@@ -68,9 +71,6 @@
                                             </constraints>
                                         </tableViewCellContentView>
                                         <color key="backgroundColor" red="0.95294117649999999" green="0.96078431369999995" blue="0.96470588239999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                        <connections>
-                                            <outlet property="titleNameTextField" destination="8cd-cI-f1M" id="Oli-Xn-nDn"/>
-                                        </connections>
                                     </tableViewCell>
                                 </prototypes>
                                 <connections>
@@ -91,6 +91,12 @@
                     <navigationItem key="navigationItem" id="Six-yc-ncf">
                         <barButtonItem key="leftBarButtonItem" image="xmark" catalog="system" id="JK7-6t-W4C">
                             <inset key="imageInsets" minX="16" minY="0.0" maxX="0.0" maxY="0.0"/>
+                        </barButtonItem>
+                        <barButtonItem key="rightBarButtonItem" image="checkmark" catalog="system" id="fMX-tN-C3u">
+                            <inset key="imageInsets" minX="0.0" minY="0.0" maxX="16" maxY="0.0"/>
+                            <connections>
+                                <action selector="createCategoryTapped:" destination="Y6W-OH-hqX" id="ey4-Jm-VDJ"/>
+                            </connections>
                         </barButtonItem>
                     </navigationItem>
                     <connections>
@@ -126,6 +132,7 @@
         </scene>
     </scenes>
     <resources>
+        <image name="checkmark" catalog="system" width="128" height="114"/>
         <image name="xmark" catalog="system" width="128" height="113"/>
         <systemColor name="systemBackgroundColor">
             <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>

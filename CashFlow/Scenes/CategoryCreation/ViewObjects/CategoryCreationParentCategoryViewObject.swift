@@ -6,7 +6,7 @@ struct CategoryCreationParentCategoryViewObject: CashFlowTableViewCellViewObject
     
     var reuseIdentifier: String = "CategoryCreationParentCategoryCell"
     
-    var cellType: CashFlowTableViewCellTypeProtocol = ._default
+    var cellType: CashFlowTableViewCellTypeProtocol = .categoryCreationParent
     
     var parentCategoryTitleName: String
     

@@ -50,7 +50,8 @@ class OperationCreationPresenter {
     fileprivate func creationNewOperationWith() {
         
         let categoryPO = CategoryPO(id: "selectedCategoryViewObject.id",
-                                    name: templateViewObject.categoryName)
+                                    name: templateViewObject.categoryName,
+                                    parentID: "")
         
         let operationPO = OperationPO(id: templateViewObject.id,
                                       type: templateViewObject.type,

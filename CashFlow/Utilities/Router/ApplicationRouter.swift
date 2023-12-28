@@ -7,4 +7,5 @@ protocol ApplicationRouter {
     func dismiss()
     func getChildrenViewController() -> UIViewController?
     func openCategoryCreationScreen()
+    func openCategoryParentList()
 }

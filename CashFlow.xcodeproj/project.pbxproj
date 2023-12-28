@@ -65,6 +65,21 @@
 		3949D7A72B3C4080005B4904 /* CategoryCreationSetTitleNameViewObject.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3949D7A62B3C4080005B4904 /* CategoryCreationSetTitleNameViewObject.swift */; };
 		3949D7A92B3C4202005B4904 /* CategoryCreationParentCategoryTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3949D7A82B3C4202005B4904 /* CategoryCreationParentCategoryTableViewCell.swift */; };
 		3949D7AB2B3C4227005B4904 /* CategoryCreationSetTitleNameTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3949D7AA2B3C4227005B4904 /* CategoryCreationSetTitleNameTableViewCell.swift */; };
+		3949D7AF2B3C5F57005B4904 /* CategoryParentListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3949D7AE2B3C5F57005B4904 /* CategoryParentListViewController.swift */; };
+		3949D7B12B3C5F63005B4904 /* CategoryParentList.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 3949D7B02B3C5F63005B4904 /* CategoryParentList.storyboard */; };
+		3949D7B32B3C5FCB005B4904 /* CategoryParentListTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3949D7B22B3C5FCB005B4904 /* CategoryParentListTableViewCell.swift */; };
+		3949D7BB2B3C606B005B4904 /* CategoryParentListPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3949D7BA2B3C606B005B4904 /* CategoryParentListPresenter.swift */; };
+		3949D7BD2B3C609A005B4904 /* CategoryParentListIOProtocols.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3949D7BC2B3C609A005B4904 /* CategoryParentListIOProtocols.swift */; };
+		3949D7BF2B3C60F0005B4904 /* CategoryParentListInteractor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3949D7BE2B3C60F0005B4904 /* CategoryParentListInteractor.swift */; };
+		3949D7C12B3C60F9005B4904 /* CategoryParentListInteractorIOProtocols.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3949D7C02B3C60F9005B4904 /* CategoryParentListInteractorIOProtocols.swift */; };
+		3949D7C32B3C6187005B4904 /* CategoryParentListInitializer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3949D7C22B3C6187005B4904 /* CategoryParentListInitializer.swift */; };
+		3949D7C52B3C61C0005B4904 /* CategoryParentListConfigurator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3949D7C42B3C61C0005B4904 /* CategoryParentListConfigurator.swift */; };
+		3949D7C72B3C692D005B4904 /* CategoryRealmDAO.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3949D7C62B3C692D005B4904 /* CategoryRealmDAO.swift */; };
+		3949D7C92B3C6945005B4904 /* CategoryDAO.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3949D7C82B3C6945005B4904 /* CategoryDAO.swift */; };
+		3949D7CB2B3C6B69005B4904 /* CategoryToCategoryParentViewObjectMapper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3949D7CA2B3C6B69005B4904 /* CategoryToCategoryParentViewObjectMapper.swift */; };
+		3949D7CD2B3C6E17005B4904 /* CategoryParentListViewObject.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3949D7CC2B3C6E17005B4904 /* CategoryParentListViewObject.swift */; };
+		3949D7CF2B3DB8CA005B4904 /* CategoryToCategoryListViewObjectMapper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3949D7CE2B3DB8CA005B4904 /* CategoryToCategoryListViewObjectMapper.swift */; };
+		3949D7D22B3DF91A005B4904 /* CategoryCreationFinishHandler.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3949D7D12B3DF91A005B4904 /* CategoryCreationFinishHandler.swift */; };
 		3957CDCE2AF567A500834215 /* AnalyticsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3957CDCD2AF567A500834215 /* AnalyticsViewController.swift */; };
 		3957CDD02AF567AB00834215 /* Analytics.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 3957CDCF2AF567AB00834215 /* Analytics.storyboard */; };
 		395A7AAE2A3E0E6D000A9BE2 /* OperationCreationViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 395A7AAD2A3E0E6D000A9BE2 /* OperationCreationViewController.swift */; };
@@ -193,6 +208,21 @@
 		3949D7A62B3C4080005B4904 /* CategoryCreationSetTitleNameViewObject.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CategoryCreationSetTitleNameViewObject.swift; sourceTree = "<group>"; };
 		3949D7A82B3C4202005B4904 /* CategoryCreationParentCategoryTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CategoryCreationParentCategoryTableViewCell.swift; sourceTree = "<group>"; };
 		3949D7AA2B3C4227005B4904 /* CategoryCreationSetTitleNameTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CategoryCreationSetTitleNameTableViewCell.swift; sourceTree = "<group>"; };
+		3949D7AE2B3C5F57005B4904 /* CategoryParentListViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CategoryParentListViewController.swift; sourceTree = "<group>"; };
+		3949D7B02B3C5F63005B4904 /* CategoryParentList.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = CategoryParentList.storyboard; sourceTree = "<group>"; };
+		3949D7B22B3C5FCB005B4904 /* CategoryParentListTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CategoryParentListTableViewCell.swift; sourceTree = "<group>"; };
+		3949D7BA2B3C606B005B4904 /* CategoryParentListPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CategoryParentListPresenter.swift; sourceTree = "<group>"; };
+		3949D7BC2B3C609A005B4904 /* CategoryParentListIOProtocols.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CategoryParentListIOProtocols.swift; sourceTree = "<group>"; };
+		3949D7BE2B3C60F0005B4904 /* CategoryParentListInteractor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CategoryParentListInteractor.swift; sourceTree = "<group>"; };
+		3949D7C02B3C60F9005B4904 /* CategoryParentListInteractorIOProtocols.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CategoryParentListInteractorIOProtocols.swift; sourceTree = "<group>"; };
+		3949D7C22B3C6187005B4904 /* CategoryParentListInitializer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CategoryParentListInitializer.swift; sourceTree = "<group>"; };
+		3949D7C42B3C61C0005B4904 /* CategoryParentListConfigurator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CategoryParentListConfigurator.swift; sourceTree = "<group>"; };
+		3949D7C62B3C692D005B4904 /* CategoryRealmDAO.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CategoryRealmDAO.swift; sourceTree = "<group>"; };
+		3949D7C82B3C6945005B4904 /* CategoryDAO.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CategoryDAO.swift; sourceTree = "<group>"; };
+		3949D7CA2B3C6B69005B4904 /* CategoryToCategoryParentViewObjectMapper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CategoryToCategoryParentViewObjectMapper.swift; sourceTree = "<group>"; };
+		3949D7CC2B3C6E17005B4904 /* CategoryParentListViewObject.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CategoryParentListViewObject.swift; sourceTree = "<group>"; };
+		3949D7CE2B3DB8CA005B4904 /* CategoryToCategoryListViewObjectMapper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CategoryToCategoryListViewObjectMapper.swift; sourceTree = "<group>"; };
+		3949D7D12B3DF91A005B4904 /* CategoryCreationFinishHandler.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CategoryCreationFinishHandler.swift; sourceTree = "<group>"; };
 		3957CDCD2AF567A500834215 /* AnalyticsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AnalyticsViewController.swift; sourceTree = "<group>"; };
 		3957CDCF2AF567AB00834215 /* Analytics.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Analytics.storyboard; sourceTree = "<group>"; };
 		395A7AAD2A3E0E6D000A9BE2 /* OperationCreationViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OperationCreationViewController.swift; sourceTree = "<group>"; };
@@ -331,13 +361,14 @@
 		391FA0D22A2147AA0096EB59 /* Scenes */ = {
 			isa = PBXGroup;
 			children = (
+				391FA0D32A2147DB0096EB59 /* Operations */,
+				395A7AA82A3E0E1C000A9BE2 /* OperationCreation */,
+				39A7D6822A6DCE820085E861 /* CategoryList */,
 				3949D78E2B39F3EB005B4904 /* CategoryCreation */,
-				3957CDCC2AF5671F00834215 /* Analytics */,
-				39A7D6822A6DCE820085E861 /* Category */,
+				3949D7AD2B3C5F20005B4904 /* CategoryParentList */,
 				3940345E2A6C34CB00D45D24 /* Settings */,
 				3940345B2A6C347000D45D24 /* TabBar */,
-				395A7AA82A3E0E1C000A9BE2 /* OperationCreation */,
-				391FA0D32A2147DB0096EB59 /* Operations */,
+				3957CDCC2AF5671F00834215 /* Analytics */,
 			);
 			path = Scenes;
 			sourceTree = "<group>";
@@ -505,6 +536,7 @@
 		3949D78E2B39F3EB005B4904 /* CategoryCreation */ = {
 			isa = PBXGroup;
 			children = (
+				3949D7D02B3DF905005B4904 /* Handler */,
 				3949D7A52B3C4068005B4904 /* ViewObjects */,
 				3949D7962B3C3C24005B4904 /* View */,
 				3949D7952B3C3C1F005B4904 /* Presenter */,
@@ -535,8 +567,8 @@
 		3949D7952B3C3C1F005B4904 /* Presenter */ = {
 			isa = PBXGroup;
 			children = (
-				3949D7972B3C3C53005B4904 /* CategoryCreationIOProtocols.swift */,
 				3949D7992B3C3C6D005B4904 /* CategoryCreationPresenter.swift */,
+				3949D7972B3C3C53005B4904 /* CategoryCreationIOProtocols.swift */,
 			);
 			path = Presenter;
 			sourceTree = "<group>";
@@ -544,10 +576,9 @@
 		3949D7962B3C3C24005B4904 /* View */ = {
 			isa = PBXGroup;
 			children = (
+				3949D7AC2B3C5B05005B4904 /* Cells */,
 				3949D78F2B39F40C005B4904 /* CategoryCreationViewController.swift */,
 				3949D7912B39F415005B4904 /* CategoryCreation.storyboard */,
-				3949D7A82B3C4202005B4904 /* CategoryCreationParentCategoryTableViewCell.swift */,
-				3949D7AA2B3C4227005B4904 /* CategoryCreationSetTitleNameTableViewCell.swift */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -559,6 +590,80 @@
 				3949D7A62B3C4080005B4904 /* CategoryCreationSetTitleNameViewObject.swift */,
 			);
 			path = ViewObjects;
+			sourceTree = "<group>";
+		};
+		3949D7AC2B3C5B05005B4904 /* Cells */ = {
+			isa = PBXGroup;
+			children = (
+				3949D7A82B3C4202005B4904 /* CategoryCreationParentCategoryTableViewCell.swift */,
+				3949D7AA2B3C4227005B4904 /* CategoryCreationSetTitleNameTableViewCell.swift */,
+			);
+			path = Cells;
+			sourceTree = "<group>";
+		};
+		3949D7AD2B3C5F20005B4904 /* CategoryParentList */ = {
+			isa = PBXGroup;
+			children = (
+				3949D7B42B3C6024005B4904 /* View */,
+				3949D7B82B3C6041005B4904 /* Presenter */,
+				3949D7B72B3C603B005B4904 /* Interactor */,
+				3949D7B62B3C6035005B4904 /* Configurator */,
+			);
+			path = CategoryParentList;
+			sourceTree = "<group>";
+		};
+		3949D7B42B3C6024005B4904 /* View */ = {
+			isa = PBXGroup;
+			children = (
+				3949D7B52B3C602C005B4904 /* Cells */,
+				3949D7AE2B3C5F57005B4904 /* CategoryParentListViewController.swift */,
+				3949D7B02B3C5F63005B4904 /* CategoryParentList.storyboard */,
+				3949D7CC2B3C6E17005B4904 /* CategoryParentListViewObject.swift */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		3949D7B52B3C602C005B4904 /* Cells */ = {
+			isa = PBXGroup;
+			children = (
+				3949D7B22B3C5FCB005B4904 /* CategoryParentListTableViewCell.swift */,
+			);
+			path = Cells;
+			sourceTree = "<group>";
+		};
+		3949D7B62B3C6035005B4904 /* Configurator */ = {
+			isa = PBXGroup;
+			children = (
+				3949D7C22B3C6187005B4904 /* CategoryParentListInitializer.swift */,
+				3949D7C42B3C61C0005B4904 /* CategoryParentListConfigurator.swift */,
+			);
+			path = Configurator;
+			sourceTree = "<group>";
+		};
+		3949D7B72B3C603B005B4904 /* Interactor */ = {
+			isa = PBXGroup;
+			children = (
+				3949D7BE2B3C60F0005B4904 /* CategoryParentListInteractor.swift */,
+				3949D7C02B3C60F9005B4904 /* CategoryParentListInteractorIOProtocols.swift */,
+			);
+			path = Interactor;
+			sourceTree = "<group>";
+		};
+		3949D7B82B3C6041005B4904 /* Presenter */ = {
+			isa = PBXGroup;
+			children = (
+				3949D7BA2B3C606B005B4904 /* CategoryParentListPresenter.swift */,
+				3949D7BC2B3C609A005B4904 /* CategoryParentListIOProtocols.swift */,
+			);
+			path = Presenter;
+			sourceTree = "<group>";
+		};
+		3949D7D02B3DF905005B4904 /* Handler */ = {
+			isa = PBXGroup;
+			children = (
+				3949D7D12B3DF91A005B4904 /* CategoryCreationFinishHandler.swift */,
+			);
+			path = Handler;
 			sourceTree = "<group>";
 		};
 		3957CDCC2AF5671F00834215 /* Analytics */ = {
@@ -629,7 +734,7 @@
 			path = Router;
 			sourceTree = "<group>";
 		};
-		39A7D6822A6DCE820085E861 /* Category */ = {
+		39A7D6822A6DCE820085E861 /* CategoryList */ = {
 			isa = PBXGroup;
 			children = (
 				39A7D6872A6E976B0085E861 /* View */,
@@ -637,7 +742,7 @@
 				39A7D6892A6E977E0085E861 /* Interactor */,
 				39A7D68A2A6E97850085E861 /* Configurator */,
 			);
-			path = Category;
+			path = CategoryList;
 			sourceTree = "<group>";
 		};
 		39A7D6872A6E976B0085E861 /* View */ = {
@@ -711,6 +816,8 @@
 			children = (
 				39AA92822A3A2D8000F2FF30 /* OperationsRealmDAO.swift */,
 				39AA92842A3A2D8C00F2FF30 /* OperationsDAO.swift */,
+				3949D7C62B3C692D005B4904 /* CategoryRealmDAO.swift */,
+				3949D7C82B3C6945005B4904 /* CategoryDAO.swift */,
 			);
 			path = DAO;
 			sourceTree = "<group>";
@@ -732,6 +839,8 @@
 				3907A4DF2A71B22A007C6412 /* CategoryPOToRealmCategoryMapper.swift */,
 				3907A4E32A71B5BD007C6412 /* OperationsPOToOperationViewObjectsMapper.swift */,
 				39EC46F72B222C9800C2BA0D /* OperationCreationTemplateViewObjectToOperationViewObjetMapper.swift */,
+				3949D7CA2B3C6B69005B4904 /* CategoryToCategoryParentViewObjectMapper.swift */,
+				3949D7CE2B3DB8CA005B4904 /* CategoryToCategoryListViewObjectMapper.swift */,
 			);
 			path = Mappers;
 			sourceTree = "<group>";
@@ -912,6 +1021,7 @@
 				3957CDD02AF567AB00834215 /* Analytics.storyboard in Resources */,
 				39A7D6782A6DB6570085E861 /* Operations.storyboard in Resources */,
 				3940345D2A6C347E00D45D24 /* TabBar.storyboard in Resources */,
+				3949D7B12B3C5F63005B4904 /* CategoryParentList.storyboard in Resources */,
 				395A7ABC2A3E11FD000A9BE2 /* OperationCreation.storyboard in Resources */,
 				3949D7922B39F415005B4904 /* CategoryCreation.storyboard in Resources */,
 				3949D7702B371E2B005B4904 /* CategoryListHeaderView.xib in Resources */,
@@ -942,16 +1052,21 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				3949D7D22B3DF91A005B4904 /* CategoryCreationFinishHandler.swift in Sources */,
 				39A7D6812A6DCDAB0085E861 /* Router.swift in Sources */,
 				3949D7902B39F40C005B4904 /* CategoryCreationViewController.swift in Sources */,
 				39B1C9AA2A5094450065442C /* Expense.swift in Sources */,
 				3907A4E62A71B6FB007C6412 /* OperationViewObject.swift in Sources */,
+				3949D7C12B3C60F9005B4904 /* CategoryParentListInteractorIOProtocols.swift in Sources */,
 				39A7D67F2A6DCDA50085E861 /* ApplicationRouter.swift in Sources */,
 				39AA927E2A3A23E600F2FF30 /* RealmManager.swift in Sources */,
 				39AA92832A3A2D8000F2FF30 /* OperationsRealmDAO.swift in Sources */,
+				3949D7C92B3C6945005B4904 /* CategoryDAO.swift in Sources */,
+				3949D7BB2B3C606B005B4904 /* CategoryParentListPresenter.swift in Sources */,
 				39A7D6962A6E98C60085E861 /* CategoryListConfigurator.swift in Sources */,
 				39EC46FD2B2370A600C2BA0D /* OperationCreationSegmentedControllHandler.swift in Sources */,
 				3949D7AB2B3C4227005B4904 /* CategoryCreationSetTitleNameTableViewCell.swift in Sources */,
+				3949D7CF2B3DB8CA005B4904 /* CategoryToCategoryListViewObjectMapper.swift in Sources */,
 				3940344E2A685C8C00D45D24 /* OperationCreationSaveButtonViewObject.swift in Sources */,
 				39EC46F42B20EFDA00C2BA0D /* OperationCreationDatePickerChangedHandler.swift in Sources */,
 				39EC47012B2378DF00C2BA0D /* OperationCreationCommentViewObject.swift in Sources */,
@@ -966,10 +1081,13 @@
 				3957CDCE2AF567A500834215 /* AnalyticsViewController.swift in Sources */,
 				395A7AB42A3E11D4000A9BE2 /* OperationCreationInteractor.swift in Sources */,
 				39A7D68E2A6E97E90085E861 /* CategoryListIOProtocols.swift in Sources */,
+				3949D7CD2B3C6E17005B4904 /* CategoryParentListViewObject.swift in Sources */,
 				395A7AB02A3E0E9D000A9BE2 /* OperationCreationPresenter.swift in Sources */,
 				395A7ABA2A3E11F6000A9BE2 /* OperationCreationInitializer.swift in Sources */,
 				3949D79C2B3C3D2E005B4904 /* CategoryCreationInteractorIOProtocols.swift in Sources */,
 				39A7D67C2A6DB9830085E861 /* TabBarViewController.swift in Sources */,
+				3949D7C72B3C692D005B4904 /* CategoryRealmDAO.swift in Sources */,
+				3949D7CB2B3C6B69005B4904 /* CategoryToCategoryParentViewObjectMapper.swift in Sources */,
 				3949D7A02B3C3D94005B4904 /* CategoryCreationInitializer.swift in Sources */,
 				394034442A65B61600D45D24 /* SaveButtonTableViewCell.swift in Sources */,
 				3949D7A22B3C3DE3005B4904 /* CategoryCreationConfigurator.swift in Sources */,
@@ -1013,6 +1131,8 @@
 				3949D7722B371E69005B4904 /* CategoryListHeaderView.swift in Sources */,
 				3949D7A72B3C4080005B4904 /* CategoryCreationSetTitleNameViewObject.swift in Sources */,
 				394034402A5F280800D45D24 /* HeaderTableViewCell.swift in Sources */,
+				3949D7B32B3C5FCB005B4904 /* CategoryParentListTableViewCell.swift in Sources */,
+				3949D7AF2B3C5F57005B4904 /* CategoryParentListViewController.swift in Sources */,
 				39A7D69C2A6E9C110085E861 /* CategoryListTableViewCell.swift in Sources */,
 				39A7D6922A6E987A0085E861 /* CategoryListinteractorIOProtocols.swift in Sources */,
 				39AA92882A3A2E0700F2FF30 /* OperationPO.swift in Sources */,
@@ -1020,6 +1140,8 @@
 				3949D7842B39B13F005B4904 /* SettingsIOProtocols.swift in Sources */,
 				3949D77A2B39B060005B4904 /* SettingsPresenter.swift in Sources */,
 				391FA0A52A2135950096EB59 /* SceneDelegate.swift in Sources */,
+				3949D7C52B3C61C0005B4904 /* CategoryParentListConfigurator.swift in Sources */,
+				3949D7C32B3C6187005B4904 /* CategoryParentListInitializer.swift in Sources */,
 				3949D78D2B39B99F005B4904 /* SettingsCategoryViewObject.swift in Sources */,
 				3940343B2A5734CB00D45D24 /* ExpensesToExpensesPOMapper.swift in Sources */,
 				39B1C9AC2A5094FA0065442C /* ExpensePO.swift in Sources */,
@@ -1028,6 +1150,8 @@
 				3940344A2A685C3200D45D24 /* OperationCreationHeaderViewObject.swift in Sources */,
 				391FA0E12A2148A20096EB59 /* OperationsViewController.swift in Sources */,
 				3907A4DC2A71A613007C6412 /* Category.swift in Sources */,
+				3949D7BD2B3C609A005B4904 /* CategoryParentListIOProtocols.swift in Sources */,
+				3949D7BF2B3C60F0005B4904 /* CategoryParentListInteractor.swift in Sources */,
 				3949D7742B372BEF005B4904 /* CategoryListHeaderSelectionHandler.swift in Sources */,
 				391FA0E52A2149510096EB59 /* OperationsIOProtocols.swift in Sources */,
 				39DDA82F2B2F68D3009E0405 /* MiddleTabBar.swift in Sources */,
