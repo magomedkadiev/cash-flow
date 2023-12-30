@@ -8,5 +8,8 @@ struct CategoryParentListViewObject: CashFlowTableViewCellViewObject {
     
     var cellType: CashFlowTableViewCellTypeProtocol = ._default
     
+    var parentID: String
+    
     var name: String
+    
 }

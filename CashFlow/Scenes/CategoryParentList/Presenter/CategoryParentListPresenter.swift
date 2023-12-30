@@ -4,9 +4,11 @@ class CategoryParentListPresenter {
     
     weak var view: CategoryParentListInputViewProtocol?
     var interactor: CategoryParentListInteractorInputProtocol?
+    var mapper: CategoryToCategoryParentViewObjectMapperProtocol
     
-    init(view: CategoryParentListInputViewProtocol?) {
+    init(view: CategoryParentListInputViewProtocol, mapper: CategoryToCategoryParentViewObjectMapperProtocol) {
         self.view = view
+        self.mapper = mapper
     }
 }
 
@@ -19,7 +21,8 @@ extension CategoryParentListPresenter: CategoryParentListOutputViewProtocol {
 
 extension CategoryParentListPresenter: CategoryParentListInteractorOutputProtocol {
     
-    func reloadDataWith(_ viewObjects: [CashFlowTableViewCellViewObject]) {
-        view?.showInfo(viewObjects)
+    func reloadDataWith(_ plainObjects: [CategoryPO]) {
+        let mappedViewObjects = mapper.map(plainObjects)
+        view?.showInfo(mappedViewObjects)
     }
 }

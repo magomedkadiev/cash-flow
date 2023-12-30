@@ -29,6 +29,7 @@ extension CategoryCreationViewController: CategoryCreationInputViewProtocol {
     
     func showInfo(_ viewObjects: [[CashFlowTableViewCellViewObject]]) {
         self.viewObjects = viewObjects
+        tableView.reloadData()
     }
     
     func categoryCreationFinished() {
@@ -86,5 +87,12 @@ extension CategoryCreationViewController: UITextFieldDelegate {
             presenter?.updateCategoryName(text)
         }
         return shouldChangeCharacters
+    }
+}
+
+extension CategoryCreationViewController: CategoryParentListSelectionHandler {
+    
+    func didSelect(_ viewObject: CashFlowTableViewCellViewObject) {
+        presenter?.updateParentCategoryName(viewObject)
     }
 }

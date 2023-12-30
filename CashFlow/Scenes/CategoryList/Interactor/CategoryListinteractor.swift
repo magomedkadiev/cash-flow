@@ -4,9 +4,9 @@ class CategoryListinteractor {
     
     weak var presenter: CategoryListinteractorOutputProtocol?
     var categoryRealmDAO: CategoryDAO
-    var categoryMapper: CategoryToCategoryListViewObjectMapperProtocol
+    var categoryMapper: CategoryToCategoryPOMapperProtocol
     
-    init(categoryRealmDAO: CategoryDAO, categoryMapper: CategoryToCategoryListViewObjectMapperProtocol) {
+    init(categoryRealmDAO: CategoryDAO, categoryMapper: CategoryToCategoryPOMapperProtocol) {
         self.categoryRealmDAO = categoryRealmDAO
         self.categoryMapper = categoryMapper
     }
@@ -16,7 +16,7 @@ extension CategoryListinteractor: CategoryListinteractorInputProtocol {
     
     func fetchAllCategories() {
         let fetchedCategories = categoryRealmDAO.fetchAllCategories()
-        let mappedCategories = categoryMapper.map(fetchedCategories)
-        presenter?.reloadDataWith(mappedCategories)
+        let plainCategories = categoryMapper.map(fetchedCategories)
+        presenter?.reloadDataWith(plainCategories)
     }
 }

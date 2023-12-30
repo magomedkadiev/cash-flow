@@ -5,5 +5,5 @@ protocol CategoryParentListInteractorInputProtocol {
 }
 
 protocol CategoryParentListInteractorOutputProtocol: AnyObject {
-    func reloadDataWith(_ viewObjects: [CashFlowTableViewCellViewObject])
+    func reloadDataWith(_ viewObjects: [CategoryPO])
 }

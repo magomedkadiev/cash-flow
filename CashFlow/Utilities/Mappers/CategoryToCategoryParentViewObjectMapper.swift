@@ -2,11 +2,11 @@ import Foundation
 
 class CategoryToCategoryParentViewObjectMapper: CategoryToCategoryParentViewObjectMapperProtocol {
     
-    func map(_ categories: [Category]) -> [CashFlowTableViewCellViewObject] {
+    func map(_ categories: [CategoryPO]) -> [CashFlowTableViewCellViewObject] {
         var viewObjects = [CashFlowTableViewCellViewObject]()
         
         for category in categories {
-            let viewObject = CategoryParentListViewObject(name: category.name)
+            let viewObject = CategoryParentListViewObject(parentID: category.id, name: category.name)
             viewObjects.append(viewObject)
         }
         return viewObjects
@@ -14,5 +14,5 @@ class CategoryToCategoryParentViewObjectMapper: CategoryToCategoryParentViewObje
 }
 
 protocol CategoryToCategoryParentViewObjectMapperProtocol {
-    func map(_ categories: [Category]) -> [CashFlowTableViewCellViewObject]
+    func map(_ categories: [CategoryPO]) -> [CashFlowTableViewCellViewObject]
 }

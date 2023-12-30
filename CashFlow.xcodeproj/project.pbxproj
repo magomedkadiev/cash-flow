@@ -80,6 +80,9 @@
 		3949D7CD2B3C6E17005B4904 /* CategoryParentListViewObject.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3949D7CC2B3C6E17005B4904 /* CategoryParentListViewObject.swift */; };
 		3949D7CF2B3DB8CA005B4904 /* CategoryToCategoryListViewObjectMapper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3949D7CE2B3DB8CA005B4904 /* CategoryToCategoryListViewObjectMapper.swift */; };
 		3949D7D22B3DF91A005B4904 /* CategoryCreationFinishHandler.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3949D7D12B3DF91A005B4904 /* CategoryCreationFinishHandler.swift */; };
+		3949D7D42B3DFFF5005B4904 /* CategoryParentListSelectionHandler.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3949D7D32B3DFFF5005B4904 /* CategoryParentListSelectionHandler.swift */; };
+		3949D7D62B3E0AA6005B4904 /* CategoryToCategoryPOMapper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3949D7D52B3E0AA6005B4904 /* CategoryToCategoryPOMapper.swift */; };
+		3949D7D92B3E0BDD005B4904 /* CategoryPOToCategoryViewObjectMapper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3949D7D82B3E0BDD005B4904 /* CategoryPOToCategoryViewObjectMapper.swift */; };
 		3957CDCE2AF567A500834215 /* AnalyticsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3957CDCD2AF567A500834215 /* AnalyticsViewController.swift */; };
 		3957CDD02AF567AB00834215 /* Analytics.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 3957CDCF2AF567AB00834215 /* Analytics.storyboard */; };
 		395A7AAE2A3E0E6D000A9BE2 /* OperationCreationViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 395A7AAD2A3E0E6D000A9BE2 /* OperationCreationViewController.swift */; };
@@ -223,6 +226,9 @@
 		3949D7CC2B3C6E17005B4904 /* CategoryParentListViewObject.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CategoryParentListViewObject.swift; sourceTree = "<group>"; };
 		3949D7CE2B3DB8CA005B4904 /* CategoryToCategoryListViewObjectMapper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CategoryToCategoryListViewObjectMapper.swift; sourceTree = "<group>"; };
 		3949D7D12B3DF91A005B4904 /* CategoryCreationFinishHandler.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CategoryCreationFinishHandler.swift; sourceTree = "<group>"; };
+		3949D7D32B3DFFF5005B4904 /* CategoryParentListSelectionHandler.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CategoryParentListSelectionHandler.swift; sourceTree = "<group>"; };
+		3949D7D52B3E0AA6005B4904 /* CategoryToCategoryPOMapper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CategoryToCategoryPOMapper.swift; sourceTree = "<group>"; };
+		3949D7D82B3E0BDD005B4904 /* CategoryPOToCategoryViewObjectMapper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CategoryPOToCategoryViewObjectMapper.swift; sourceTree = "<group>"; };
 		3957CDCD2AF567A500834215 /* AnalyticsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AnalyticsViewController.swift; sourceTree = "<group>"; };
 		3957CDCF2AF567AB00834215 /* Analytics.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Analytics.storyboard; sourceTree = "<group>"; };
 		395A7AAD2A3E0E6D000A9BE2 /* OperationCreationViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OperationCreationViewController.swift; sourceTree = "<group>"; };
@@ -604,6 +610,7 @@
 		3949D7AD2B3C5F20005B4904 /* CategoryParentList */ = {
 			isa = PBXGroup;
 			children = (
+				3949D7D32B3DFFF5005B4904 /* CategoryParentListSelectionHandler.swift */,
 				3949D7B42B3C6024005B4904 /* View */,
 				3949D7B82B3C6041005B4904 /* Presenter */,
 				3949D7B72B3C603B005B4904 /* Interactor */,
@@ -664,6 +671,15 @@
 				3949D7D12B3DF91A005B4904 /* CategoryCreationFinishHandler.swift */,
 			);
 			path = Handler;
+			sourceTree = "<group>";
+		};
+		3949D7D72B3E0B7B005B4904 /* v2 */ = {
+			isa = PBXGroup;
+			children = (
+				39AA928C2A3A3E1500F2FF30 /* OperationsToOperationsPOMapper.swift */,
+				3949D7D52B3E0AA6005B4904 /* CategoryToCategoryPOMapper.swift */,
+			);
+			path = v2;
 			sourceTree = "<group>";
 		};
 		3957CDCC2AF5671F00834215 /* Analytics */ = {
@@ -834,10 +850,11 @@
 		39AA928B2A3A3DEA00F2FF30 /* Mappers */ = {
 			isa = PBXGroup;
 			children = (
-				39AA928C2A3A3E1500F2FF30 /* OperationsToOperationsPOMapper.swift */,
+				3949D7D72B3E0B7B005B4904 /* v2 */,
 				3940343A2A5734CB00D45D24 /* ExpensesToExpensesPOMapper.swift */,
 				3907A4DF2A71B22A007C6412 /* CategoryPOToRealmCategoryMapper.swift */,
 				3907A4E32A71B5BD007C6412 /* OperationsPOToOperationViewObjectsMapper.swift */,
+				3949D7D82B3E0BDD005B4904 /* CategoryPOToCategoryViewObjectMapper.swift */,
 				39EC46F72B222C9800C2BA0D /* OperationCreationTemplateViewObjectToOperationViewObjetMapper.swift */,
 				3949D7CA2B3C6B69005B4904 /* CategoryToCategoryParentViewObjectMapper.swift */,
 				3949D7CE2B3DB8CA005B4904 /* CategoryToCategoryListViewObjectMapper.swift */,
@@ -1114,6 +1131,7 @@
 				3949D78A2B39B51C005B4904 /* SettingsTableViewCell.swift in Sources */,
 				39EC46F02B20953200C2BA0D /* OperationCreationDateViewObject.swift in Sources */,
 				39EC46EA2B10C8E400C2BA0D /* Date + Extension.swift in Sources */,
+				3949D7D92B3E0BDD005B4904 /* CategoryPOToCategoryViewObjectMapper.swift in Sources */,
 				39A7D6902A6E98630085E861 /* CategoryListinteractor.swift in Sources */,
 				3949D7A42B3C3F82005B4904 /* CategoryCreationParentCategoryViewObject.swift in Sources */,
 				3907A4D42A704A03007C6412 /* TotalAmountTableViewCell.swift in Sources */,
@@ -1136,6 +1154,7 @@
 				39A7D69C2A6E9C110085E861 /* CategoryListTableViewCell.swift in Sources */,
 				39A7D6922A6E987A0085E861 /* CategoryListinteractorIOProtocols.swift in Sources */,
 				39AA92882A3A2E0700F2FF30 /* OperationPO.swift in Sources */,
+				3949D7D62B3E0AA6005B4904 /* CategoryToCategoryPOMapper.swift in Sources */,
 				39EC46FF2B23773400C2BA0D /* CommentTableViewCell.swift in Sources */,
 				3949D7842B39B13F005B4904 /* SettingsIOProtocols.swift in Sources */,
 				3949D77A2B39B060005B4904 /* SettingsPresenter.swift in Sources */,
@@ -1148,6 +1167,7 @@
 				3940344C2A685C7400D45D24 /* OperationCreationCategoryViewObject.swift in Sources */,
 				39A7D6992A6E9B9E0085E861 /* CategoryListViewObject.swift in Sources */,
 				3940344A2A685C3200D45D24 /* OperationCreationHeaderViewObject.swift in Sources */,
+				3949D7D42B3DFFF5005B4904 /* CategoryParentListSelectionHandler.swift in Sources */,
 				391FA0E12A2148A20096EB59 /* OperationsViewController.swift in Sources */,
 				3907A4DC2A71A613007C6412 /* Category.swift in Sources */,
 				3949D7BD2B3C609A005B4904 /* CategoryParentListIOProtocols.swift in Sources */,

@@ -1,6 +1,6 @@
 import Foundation
 
-struct CategoryListViewObject: CashFlowTableViewCellViewObject {
+struct CategoryListViewObject: CashFlowTableViewCellViewObject, Hashable {
     
     var cellHeight: CGFloat = 50
     
@@ -16,4 +16,7 @@ struct CategoryListViewObject: CashFlowTableViewCellViewObject {
     
     var isSelected: Bool = false
     
+    var parentID: String = ""
+    
+    var id: String = ""
 }

@@ -1,7 +1,7 @@
 import Foundation
 
 protocol CategoryParentListInputViewProtocol: AnyObject {
-    func showInfo(_ viewObjects: [CashFlowTableViewCellViewObject])
+    func showInfo(_ plainObjects: [CashFlowTableViewCellViewObject])
 }
 
 protocol CategoryParentListOutputViewProtocol {

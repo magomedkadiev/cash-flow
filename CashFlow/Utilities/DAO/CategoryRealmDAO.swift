@@ -11,6 +11,12 @@ class CategoryRealmDAO: CategoryDAO {
         return results
     }
     
+    func fetchAllParentCategories() -> [Category] {
+        let realm = try! Realm()
+        let results = Array(realm.objects(Category.self)).filter { $0.parentID.isEmpty }
+        return results
+    }
+    
     func createNew(category: CategoryPO, complitionHandler: @escaping () -> Void?) {
         realmManager.write { realm in
             let storedProreties = Category(id: category.id, name: category.name, parentID: category.parentID)

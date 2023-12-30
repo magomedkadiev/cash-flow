@@ -5,47 +5,34 @@ class CategoryListPresenter {
     weak var view: CategoryListInputViewProtocol?
     var interactor: CategoryListinteractorInputProtocol
     let router: ApplicationRouter
+    var mapper: CategoryPOToCategoryViewObjectMapperProtocol
     
-    init(view: CategoryListInputViewProtocol, interactor: CategoryListinteractorInputProtocol, router: ApplicationRouter) {
+    init(view: CategoryListInputViewProtocol, interactor: CategoryListinteractorInputProtocol, router: ApplicationRouter, mapper: CategoryPOToCategoryViewObjectMapperProtocol) {
         self.view = view
         self.interactor = interactor
         self.router = router
+        self.mapper = mapper
     }
     
     private func fillViewObjectsToShow(_ viewObjects: [CashFlowTableViewCellViewObject]) {
-        guard let viewObjects = viewObjects as? [CategoryListViewObject] else {
+        guard var viewObjects = viewObjects as? [CategoryListViewObject] else {
             return
         }
-        view?.showInfo(viewObjects)
+        
+        let objectsByParentID = Dictionary(grouping: viewObjects, by: \.parentID)
+        for i in 0..<viewObjects.count {
+            viewObjects[i].subCategories = objectsByParentID[viewObjects[i].id] ?? []
+        }
 
-        
-        
-//        var viewObjects = [CategoryListViewObject]()
-        
-        //TODO: Сохранять в бд. Добавить возможность добавлять новые категории. Сохранять значение выбранного элемента.
-//        viewObjects = [
-//            CategoryListViewObject(name: "Еда вне дома", subCategories: [
-//                CategoryListViewObject(name: "Кофейни"),
-//                CategoryListViewObject(name: "Рестораны"),
-//                CategoryListViewObject(name: "Обед")
-//            ]),
-//            CategoryListViewObject(name: "Автомобиль", subCategories: [
-//                CategoryListViewObject(name: "Топливо"),
-//                CategoryListViewObject(name: "Штрафы")
-//            ]),
-//            CategoryListViewObject(name: "Продукты питания")
-//        ]
-
+        let filteredViewObjects = viewObjects.filter { $0.parentID.isEmpty }
+        view?.showInfo(filteredViewObjects)
     }
 }
 
 extension CategoryListPresenter: CategoryListOutputViewProtocol {
     
     func viewDidLoad() {
-//        fillViewObjectsToShow()
-        fetchAllCategories()
-//        interactor.fetchAllCategories()
-        
+        fetchAllCategories()        
     }
     
     func fetchAllCategories() {
@@ -70,7 +57,8 @@ extension CategoryListPresenter: CategoryListOutputViewProtocol {
 
 extension CategoryListPresenter: CategoryListinteractorOutputProtocol {
     
-    func reloadDataWith(_ mappedObjects: [CashFlowTableViewCellViewObject]) {
-        fillViewObjectsToShow(mappedObjects)
+    func reloadDataWith(_ plainObjects: [CategoryPO]) {
+        let mappedViewObject = mapper.map(plainObjects)
+        fillViewObjectsToShow(mappedViewObject)
     }
 }

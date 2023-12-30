@@ -5,6 +5,7 @@ class CategoryParentListViewController: UIViewController {
     var presenter: CategoryParentListOutputViewProtocol?
     @IBOutlet weak var tableView: UITableView!
     var viewObjects = [CashFlowTableViewCellViewObject]()
+    weak var handler: CategoryParentListSelectionHandler?
     
     static func controller() -> UINavigationController {
         let storyboard = UIStoryboard(name: "CategoryParentList", bundle: nil)
@@ -15,7 +16,6 @@ class CategoryParentListViewController: UIViewController {
         super.viewDidLoad()
         presenter?.viewDidLoad()
     } 
-
 }
 
 extension CategoryParentListViewController: CategoryParentListInputViewProtocol {
@@ -46,5 +46,12 @@ extension CategoryParentListViewController: UITableViewDelegate {
     func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
         let viewObject = viewObjects[indexPath.row]
         return viewObject.cellHeight
+    }
+    
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        tableView.deselectRow(at: indexPath, animated: true)
+        let viewObject = viewObjects[indexPath.row]
+        handler?.didSelect(viewObject)
+        self.dismiss(animated: true)
     }
 }

@@ -51,7 +51,7 @@ class OperationCreationPresenter {
         
         let categoryPO = CategoryPO(id: "selectedCategoryViewObject.id",
                                     name: templateViewObject.categoryName,
-                                    parentID: "")
+                                    parentID: "", subCategories: [])
         
         let operationPO = OperationPO(id: templateViewObject.id,
                                       type: templateViewObject.type,

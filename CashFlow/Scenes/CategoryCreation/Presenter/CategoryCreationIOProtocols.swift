@@ -10,4 +10,5 @@ protocol CategoryCreationOutputViewProtocol {
     func didSelectItemEvent(_ viewObject: CashFlowTableViewCellViewObject)
     func createCategoryWith()
     func updateCategoryName(_ text: String)
+    func updateParentCategoryName(_ viewObject: CashFlowTableViewCellViewObject)
 }

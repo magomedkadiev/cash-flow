@@ -95,7 +95,7 @@ extension CategoryListViewController: UITableViewDelegate {
     }
     
     func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
-        let viewObject = viewObjects[indexPath.row]
+        let viewObject = viewObjects[indexPath.section].subCategories[indexPath.row]
         return viewObject.cellHeight
     }
     

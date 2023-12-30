@@ -107,7 +107,10 @@ class Router: ApplicationRouter {
             if let navigationController = topController as? UINavigationController {
                 if let categoryCreationViewController = navigationController.topViewController as? CategoryCreationViewController {
                     let categoryParentListViewController = CategoryParentListViewController.controller()
-                    categoryCreationViewController.present(categoryParentListViewController, animated: true)
+                    if let topViewController = categoryParentListViewController.topViewController as? CategoryParentListViewController {
+                        topViewController.handler = categoryCreationViewController
+                        categoryCreationViewController.present(categoryParentListViewController, animated: true)
+                    }
                 }
             }
         }
