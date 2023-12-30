@@ -90,10 +90,17 @@ extension CategoryListViewController: UITableViewDelegate {
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         tableView.deselectRow(at: indexPath, animated: true)
         var viewObject = viewObjects[indexPath.section].subCategories[indexPath.row]
+        var parentViewObject = viewObjects[indexPath.section]
         viewObject.isSelected = !viewObject.isSelected
         
-        handler?.didSelect(viewObject)
-        presenter?.dismissViewController(with: viewObject)
+        guard isEdited else {
+            handler?.didSelect(viewObject)
+            presenter?.dismissViewController()
+            return
+        }
+        let subCat = parentViewObject.subCategories[indexPath.row]
+        parentViewObject.subCategories = [subCat]
+        presenter?.openCategoryCreationScreen(with: parentViewObject)
     }
     
     func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {

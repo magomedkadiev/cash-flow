@@ -39,7 +39,7 @@ extension CategoryListPresenter: CategoryListOutputViewProtocol {
         interactor.fetchAllCategories()
     }
     
-    func dismissViewController(with viewObject: CashFlowTableViewCellViewObject) {
+    func dismissViewController() {
         router.dismiss()
     }
     
@@ -51,7 +51,11 @@ extension CategoryListPresenter: CategoryListOutputViewProtocol {
     }
     
     func addButtonTapped() {
-        router.openCategoryCreationScreen()
+        router.openCategoryCreationScreen(nil)
+    }
+    
+    func openCategoryCreationScreen(with viewObject: CashFlowTableViewCellViewObject) {
+        router.openCategoryCreationScreen(viewObject)
     }
 }
 

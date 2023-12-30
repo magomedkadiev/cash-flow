@@ -5,14 +5,15 @@ class CategoryCreationPresenter {
     weak var view: CategoryCreationInputViewProtocol?
     let router: ApplicationRouter
     var interactor: CategoryCreationInteractorInputProtocol
+    var templateViewObject: CategoryCreationTemplateViewObject
+    var templateViewObjectMapper: CategoryCreationToCategoryCreationTemplateViewObjectMapper
     
-    fileprivate var categoryName: String = ""
-    fileprivate var categoryParentViewObject: CategoryParentListViewObject?
-    
-    init(view: CategoryCreationInputViewProtocol, router: ApplicationRouter, interactor: CategoryCreationInteractorInputProtocol) {
+    init(view: CategoryCreationInputViewProtocol, router: ApplicationRouter, interactor: CategoryCreationInteractorInputProtocol, templateViewObject: CategoryCreationTemplateViewObject, templateViewObjectMapper: CategoryCreationToCategoryCreationTemplateViewObjectMapper) {
         self.view = view
         self.router = router
         self.interactor = interactor
+        self.templateViewObject = templateViewObject
+        self.templateViewObjectMapper = templateViewObjectMapper
     }
     
     private func fillViewObjectsToShow() {
@@ -21,8 +22,8 @@ class CategoryCreationPresenter {
         var parentCategorySection = [CashFlowTableViewCellViewObject]()
         var categoryCreationSection = [CashFlowTableViewCellViewObject]()
         
-        let parentCategoryViewObject = CategoryCreationParentCategoryViewObject(parentCategoryTitleName: categoryParentViewObject?.name ?? "")
-        let categoryCreationSetTitleNameViewObject = CategoryCreationSetTitleNameViewObject(titleName: "111")
+        let parentCategoryViewObject = CategoryCreationParentCategoryViewObject(parentCategoryTitleName: templateViewObject.parentCategoryName)
+        let categoryCreationSetTitleNameViewObject = CategoryCreationSetTitleNameViewObject(titleName: templateViewObject.name)
         
         parentCategorySection.append(parentCategoryViewObject)
         categoryCreationSection.append(categoryCreationSetTitleNameViewObject)
@@ -34,7 +35,10 @@ class CategoryCreationPresenter {
 
 extension CategoryCreationPresenter: CategoryCreationOutputViewProtocol {
     
-    func viewDidLoad() {
+    func viewDidLoad(_ viewObject: CashFlowTableViewCellViewObject?) {
+        if let categoryViewObject = viewObject as? CategoryListViewObject {
+            templateViewObject = templateViewObjectMapper.map(categoryViewObject)
+        }
         fillViewObjectsToShow()
     }
     
@@ -47,13 +51,13 @@ extension CategoryCreationPresenter: CategoryCreationOutputViewProtocol {
         }
     }
     
-    func createCategoryWith() {
-        guard !categoryName.isEmpty else {
+    func createCategoryEvent() {
+        guard !templateViewObject.name.isEmpty else {
             print("categoryName isEpmty")
             return
         }
         
-        let categoryPO = CategoryPO(id: UUID().uuidString, name: categoryName, parentID: categoryParentViewObject?.parentID ?? "", subCategories: [])
+        let categoryPO = CategoryPO(id: UUID().uuidString, name: templateViewObject.name, parentID: templateViewObject.parentID, subCategories: [])
         interactor.performsaveCategoryRequest(categoryPO)
     }
 }
@@ -68,14 +72,15 @@ extension CategoryCreationPresenter: CategoryCreationInteractorOutputProtocol {
     }
     
     func updateCategoryName(_ text: String) {
-        categoryName = text
+        templateViewObject.name = text
     }
     
     func updateParentCategoryName(_ viewObject: CashFlowTableViewCellViewObject) {
         guard let categoryParentViewObject = viewObject as? CategoryParentListViewObject else {
             return
         }
-        self.categoryParentViewObject = categoryParentViewObject
+        self.templateViewObject.parentCategoryName = categoryParentViewObject.name
+        self.templateViewObject.parentID = categoryParentViewObject.parentID
         fillViewObjectsToShow()
     }
 }

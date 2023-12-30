@@ -83,6 +83,8 @@
 		3949D7D42B3DFFF5005B4904 /* CategoryParentListSelectionHandler.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3949D7D32B3DFFF5005B4904 /* CategoryParentListSelectionHandler.swift */; };
 		3949D7D62B3E0AA6005B4904 /* CategoryToCategoryPOMapper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3949D7D52B3E0AA6005B4904 /* CategoryToCategoryPOMapper.swift */; };
 		3949D7D92B3E0BDD005B4904 /* CategoryPOToCategoryViewObjectMapper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3949D7D82B3E0BDD005B4904 /* CategoryPOToCategoryViewObjectMapper.swift */; };
+		3949D7DB2B4027E6005B4904 /* CategoryCreationTemplateViewObject.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3949D7DA2B4027E6005B4904 /* CategoryCreationTemplateViewObject.swift */; };
+		3949D7DD2B4029C1005B4904 /* CategoryCreationToCategoryCreationTemplateViewObjectMapper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3949D7DC2B4029C1005B4904 /* CategoryCreationToCategoryCreationTemplateViewObjectMapper.swift */; };
 		3957CDCE2AF567A500834215 /* AnalyticsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3957CDCD2AF567A500834215 /* AnalyticsViewController.swift */; };
 		3957CDD02AF567AB00834215 /* Analytics.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 3957CDCF2AF567AB00834215 /* Analytics.storyboard */; };
 		395A7AAE2A3E0E6D000A9BE2 /* OperationCreationViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 395A7AAD2A3E0E6D000A9BE2 /* OperationCreationViewController.swift */; };
@@ -229,6 +231,8 @@
 		3949D7D32B3DFFF5005B4904 /* CategoryParentListSelectionHandler.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CategoryParentListSelectionHandler.swift; sourceTree = "<group>"; };
 		3949D7D52B3E0AA6005B4904 /* CategoryToCategoryPOMapper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CategoryToCategoryPOMapper.swift; sourceTree = "<group>"; };
 		3949D7D82B3E0BDD005B4904 /* CategoryPOToCategoryViewObjectMapper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CategoryPOToCategoryViewObjectMapper.swift; sourceTree = "<group>"; };
+		3949D7DA2B4027E6005B4904 /* CategoryCreationTemplateViewObject.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CategoryCreationTemplateViewObject.swift; sourceTree = "<group>"; };
+		3949D7DC2B4029C1005B4904 /* CategoryCreationToCategoryCreationTemplateViewObjectMapper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CategoryCreationToCategoryCreationTemplateViewObjectMapper.swift; sourceTree = "<group>"; };
 		3957CDCD2AF567A500834215 /* AnalyticsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AnalyticsViewController.swift; sourceTree = "<group>"; };
 		3957CDCF2AF567AB00834215 /* Analytics.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Analytics.storyboard; sourceTree = "<group>"; };
 		395A7AAD2A3E0E6D000A9BE2 /* OperationCreationViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OperationCreationViewController.swift; sourceTree = "<group>"; };
@@ -594,6 +598,7 @@
 			children = (
 				3949D7A32B3C3F82005B4904 /* CategoryCreationParentCategoryViewObject.swift */,
 				3949D7A62B3C4080005B4904 /* CategoryCreationSetTitleNameViewObject.swift */,
+				3949D7DA2B4027E6005B4904 /* CategoryCreationTemplateViewObject.swift */,
 			);
 			path = ViewObjects;
 			sourceTree = "<group>";
@@ -858,6 +863,7 @@
 				39EC46F72B222C9800C2BA0D /* OperationCreationTemplateViewObjectToOperationViewObjetMapper.swift */,
 				3949D7CA2B3C6B69005B4904 /* CategoryToCategoryParentViewObjectMapper.swift */,
 				3949D7CE2B3DB8CA005B4904 /* CategoryToCategoryListViewObjectMapper.swift */,
+				3949D7DC2B4029C1005B4904 /* CategoryCreationToCategoryCreationTemplateViewObjectMapper.swift */,
 			);
 			path = Mappers;
 			sourceTree = "<group>";
@@ -1081,6 +1087,7 @@
 				3949D7C92B3C6945005B4904 /* CategoryDAO.swift in Sources */,
 				3949D7BB2B3C606B005B4904 /* CategoryParentListPresenter.swift in Sources */,
 				39A7D6962A6E98C60085E861 /* CategoryListConfigurator.swift in Sources */,
+				3949D7DD2B4029C1005B4904 /* CategoryCreationToCategoryCreationTemplateViewObjectMapper.swift in Sources */,
 				39EC46FD2B2370A600C2BA0D /* OperationCreationSegmentedControllHandler.swift in Sources */,
 				3949D7AB2B3C4227005B4904 /* CategoryCreationSetTitleNameTableViewCell.swift in Sources */,
 				3949D7CF2B3DB8CA005B4904 /* CategoryToCategoryListViewObjectMapper.swift in Sources */,
@@ -1141,6 +1148,7 @@
 				391FA0A32A2135950096EB59 /* AppDelegate.swift in Sources */,
 				395A7AB62A3E11E3000A9BE2 /* OperationCreationInteractorIOProtocols.swift in Sources */,
 				394034502A685D1300D45D24 /* CashFlowTableViewCellViewObject.swift in Sources */,
+				3949D7DB2B4027E6005B4904 /* CategoryCreationTemplateViewObject.swift in Sources */,
 				391FA0D92A2148560096EB59 /* OperationsConfigurator.swift in Sources */,
 				3949D79A2B3C3C6D005B4904 /* CategoryCreationPresenter.swift in Sources */,
 				39A7D6942A6E98B60085E861 /* CategoryListInitializer.swift in Sources */,

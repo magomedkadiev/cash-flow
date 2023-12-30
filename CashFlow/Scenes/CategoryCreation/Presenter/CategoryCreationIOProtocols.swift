@@ -6,9 +6,9 @@ protocol CategoryCreationInputViewProtocol: AnyObject {
 }
 
 protocol CategoryCreationOutputViewProtocol {
-    func viewDidLoad()
+    func viewDidLoad(_ viewObject: CashFlowTableViewCellViewObject?)
     func didSelectItemEvent(_ viewObject: CashFlowTableViewCellViewObject)
-    func createCategoryWith()
+    func createCategoryEvent()
     func updateCategoryName(_ text: String)
     func updateParentCategoryName(_ viewObject: CashFlowTableViewCellViewObject)
 }

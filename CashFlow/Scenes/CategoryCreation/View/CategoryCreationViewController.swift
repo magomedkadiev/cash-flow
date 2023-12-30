@@ -5,10 +5,9 @@ class CategoryCreationViewController: UIViewController {
     @IBOutlet weak var tableView: UITableView!
     
     var presenter: CategoryCreationOutputViewProtocol?
-    
     var viewObjects = [[CashFlowTableViewCellViewObject]]()
-    
     weak var categoryCreationFinishHandler: CategoryCreationFinishHandler?
+    var categoryViewObject: CashFlowTableViewCellViewObject?
     
     static func controller() -> UINavigationController {
         let storyboard = UIStoryboard(name: "CategoryCreation", bundle: nil)
@@ -17,11 +16,11 @@ class CategoryCreationViewController: UIViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
-        presenter?.viewDidLoad()
+        presenter?.viewDidLoad(categoryViewObject)
     }
 
     @IBAction func createCategoryTapped(_ sender: UIBarButtonItem) {
-        presenter?.createCategoryWith()
+        presenter?.createCategoryEvent()
     }
 }
 

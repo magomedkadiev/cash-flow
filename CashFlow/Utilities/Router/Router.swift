@@ -76,7 +76,7 @@ class Router: ApplicationRouter {
         return nil
     }
     
-    func openCategoryCreationScreen() {
+    func openCategoryCreationScreen(_ viewObject: CashFlowTableViewCellViewObject?) {
         let keyWindow = UIApplication.shared.connectedScenes.map({ $0 as? UIWindowScene }).compactMap({ $0 })
             .first?.windows.filter {$0.isKeyWindow}.first
         
@@ -89,6 +89,7 @@ class Router: ApplicationRouter {
                     let categoryCreationViewController = CategoryCreationViewController.controller()
                     if let topViewController = categoryCreationViewController.topViewController as? CategoryCreationViewController {
                         topViewController.categoryCreationFinishHandler = categoryListViewController
+                        topViewController.categoryViewObject = viewObject
                         categoryListViewController.present(categoryCreationViewController, animated: true)
                     }
                 }
