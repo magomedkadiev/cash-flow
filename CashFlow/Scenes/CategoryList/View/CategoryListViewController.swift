@@ -8,6 +8,7 @@ class CategoryListViewController: UIViewController {
     var viewObjects = [CategoryListViewObject]()
     weak var handler: CategoryListSelectionHandler?
     
+    @IBOutlet weak var addBarButtonItem: UIBarButtonItem!
     private let headerID = String(describing: CategoryListHeaderView.self)
     private var isEdited: Bool {
         get {
@@ -23,6 +24,7 @@ class CategoryListViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         configureTableView()
+        addBarButtonItem.isHidden = !isEdited
         presenter?.viewDidLoad()
     }
     

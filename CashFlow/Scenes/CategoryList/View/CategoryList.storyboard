@@ -95,6 +95,7 @@
                         </barButtonItem>
                     </navigationItem>
                     <connections>
+                        <outlet property="addBarButtonItem" destination="vrx-7a-MYr" id="WIK-Tf-DOZ"/>
                         <outlet property="tableView" destination="aWV-b6-1NJ" id="jsd-s4-6Z8"/>
                     </connections>
                 </viewController>
