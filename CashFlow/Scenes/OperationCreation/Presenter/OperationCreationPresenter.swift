@@ -49,9 +49,10 @@ class OperationCreationPresenter {
     
     fileprivate func creationNewOperationWith() {
         
-        let categoryPO = CategoryPO(id: "selectedCategoryViewObject.id",
+        let categoryPO = CategoryPO(id: templateViewObject.categoryID,
                                     name: templateViewObject.categoryName,
-                                    parentID: "", subCategories: [])
+                                    parentID: templateViewObject.parentID,
+                                    subCategories: [])
         
         let operationPO = OperationPO(id: templateViewObject.id,
                                       type: templateViewObject.type,
@@ -87,6 +88,8 @@ extension OperationCreationPresenter: OperationCreationOutputViewProtocol {
     func configureSelected(viewObject: CashFlowTableViewCellViewObject) {
         if let categoryViewObject = viewObject as? CategoryListViewObject {
             templateViewObject.categoryName = categoryViewObject.name
+            templateViewObject.categoryID = categoryViewObject.id
+            templateViewObject.parentID = categoryViewObject.parentID
             fillViewObjectsToShow()
         }
     }

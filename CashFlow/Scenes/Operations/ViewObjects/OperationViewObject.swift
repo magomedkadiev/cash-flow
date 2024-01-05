@@ -11,6 +11,10 @@ struct OperationViewObject: CashFlowTableViewCellViewObject {
     var cellType: CashFlowTableViewCellTypeProtocol = ._default
     
     var categoryName: String
+    
+    var categoryID: String
+    
+    var parentID: String
         
     var totalAmount: Int
     

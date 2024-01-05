@@ -6,7 +6,14 @@ class OperationsPOToOperationViewObjectsMapper: OperationsPOToOperationViewObjec
         
         var plainObjects = [OperationViewObject]()
         for operationPO in operationsPO {
-            let plainObject = OperationViewObject(id: operationPO.id, categoryName: operationPO.category.name, totalAmount: operationPO.sum, date: operationPO.date, type: operationPO.type, comment: operationPO.comment)
+            let plainObject = OperationViewObject(id: operationPO.id,
+                                                  categoryName: operationPO.category.name,
+                                                  categoryID: operationPO.category.id,
+                                                  parentID: operationPO.category.parentID,
+                                                  totalAmount: operationPO.sum,
+                                                  date: operationPO.date,
+                                                  type: operationPO.type,
+                                                  comment: operationPO.comment)
             plainObjects.append(plainObject)
         }
         return plainObjects

@@ -8,6 +8,8 @@ class OperationCreationConfigurator {
         let router = Router()
         let templateViewObject = OperationCreationTemplateViewObject(id: UUID().uuidString,
                                                                             categoryName: "(Без категории)",
+                                                                            categoryID: UUID().uuidString,
+                                                                            parentID: UUID().uuidString,
                                                                             date: .now,
                                                                             totalAmount: 0,
                                                                             type: .expense,

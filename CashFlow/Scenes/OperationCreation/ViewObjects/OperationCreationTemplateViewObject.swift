@@ -6,6 +6,10 @@ struct OperationCreationTemplateViewObject {
     
     var categoryName: String
     
+    var categoryID: String
+    
+    var parentID: String
+    
     var date: Date
     
     var totalAmount: Int
