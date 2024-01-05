@@ -35,15 +35,26 @@ class Router: ApplicationRouter {
         }
         if let navigationController = applicationTabBarController.selectedViewController as? UINavigationController {
             if let operationsViewController = navigationController.topViewController as? OperationsViewController {
-                let operationCreationViewController = OperationCreationViewController.controller()
-                if let topViewController = operationCreationViewController.topViewController as? OperationCreationViewController {
+                
+                let operationCreationNavigationViewController = OperationCreationViewController.controller()
+                
+                if let topViewController = operationCreationNavigationViewController.topViewController as? OperationCreationViewController {
                     topViewController.operationCreationFinishHandler = operationsViewController
                     topViewController.operationViewObject = viewObject
-                    operationsViewController.present(operationCreationViewController, animated: true)
+                    operationsViewController.present(operationCreationNavigationViewController, animated: true)
                 }
-            } else if let selectedViewController = applicationTabBarController.selectedViewController {
-                let operationCreationViewController = OperationCreationViewController.controller()
-                selectedViewController.present(operationCreationViewController, animated: true)
+                
+            } else if let navCon = applicationTabBarController.selectedViewController as? UINavigationController {
+                if let operationsViewController = (applicationTabBarController.viewControllers?[0] as? UINavigationController)?.topViewController as? OperationsViewController {
+                    
+                    let operationCreationNavigationViewController = OperationCreationViewController.controller()
+
+                    if let topViewController = operationCreationNavigationViewController.topViewController as? OperationCreationViewController {
+                        topViewController.operationCreationFinishHandler = operationsViewController
+                        navCon.present(operationCreationNavigationViewController, animated: true)
+                    }
+                    
+                }
             }
         }
     }

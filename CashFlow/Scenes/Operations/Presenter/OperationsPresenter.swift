@@ -65,6 +65,7 @@ extension OperationsPresenter: OperationsOutputViewProtocol {
     }
     
     func fetchAllOperations() {
+        fillViewObjectsToShow()
         interactor.fetchAllOperations()
     }
     
