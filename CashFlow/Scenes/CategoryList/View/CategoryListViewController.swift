@@ -45,7 +45,9 @@ extension CategoryListViewController: CategoryListInputViewProtocol {
     func showInfo(_ viewObjects: [CashFlowTableViewCellViewObject]) {
         guard let viewObjects = viewObjects as? [CategoryListViewObject] else { return }
         self.viewObjects = viewObjects
-        tableView.reloadData()
+        DispatchQueue.main.async {
+            self.tableView.reloadData()
+        }
     }
 }
 
@@ -111,6 +113,25 @@ extension CategoryListViewController: UITableViewDelegate {
     func tableView(_ tableView: UITableView, heightForHeaderInSection section: Int) -> CGFloat {
         let viewObject = viewObjects[section]
         return viewObject.cellHeight
+    }
+    
+    func tableView(_ tableView: UITableView, commit editingStyle: UITableViewCell.EditingStyle, forRowAt indexPath: IndexPath) {
+        let viewObject = viewObjects[indexPath.section].subCategories[indexPath.row]
+        
+        switch editingStyle {
+        case .delete:
+            presenter?.removeItemEvent(viewObject)
+            
+            self.viewObjects[indexPath.section].subCategories.remove(at: indexPath.row)
+            tableView.deleteRows(at: [indexPath], with: .automatic)
+            
+            if viewObjects[indexPath.section].subCategories.isEmpty {
+                self.viewObjects.remove(at: indexPath.section)
+                tableView.deleteSections(IndexSet(integer: indexPath.section), with: .automatic)
+            }
+        default:
+            return
+        }
     }
 }
 

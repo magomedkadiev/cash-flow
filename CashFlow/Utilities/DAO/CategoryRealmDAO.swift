@@ -27,4 +27,21 @@ class CategoryRealmDAO: CategoryDAO {
             complitionHandler()
         }
     }
+    
+    func remove(_ category: Category) {
+        let realm = try! Realm()
+        try! realm.write {
+            let categories = realm.objects(Category.self)
+            let categoryToRemove = categories.filter("id = %@", category.id)
+            
+            realm.delete(categoryToRemove)
+            let parentCategoryToRemove = realm.objects(Category.self).filter("parentID = %@", category.parentID)
+
+            if parentCategoryToRemove.isEmpty {
+                let parentCategoryToRemove2 = realm.objects(Category.self).filter("id = %@", category.parentID)
+
+                realm.delete(parentCategoryToRemove2)
+            }
+        }
+    }
 }

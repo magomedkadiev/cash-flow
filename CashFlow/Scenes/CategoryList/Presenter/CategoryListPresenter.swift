@@ -57,6 +57,13 @@ extension CategoryListPresenter: CategoryListOutputViewProtocol {
     func openCategoryCreationScreen(with viewObject: CashFlowTableViewCellViewObject) {
         router.openCategoryCreationScreen(viewObject)
     }
+    
+    func removeItemEvent(_ viewObject: CashFlowTableViewCellViewObject) {
+        guard let viewObject = viewObject as? CategoryListViewObject else {
+            return
+        }
+        interactor.removeCategory(viewObject)
+    }
 }
 
 extension CategoryListPresenter: CategoryListinteractorOutputProtocol {

@@ -11,4 +11,5 @@ protocol CategoryListOutputViewProtocol {
     func isReadyForEditing() -> Bool
     func addButtonTapped()
     func openCategoryCreationScreen(with viewObject: CashFlowTableViewCellViewObject)
+    func removeItemEvent(_ viewObject: CashFlowTableViewCellViewObject)
 }
