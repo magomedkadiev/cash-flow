@@ -25,7 +25,9 @@ class CategoryCreationPresenter {
         let parentCategoryViewObject = CategoryCreationParentCategoryViewObject(parentCategoryTitleName: templateViewObject.parentCategoryName)
         let categoryCreationSetTitleNameViewObject = CategoryCreationSetTitleNameViewObject(titleName: templateViewObject.name)
         
-        parentCategorySection.append(parentCategoryViewObject)
+        if !templateViewObject.parentID.isEmpty {
+            parentCategorySection.append(parentCategoryViewObject)
+        }
         categoryCreationSection.append(categoryCreationSetTitleNameViewObject)
         
         viewObjects.append(contentsOf: [parentCategorySection, categoryCreationSection])
@@ -57,7 +59,7 @@ extension CategoryCreationPresenter: CategoryCreationOutputViewProtocol {
             return
         }
         
-        let categoryPO = CategoryPO(id: UUID().uuidString, name: templateViewObject.name, parentID: templateViewObject.parentID, subCategories: [])
+        let categoryPO = CategoryPO(id: UUID().uuidString, name: templateViewObject.name, parentID: templateViewObject.id, subCategories: [])
         interactor.performsaveCategoryRequest(categoryPO)
     }
 }

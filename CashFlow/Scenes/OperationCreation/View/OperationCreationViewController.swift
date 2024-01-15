@@ -116,7 +116,7 @@ extension OperationCreationViewController: UITextFieldDelegate {
 
 extension OperationCreationViewController: CategoryListSelectionHandler {
     
-    func didSelect(_ viewObject: CashFlowTableViewCellViewObject) {
+    func updateSelectedCategoryObject(_ viewObject: CashFlowTableViewCellViewObject) {
         presenter?.configureSelected(viewObject: viewObject)
     }
 }

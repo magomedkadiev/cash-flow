@@ -27,12 +27,20 @@ class CategoryListPresenter {
         let filteredViewObjects = viewObjects.filter { $0.parentID.isEmpty }
         view?.showInfo(filteredViewObjects)
     }
+    
+    private func doesCategoryOpenedFromCreationScene() -> Bool {
+        if (router.getChildrenViewController() as? OperationCreationViewController) != nil {
+            return true
+        }
+        return false
+    }
 }
 
 extension CategoryListPresenter: CategoryListOutputViewProtocol {
     
     func viewDidLoad() {
-        fetchAllCategories()        
+        fetchAllCategories()
+        view?.hideBarButtonItemIfNedeed(doesCategoryOpenedFromCreationScene())
     }
     
     func fetchAllCategories() {
@@ -41,13 +49,6 @@ extension CategoryListPresenter: CategoryListOutputViewProtocol {
     
     func dismissViewController() {
         router.dismiss()
-    }
-    
-    func isReadyForEditing() -> Bool {
-        if (router.getChildrenViewController() as? OperationCreationViewController) != nil {
-            return false
-        }
-        return true
     }
     
     func addButtonTapped() {
@@ -63,6 +64,32 @@ extension CategoryListPresenter: CategoryListOutputViewProtocol {
             return
         }
         interactor.removeCategory(viewObject)
+    }
+    
+    func didSelectItemEvent(_ viewObjects: [CategoryListViewObject], indexPath: IndexPath) {
+
+        if doesCategoryOpenedFromCreationScene() {
+            let viewObject: CategoryListViewObject!
+            if indexPath.row == 0 {
+                viewObject = viewObjects[indexPath.section]
+            } else {
+                viewObject = viewObjects[indexPath.section].subCategories[indexPath.row - 1]
+            }
+            view?.didSelectHandler(viewObject)
+            dismissViewController()
+        } else {
+            var viewObject: CategoryListViewObject!
+            if indexPath.row == 0 {
+                viewObject = viewObjects[indexPath.section]
+                let subCat = viewObjects[indexPath.section]
+                viewObject.subCategories = [subCat]
+            } else {
+                viewObject = viewObjects[indexPath.section]
+                let subCat = viewObject.subCategories[indexPath.row - 1]
+                viewObject.subCategories = [subCat]
+            }
+            openCategoryCreationScreen(with: viewObject)
+        }
     }
 }
 

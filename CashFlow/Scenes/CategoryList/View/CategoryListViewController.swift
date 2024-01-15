@@ -9,12 +9,6 @@ class CategoryListViewController: UIViewController {
     weak var handler: CategoryListSelectionHandler?
     
     @IBOutlet weak var addBarButtonItem: UIBarButtonItem!
-    private let headerID = String(describing: CategoryListHeaderView.self)
-    private var isEdited: Bool {
-        get {
-            return presenter?.isReadyForEditing() ?? false
-        }
-    }
 
     static func controller() -> UINavigationController {
         let storyboard = UIStoryboard(name: "CategoryList", bundle: nil)
@@ -23,21 +17,12 @@ class CategoryListViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        configureTableView()
-        addBarButtonItem.isHidden = !isEdited
         presenter?.viewDidLoad()
     }
-    
-    private func configureTableView() {
-        let nib = UINib(nibName: headerID, bundle: nil)
-        tableView.register(nib, forHeaderFooterViewReuseIdentifier: headerID)
-        tableView.tableFooterView = UIView()
-    }
-    
+     
     @IBAction func addBarButtonItemTapped(_ sender: UIBarButtonItem) {
         presenter?.addButtonTapped()
     }
-    
 }
 
 extension CategoryListViewController: CategoryListInputViewProtocol {
@@ -49,37 +34,49 @@ extension CategoryListViewController: CategoryListInputViewProtocol {
             self.tableView.reloadData()
         }
     }
+    
+    func didSelectHandler(_ viewObject: CategoryListViewObject) {
+        self.handler?.updateSelectedCategoryObject(viewObject)
+    }
+    
+    func hideBarButtonItemIfNedeed(_ value: Bool) {
+        addBarButtonItem.isHidden = value
+    }
 }
 
 extension CategoryListViewController: UITableViewDataSource {
     
-    func numberOfSections(in tableView: UITableView) -> Int {
-        return viewObjects.count
-    }
-    
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        guard viewObjects[section].isExpanded else {
-            return 0
-        }
-        return viewObjects[section].subCategories.count
-    }
-    
-    func tableView(_ tableView: UITableView, viewForHeaderInSection section: Int) -> UIView? {
-        guard let header = tableView.dequeueReusableHeaderFooterView(withIdentifier: headerID) as? CategoryListHeaderView else {
-            return UIView()
-        }
-        header.configure(title: viewObjects[section].name, section: section)
-        header.rotateImage(viewObjects[section].isExpanded)
-        header.handler = self
+        var viewObjectsCount = viewObjects.count
         
-        return header
+        for viewObject in viewObjects {
+            viewObjectsCount += viewObject.subCategories.count
+        }
+        
+        return viewObjectsCount
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let viewObject = viewObjects[indexPath.section].subCategories[indexPath.row]
+        let viewObject: CategoryListViewObject?
 
-        if let cell = tableView.dequeueReusableCell(withIdentifier: viewObject.reuseIdentifier) as? CashFlowTableViewCellProtocol {
-            cell.setup(with: viewObject, indexPath: indexPath)
+        let section = getSectionIndex(indexPath.row)
+        let row = getRowIndex(indexPath.row)
+        let mutableIndexPath = IndexPath(row: row, section: section)
+        
+
+        if row == 0 {
+            viewObject = viewObjects[section]
+        } else {
+            viewObject = viewObjects[section].subCategories[row - 1]
+        }
+
+        if let cell = tableView.dequeueReusableCell(withIdentifier: viewObject!.reuseIdentifier) as? CashFlowTableViewCellProtocol {
+            
+            if let headerCell = cell as? CategoryListTableViewCell {
+                headerCell.handler = self
+            }
+            
+            cell.setup(with: viewObject!, indexPath: mutableIndexPath)
             return cell as? UITableViewCell ?? UITableViewCell()
         } else {
             return UITableViewCell()
@@ -91,28 +88,23 @@ extension CategoryListViewController: UITableViewDelegate {
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         tableView.deselectRow(at: indexPath, animated: true)
-        var viewObject = viewObjects[indexPath.section].subCategories[indexPath.row]
-        var parentViewObject = viewObjects[indexPath.section]
-        viewObject.isSelected = !viewObject.isSelected
         
-        guard isEdited else {
-            handler?.didSelect(viewObject)
-            presenter?.dismissViewController()
-            return
-        }
-        let subCat = parentViewObject.subCategories[indexPath.row]
-        parentViewObject.subCategories = [subCat]
-        presenter?.openCategoryCreationScreen(with: parentViewObject)
+        let section = getSectionIndex(indexPath.row)
+        let row = getRowIndex(indexPath.row)
+        let indexPath = IndexPath(row: row, section: section)
+        
+        presenter?.didSelectItemEvent(viewObjects, indexPath: indexPath)
     }
     
     func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
-        let viewObject = viewObjects[indexPath.section].subCategories[indexPath.row]
-        return viewObject.cellHeight
-    }
-    
-    func tableView(_ tableView: UITableView, heightForHeaderInSection section: Int) -> CGFloat {
-        let viewObject = viewObjects[section]
-        return viewObject.cellHeight
+        let section = getSectionIndex(indexPath.row)
+        let row = getRowIndex(indexPath.row)
+        
+        if row == 0 {
+            return viewObjects[section].cellHeight
+        }
+        
+        return viewObjects[section].isExpanded ? 0 : viewObjects[section].cellHeight
     }
     
     func tableView(_ tableView: UITableView, commit editingStyle: UITableViewCell.EditingStyle, forRowAt indexPath: IndexPath) {
@@ -140,8 +132,18 @@ extension CategoryListViewController: CategoryListHeaderSelectionHandler {
     func expandedSection(_ button: UIButton) {
         let section = button.tag
         let isExpanded = viewObjects[section].isExpanded
+        
         viewObjects[section].isExpanded = !isExpanded
-        tableView.reloadSections(IndexSet(integer: section), with: .automatic)
+        let indices = getHeaderIndices()
+        
+        let start = indices[section]
+        let end = start + viewObjects[section].subCategories.count
+        
+        tableView.beginUpdates()
+        for i in start ..< end + 1 {
+            tableView.reloadRows(at: [IndexPath(row: i, section: 0)], with: .automatic)
+        }
+        tableView.endUpdates()
     }
 }
 
@@ -149,5 +151,46 @@ extension CategoryListViewController: CategoryCreationFinishHandler {
     
     func finishHandled() {
         presenter?.fetchAllCategories()
+    }
+}
+
+extension CategoryListViewController {
+    
+    func getSectionIndex(_ row: NSInteger) -> Int {
+        let indices = getHeaderIndices()
+        
+        for i in 0..<indices.count {
+            if i == indices.count - 1 || row < indices[i + 1] {
+                return i
+            }
+        }
+        
+        return -1
+    }
+    
+    func getRowIndex(_ row: NSInteger) -> Int {
+        var index = row
+        let indices = getHeaderIndices()
+        
+        for i in 0..<indices.count {
+            if i == indices.count - 1 || row < indices[i + 1] {
+                index -= indices[i]
+                break
+            }
+        }
+        
+        return index
+    }
+    
+    func getHeaderIndices() -> [Int] {
+        var index = 0
+        var indices: [Int] = []
+        
+        for viewObject in viewObjects {
+            indices.append(index)
+            index += viewObject.subCategories.count + 1
+        }
+        
+        return indices
     }
 }

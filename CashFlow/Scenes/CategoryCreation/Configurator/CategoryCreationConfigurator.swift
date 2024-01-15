@@ -6,7 +6,7 @@ class CategoryCreationConfigurator {
         let router: ApplicationRouter = Router()
         let categoryRealmDAO: CategoryDAO = CategoryRealmDAO()
         let interactor = CategoryCreationInteractor(categoryRealmDAO: categoryRealmDAO)
-        let templateViewObject = CategoryCreationTemplateViewObject(name: "",
+        let templateViewObject = CategoryCreationTemplateViewObject(id: "", name: "",
                                                                     parentCategoryName: "",
                                                                     parentID: "")
         let templateViewObjectMapper = CategoryCreationToCategoryCreationTemplateViewObjectMapper()

@@ -3,9 +3,9 @@ import Foundation
 class CategoryCreationToCategoryCreationTemplateViewObjectMapper: CategoryCreationToCategoryCreationTemplateViewObjectMapperProtocol {
     
     func map(_ viewObject: CategoryListViewObject) -> CategoryCreationTemplateViewObject {
-        return CategoryCreationTemplateViewObject(name: viewObject.subCategories.first?.name ?? "",
+        return CategoryCreationTemplateViewObject(id: viewObject.id, name: viewObject.subCategories.first?.name ?? "",
                                                   parentCategoryName: viewObject.name,
-                                                  parentID: viewObject.id)
+                                                  parentID: viewObject.subCategories.first?.parentID ?? "")
     }
 }
 

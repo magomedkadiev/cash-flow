@@ -1,5 +1,5 @@
 import Foundation
 
 protocol CategoryListSelectionHandler: AnyObject {
-    func didSelect(_ viewObject: CashFlowTableViewCellViewObject)
+    func updateSelectedCategoryObject(_ viewObject: CashFlowTableViewCellViewObject)
 }
