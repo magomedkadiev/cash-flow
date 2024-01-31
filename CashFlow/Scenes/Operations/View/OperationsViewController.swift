@@ -9,7 +9,6 @@ class OperationsViewController: UIViewController {
     
     private let refreshControl: UIRefreshControl = {
         let refreshControl = UIRefreshControl()
-        refreshControl.tintColor = .clear
         return refreshControl
     }()
     
@@ -25,21 +24,17 @@ class OperationsViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         presenter?.viewDidLoad()
-        tableView.addSubview(refreshControl)
+        tableView.refreshControl = refreshControl
+        tableView.refreshControl?.addTarget(self, action: #selector(didPullToRefresh), for: .valueChanged)
     }
-}
-
-extension OperationsViewController: UIScrollViewDelegate {
     
-    func scrollViewDidScroll(_ scrollView: UIScrollView) {
-        let maxPullDistance: CGFloat = 210
-        if scrollView.panGestureRecognizer.state.rawValue == 0 && scrollView.contentOffset.y < -maxPullDistance {
-            refreshControl.beginRefreshing()
-            presenter?.eventBeginFerfeshing()
-            DispatchQueue.main.asyncAfter(deadline: .now() + 0.3, execute: {
-                self.refreshControl.endRefreshing()
-            })
-        }
+    @objc func didPullToRefresh() {
+        presenter?.eventBeginFerfeshing()
+
+        DispatchQueue.main.asyncAfter(deadline: .now() + 0.3,
+                                      execute: {
+            self.refreshControl.endRefreshing()
+        })
     }
 }
 
