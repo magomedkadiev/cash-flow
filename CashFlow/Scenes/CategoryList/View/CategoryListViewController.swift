@@ -108,18 +108,42 @@ extension CategoryListViewController: UITableViewDelegate {
     }
     
     func tableView(_ tableView: UITableView, commit editingStyle: UITableViewCell.EditingStyle, forRowAt indexPath: IndexPath) {
-        let viewObject = viewObjects[indexPath.section].subCategories[indexPath.row]
+        let section = getSectionIndex(indexPath.row)
+        let row = getRowIndex(indexPath.row)
+        let mutableIndexPath = IndexPath(row: row, section: section)
+        let viewObject: CategoryListViewObject!
+
+        if row == 0 {
+            viewObject = viewObjects[section]
+        } else {
+            viewObject = viewObjects[section].subCategories[row - 1]
+        }
         
         switch editingStyle {
         case .delete:
             presenter?.removeItemEvent(viewObject)
             
-            self.viewObjects[indexPath.section].subCategories.remove(at: indexPath.row)
-            tableView.deleteRows(at: [indexPath], with: .automatic)
-            
-            if viewObjects[indexPath.section].subCategories.isEmpty {
-                self.viewObjects.remove(at: indexPath.section)
-                tableView.deleteSections(IndexSet(integer: indexPath.section), with: .automatic)
+            // Удаление категории и подкатегории
+            if row == 0 {
+                // Проверка на наличия подкатегорий в категории
+                if viewObjects[section].subCategories.count > 0 {
+                    let end = viewObjects[section].subCategories.count
+                    
+                    tableView.beginUpdates()
+                    for i in 0 ..< end {
+                        self.viewObjects[section].subCategories.remove(at: i)
+                        tableView.deleteRows(at: [IndexPath(row: i, section: 0)], with: .automatic)
+                    }
+                    tableView.endUpdates()
+                }
+                
+                self.viewObjects.remove(at: section)
+                tableView.deleteRows(at: [indexPath], with: .automatic)
+                
+            } else { 
+                // Удаление категории или подкатегории
+                self.viewObjects[section].subCategories.remove(at: row - 1)
+                tableView.deleteRows(at: [mutableIndexPath], with: .automatic)
             }
         default:
             return
