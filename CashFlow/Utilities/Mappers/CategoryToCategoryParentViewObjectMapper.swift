@@ -6,7 +6,7 @@ class CategoryToCategoryParentViewObjectMapper: CategoryToCategoryParentViewObje
         var viewObjects = [CashFlowTableViewCellViewObject]()
         
         for category in categories {
-            let viewObject = CategoryParentListViewObject(parentID: category.id, name: category.name)
+            let viewObject = CategoryParentListViewObject(id: category.id, parentID: category.parentID, name: category.name)
             viewObjects.append(viewObject)
         }
         return viewObjects

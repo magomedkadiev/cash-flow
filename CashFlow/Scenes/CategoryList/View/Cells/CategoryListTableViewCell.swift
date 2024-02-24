@@ -6,6 +6,7 @@ class CategoryListTableViewCell: UITableViewCell, CashFlowTableViewCellProtocol 
     @IBOutlet weak var nameLabelText: UILabel!
     @IBOutlet weak var toogleButton: UIButton!
     @IBOutlet weak var leadingCategoryStackConstraint: NSLayoutConstraint!
+    @IBOutlet weak var addNewCategoryButton: UIButton!
     
     weak var handler: CategoryListHeaderSelectionHandler?
     
@@ -22,9 +23,11 @@ class CategoryListTableViewCell: UITableViewCell, CashFlowTableViewCellProtocol 
         if indexPath.row == 0 {
             leadingCategoryStackConstraint.constant = 16
             toogleButton.isHidden = false
+            addNewCategoryButton.isHidden = false
         } else {
             leadingCategoryStackConstraint.constant = 48
             toogleButton.isHidden = true
+            addNewCategoryButton.isHidden = true
         }
     }
     
@@ -38,6 +41,11 @@ class CategoryListTableViewCell: UITableViewCell, CashFlowTableViewCellProtocol 
     
     @IBAction func toogleButtonTouched(_ sender: UIButton) {
         handler?.expandedSection(sender)
+    }
+    
+    
+    @IBAction func addNewCategoryButtonTapped(_ sender: UIButton) {
+        print("Button Tapped")
     }
     
 }

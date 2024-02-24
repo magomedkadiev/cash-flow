@@ -58,8 +58,8 @@ extension CategoryCreationPresenter: CategoryCreationOutputViewProtocol {
             print("categoryName isEpmty")
             return
         }
-        
-        let categoryPO = CategoryPO(id: UUID().uuidString, name: templateViewObject.name, parentID: templateViewObject.parentID, subCategories: [])
+        let templateViewObjectID = templateViewObject.id.isEmpty ? UUID().uuidString : templateViewObject.id
+        let categoryPO = CategoryPO(id: templateViewObjectID, name: templateViewObject.name, parentID: templateViewObject.parentID, subCategories: [])
         interactor.performsaveCategoryRequest(categoryPO)
     }
 }
@@ -82,7 +82,7 @@ extension CategoryCreationPresenter: CategoryCreationInteractorOutputProtocol {
             return
         }
         self.templateViewObject.parentCategoryName = categoryParentViewObject.name
-        self.templateViewObject.parentID = categoryParentViewObject.parentID
+        self.templateViewObject.parentID = categoryParentViewObject.id
         fillViewObjectsToShow()
     }
 }
