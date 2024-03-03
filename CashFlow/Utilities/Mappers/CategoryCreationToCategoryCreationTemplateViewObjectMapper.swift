@@ -6,7 +6,7 @@ class CategoryCreationToCategoryCreationTemplateViewObjectMapper: CategoryCreati
         return CategoryCreationTemplateViewObject(id: viewObject.subCategories.first?.id ?? "",
                                                   name: viewObject.subCategories.first?.name ?? "",
                                                   parentCategoryName: viewObject.name,
-                                                  parentID: viewObject.id)
+                                                  parentID: viewObject.subCategories.first?.parentID ?? "")
     }
 }
 
