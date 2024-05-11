@@ -20,7 +20,7 @@ class CategoryToCategoryPOMapper: CategoryToCategoryPOMapperProtocol {
     }
     
     func map(_ viewObject: CashFlowTableViewCellViewObject) -> Category {
-        guard let viewObject = viewObject as? CategoryListViewObject else {
+        guard let viewObject = viewObject as? CategoryParentListViewObject else {
             return Category()
         }
         return Category(id: viewObject.id, name: viewObject.name, subCategories: [])

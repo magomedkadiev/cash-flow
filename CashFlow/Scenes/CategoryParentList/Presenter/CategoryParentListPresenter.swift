@@ -17,6 +17,10 @@ extension CategoryParentListPresenter: CategoryParentListOutputViewProtocol {
     func viewDidLoad() {
         interactor?.fetchAllCategories()
     }
+    
+    func didDeleteButtonTapped(_ viewObject: CashFlowTableViewCellViewObject) {
+        interactor?.removeCategory(viewObject)
+    }
 }
 
 extension CategoryParentListPresenter: CategoryParentListInteractorOutputProtocol {

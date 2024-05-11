@@ -105,53 +105,11 @@ extension CategoryListViewController: UITableViewDelegate {
     func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
         if indexPath.row == 0 {
             return viewObjects[indexPath.section].cellHeight
-
+            
         }
         return viewObjects[indexPath.section].subCategories[indexPath.row - 1].cellHeight
     }
     
-//    func tableView(_ tableView: UITableView, commit editingStyle: UITableViewCell.EditingStyle, forRowAt indexPath: IndexPath) {
-//        let section = getSectionIndex(indexPath.row)
-//        let row = getRowIndex(indexPath.row)
-//        let mutableIndexPath = IndexPath(row: row, section: section)
-//        let viewObject: CategoryListViewObject!
-//
-//        if row == 0 {
-//            viewObject = viewObjects[section]
-//        } else {
-//            viewObject = viewObjects[section].subCategories[row - 1]
-//        }
-//        
-//        switch editingStyle {
-//        case .delete:
-//            presenter?.removeItemEvent(viewObject)
-//            
-//            // Удаление категории и подкатегории
-//            if row == 0 {
-//                // Проверка на наличия подкатегорий в категории
-//                if viewObjects[section].subCategories.count > 0 {
-//                    let end = viewObjects[section].subCategories.count
-//                    
-//                    tableView.beginUpdates()
-//                    for i in 0 ..< end {
-//                        self.viewObjects[section].subCategories.remove(at: i)
-//                        tableView.deleteRows(at: [IndexPath(row: i, section: 0)], with: .automatic)
-//                    }
-//                    tableView.endUpdates()
-//                }
-//                
-//                self.viewObjects.remove(at: section)
-//                tableView.deleteRows(at: [indexPath], with: .automatic)
-//                
-//            } else { 
-//                // Удаление категории или подкатегории
-//                self.viewObjects[section].subCategories.remove(at: row - 1)
-//                tableView.deleteRows(at: [mutableIndexPath], with: .automatic)
-//            }
-//        default:
-//            return
-//        }
-//    }
 }
 
 extension CategoryListViewController: CategoryListHeaderSelectionHandler {

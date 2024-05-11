@@ -25,4 +25,10 @@ extension CategoryParentListInteractor: CategoryParentListInteractorInputProtoco
         categoryRealmDAO.move(from: from, to: to)
         fetchAllCategories()
     }
+    
+    func removeCategory(_ viewObject: CashFlowTableViewCellViewObject) {
+        let category = categoryMapper.map(viewObject)
+        categoryRealmDAO.remove(category)
+
+    }
 }

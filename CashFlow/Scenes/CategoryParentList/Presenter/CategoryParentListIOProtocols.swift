@@ -7,5 +7,6 @@ protocol CategoryParentListInputViewProtocol: AnyObject {
 protocol CategoryParentListOutputViewProtocol {
     func viewDidLoad()
     func moveRow(from: Int, to: Int)
+    func didDeleteButtonTapped(_ viewObject: CashFlowTableViewCellViewObject)
 
 }

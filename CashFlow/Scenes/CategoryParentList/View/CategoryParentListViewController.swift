@@ -31,7 +31,6 @@ extension CategoryParentListViewController: CategoryParentListInputViewProtocol 
     }
 }
 
-
 extension CategoryParentListViewController: UIAdaptivePresentationControllerDelegate {
     
     func presentationControllerWillDismiss(_ presentationController: UIPresentationController) {
@@ -60,7 +59,7 @@ extension CategoryParentListViewController: UITableViewDataSource {
     }
     
     func tableView(_ tableView: UITableView, editingStyleForRowAt indexPath: IndexPath) -> UITableViewCell.EditingStyle {
-        return .none
+        return .delete
     }
     
     func tableView(_ tableView: UITableView, shouldIndentWhileEditingRowAt indexPath: IndexPath) -> Bool {
@@ -84,5 +83,16 @@ extension CategoryParentListViewController: UITableViewDelegate {
         let viewObject = viewObjects[indexPath.row]
         handler?.didSelect(viewObject)
         self.dismiss(animated: true)
+    }
+    
+    func tableView(_ tableView: UITableView, commit editingStyle: UITableViewCell.EditingStyle, forRowAt indexPath: IndexPath) {
+        switch editingStyle {
+        case .delete:
+            presenter?.didDeleteButtonTapped(viewObjects[indexPath.row])
+            viewObjects.remove(at: indexPath.row)
+            tableView.deleteRows(at: [indexPath], with: .automatic)
+        default:
+            return
+        }
     }
 }

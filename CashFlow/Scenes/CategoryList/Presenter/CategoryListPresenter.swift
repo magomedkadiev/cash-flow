@@ -15,7 +15,7 @@ class CategoryListPresenter {
     }
     
     private func fillViewObjectsToShow(_ viewObjects: [CashFlowTableViewCellViewObject]) {
-        guard var viewObjects = viewObjects as? [CategoryListViewObject] else {
+        guard let viewObjects = viewObjects as? [CategoryListViewObject] else {
             return
         }
         
@@ -51,13 +51,6 @@ extension CategoryListPresenter: CategoryListOutputViewProtocol {
     
     func openCategoryCreationScreen(with viewObject: CashFlowTableViewCellViewObject) {
         router.openCategoryCreationScreen(viewObject)
-    }
-    
-    func removeItemEvent(_ viewObject: CashFlowTableViewCellViewObject) {
-        guard let viewObject = viewObject as? CategoryListViewObject else {
-            return
-        }
-        interactor.removeCategory(viewObject)
     }
     
     func didSelectItemEvent(_ viewObjects: [CategoryListViewObject], indexPath: IndexPath) {

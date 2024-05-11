@@ -7,7 +7,7 @@ class OperationsToOperationsPOMapper: OperationsToOperationsPOMapperProtocol {
         
         for operation in operations {
             let categoryPO = CategoryPO(id: operation.category?.id ?? "",
-                                        name: operation.category?.name ?? "",
+                                        name: operation.category?.name ?? "(Без категории)",
                                         subCategories: [])
             let object = OperationPO(id: operation.id,
                                      type: operation.type,

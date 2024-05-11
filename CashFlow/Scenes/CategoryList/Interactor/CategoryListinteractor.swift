@@ -19,9 +19,4 @@ extension CategoryListinteractor: CategoryListinteractorInputProtocol {
         let plainCategories = categoryMapper.map(fetchedCategories)
         presenter?.reloadDataWith(plainCategories)
     }
-    
-    func removeCategory(_ viewObject: CashFlowTableViewCellViewObject) {
-        let category = categoryMapper.map(viewObject)
-        categoryRealmDAO.remove(category)
-    }
 }

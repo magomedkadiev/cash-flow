@@ -38,6 +38,19 @@ class CategoryRealmDAO: CategoryDAO {
     }
     
     func remove(_ category: Category) {
+        let realm = try! Realm()
+        
+        try! realm.write {
+            if let categoryList = realm.object(ofType: CategoryList.self, forPrimaryKey: 0) {
+                if let category = categoryList.categories.filter("id = %@", category.id).first {
+                    for sub in category.subCategories {
+                        realm.delete(sub)
+                    }
+                    realm.delete(category)
+                }
+            }
+        }
+        
         /*
         let realm = try! Realm()
         try! realm.write {

@@ -12,7 +12,6 @@ protocol CategoryListOutputViewProtocol {
     func dismissViewController()
     func addButtonTapped()
     func openCategoryCreationScreen(with viewObject: CashFlowTableViewCellViewObject)
-    func removeItemEvent(_ viewObject: CashFlowTableViewCellViewObject)
     func didSelectItemEvent(_ viewObjects: [CategoryListViewObject], indexPath: IndexPath)
     func reorderCategoriesButtonTapped()
 }
