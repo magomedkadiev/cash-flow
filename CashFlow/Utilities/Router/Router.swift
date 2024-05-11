@@ -123,6 +123,13 @@ class Router: ApplicationRouter {
                         topViewController.handler = categoryCreationViewController
                         categoryCreationViewController.present(categoryParentListViewController, animated: true)
                     }
+                } else if let categoryListViewController = navigationController.topViewController as? CategoryListViewController {
+                    let categoryParentListViewController = CategoryParentListViewController.controller()
+                    if let topViewController = categoryParentListViewController.topViewController as? CategoryParentListViewController {
+                        topViewController.doesOpenForEditing = true
+                        topViewController.closeHandler = categoryListViewController
+                        categoryListViewController.present(categoryParentListViewController, animated: true)
+                    }
                 }
             }
         }

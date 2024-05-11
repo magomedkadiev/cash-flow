@@ -8,15 +8,17 @@ struct CategoryListViewObject: CashFlowTableViewCellViewObject, Hashable {
     
     var cellType: CashFlowTableViewCellTypeProtocol = .categoryButton
     
+    var id: String = ""
+
+    var parentID: String = ""
+
     var name: String
     
     var isExpanded: Bool = true
     
     var subCategories: [CategoryListViewObject] = []
     
-    var isSelected: Bool = false
+    var opened: Bool = false
     
-    var parentID: String = ""
     
-    var id: String = ""
 }

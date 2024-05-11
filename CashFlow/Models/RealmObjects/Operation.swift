@@ -24,7 +24,7 @@ class Operation: Object {
     
     @objc dynamic var comment: String = ""
             
-    convenience init(id: String, type: OperationType, category: Category, totalAmount: Int, date: Date, comment: String) {
+    convenience init(id: String, type: OperationType, category: Category?, totalAmount: Int, date: Date, comment: String) {
         self.init()
         self.id = id
         self.type = type

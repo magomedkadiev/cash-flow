@@ -59,7 +59,11 @@ extension CategoryCreationPresenter: CategoryCreationOutputViewProtocol {
             return
         }
         let templateViewObjectID = templateViewObject.id.isEmpty ? UUID().uuidString : templateViewObject.id
-        let categoryPO = CategoryPO(id: templateViewObjectID, name: templateViewObject.name, parentID: templateViewObject.parentID, subCategories: [])
+        
+        let id = templateViewObject.parentID.isEmpty ? UUID().uuidString : templateViewObject.parentID
+        
+        
+        let categoryPO = CategoryPO(id: id, name: templateViewObject.name, subCategories: [])
         interactor.performsaveCategoryRequest(categoryPO)
     }
 }

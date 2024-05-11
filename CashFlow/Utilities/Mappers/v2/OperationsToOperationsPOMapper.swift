@@ -6,9 +6,8 @@ class OperationsToOperationsPOMapper: OperationsToOperationsPOMapperProtocol {
         var plainObjects = [OperationPO]()
         
         for operation in operations {
-            let categoryPO = CategoryPO(id: operation.category?.id ?? "" ,
+            let categoryPO = CategoryPO(id: operation.category?.id ?? "",
                                         name: operation.category?.name ?? "",
-                                        parentID: operation.category?.id ?? "",
                                         subCategories: [])
             let object = OperationPO(id: operation.id,
                                      type: operation.type,

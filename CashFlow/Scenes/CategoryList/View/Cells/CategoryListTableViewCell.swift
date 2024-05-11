@@ -15,10 +15,10 @@ class CategoryListTableViewCell: UITableViewCell, CashFlowTableViewCellProtocol 
             return
         }
         nameLabelText.text = viewObject.name
-        checkMarkImageView.isHidden = !viewObject.isSelected
+//        checkMarkImageView.isHidden = !viewObject.isSelected
         
         toogleButton.tag = indexPath.section
-        rotateImage(viewObject.isExpanded)     
+        rotateImage(!viewObject.opened)     
         
         if indexPath.row == 0 {
             leadingCategoryStackConstraint.constant = 16
@@ -40,7 +40,7 @@ class CategoryListTableViewCell: UITableViewCell, CashFlowTableViewCellProtocol 
     }
     
     @IBAction func toogleButtonTouched(_ sender: UIButton) {
-        handler?.expandedSection(sender)
+        handler?.expandedCellsButtonTapped(sender)
     }
     
     

@@ -6,6 +6,9 @@ class CategoryParentListViewController: UIViewController {
     @IBOutlet weak var tableView: UITableView!
     var viewObjects = [CashFlowTableViewCellViewObject]()
     weak var handler: CategoryParentListSelectionHandler?
+    weak var closeHandler: CategoryParentListCloseHandler?
+    
+    var doesOpenForEditing: Bool = false
     
     static func controller() -> UINavigationController {
         let storyboard = UIStoryboard(name: "CategoryParentList", bundle: nil)
@@ -15,7 +18,10 @@ class CategoryParentListViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         presenter?.viewDidLoad()
-    } 
+        navigationController?.presentationController?.delegate = self
+
+        tableView.isEditing = doesOpenForEditing
+    }
 }
 
 extension CategoryParentListViewController: CategoryParentListInputViewProtocol {
@@ -23,6 +29,15 @@ extension CategoryParentListViewController: CategoryParentListInputViewProtocol 
     func showInfo(_ viewObjects: [CashFlowTableViewCellViewObject]) {
         self.viewObjects = viewObjects
     }
+}
+
+
+extension CategoryParentListViewController: UIAdaptivePresentationControllerDelegate {
+    
+    func presentationControllerWillDismiss(_ presentationController: UIPresentationController) {
+        closeHandler?.didClose()
+    }
+    
 }
 
 extension CategoryParentListViewController: UITableViewDataSource {
@@ -38,6 +53,22 @@ extension CategoryParentListViewController: UITableViewDataSource {
         }
         cell.setup(with: viewObject, indexPath: indexPath)
         return cell as? UITableViewCell ?? UITableViewCell()
+    }
+    
+    func tableView(_ tableView: UITableView, canMoveRowAt indexPath: IndexPath) -> Bool {
+        return true
+    }
+    
+    func tableView(_ tableView: UITableView, editingStyleForRowAt indexPath: IndexPath) -> UITableViewCell.EditingStyle {
+        return .none
+    }
+    
+    func tableView(_ tableView: UITableView, shouldIndentWhileEditingRowAt indexPath: IndexPath) -> Bool {
+        return false
+    }
+    
+    func tableView(_ tableView: UITableView, moveRowAt sourceIndexPath: IndexPath, to destinationIndexPath: IndexPath) {
+        presenter?.moveRow(from: sourceIndexPath.row, to: destinationIndexPath.row)
     }
 }
 

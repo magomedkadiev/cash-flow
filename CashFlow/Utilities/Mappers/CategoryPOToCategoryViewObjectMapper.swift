@@ -2,10 +2,16 @@ import Foundation
 
 class CategoryPOToCategoryViewObjectMapper: CategoryPOToCategoryViewObjectMapperProtocol {
     
-    func map(_ operationsPO: [CategoryPO]) -> [CategoryListViewObject] {
+    func map(_ categoriesPO: [CategoryPO]) -> [CategoryListViewObject] {
         var viewObjects = [CategoryListViewObject]()
-        for operationPO in operationsPO {
-            let viewObject = CategoryListViewObject(name: operationPO.name, parentID: operationPO.parentID, id: operationPO.id)
+        for categoryPO in categoriesPO {
+            var subCategories = [CategoryListViewObject]()
+            if let subCategory = categoryPO.subCategories.first {
+                let subViewObject = CategoryListViewObject(id: subCategory.id, parentID: "subCategory.parentID", name: subCategory.name)
+                subCategories.append(subViewObject)
+            }
+            
+            let viewObject = CategoryListViewObject(id: categoryPO.id, name: categoryPO.name, subCategories: subCategories)
             viewObjects.append(viewObject)
         }
         return viewObjects
@@ -13,5 +19,5 @@ class CategoryPOToCategoryViewObjectMapper: CategoryPOToCategoryViewObjectMapper
 }
 
 protocol CategoryPOToCategoryViewObjectMapperProtocol {
-    func map(_ operationsPO: [CategoryPO]) -> [CategoryListViewObject]
+    func map(_ categoriesPO: [CategoryPO]) -> [CategoryListViewObject]
 }

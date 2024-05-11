@@ -6,7 +6,13 @@ class CategoryToCategoryPOMapper: CategoryToCategoryPOMapperProtocol {
         var plainObjects = [CategoryPO]()
         
         for category in categories {
-            let plainObject = CategoryPO(id: category.id, name: category.name, parentID: category.parentID, subCategories: [])
+            var subCategories = [CategoryPO]()
+            if let subCategory = category.subCategories.first {
+                let subCategoryPO = CategoryPO(id: subCategory.id, name: subCategory.name, subCategories: [])
+                subCategories.append(subCategoryPO)
+            }
+            
+            let plainObject = CategoryPO(id: category.id, name: category.name, subCategories: subCategories)
             plainObjects.append(plainObject)
         }
         
@@ -17,7 +23,7 @@ class CategoryToCategoryPOMapper: CategoryToCategoryPOMapperProtocol {
         guard let viewObject = viewObject as? CategoryListViewObject else {
             return Category()
         }
-        return Category(id: viewObject.id, name: viewObject.name, parentID: viewObject.parentID)
+        return Category(id: viewObject.id, name: viewObject.name, subCategories: [])
     }
 }
 

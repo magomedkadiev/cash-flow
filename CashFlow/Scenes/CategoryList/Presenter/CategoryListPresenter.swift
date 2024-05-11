@@ -19,13 +19,7 @@ class CategoryListPresenter {
             return
         }
         
-        let objectsByParentID = Dictionary(grouping: viewObjects, by: \.parentID)
-        for i in 0..<viewObjects.count {
-            viewObjects[i].subCategories = objectsByParentID[viewObjects[i].id] ?? []
-        }
-
-        let filteredViewObjects = viewObjects.filter { $0.parentID.isEmpty }
-        view?.showInfo(filteredViewObjects)
+        view?.showInfo(viewObjects)
     }
     
     private func doesCategoryOpenedFromCreationScene() -> Bool {
@@ -90,6 +84,10 @@ extension CategoryListPresenter: CategoryListOutputViewProtocol {
             }
             openCategoryCreationScreen(with: viewObject)
         }
+    }
+    
+    func reorderCategoriesButtonTapped() {
+        router.openCategoryParentList()
     }
 }
 

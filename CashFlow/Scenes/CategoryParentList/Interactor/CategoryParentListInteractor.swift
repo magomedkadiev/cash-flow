@@ -16,8 +16,13 @@ class CategoryParentListInteractor {
 extension CategoryParentListInteractor: CategoryParentListInteractorInputProtocol {
     
     func fetchAllCategories() {
-        let fetchedCatetories = categoryRealmDAO.fetchAllParentCategories()
+        let fetchedCatetories = categoryRealmDAO.fetchAllCategories()
         let mappedObjects = categoryMapper.map(fetchedCatetories)
         presenter?.reloadDataWith(mappedObjects)
+    }
+    
+    func moveRow(_ from: Int, _ to: Int) {
+        categoryRealmDAO.move(from: from, to: to)
+        fetchAllCategories()
     }
 }

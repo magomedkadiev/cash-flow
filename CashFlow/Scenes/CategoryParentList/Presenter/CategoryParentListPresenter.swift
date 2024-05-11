@@ -25,4 +25,8 @@ extension CategoryParentListPresenter: CategoryParentListInteractorOutputProtoco
         let mappedViewObjects = mapper.map(plainObjects)
         view?.showInfo(mappedViewObjects)
     }
+    
+    func moveRow(from: Int, to: Int) {
+        interactor?.moveRow(from, to)
+    }
 }

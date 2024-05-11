@@ -17,11 +17,12 @@ class OperationsRealmDAO: OperationsDAO {
     }
     
     func creationOperation(_ operation: OperationPO, complitionHandler: @escaping () -> Void?) {
-        let categoryMapper = CategoryPOToRealmCategoryMapper()
         realmManager.write { realm in
+            let operationCategory = self.getCategoryForOperation(operation)
+            
             let storedProreties = Operation(id: operation.id,
                                             type: operation.type,
-                                            category: categoryMapper.map(operation.category),
+                                            category: operationCategory,
                                             totalAmount: operation.sum,
                                             date: operation.date,
                                             comment: operation.comment)
@@ -43,5 +44,11 @@ class OperationsRealmDAO: OperationsDAO {
         let realm = try! Realm()
         let results = Array(realm.objects(Expense.self))
         return results
+    }
+    
+    private func getCategoryForOperation(_ operation: OperationPO) -> Category? {
+        let realm = try! Realm()
+        let categories = realm.objects(Category.self)
+        return categories.filter("id = %@", operation.category.id).first
     }
 }

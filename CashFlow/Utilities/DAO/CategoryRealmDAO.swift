@@ -7,20 +7,29 @@ class CategoryRealmDAO: CategoryDAO {
 
     func fetchAllCategories() -> [Category] {
         let realm = try! Realm()
-        let results = Array(realm.objects(Category.self))
-        return results
+        if let categories = realm.object(ofType: CategoryList.self, forPrimaryKey: 0)?.categories {
+            return Array(categories)
+        }
+        return []
     }
-    
-    func fetchAllParentCategories() -> [Category] {
-        let realm = try! Realm()
-        let results = Array(realm.objects(Category.self)).filter { $0.parentID.isEmpty }
-        return results
-    }
-    
+
     func createNew(category: CategoryPO, complitionHandler: @escaping () -> Void?) {
         realmManager.write { realm in
-            let storedProreties = Category(id: category.id, name: category.name, parentID: category.parentID)
-            realm.add(storedProreties, update: .modified)
+            
+            var categoryList = realm.object(ofType: CategoryList.self, forPrimaryKey: 0)
+            
+            if categoryList == nil {
+                categoryList = realm.create(CategoryList.self, value: [])
+            }
+            
+            if let exist = categoryList?.categories.filter("id = %@", category.id).first {
+                let category = Category(id: UUID().uuidString, name: category.name, subCategories: [])
+                exist.subCategories.append(category)
+            } else {
+                let newCategory = Category(id: category.id, name: category.name, subCategories: [])
+                categoryList?.categories.append(newCategory)
+                realm.add(newCategory)
+            }
         } onSuccess: {
             complitionHandler()
         } onFailure: {
@@ -29,6 +38,7 @@ class CategoryRealmDAO: CategoryDAO {
     }
     
     func remove(_ category: Category) {
+        /*
         let realm = try! Realm()
         try! realm.write {
             let categories = realm.objects(Category.self)
@@ -43,5 +53,24 @@ class CategoryRealmDAO: CategoryDAO {
                 realm.delete(parentCategoryToRemove2)
             }
         }
+         */
+    }
+    
+    func move(from: Int, to: Int) {
+        let realm = try! Realm()
+        try! realm.write {
+            if let categoryList = realm.object(ofType: CategoryList.self, forPrimaryKey: 0) {
+                let categories = categoryList.categories
+                var destTO = to
+
+                if from < to {
+                    destTO = to + 1
+                }
+                categories.move(fromOffsets: IndexSet(integer: from), toOffset: destTO)
+                categoryList.categories = categories
+            }
+            
+        }
     }
 }
+
