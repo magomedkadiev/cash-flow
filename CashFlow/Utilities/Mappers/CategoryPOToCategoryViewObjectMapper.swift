@@ -6,11 +6,10 @@ class CategoryPOToCategoryViewObjectMapper: CategoryPOToCategoryViewObjectMapper
         var viewObjects = [CategoryListViewObject]()
         for categoryPO in categoriesPO {
             var subCategories = [CategoryListViewObject]()
-            if let subCategory = categoryPO.subCategories.first {
+            for subCategory in categoryPO.subCategories {
                 let subViewObject = CategoryListViewObject(id: subCategory.id, parentID: "subCategory.parentID", name: subCategory.name)
                 subCategories.append(subViewObject)
             }
-            
             let viewObject = CategoryListViewObject(id: categoryPO.id, name: categoryPO.name, subCategories: subCategories)
             viewObjects.append(viewObject)
         }

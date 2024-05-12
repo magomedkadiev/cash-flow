@@ -7,8 +7,9 @@ class CategoryToCategoryPOMapper: CategoryToCategoryPOMapperProtocol {
         
         for category in categories {
             var subCategories = [CategoryPO]()
-            if let subCategory = category.subCategories.first {
-                let subCategoryPO = CategoryPO(id: subCategory.id, name: subCategory.name, subCategories: [])
+            
+            for sub in category.subCategories {
+                let subCategoryPO = CategoryPO(id: sub.id, name: sub.name, subCategories: [])
                 subCategories.append(subCategoryPO)
             }
             
