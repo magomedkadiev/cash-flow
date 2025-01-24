@@ -112,6 +112,13 @@ extension OperationCreationViewController: UITextFieldDelegate {
         }
         return shouldChangeCharacters
     }
+    
+    func textFieldShouldBeginEditing(_ textField: UITextField) -> Bool {
+        if ((textField.text?.starts(with: "0")) != nil) {
+            textField.text = ""
+        }
+        return true
+    }
 }
 
 extension OperationCreationViewController: CategoryListSelectionHandler {

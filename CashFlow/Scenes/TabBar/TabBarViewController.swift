@@ -21,6 +21,9 @@ class TabBarViewController: UITabBarController {
         let settingsViewController = SettingsViewController.controller()
         settingsViewController.tabBarItem.title = "Настройки"
         
+        let analyticsViewController = AnalyticsViewController.controller()
+        analyticsViewController.tabBarItem.title = "Аналитика"
+        
         viewControllers = [operationsViewController, operationCreationViewController, settingsViewController]
     }
 }

@@ -1,29 +1,22 @@
-//
-//  AnalyticsViewController.swift
-//  CashFlow
-//
-//  Created by Султанхан on 03.11.2023.
-//
-
 import UIKit
 
 class AnalyticsViewController: UIViewController {
+    
+    static func controller() -> UINavigationController {
+        let storyboard = UIStoryboard(name: "Analytics", bundle: nil)
+        return storyboard.instantiateInitialViewController() as! UINavigationController
+    }
 
+    @IBOutlet weak var chartsBackgroundView: UIView!
+    var chartsView: MyView?
+    
     override func viewDidLoad() {
         super.viewDidLoad()
 
-        // Do any additional setup after loading the view.
+        chartsView = MyView()
+        chartsView?.injectIn(view: chartsBackgroundView)
+        chartsBackgroundView.backgroundColor = .clear
     }
-    
-
-    /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destination.
-        // Pass the selected object to the new view controller.
-    }
-    */
 
 }
+
