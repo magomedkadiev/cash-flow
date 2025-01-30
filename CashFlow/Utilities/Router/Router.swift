@@ -3,7 +3,7 @@ import UIKit
 
 class Router: ApplicationRouter {
     
-    func openCategoryList() {
+    func openCategoryList(_ viewObject: CashFlowTableViewCellViewObject?) {
         let keyWindow = UIApplication.shared.connectedScenes.map({ $0 as? UIWindowScene }).compactMap({ $0 })
             .first?.windows.filter {$0.isKeyWindow}.first
         
@@ -17,6 +17,7 @@ class Router: ApplicationRouter {
                     let categoryListViewController = CategoryListViewController.controller()
                     if let topViewController = categoryListViewController.topViewController as? CategoryListViewController {
                         topViewController.handler = operationCreationViewController
+                        topViewController.operationViewObject = viewObject
                         operationCreationViewController.present(categoryListViewController, animated: true)
                     }
                 }

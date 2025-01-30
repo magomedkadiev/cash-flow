@@ -7,6 +7,7 @@ class CategoryListViewController: UIViewController {
     var presenter: CategoryListOutputViewProtocol?
     var viewObjects = [CategoryListViewObject]()
     weak var handler: CategoryListSelectionHandler?
+    var operationViewObject: CashFlowTableViewCellViewObject?
     
     @IBOutlet weak var moveBarButtonItem: UIBarButtonItem!
     @IBOutlet weak var addBarButtonItem: UIBarButtonItem!
@@ -83,6 +84,9 @@ extension CategoryListViewController: UITableViewDataSource {
             
             if let headerCell = cell as? CategoryListTableViewCell {
                headerCell.handler = self
+                if let operationViewObject = operationViewObject as? OperationViewObject {
+                    headerCell.checkMarkImageView.isHidden = viewObject.id != operationViewObject.categoryID
+                }
             }
             
             cell.setup(with: viewObject, indexPath: indexPath)
@@ -90,6 +94,12 @@ extension CategoryListViewController: UITableViewDataSource {
             
         } else {
             guard let cell = tableView.dequeueReusableCell(withIdentifier: viewObject.reuseIdentifier) as? CashFlowTableViewCellProtocol else { return UITableViewCell() }
+            
+            if let underHeader = cell as? CategoryListTableViewCell {
+                if let operationViewObject = operationViewObject as? OperationViewObject {
+                    underHeader.checkMarkImageView.isHidden = viewObject.subCategories[indexPath.row - 1].id != operationViewObject.categoryID
+                }
+            }
             
             cell.setup(with: viewObject.subCategories[indexPath.row - 1], indexPath: indexPath)
             return cell as? UITableViewCell ?? UITableViewCell()

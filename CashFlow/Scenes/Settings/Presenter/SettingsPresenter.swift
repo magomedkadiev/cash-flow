@@ -31,7 +31,7 @@ extension SettingsPresenter: SettingsOutputViewProtocol {
         let rowType = viewObject.cellType
         switch rowType {
         case .settingCategory:
-            router.openCategoryList()
+            router.openCategoryList(nil)
         default:
             return
         }

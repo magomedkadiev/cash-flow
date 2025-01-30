@@ -76,7 +76,7 @@ extension OperationCreationPresenter: OperationCreationOutputViewProtocol {
     func didSelectRowAt(_ type: CashFlowTableViewCellTypeProtocol) {
         switch type {
         case .categoryButton:
-            router.openCategoryList()
+            router.openCategoryList(operationViewObject)
         case .saveButton:
             creationNewOperationWith()
         default:

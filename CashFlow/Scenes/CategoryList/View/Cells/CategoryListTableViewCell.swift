@@ -23,7 +23,7 @@ class CategoryListTableViewCell: UITableViewCell, CashFlowTableViewCellProtocol 
         if indexPath.row == 0 {
             leadingCategoryStackConstraint.constant = 16
             toogleButton.isHidden = false
-            addNewCategoryButton.isHidden = false
+            addNewCategoryButton.isHidden = true
         } else {
             leadingCategoryStackConstraint.constant = 48
             toogleButton.isHidden = true
