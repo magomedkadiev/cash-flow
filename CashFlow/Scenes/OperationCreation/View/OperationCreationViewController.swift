@@ -16,6 +16,7 @@ class OperationCreationViewController: UIViewController {
     
     weak var operationCreationFinishHandler: OperationCreationFinishHandler?
     
+    @IBOutlet weak var closeBarButtonItem: UIBarButtonItem!
     @IBOutlet weak var tableView: UITableView!
     
     static func controller() -> UINavigationController {
@@ -36,6 +37,9 @@ class OperationCreationViewController: UIViewController {
                 cell.displayLabelText.text = sum.toMoneyStyle()
             }
         }
+    }
+    @IBAction func closeButtonTapped(_ sender: UIBarButtonItem) {
+        self.dismiss(animated: true)
     }
 }
 

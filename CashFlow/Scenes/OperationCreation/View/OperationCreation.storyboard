@@ -254,10 +254,15 @@
                         <imageReference key="image" image="plus.circle.fill" catalog="system" symbolScale="large" variableValue="0.0"/>
                     </tabBarItem>
                     <navigationItem key="navigationItem" id="d8D-or-sdB">
-                        <barButtonItem key="leftBarButtonItem" systemItem="stop" id="JYE-3g-hJs"/>
+                        <barButtonItem key="leftBarButtonItem" systemItem="stop" id="JYE-3g-hJs">
+                            <connections>
+                                <action selector="closeButtonTapped:" destination="Y6W-OH-hqX" id="MgL-15-Nlx"/>
+                            </connections>
+                        </barButtonItem>
                     </navigationItem>
                     <simulatedTabBarMetrics key="simulatedBottomBarMetrics"/>
                     <connections>
+                        <outlet property="closeBarButtonItem" destination="JYE-3g-hJs" id="d0e-f2-fHt"/>
                         <outlet property="tableView" destination="s8V-iv-o60" id="tMC-gl-M9S"/>
                     </connections>
                 </viewController>
