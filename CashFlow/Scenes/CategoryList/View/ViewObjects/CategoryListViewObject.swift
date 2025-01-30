@@ -18,7 +18,7 @@ struct CategoryListViewObject: CashFlowTableViewCellViewObject, Hashable {
     
     var subCategories: [CategoryListViewObject] = []
     
-    var opened: Bool = false
+    var opened: Bool = true
     
     
 }

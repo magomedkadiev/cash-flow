@@ -30,6 +30,9 @@ class CategoryListViewController: UIViewController {
     @IBAction func moveBarButtonItemTapped(_ sender: UIBarButtonItem) {
         presenter?.reorderCategoriesButtonTapped()
     }
+    @IBAction func closeBarButtonTapped(_ sender: UIBarButtonItem) {
+        self.dismiss(animated: true)
+    }
 }
 
 extension CategoryListViewController: CategoryParentListCloseHandler {

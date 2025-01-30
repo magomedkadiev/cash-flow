@@ -22,6 +22,9 @@ class CategoryParentListViewController: UIViewController {
 
         tableView.isEditing = doesOpenForEditing
     }
+    @IBAction func closeButtonTapped(_ sender: UIBarButtonItem) {
+        self.dismiss(animated: true)
+    }
 }
 
 extension CategoryParentListViewController: CategoryParentListInputViewProtocol {
