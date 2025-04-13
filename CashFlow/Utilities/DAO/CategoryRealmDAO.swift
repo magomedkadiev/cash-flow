@@ -85,5 +85,14 @@ class CategoryRealmDAO: CategoryDAO {
             
         }
     }
+    
+    func loadCategoryTemplates(_ categories: [Category]) {
+        let realm = try! Realm()
+        
+        try! realm.write {
+            var categoryList = realm.create(CategoryList.self, value: [])
+            categoryList.categories.append(objectsIn: categories)
+        }
+    }
 }
 

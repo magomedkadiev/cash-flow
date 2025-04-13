@@ -19,4 +19,9 @@ extension CategoryListinteractor: CategoryListinteractorInputProtocol {
         let plainCategories = categoryMapper.map(fetchedCategories)
         presenter?.reloadDataWith(plainCategories)
     }
+    
+    func loadCategoryTemplates() {
+        let defCategories = CategoriesTemplate.defaultsCategories()
+        categoryRealmDAO.loadCategoryTemplates(defCategories)
+    }
 }

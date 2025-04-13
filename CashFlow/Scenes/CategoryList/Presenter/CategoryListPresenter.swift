@@ -33,8 +33,18 @@ class CategoryListPresenter {
 extension CategoryListPresenter: CategoryListOutputViewProtocol {
     
     func viewDidLoad() {
+        loadTemplatesToDatabaseIfFirstTimeLunched()
         fetchAllCategories()
         view?.hideBarButtonItemIfNedeed(doesCategoryOpenedFromCreationScene())
+    }
+    
+    private func loadTemplatesToDatabaseIfFirstTimeLunched() {
+        if UserDefaults.standard.bool(forKey: "hasLunchedOnce") {
+        } else {
+            interactor.loadCategoryTemplates()
+            UserDefaults.standard.set(true, forKey: "hasLunchedOnce")
+            UserDefaults.standard.synchronize()
+        }
     }
     
     func fetchAllCategories() {

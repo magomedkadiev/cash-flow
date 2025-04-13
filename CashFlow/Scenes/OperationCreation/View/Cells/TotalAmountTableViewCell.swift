@@ -9,7 +9,7 @@ class TotalAmountTableViewCell: UITableViewCell, CashFlowTableViewCellProtocol {
         guard let viewObject = viewObject as? OperationCreationTotalAmountViewObject else {
             return
         }
-        displayTextField.becomeFirstResponder()
+//        displayTextField.becomeFirstResponder()
         displayLabelText.text = viewObject.totalAmount.toMoneyStyle()
         displayTextField.text = "\(viewObject.totalAmount)"
     }

@@ -93,6 +93,7 @@
 		395A7ABA2A3E11F6000A9BE2 /* OperationCreationInitializer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 395A7AB92A3E11F6000A9BE2 /* OperationCreationInitializer.swift */; };
 		395A7ABC2A3E11FD000A9BE2 /* OperationCreation.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 395A7ABB2A3E11FD000A9BE2 /* OperationCreation.storyboard */; };
 		3999024E2BF0C526001DA6E9 /* ChartManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3999024D2BF0C526001DA6E9 /* ChartManager.swift */; };
+		39A0DA352DAC2BDA00D15E80 /* CategoriesTemplate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 39A0DA342DAC2BDA00D15E80 /* CategoriesTemplate.swift */; };
 		39A7D6782A6DB6570085E861 /* Operations.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 391FA0E22A2148D40096EB59 /* Operations.storyboard */; };
 		39A7D67A2A6DB6C00085E861 /* SettingsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 39A7D6792A6DB6C00085E861 /* SettingsViewController.swift */; };
 		39A7D67C2A6DB9830085E861 /* TabBarViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 39A7D67B2A6DB9830085E861 /* TabBarViewController.swift */; };
@@ -238,6 +239,7 @@
 		395A7AB92A3E11F6000A9BE2 /* OperationCreationInitializer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OperationCreationInitializer.swift; sourceTree = "<group>"; };
 		395A7ABB2A3E11FD000A9BE2 /* OperationCreation.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = OperationCreation.storyboard; sourceTree = "<group>"; };
 		3999024D2BF0C526001DA6E9 /* ChartManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChartManager.swift; sourceTree = "<group>"; };
+		39A0DA342DAC2BDA00D15E80 /* CategoriesTemplate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CategoriesTemplate.swift; sourceTree = "<group>"; };
 		39A7D6792A6DB6C00085E861 /* SettingsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsViewController.swift; sourceTree = "<group>"; };
 		39A7D67B2A6DB9830085E861 /* TabBarViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TabBarViewController.swift; sourceTree = "<group>"; };
 		39A7D67E2A6DCDA50085E861 /* ApplicationRouter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ApplicationRouter.swift; sourceTree = "<group>"; };
@@ -740,6 +742,14 @@
 			path = View;
 			sourceTree = "<group>";
 		};
+		39A0DA312DAC2BB300D15E80 /* Templates */ = {
+			isa = PBXGroup;
+			children = (
+				39A0DA342DAC2BDA00D15E80 /* CategoriesTemplate.swift */,
+			);
+			path = Templates;
+			sourceTree = "<group>";
+		};
 		39A7D67D2A6DCD8A0085E861 /* Router */ = {
 			isa = PBXGroup;
 			children = (
@@ -862,6 +872,7 @@
 		39AD17302A3A16B9002E9668 /* Utilities */ = {
 			isa = PBXGroup;
 			children = (
+				39A0DA312DAC2BB300D15E80 /* Templates */,
 				39EC46E82B10C8D400C2BA0D /* Extensions */,
 				39A7D67D2A6DCD8A0085E861 /* Router */,
 				39AA928B2A3A3DEA00F2FF30 /* Mappers */,
@@ -1070,6 +1081,7 @@
 				3949D7902B39F40C005B4904 /* CategoryCreationViewController.swift in Sources */,
 				39B1C9AA2A5094450065442C /* Expense.swift in Sources */,
 				3907A4E62A71B6FB007C6412 /* OperationViewObject.swift in Sources */,
+				39A0DA352DAC2BDA00D15E80 /* CategoriesTemplate.swift in Sources */,
 				3949D7C12B3C60F9005B4904 /* CategoryParentListInteractorIOProtocols.swift in Sources */,
 				39A7D67F2A6DCDA50085E861 /* ApplicationRouter.swift in Sources */,
 				39AA927E2A3A23E600F2FF30 /* RealmManager.swift in Sources */,
