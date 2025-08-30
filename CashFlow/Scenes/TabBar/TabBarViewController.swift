@@ -13,13 +13,13 @@ class TabBarViewController: UITabBarController {
     
     private func setUpViewControllers() {
         let operationsViewController = OperationsViewController.controller()
-        operationsViewController.tabBarItem.title = "Операции"
+//        operationsViewController.tabBarItem.title = "Операции"
         
         let operationCreationViewController = OperationCreationViewController.controller()
         operationCreationViewController.tabBarItem.title = ""
 
         let settingsViewController = SettingsViewController.controller()
-        settingsViewController.tabBarItem.title = "Настройки"
+//        settingsViewController.tabBarItem.title = "Настройки"
         
         let analyticsViewController = AnalyticsViewController.controller()
         analyticsViewController.tabBarItem.title = "Аналитика"

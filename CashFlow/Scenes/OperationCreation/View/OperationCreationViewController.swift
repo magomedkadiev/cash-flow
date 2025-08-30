@@ -91,6 +91,15 @@ extension OperationCreationViewController: UITableViewDelegate {
         let type = viewObjects[indexPath.section][indexPath.row].cellType
         presenter?.didSelectRowAt(type)
     }
+    
+    func tableView(_ tableView: UITableView, willDisplay cell: UITableViewCell, forRowAt indexPath: IndexPath) {
+        guard let cell = cell as? TotalAmountTableViewCell else {
+            return
+        }
+        DispatchQueue.main.async {
+            cell.displayTextField.becomeFirstResponder()
+        }
+    }
 }
 
 extension OperationCreationViewController: OperationCreationInputViewProtocol {
