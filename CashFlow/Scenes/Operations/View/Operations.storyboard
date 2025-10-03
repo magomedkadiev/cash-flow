@@ -1,9 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="23504" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="Agv-mg-tJR">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="23727" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="Agv-mg-tJR">
     <device id="retina6_12" orientation="portrait" appearance="light"/>
     <dependencies>
         <deployment identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="23506"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="23721"/>
         <capability name="Named colors" minToolsVersion="9.0"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="System colors in document resources" minToolsVersion="11.0"/>
@@ -110,37 +110,37 @@
                                     </constraints>
                                 </view>
                                 <prototypes>
-                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="OperationsTableViewCell" rowHeight="55" id="jpg-Nt-K3a" customClass="OperationsTableViewCell" customModule="CashFlow" customModuleProvider="target">
-                                        <rect key="frame" x="20" y="150.33333206176758" width="353" height="55"/>
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="OperationsTableViewCell" rowHeight="50" id="jpg-Nt-K3a" customClass="OperationsTableViewCell" customModule="CashFlow" customModuleProvider="target">
+                                        <rect key="frame" x="20" y="150.33333206176758" width="353" height="50"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="jpg-Nt-K3a" id="6Lb-Tp-D32">
-                                            <rect key="frame" x="0.0" y="0.0" width="353" height="55"/>
+                                            <rect key="frame" x="0.0" y="0.0" width="353" height="50"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
-                                                <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" translatesAutoresizingMaskIntoConstraints="NO" id="p47-E9-NED">
-                                                    <rect key="frame" x="53" y="9.6666666666666643" width="107" height="36"/>
+                                                <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="fillProportionally" alignment="top" translatesAutoresizingMaskIntoConstraints="NO" id="p47-E9-NED">
+                                                    <rect key="frame" x="53" y="4" width="107" height="42"/>
                                                     <subviews>
                                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Еда вне дома" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Wdq-LH-Maq">
-                                                            <rect key="frame" x="0.0" y="0.0" width="107" height="20.333333333333332"/>
+                                                            <rect key="frame" x="0.0" y="0.0" width="107" height="24.666666666666668"/>
                                                             <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                                             <nil key="highlightedColor"/>
                                                         </label>
                                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Комментарий" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="aGz-NM-3gb">
-                                                            <rect key="frame" x="0.0" y="20.333333333333336" width="107" height="15.666666666666664"/>
-                                                            <fontDescription key="fontDescription" type="system" pointSize="13"/>
-                                                            <color key="textColor" white="0.33333333329999998" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                            <rect key="frame" x="0.0" y="24.666666666666671" width="81.666666666666671" height="17.333333333333329"/>
+                                                            <fontDescription key="fontDescription" type="system" pointSize="12"/>
+                                                            <color key="textColor" systemColor="secondaryLabelColor"/>
                                                             <nil key="highlightedColor"/>
                                                         </label>
                                                     </subviews>
                                                 </stackView>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" horizontalCompressionResistancePriority="751" text="- 500 р" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="bHb-Lh-Ykg">
-                                                    <rect key="frame" x="275.66666666666669" y="17.333333333333336" width="57.333333333333314" height="20.333333333333336"/>
+                                                    <rect key="frame" x="275.66666666666669" y="14.999999999999998" width="57.333333333333314" height="20.333333333333329"/>
                                                     <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                                     <nil key="textColor"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
-                                                <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="photo" catalog="system" translatesAutoresizingMaskIntoConstraints="NO" id="e59-F5-pUm">
-                                                    <rect key="frame" x="20" y="17.666666666666664" width="25" height="20.000000000000007"/>
+                                                <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="bolt.circle" catalog="system" translatesAutoresizingMaskIntoConstraints="NO" id="e59-F5-pUm">
+                                                    <rect key="frame" x="20" y="16.666666666666664" width="25" height="16.666666666666664"/>
                                                     <constraints>
                                                         <constraint firstAttribute="width" constant="25" id="TEN-f3-8wt"/>
                                                         <constraint firstAttribute="height" constant="28" id="ukY-2o-yHe"/>
@@ -148,9 +148,11 @@
                                                 </imageView>
                                             </subviews>
                                             <constraints>
+                                                <constraint firstAttribute="bottom" secondItem="p47-E9-NED" secondAttribute="bottom" constant="4" id="0BV-kD-pFZ"/>
                                                 <constraint firstItem="bHb-Lh-Ykg" firstAttribute="trailing" secondItem="6Lb-Tp-D32" secondAttribute="trailingMargin" id="1q1-V3-bad"/>
                                                 <constraint firstItem="e59-F5-pUm" firstAttribute="leading" secondItem="6Lb-Tp-D32" secondAttribute="leadingMargin" id="90E-uA-JZi"/>
                                                 <constraint firstItem="bHb-Lh-Ykg" firstAttribute="centerY" secondItem="6Lb-Tp-D32" secondAttribute="centerY" id="K6D-9e-v2K"/>
+                                                <constraint firstItem="p47-E9-NED" firstAttribute="top" secondItem="6Lb-Tp-D32" secondAttribute="top" constant="4" id="Sz0-gl-QmM"/>
                                                 <constraint firstItem="bHb-Lh-Ykg" firstAttribute="leading" relation="greaterThanOrEqual" secondItem="p47-E9-NED" secondAttribute="trailing" constant="16" id="ach-wX-7Gg"/>
                                                 <constraint firstItem="p47-E9-NED" firstAttribute="centerY" secondItem="6Lb-Tp-D32" secondAttribute="centerY" id="s8X-Pm-M7p"/>
                                                 <constraint firstItem="p47-E9-NED" firstAttribute="leading" secondItem="e59-F5-pUm" secondAttribute="trailing" constant="8" symbolic="YES" id="vJX-E1-043"/>
@@ -197,7 +199,7 @@
                     </connections>
                 </customObject>
             </objects>
-            <point key="canvasLocation" x="2045.5813953488371" y="2.5751072961373391"/>
+            <point key="canvasLocation" x="2045.0381679389311" y="2.1126760563380285"/>
         </scene>
         <!--Операции-->
         <scene sceneID="g9S-DW-UHm">
@@ -206,7 +208,7 @@
                     <tabBarItem key="tabBarItem" title="Операции" selectedImage="list.bullet" catalog="system" id="PNn-7g-LCK"/>
                     <toolbarItems/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" id="uMR-gz-Yh9">
-                        <rect key="frame" x="0.0" y="59" width="393" height="44"/>
+                        <rect key="frame" x="0.0" y="118" width="393" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
                     </navigationBar>
                     <nil name="viewControllers"/>
@@ -220,11 +222,14 @@
         </scene>
     </scenes>
     <resources>
+        <image name="bolt.circle" catalog="system" width="128" height="123"/>
         <image name="list.bullet" catalog="system" width="128" height="87"/>
-        <image name="photo" catalog="system" width="128" height="93"/>
         <namedColor name="backgroundCell">
             <color red="0.95294117647058818" green="0.96078431372549022" blue="0.96470588235294119" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </namedColor>
+        <systemColor name="secondaryLabelColor">
+            <color red="0.23529411759999999" green="0.23529411759999999" blue="0.26274509800000001" alpha="0.59999999999999998" colorSpace="custom" customColorSpace="sRGB"/>
+        </systemColor>
         <systemColor name="systemBackgroundColor">
             <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
         </systemColor>

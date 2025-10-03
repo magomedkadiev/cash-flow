@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="23727" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="mf6-65-e2t">
-    <device id="retina6_9" orientation="portrait" appearance="light"/>
+    <device id="retina6_9" orientation="portrait" appearance="dark"/>
     <dependencies>
         <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="23721"/>
@@ -23,7 +23,7 @@
                                 <rect key="frame" x="0.0" y="0.0" width="440" height="956"/>
                                 <color key="backgroundColor" name="backgroundTableView"/>
                                 <prototypes>
-                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="headerTableViewCell" rowHeight="47" id="GaC-dQ-1xG" customClass="HeaderTableViewCell" customModule="CashFlow" customModuleProvider="target">
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" selectionStyle="none" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="headerTableViewCell" rowHeight="47" id="GaC-dQ-1xG" customClass="HeaderTableViewCell" customModule="CashFlow" customModuleProvider="target">
                                         <rect key="frame" x="20" y="55.333332061767578" width="400" height="47"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="GaC-dQ-1xG" id="6F4-My-GLw">
@@ -32,13 +32,13 @@
                                             <subviews>
                                                 <segmentedControl opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="top" segmentControlStyle="plain" selectedSegmentIndex="0" translatesAutoresizingMaskIntoConstraints="NO" id="B1O-kR-UCr">
                                                     <rect key="frame" x="8" y="8" width="384" height="32"/>
-                                                    <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                                                    <color key="backgroundColor" name="backgroundCell"/>
                                                     <segments>
                                                         <segment title="Расход"/>
                                                         <segment title="Доход"/>
                                                     </segments>
                                                     <color key="tintColor" systemColor="tintColor"/>
-                                                    <color key="selectedSegmentTintColor" red="0.22745099660000001" green="0.50196081400000003" blue="0.74901962280000001" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                                    <color key="selectedSegmentTintColor" red="0.1176470588" green="0.43137254899999999" blue="0.95686274510000002" alpha="1" colorSpace="calibratedRGB"/>
                                                     <connections>
                                                         <action selector="segmentedControllValueChanged:" destination="GaC-dQ-1xG" eventType="valueChanged" id="1Tq-fL-irs"/>
                                                     </connections>
@@ -56,7 +56,7 @@
                                             <outlet property="segmentedControl" destination="B1O-kR-UCr" id="Dpm-5b-P1n"/>
                                         </connections>
                                     </tableViewCell>
-                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="TotalAmountTableViewCell" rowHeight="76" id="qTP-wQ-Afa" customClass="TotalAmountTableViewCell" customModule="CashFlow" customModuleProvider="target">
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" selectionStyle="none" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="TotalAmountTableViewCell" rowHeight="76" id="qTP-wQ-Afa" customClass="TotalAmountTableViewCell" customModule="CashFlow" customModuleProvider="target">
                                         <rect key="frame" x="20" y="102.33333206176758" width="400" height="76"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="qTP-wQ-Afa" id="llu-Ny-iQu">
@@ -98,7 +98,7 @@
                                             <outlet property="displayTextField" destination="BTV-XI-7qK" id="aeb-rU-z1Z"/>
                                         </connections>
                                     </tableViewCell>
-                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="categoryTableViewCell" rowHeight="50" id="MVX-2t-jeR" customClass="CategoryTableViewCell" customModule="CashFlow" customModuleProvider="target">
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="none" indentationWidth="10" reuseIdentifier="categoryTableViewCell" rowHeight="50" id="MVX-2t-jeR" customClass="CategoryTableViewCell" customModule="CashFlow" customModuleProvider="target">
                                         <rect key="frame" x="20" y="178.33333206176758" width="400" height="50"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="MVX-2t-jeR" id="uJP-fe-8QG">
@@ -114,7 +114,7 @@
                                                                 <constraint firstAttribute="width" constant="82.670000000000002" id="Zaq-1u-33a"/>
                                                             </constraints>
                                                             <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                                            <color key="textColor" white="0.33333333333333331" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                            <color key="textColor" white="0.66666666666666663" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                             <nil key="highlightedColor"/>
                                                         </label>
                                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Без категории" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Hir-ae-hPA">
@@ -138,7 +138,7 @@
                                             <outlet property="categoryNameLabel" destination="Hir-ae-hPA" id="azs-SA-wsc"/>
                                         </connections>
                                     </tableViewCell>
-                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="dateTableViewCell" rowHeight="50" id="Van-AU-opS" customClass="DateTableViewCell" customModule="CashFlow" customModuleProvider="target">
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="none" indentationWidth="10" reuseIdentifier="dateTableViewCell" rowHeight="50" id="Van-AU-opS" customClass="DateTableViewCell" customModule="CashFlow" customModuleProvider="target">
                                         <rect key="frame" x="20" y="228.33333206176758" width="400" height="50"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="Van-AU-opS" id="opu-Fr-rDL">
@@ -154,7 +154,7 @@
                                                                 <constraint firstAttribute="width" constant="82.670000000000002" id="mJp-p2-xd1"/>
                                                             </constraints>
                                                             <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                                            <color key="textColor" white="0.33333333329999998" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                            <color key="textColor" white="0.66666666666666663" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                             <nil key="highlightedColor"/>
                                                         </label>
                                                         <datePicker contentMode="scaleToFill" contentHorizontalAlignment="trailing" contentVerticalAlignment="center" datePickerMode="dateAndTime" minuteInterval="1" translatesAutoresizingMaskIntoConstraints="NO" id="AZn-f5-exo">
@@ -210,7 +210,7 @@
                                             <outlet property="commentTextField" destination="hya-wj-52N" id="n0K-yL-xka"/>
                                         </connections>
                                     </tableViewCell>
-                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="saveButtonTableViewCell" rowHeight="50" id="cpq-fC-bi3" customClass="SaveButtonTableViewCell" customModule="CashFlow" customModuleProvider="target">
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="none" indentationWidth="10" reuseIdentifier="saveButtonTableViewCell" rowHeight="50" id="cpq-fC-bi3" customClass="SaveButtonTableViewCell" customModule="CashFlow" customModuleProvider="target">
                                         <rect key="frame" x="20" y="328.33333206176758" width="400" height="50"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="cpq-fC-bi3" id="d4f-iM-Txn">
@@ -231,7 +231,7 @@
                                                 <constraint firstAttribute="bottomMargin" secondItem="ayR-Bc-Vvs" secondAttribute="bottom" id="qfx-B5-Riv"/>
                                             </constraints>
                                         </tableViewCellContentView>
-                                        <color key="backgroundColor" red="0.22745099660000001" green="0.50196081400000003" blue="0.74901962280000001" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                        <color key="backgroundColor" red="0.11764705882352941" green="0.43137254901960786" blue="0.95686274509803915" alpha="1" colorSpace="calibratedRGB"/>
                                     </tableViewCell>
                                 </prototypes>
                                 <sections/>
@@ -311,11 +311,8 @@
         <systemColor name="labelColor">
             <color white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
         </systemColor>
-        <systemColor name="systemBackgroundColor">
-            <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-        </systemColor>
         <systemColor name="tintColor">
-            <color red="0.0" green="0.47843137254901963" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+            <color red="0.0" green="0.47843137250000001" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </systemColor>
     </resources>
 </document>
