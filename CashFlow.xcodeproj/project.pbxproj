@@ -130,6 +130,7 @@
 		39EC46FF2B23773400C2BA0D /* CommentTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 39EC46FE2B23773400C2BA0D /* CommentTableViewCell.swift */; };
 		39EC47012B2378DF00C2BA0D /* OperationCreationCommentViewObject.swift in Sources */ = {isa = PBXBuildFile; fileRef = 39EC47002B2378DF00C2BA0D /* OperationCreationCommentViewObject.swift */; };
 		39EC47032B27107A00C2BA0D /* OperationCreationCommentHandler.swift in Sources */ = {isa = PBXBuildFile; fileRef = 39EC47022B27107A00C2BA0D /* OperationCreationCommentHandler.swift */; };
+		E862F9632E9182EF00C03942 /* Numeric + Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = E862F9622E9182EF00C03942 /* Numeric + Extension.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -275,6 +276,7 @@
 		39EC46FE2B23773400C2BA0D /* CommentTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CommentTableViewCell.swift; sourceTree = "<group>"; };
 		39EC47002B2378DF00C2BA0D /* OperationCreationCommentViewObject.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OperationCreationCommentViewObject.swift; sourceTree = "<group>"; };
 		39EC47022B27107A00C2BA0D /* OperationCreationCommentHandler.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OperationCreationCommentHandler.swift; sourceTree = "<group>"; };
+		E862F9622E9182EF00C03942 /* Numeric + Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Numeric + Extension.swift"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -907,6 +909,7 @@
 			children = (
 				39EC46E92B10C8E400C2BA0D /* Date + Extension.swift */,
 				39EC46ED2B191E2A00C2BA0D /* Int + Extension.swift */,
+				E862F9622E9182EF00C03942 /* Numeric + Extension.swift */,
 			);
 			path = Extensions;
 			sourceTree = "<group>";
@@ -1170,6 +1173,7 @@
 				391FA0A52A2135950096EB59 /* SceneDelegate.swift in Sources */,
 				3949D7C52B3C61C0005B4904 /* CategoryParentListConfigurator.swift in Sources */,
 				3949D7C32B3C6187005B4904 /* CategoryParentListInitializer.swift in Sources */,
+				E862F9632E9182EF00C03942 /* Numeric + Extension.swift in Sources */,
 				3949D78D2B39B99F005B4904 /* SettingsCategoryViewObject.swift in Sources */,
 				3940343B2A5734CB00D45D24 /* ExpensesToExpensesPOMapper.swift in Sources */,
 				39B1C9AC2A5094FA0065442C /* ExpensePO.swift in Sources */,

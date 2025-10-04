@@ -3,9 +3,7 @@ import UIKit
 class OperationCreationViewController: UIViewController {
     
     var presenter: OperationCreationOutputViewProtocol?
-    
-    private var sum: Int = 0
-    
+        
     var operationViewObject: CashFlowTableViewCellViewObject?
         
     var viewObjects: [[CashFlowTableViewCellViewObject]] = [] {
@@ -29,15 +27,6 @@ class OperationCreationViewController: UIViewController {
         presenter?.viewDidLoad(operationViewObject)
     }
     
-    fileprivate func updateDisplayTextLabelWhenTotalAmountChanged() {
-        let visibleCells = tableView.visibleCells
-        
-        for cell in visibleCells {
-            if let cell = cell as? TotalAmountTableViewCell {
-                cell.displayLabelText.text = sum.toMoneyStyle()
-            }
-        }
-    }
     @IBAction func closeButtonTapped(_ sender: UIBarButtonItem) {
         self.dismiss(animated: true)
     }
@@ -116,21 +105,28 @@ extension OperationCreationViewController: OperationCreationInputViewProtocol {
 extension OperationCreationViewController: UITextFieldDelegate {
     
     func textField(_ textField: UITextField, shouldChangeCharactersIn range: NSRange, replacementString string: String) -> Bool {
-        let text = (textField.text as NSString?)?.replacingCharacters(in: range, with: string) ?? ""
-        let shouldChangeCharacters = text.count <= 8
-        if shouldChangeCharacters {
-            sum = Int(text) ?? 0
-            presenter?.totalAmountValueChanged(totalAmount: Int(text) ?? 0)
-            updateDisplayTextLabelWhenTotalAmountChanged()
+        let currentText = (textField.text as NSString?)?.replacingCharacters(in: range, with: string) ?? ""
+        
+        guard currentText.count <= 12 else {
+            return false
         }
-        return shouldChangeCharacters
-    }
-    
-    func textFieldShouldBeginEditing(_ textField: UITextField) -> Bool {
-        if ((textField.text?.starts(with: "0")) != nil) {
+        
+        guard currentText != "0" else {
+            return false
+        }
+        
+        let currentTextWithNoSpaces = currentText.replacingOccurrences(of: " ", with: "")
+        
+        if currentTextWithNoSpaces.isEmpty {
             textField.text = ""
+            return false
         }
-        return true
+        
+        let number = Int(currentTextWithNoSpaces) ?? 0
+        textField.text = number.groupedFormStyle()
+        presenter?.totalAmountValueChanged(totalAmount: number)
+
+        return false
     }
 }
 
