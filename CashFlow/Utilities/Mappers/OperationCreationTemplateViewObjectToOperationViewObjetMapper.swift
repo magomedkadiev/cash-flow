@@ -5,7 +5,7 @@ class OperationCreationTemplateViewObjectToOperationViewObjetMapper {
         return OperationCreationTemplateViewObject(id: operationViewObject.id,
                                                    categoryName: operationViewObject.categoryName,
                                                    categoryID: operationViewObject.categoryID,
-                                                   parentID: operationViewObject.parentID,
+                                                   parentID: "operationViewObject.parentID",
                                                    date: operationViewObject.date,
                                                    totalAmount: operationViewObject.totalAmount,
                                                    type: operationViewObject.type,

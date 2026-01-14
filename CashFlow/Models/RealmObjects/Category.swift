@@ -19,12 +19,19 @@ class Category: Object {
     
     @objc dynamic var name: String = ""
     
+    @objc dynamic var parentID: String = ""
+    
+    override static func primaryKey() -> String? {
+            return "id"
+    }
+    
     var subCategories = List<Category>()
 
-    convenience init(id: String, name: String, subCategories: [Category]) {
+    convenience init(id: String, name: String, parentID: String, subCategories: [Category]) {
         self.init()
         self.id = id
         self.name = name
+        self.parentID = parentID
         self.subCategories.append(objectsIn: subCategories)
     }
 }

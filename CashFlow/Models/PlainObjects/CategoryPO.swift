@@ -4,6 +4,6 @@ struct CategoryPO {
     
     var id: String
     var name: String
-//    var parentID: String
+    var parentID: String
     var subCategories: [CategoryPO]
 }

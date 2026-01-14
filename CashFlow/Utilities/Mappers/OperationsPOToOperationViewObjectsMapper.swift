@@ -9,7 +9,7 @@ class OperationsPOToOperationViewObjectsMapper: OperationsPOToOperationViewObjec
             let plainObject = OperationViewObject(id: operationPO.id,
                                                   categoryName: operationPO.category.name,
                                                   categoryID: operationPO.category.id,
-                                                  parentID: "operationPO.category.parentID",
+//                                                  parentID: "operationPO.category.parentID",
                                                   totalAmount: operationPO.sum,
                                                   date: operationPO.date,
                                                   type: operationPO.type,

@@ -15,19 +15,14 @@ class CategoryRealmDAO: CategoryDAO {
 
     func createNew(category: CategoryPO, complitionHandler: @escaping () -> Void?) {
         realmManager.write { realm in
+            var categoryList = realm.object(ofType: CategoryList.self, forPrimaryKey: 0) ?? realm.create(CategoryList.self, value: [])
             
-            var categoryList = realm.object(ofType: CategoryList.self, forPrimaryKey: 0)
-            
-            if categoryList == nil {
-                categoryList = realm.create(CategoryList.self, value: [])
-            }
-            
-            if let exist = categoryList?.categories.filter("id = %@", category.id).first {
-                let category = Category(id: UUID().uuidString, name: category.name, subCategories: [])
+            if let exist = categoryList.categories.filter("id = %@", category.parentID).first {
+                let category = Category(id: UUID().uuidString, name: category.name, parentID: category.parentID, subCategories: [])
                 exist.subCategories.append(category)
             } else {
-                let newCategory = Category(id: category.id, name: category.name, subCategories: [])
-                categoryList?.categories.append(newCategory)
+                let newCategory = Category(id: category.id, name: category.name, parentID: category.parentID, subCategories: [])
+                categoryList.categories.append(newCategory)
                 realm.add(newCategory)
             }
         } onSuccess: {
@@ -35,6 +30,31 @@ class CategoryRealmDAO: CategoryDAO {
         } onFailure: {
             complitionHandler()
         }
+    }
+    
+    func replaceParentCategory(oldID: String, newCategory: CategoryPO, complitionHandler: @escaping () -> Void?) {
+        realmManager.write { realm in
+            
+            if let existing = realm.object(ofType: Category.self, forPrimaryKey: newCategory.id) {
+                existing.parentID = newCategory.parentID
+                
+                if let oldParent = realm.object(ofType: Category.self, forPrimaryKey: oldID),
+                   let index = oldParent.subCategories.firstIndex(where: { $0.id == existing.id }) {
+                    oldParent.subCategories.remove(at: index)
+                }
+                
+                if let newParent = realm.object(ofType: Category.self, forPrimaryKey: newCategory.parentID) {
+                    if !newParent.subCategories.contains(where: { $0.id == existing.id }) {
+                        newParent.subCategories.append(existing)
+                    }
+                }
+            }
+        } onSuccess: {
+            complitionHandler()
+        } onFailure: {
+            complitionHandler()
+        }
+
     }
     
     func remove(_ category: Category) {
@@ -50,23 +70,6 @@ class CategoryRealmDAO: CategoryDAO {
                 }
             }
         }
-        
-        /*
-        let realm = try! Realm()
-        try! realm.write {
-            let categories = realm.objects(Category.self)
-            let categoryToRemove = categories.filter("id = %@", category.id)
-            
-            realm.delete(categoryToRemove)
-            let parentCategoryToRemove = realm.objects(Category.self).filter("parentID = %@", category.parentID)
-
-            if parentCategoryToRemove.isEmpty {
-                let parentCategoryToRemove2 = realm.objects(Category.self).filter("id = %@", category.parentID)
-
-                realm.delete(parentCategoryToRemove2)
-            }
-        }
-         */
     }
     
     func move(from: Int, to: Int) {
@@ -90,7 +93,7 @@ class CategoryRealmDAO: CategoryDAO {
         let realm = try! Realm()
         
         try! realm.write {
-            var categoryList = realm.create(CategoryList.self, value: [])
+            let categoryList = realm.create(CategoryList.self, value: [])
             categoryList.categories.append(objectsIn: categories)
         }
     }

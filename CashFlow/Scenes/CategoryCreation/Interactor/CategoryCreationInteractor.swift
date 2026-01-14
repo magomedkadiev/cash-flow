@@ -17,4 +17,11 @@ extension CategoryCreationInteractor: CategoryCreationInteractorInputProtocol {
             self.presenter?.operationCreationFinished()
         }
     }
+    
+    func replaceParentCategory(oldID: String, newCategory: CategoryPO) {
+        categoryRealmDAO.replaceParentCategory(oldID: oldID, newCategory: newCategory) {
+            self.presenter?.operationCreationFinished()
+        }
+    }
+    
 }

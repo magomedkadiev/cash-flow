@@ -6,28 +6,28 @@ class CategoriesTemplate {
     
     class func defaultsCategories() -> [Category] {
         return [
-            Category(id: UUID().uuidString, name: "Продукты питания", subCategories: [
-                Category(id: UUID().uuidString, name: "Супермаркет", subCategories: []),
-                Category(id: UUID().uuidString, name: "Сладости", subCategories: [])
+            Category(id: "1", name: "Продукты питания", parentID: "", subCategories: [
+                Category(id: UUID().uuidString, name: "Супермаркет", parentID: "1", subCategories: []),
+                Category(id: UUID().uuidString, name: "Сладости", parentID: "1", subCategories: [])
 
             ]),
-            Category(id: UUID().uuidString, name: "Еда вне дома", subCategories: [
-                Category(id: UUID().uuidString, name: "Кофейни", subCategories: []),
-                Category(id: UUID().uuidString, name: "Рестораны", subCategories: []),
-                Category(id: UUID().uuidString, name: "Завтраки", subCategories: []),
-                Category(id: UUID().uuidString, name: "Обеды", subCategories: []),
-                Category(id: UUID().uuidString, name: "Ужины", subCategories: [])
+            Category(id: "2", name: "Еда вне дома", parentID: "", subCategories: [
+                Category(id: UUID().uuidString, name: "Кофейни", parentID: "2", subCategories: []),
+                Category(id: UUID().uuidString, name: "Рестораны", parentID: "2", subCategories: []),
+                Category(id: UUID().uuidString, name: "Завтраки", parentID: "2", subCategories: []),
+                Category(id: UUID().uuidString, name: "Обеды", parentID: "2", subCategories: []),
+                Category(id: UUID().uuidString, name: "Ужины", parentID: "2", subCategories: [])
 
             ]),
-            Category(id: UUID().uuidString, name: "Автомобиль", subCategories: [
-                Category(id: UUID().uuidString, name: "Топливо", subCategories: []),
-                Category(id: UUID().uuidString, name: "Мойка", subCategories: []),
-                Category(id: UUID().uuidString, name: "Штрафы", subCategories: []),
-                Category(id: UUID().uuidString, name: "Запчасти", subCategories: [])
+            Category(id: "3", name: "Автомобиль", parentID: "", subCategories: [
+                Category(id: UUID().uuidString, name: "Топливо", parentID: "3", subCategories: []),
+                Category(id: UUID().uuidString, name: "Мойка", parentID: "3", subCategories: []),
+                Category(id: UUID().uuidString, name: "Штрафы", parentID: "3", subCategories: []),
+                Category(id: UUID().uuidString, name: "Запчасти", parentID: "3", subCategories: [])
             ]),
-            Category(id: UUID().uuidString, name: "Услуги связи", subCategories: [
-                Category(id: UUID().uuidString, name: "Интернет", subCategories: []),
-                Category(id: UUID().uuidString, name: "Мобильная связь", subCategories: [])
+            Category(id: "4", name: "Услуги связи", parentID: "", subCategories: [
+                Category(id: UUID().uuidString, name: "Интернет", parentID: "4", subCategories: []),
+                Category(id: UUID().uuidString, name: "Мобильная связь", parentID: "4", subCategories: [])
             ])
         ]
     }

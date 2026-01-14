@@ -53,18 +53,25 @@ extension CategoryCreationPresenter: CategoryCreationOutputViewProtocol {
         }
     }
     
-    func createCategoryEvent() {
+    func createCategoryEvent(_ viewObject: CashFlowTableViewCellViewObject?) {
         guard !templateViewObject.name.isEmpty else {
             print("categoryName isEpmty")
             return
         }
-        let templateViewObjectID = templateViewObject.id.isEmpty ? UUID().uuidString : templateViewObject.id
         
-        let id = templateViewObject.parentID.isEmpty ? UUID().uuidString : templateViewObject.parentID
+        let categoryPO = CategoryPO(id: templateViewObject.id.isEmpty ? UUID().uuidString : templateViewObject.id,
+                                    name: templateViewObject.name,
+                                    parentID: templateViewObject.parentID,
+                                    subCategories: [])
         
-        
-        let categoryPO = CategoryPO(id: id, name: templateViewObject.name, subCategories: [])
-        interactor.performsaveCategoryRequest(categoryPO)
+        if let existingCategory = viewObject as? CategoryListViewObject {
+            if let existingSubCategory = existingCategory.subCategories.first,
+               existingSubCategory.parentID != templateViewObject.parentID {
+                interactor.replaceParentCategory(oldID: existingSubCategory.parentID, newCategory: categoryPO)
+            }
+        } else {
+                interactor.performsaveCategoryRequest(categoryPO)
+        }
     }
 }
 

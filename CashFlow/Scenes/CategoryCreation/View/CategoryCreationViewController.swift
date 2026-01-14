@@ -20,7 +20,7 @@ class CategoryCreationViewController: UIViewController {
     }
 
     @IBAction func createCategoryTapped(_ sender: UIBarButtonItem) {
-        presenter?.createCategoryEvent()
+        presenter?.createCategoryEvent(categoryViewObject)
     }
     @IBAction func closeBarButtonTapped(_ sender: UIBarButtonItem) {
         self.dismiss(animated: true)

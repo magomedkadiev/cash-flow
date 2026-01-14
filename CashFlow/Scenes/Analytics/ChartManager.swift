@@ -78,9 +78,9 @@ struct MyView: View {
         }
     }
     var data: [OperationModel] = [
-        .init(id: UUID().uuidString, type: .expense, category: CategoryPO(id: "", name: "Атомобиль", subCategories: []), sum: 100, date: Date(), comment: ""),
-        .init(id: UUID().uuidString, type: .expense, category: CategoryPO(id: "", name: "Еда вне дома", subCategories: []), sum: 200, date: Date(), comment: ""),
-        .init(id: UUID().uuidString, type: .expense, category: CategoryPO(id: "", name: "Здоровье", subCategories: []), sum: 300, date: Date(), comment: "")
+        .init(id: UUID().uuidString, type: .expense, category: CategoryPO(id: "", name: "Атомобиль", parentID: "", subCategories: []), sum: 100, date: Date(), comment: ""),
+        .init(id: UUID().uuidString, type: .expense, category: CategoryPO(id: "", name: "Еда вне дома", parentID: "", subCategories: []), sum: 200, date: Date(), comment: ""),
+        .init(id: UUID().uuidString, type: .expense, category: CategoryPO(id: "", name: "Здоровье", parentID: "", subCategories: []), sum: 300, date: Date(), comment: "")
     ]
 
 }

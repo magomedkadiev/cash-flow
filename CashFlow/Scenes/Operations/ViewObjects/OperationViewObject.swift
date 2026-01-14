@@ -13,8 +13,6 @@ struct OperationViewObject: CashFlowTableViewCellViewObject {
     var categoryName: String
     
     var categoryID: String
-    
-    var parentID: String
         
     var totalAmount: Int
     
