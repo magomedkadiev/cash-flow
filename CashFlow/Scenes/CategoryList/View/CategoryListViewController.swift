@@ -19,6 +19,7 @@ class CategoryListViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        configureCloseButtonIfNeeded()
         presenter?.viewDidLoad()
         
         tableView.tableFooterView = nil
@@ -31,9 +32,34 @@ class CategoryListViewController: UIViewController {
     @IBAction func moveBarButtonItemTapped(_ sender: UIBarButtonItem) {
         presenter?.reorderCategoriesButtonTapped()
     }
-    @IBAction func closeBarButtonTapped(_ sender: UIBarButtonItem) {
+    
+    private func configureCloseButtonIfNeeded() {
+        if shouldShowCloseButton {
+            navigationItem.leftBarButtonItem = UIBarButtonItem(image: #imageLiteral(resourceName: "Add"),
+                                                               style: .plain,
+                                                               target: self,
+                                                               action: #selector(closeTapped))
+        }
+    }
+    
+    private var shouldShowCloseButton: Bool {
+        if let currentNavigationController = navigationController,
+           currentNavigationController.presentingViewController != nil,
+           currentNavigationController.viewControllers.first == self {
+            return true
+        }
+        
+        if presentingViewController != nil {
+            return true
+        }
+        
+        return false
+    }
+    
+    @objc private func closeTapped() {
         self.dismiss(animated: true)
     }
+
 }
 
 extension CategoryListViewController: CategoryParentListCloseHandler {

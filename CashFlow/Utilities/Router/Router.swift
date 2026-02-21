@@ -23,9 +23,10 @@ class Router: ApplicationRouter {
                 }
             } // From settings scene
             else if let navigationController = (topController as? UITabBarController)?.selectedViewController as? UINavigationController {
-                let categoryListViewController = CategoryListViewController.controller()
-                navigationController.present(categoryListViewController, animated: true)
-
+                let navigationCategoryListViewController = CategoryListViewController.controller()
+                if let categoryListViewController = navigationCategoryListViewController.viewControllers.first {
+                    navigationController.pushViewController(categoryListViewController, animated: true)
+                }
             }
         }
     }
